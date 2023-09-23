@@ -141,57 +141,57 @@ export const categorieMegaMenuItems = [
     menuCol: [
       {
         id: 1,
-        megaBanner: "/img/backgrounds/7.png",
-        title: "Things to do on your hotel",
-        btnText: "See Hotel",
+        megaBanner: "/img/backgrounds/ashok.jpg",
+        title: "Explore trucks of Ashok Leyland",
+        btnText: "See More",
         btnRoute: "/hotel/hotel-list-v1",
         menuItems: [
           {
             id: 1,
-            title: "Hotel List",
+            title: "Ecomet Star Series",
             menuList: [
               {
-                name: "Hotel List v1",
+                name: "1110 R",
                 routePath: "/hotel/hotel-list-v1",
               },
               {
-                name: "Hotel List v2",
+                name: "1120 R",
                 routePath: "/hotel/hotel-list-v2",
               },
               {
-                name: "Hotel List v3",
+                name: "1130 R",
                 routePath: "/hotel/hotel-list-v3",
               },
               {
-                name: "Hotel List v4",
+                name: "1140 R",
                 routePath: "/hotel/hotel-list-v4",
               },
               {
-                name: "Hotel List v5",
+                name: "1150 H",
                 routePath: "/hotel/hotel-list-v5",
               },
             ],
           },
           {
             id: 2,
-            title: "Hotel Single",
+            title: "Boss Series",
             menuList: [
               {
-                name: "Hotel Single v1",
+                name: "Boss 1100",
                 routePath: "/hotel/hotel-single-v1/5",
               },
               {
-                name: "Hotel Single v2",
+                name: "Boss 1200",
                 routePath: "/hotel/hotel-single-v2/3",
               },
             ],
           },
           {
             id: 3,
-            title: "Hotel Booking",
+            title: "Other varients",
             menuList: [
               {
-                name: "Booking Page",
+                name: "1200 R",
                 routePath: "/hotel/booking-page",
               },
             ],
@@ -206,35 +206,57 @@ export const categorieMegaMenuItems = [
       {
         id: 1,
         megaBanner: "/img/backgrounds/8.png",
-        title: "Things to do on your tour",
-        btnText: "See Tour",
+        title: "Explore trucks of Bharat Benz",
+        btnText: "See Trucks",
         btnRoute: "/tour/tour-list-v1",
         menuItems: [
           {
             id: 1,
-            title: "Tour List",
+            title: "Ecomet Star Series",
             menuList: [
               {
-                name: "Tour List v1",
-                routePath: "/tour/tour-list-v1",
+                name: "1110 R",
+                routePath: "/hotel/hotel-list-v1",
               },
               {
-                name: "Tour List v2",
-                routePath: "/tour/tour-list-v2",
+                name: "1120 R",
+                routePath: "/hotel/hotel-list-v2",
+              },
+              {
+                name: "1130 R",
+                routePath: "/hotel/hotel-list-v3",
+              },
+              {
+                name: "1140 R",
+                routePath: "/hotel/hotel-list-v4",
+              },
+              {
+                name: "1150 H",
+                routePath: "/hotel/hotel-list-v5",
               },
             ],
           },
           {
             id: 2,
-            title: "Tour Pages",
+            title: "Boss Series",
             menuList: [
               {
-                name: "Tour Map",
-                routePath: "/tour/tour-list-v3",
+                name: "Boss 1100",
+                routePath: "/hotel/hotel-single-v1/5",
               },
               {
-                name: "Tour Single",
-                routePath: "/tour/tour-single/5",
+                name: "Boss 1200",
+                routePath: "/hotel/hotel-single-v2/3",
+              },
+            ],
+          },
+          {
+            id: 3,
+            title: "Other varients",
+            menuList: [
+              {
+                name: "1200 R",
+                routePath: "/hotel/booking-page",
               },
             ],
           },
@@ -248,36 +270,57 @@ export const categorieMegaMenuItems = [
       {
         id: 1,
         megaBanner: "/img/backgrounds/9.png",
-        title: "Things to do on your activity",
-        btnText: "See Activity",
+        title: "Explore trucks of Volvo",
+        btnText: "See Volvo trucks",
         btnRoute: "/activity/activity-list-v1",
         menuItems: [
           {
             id: 1,
-            title: "Activity List",
+            title: "Ecomet Star Series",
             menuList: [
               {
-                name: "Activity List v1",
-                routePath: "/activity/activity-list-v1",
+                name: "1110 R",
+                routePath: "/hotel/hotel-list-v1",
               },
               {
-                name: "Activity List v2",
-                routePath: "/activity/activity-list-v2",
+                name: "1120 R",
+                routePath: "/hotel/hotel-list-v2",
+              },
+              {
+                name: "1130 R",
+                routePath: "/hotel/hotel-list-v3",
+              },
+              {
+                name: "1140 R",
+                routePath: "/hotel/hotel-list-v4",
+              },
+              {
+                name: "1150 H",
+                routePath: "/hotel/hotel-list-v5",
               },
             ],
           },
           {
             id: 2,
-            title: "Activity Pages",
+            title: "Boss Series",
             menuList: [
               {
-                name: "Activity Map",
-                routePath: "/activity/activity-list-v3",
+                name: "Boss 1100",
+                routePath: "/hotel/hotel-single-v1/5",
               },
               {
-                name: "Activity Single",
-                routePath: "activity-single",
-                routePath: "/activity/activity-single/3",
+                name: "Boss 1200",
+                routePath: "/hotel/hotel-single-v2/3",
+              },
+            ],
+          },
+          {
+            id: 3,
+            title: "Other varients",
+            menuList: [
+              {
+                name: "1200 R",
+                routePath: "/hotel/booking-page",
               },
             ],
           },
@@ -291,35 +334,57 @@ export const categorieMegaMenuItems = [
       {
         id: 1,
         megaBanner: "/img/backgrounds/10.png",
-        title: "Things to do on your rentals",
-        btnText: "See Rental",
+        title: "Explore Tata Trucks",
+        btnText: "See Trucks",
         btnRoute: "/rental/rental-list-v1",
-        menuItems: [
+        menuItems:[
           {
             id: 1,
-            title: "Rental List",
+            title: "Ecomet Star Series",
             menuList: [
               {
-                name: "Rental List v1",
-                routePath: "/rental/rental-list-v1",
+                name: "1110 R",
+                routePath: "/hotel/hotel-list-v1",
               },
               {
-                name: "Rental List v2",
-                routePath: "/rental/rental-list-v2",
+                name: "1120 R",
+                routePath: "/hotel/hotel-list-v2",
+              },
+              {
+                name: "1130 R",
+                routePath: "/hotel/hotel-list-v3",
+              },
+              {
+                name: "1140 R",
+                routePath: "/hotel/hotel-list-v4",
+              },
+              {
+                name: "1150 H",
+                routePath: "/hotel/hotel-list-v5",
               },
             ],
           },
           {
             id: 2,
-            title: "Rental Pages",
+            title: "Boss Series",
             menuList: [
               {
-                name: "Rental Map",
-                routePath: "/rental/rental-list-v3",
+                name: "Boss 1100",
+                routePath: "/hotel/hotel-single-v1/5",
               },
               {
-                name: "Rental Single",
-                routePath: "/rental/rental-single/3",
+                name: "Boss 1200",
+                routePath: "/hotel/hotel-single-v2/3",
+              },
+            ],
+          },
+          {
+            id: 3,
+            title: "Other varients",
+            menuList: [
+              {
+                name: "1200 R",
+                routePath: "/hotel/booking-page",
               },
             ],
           },
@@ -441,7 +506,7 @@ export const categorieMegaMenuItems = [
 export const categorieMobileItems = [
   {
     id: 1,
-    title: "Hotel",
+    title: "",
     menuItems: [
       {
         id: 1,

@@ -5,6 +5,7 @@ import {
   blogItems,
   pageItems,
   dashboardItems,
+  categorieMegaMenuItems,
 } from "../../data/mainMenuData";
 import CategoriesMegaMenu from "./CategoriesMegaMenu";
 import {
@@ -13,6 +14,7 @@ import {
   isActiveParentChaild,
 } from "../../utils/linkActiveChecker";
 import { useRouter } from "next/router";
+import { truckList } from "../../data/truckList";
 
 const MainMenu = ({ style = "" }) => {
   const router = useRouter();
@@ -20,115 +22,74 @@ const MainMenu = ({ style = "" }) => {
   return (
     <nav className="menu js-navList">
       <ul className={`menu__nav ${style} -is-active`}>
-        <li
-          className={`${
-            isActiveParentChaild(homeItems, router.asPath) ? "current" : ""
-          } menu-item-has-children`}
-        >
-          <a href="#">
-            <span className="mr-10">Home</span>
-            <i className="icon icon-chevron-sm-down" />
-          </a>
-          <ul className="subnav">
-            {homeItems.map((menu, i) => (
-              <li
-                key={i}
-                className={
-                  isActiveLink(menu.routePath, router.asPath) ? "current" : ""
-                }
-              >
-                <Link href={menu.routePath}>{menu.name}</Link>
-              </li>
-            ))}
-          </ul>
+        <li className={router.pathname === "/" ? "current" : ""}>
+          <Link href="/">Home</Link>
         </li>
-        {/* End home page menu */}
 
         <li className="menu-item-has-children -has-mega-menu">
           <a href="#">
-            <span className="mr-10">Categories</span>
+            <span className="mr-10">Trucks</span>
             <i className="icon icon-chevron-sm-down" />
           </a>
           <div className="mega">
-            <CategoriesMegaMenu />
+            <CategoriesMegaMenu
+              itemList={truckList}
+              categorieMegaMenuItems={categorieMegaMenuItems}
+            />
           </div>
         </li>
         {/* End categories menu items */}
 
-        <li className={router.pathname === "/destinations" ? "current" : ""}>
-          <Link href="/destinations">Destinations</Link>
-        </li>
-        {/* End Destinatinos single menu */}
-
-        <li
-          className={`${
-            isActiveParentChaild(blogItems, router.asPath) ? "current" : ""
-          } menu-item-has-children`}
-        >
+        <li className="menu-item-has-children -has-mega-menu">
           <a href="#">
-            <span className="mr-10">Blog</span>
+            <span className="mr-10">Tippers</span>
             <i className="icon icon-chevron-sm-down" />
           </a>
-          <ul className="subnav">
-            {blogItems.map((menu, i) => (
-              <li
-                key={i}
-                className={
-                  isActiveLink(menu.routePath, router.asPath) ? "current" : ""
-                }
-              >
-                <Link href={menu.routePath}>{menu.name}</Link>
-              </li>
-            ))}
-          </ul>
+          <div className="mega">
+            <CategoriesMegaMenu
+              itemList={truckList}
+              categorieMegaMenuItems={categorieMegaMenuItems}
+            />
+          </div>
         </li>
-        {/* End blogIems */}
 
-        <li
-          className={`${
-            isActiveParentChaild(pageItems, router.asPath) ? "current" : ""
-          } menu-item-has-children`}
-        >
+        <li className="menu-item-has-children -has-mega-menu">
           <a href="#">
-            <span className="mr-10">Pages</span>
+            <span className="mr-10">Pickups</span>
             <i className="icon icon-chevron-sm-down" />
           </a>
-          <ul className="subnav">
-            {pageItems.map((menu, i) => (
-              <li
-                key={i}
-                className={
-                  isActiveLink(menu.routePath, router.asPath) ? "current" : ""
-                }
-              >
-                <Link href={menu.routePath}>{menu.name}</Link>
-              </li>
-            ))}
-          </ul>
+          <div className="mega">
+            <CategoriesMegaMenu
+              itemList={truckList}
+              categorieMegaMenuItems={categorieMegaMenuItems}
+            />
+          </div>
         </li>
-        {/* End pages items */}
 
-        <li
-          className={`${
-            isActiveParentChaild(dashboardItems, router.asPath) ? "current" : ""
-          } menu-item-has-children`}
-        >
+        <li className="menu-item-has-children -has-mega-menu">
           <a href="#">
-            <span className="mr-10">Dashboard</span>
+            <span className="mr-10">Trailers</span>
             <i className="icon icon-chevron-sm-down" />
           </a>
-          <ul className="subnav ">
-            {dashboardItems.map((menu, i) => (
-              <li
-                key={i}
-                className={
-                  isActiveLink(menu.routePath, router.asPath) ? "current" : ""
-                }
-              >
-                <Link href={menu.routePath}>{menu.name}</Link>
-              </li>
-            ))}
-          </ul>
+          <div className="mega">
+            <CategoriesMegaMenu
+              itemList={truckList}
+              categorieMegaMenuItems={categorieMegaMenuItems}
+            />
+          </div>
+        </li>
+
+        <li className="menu-item-has-children -has-mega-menu">
+          <a href="#">
+            <span className="mr-10">3-Wheelers</span>
+            <i className="icon icon-chevron-sm-down" />
+          </a>
+          <div className="mega">
+            <CategoriesMegaMenu
+              itemList={truckList}
+              categorieMegaMenuItems={categorieMegaMenuItems}
+            />
+          </div>
         </li>
 
         <li className={router.pathname === "/contact" ? "current" : ""}>
