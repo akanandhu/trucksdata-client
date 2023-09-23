@@ -27,7 +27,7 @@ const home_8 = () => {
       <Hero8 />
       {/* End Hero 8 */}
 
-      <section className="layout-pt-lg layout-pb-md">
+      {/* <section className="layout-pt-lg layout-pb-md">
         <div className="container">
           <div className="row justify-center text-center">
             <div className="col-auto">
@@ -39,15 +39,12 @@ const home_8 = () => {
               </div>
             </div>
           </div>
-          {/* End .row */}
 
           <div className="row y-gap-40 justify-between pt-40 sm:pt-20">
             <BlockGuide />
           </div>
-          {/* End .row */}
         </div>
-        {/* End .container */}
-      </section>
+      </section> */}
       {/* End Why Coose Us */}
 
       <section className="layout-pt-md layout-pb-md">
@@ -55,9 +52,9 @@ const home_8 = () => {
           <div className="row y-gap-20 justify-center text-center">
             <div className="col-auto">
               <div className="sectionTitle -md">
-                <h2 className="sectionTitle__title">Popular Car Hire</h2>
+                <h2 className="sectionTitle__title">Popular Models</h2>
                 <p className=" sectionTitle__text mt-5 sm:mt-0">
-                  Interdum et malesuada fames ac ante ipsum
+                  Explore the popular Models
                 </p>
               </div>
             </div>

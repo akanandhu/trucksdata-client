@@ -74,11 +74,11 @@ const PopularCars = () => {
                   </div>
                   {/* End cartImage */}
 
-                  <div className="cardImage__wishlist">
+                  {/* <div className="cardImage__wishlist">
                     <button className="button -blue-1 bg-white size-30 rounded-full shadow-2">
                       <i className="icon-heart text-12" />
                     </button>
-                  </div>
+                  </div> */}
 
                   <div className="cardImage__leftBadge">
                     <div
@@ -105,16 +105,13 @@ const PopularCars = () => {
 
                   <h4 className="text-dark-1 text-18 lh-16 fw-500">
                     {item?.title}{" "}
-                    <span className="text-15 text-light-1 fw-400">
-                      or similar
-                    </span>
                   </h4>
                   <p className="text-light-1 lh-14 text-14 mt-5" />
 
                   <div className="row x-gap-20 y-gap-10 items-center pt-5">
                     <div className="col-auto">
                       <div className="d-flex items-center text-14 text-dark-1">
-                        <i className="icon-user-2 mr-10" />
+                        <i className="icon-eye mr-10" />
                         <div className="lh-14">{item?.seat}</div>
                       </div>
                     </div>
