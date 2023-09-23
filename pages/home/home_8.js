@@ -18,7 +18,7 @@ import Link from "next/link";
 const home_8 = () => {
   return (
     <>
-      <Seo pageTitle="Home-8" />
+      <Seo pageTitle="Home" />
       {/* End Page Title */}
 
       <Header8 />
