@@ -23,15 +23,14 @@ const index = () => {
                   data-aos="fade-up"
                   data-aos-delay="100"
                 >
-                  Search for the Best Car Hire Deals
+                  Search for the Best Trucks
                 </h1>
                 <p
                   className="text-dark-1 mt-5"
                   data-aos="fade-up"
                   data-aos-delay="200"
                 >
-                  Book better cars from local hosts across the US and around the
-                  world.
+                  Navigate India&apos;s Trucking Landscape With Ease.
                 </p>
               </div>
             </div>
