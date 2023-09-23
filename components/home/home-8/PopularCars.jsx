@@ -113,7 +113,7 @@ const PopularCars = () => {
                   <div className="row x-gap-20 y-gap-10 items-center pt-5">
                     <div className="col-auto">
                       <div className="d-flex items-center text-14 text-dark-1">
-                        <i className="icon-clock mr-10" />
+                        <i className="icon-eye mr-10" />
                         <div className="lh-14">{item?.seat}</div>
                       </div>
                     </div>
