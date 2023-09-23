@@ -2,25 +2,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-import { categorieMegaMenuItems } from "../../data/mainMenuData";
 import {
   isActiveParent,
   isActiveLink,
   isActiveParentChaild,
 } from "../../utils/linkActiveChecker";
 
-const CategoriesMegaMenu = () => {
+const CategoriesMegaMenu = ({itemList, categorieMegaMenuItems}) => {
   const router = useRouter();
 
-  const itemList = [
-    "Hotel",
-    "Tour",
-    "Activity",
-    "Holiday Rentals",
-    "Car",
-    "Cruise",
-    "Flights",
-  ];
 
   return (
     <Tabs className="tabs -underline-2 js-tabs">
