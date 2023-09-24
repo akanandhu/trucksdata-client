@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { MdOutlineCompare } from "react-icons/md";
 import MainMenu from "../MainMenu";
 import SearchBoxContent from "../../hero/hero-8/SearchBoxContent";
 import MobileMenu from "../MobileMenu";
@@ -47,7 +48,7 @@ const Header1 = () => {
 
             <div className="col-auto">
               <div className="d-flex items-center">
-                <div className="mr-15 xxl:d-none">
+                <div className="mr-15 xxl:d-none d-flex">
                   <button
                     className="text-26 text-dark-1"
                     data-bs-toggle="offcanvas"
@@ -77,20 +78,20 @@ const Header1 = () => {
                   <SearchBoxContent />
                 </div>
 
+                <div className="mr-15 xxl:d-none">
+                  {/* <Link href={"/"}> */}
+                  <button className="text-26 text-dark-1 d-flex">
+                    <MdOutlineCompare />
+                  </button>
+                  {/* </Link> */}
+                </div>
+
                 {/* Start btn-group */}
                 <div className="d-flex items-center ml-20 is-menu-opened-hide md:d-none">
-                  <Link
-                    href="/others-pages/login"
-                    className="button px-30 fw-400 text-14 -blue-1 bg-dark-1 h-50 text-white"
-                  >
-                    Become An Expert
-                  </Link>
-                  <Link
-                    href="/others-pages/signup"
-                    className="button px-30 fw-400 text-14 border-dark-1 -blue-1 h-50 text-dark-1 ml-20"
-                  >
-                    Sign In / Register
-                  </Link>
+                  <div className="button px-30 fw-400 text-14 -blue-1 bg-dark-1 h-50 text-white">
+                    <i className="icon-globe mr-5" />
+                    English
+                  </div>
                 </div>
                 {/* End btn-group */}
 
@@ -99,8 +100,10 @@ const Header1 = () => {
                   <div>
                     <Link
                       href="/others-pages/login"
-                      className="d-flex items-center icon-user text-inherit text-22"
-                    />
+                      className="d-flex items-center text-inherit text-22"
+                    >
+                      <MdOutlineCompare />
+                    </Link>
                   </div>
                   <div>
                     <button
