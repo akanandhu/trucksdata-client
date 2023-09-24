@@ -2151,3 +2151,14 @@ table.table-5 {
   height: 100%;
   max-height: 700px;
 }
+
+.custom-btn {
+  background: white;
+  box-shadow: 0px 0px 5px rgba(203, 166, 34, 0.60);
+  transition: box-shadow 0.3s ease;
+}
+
+.custom-btn:hover {
+  background: linear-gradient(to right, #FF5733, #FFBD33);
+  box-shadow: 0px 0px 15px rgba(203, 166, 34, 0.80);
+}

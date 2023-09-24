@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { BiSolidFactory } from "react-icons/bi";
+
 function DropInput(props) {
   const { dropdownDetails } = props;
   const [searchValue, setSearchValue] = useState("");

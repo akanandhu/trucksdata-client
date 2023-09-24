@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper";
 import carsData from "../../../data/cars";
 import isTextMatched from "../../../utils/isTextMatched";
+import CompareButton from "../../truck-card/CompareButton";
 
 const PopularCars = () => {
   return (
@@ -92,6 +93,7 @@ const PopularCars = () => {
                     </div>
                   </div>
                 </div>
+                </Link>
                 {/* End .tourCard__image */}
 
                 <div className="carCard__content mt-10">
@@ -111,17 +113,12 @@ const PopularCars = () => {
                   <div className="row x-gap-20 y-gap-10 items-center pt-5">
                     <div className="col-auto">
                       <div className="d-flex items-center text-14 text-dark-1">
-                        <i className="icon-eye mr-10" />
+                        <i className="icon-clock mr-10" />
                         <div className="lh-14">{item?.seat}</div>
                       </div>
                     </div>
 
-                    <div className="col-auto">
-                      <div className="d-flex items-center text-14 text-dark-1">
-                        <i className="icon-luggage mr-10" />
-                        <div className="lh-14">{item?.luggage}</div>
-                      </div>
-                    </div>
+                    
 
                     <div className="col-auto">
                       <div className="d-flex items-center text-14 text-dark-1">
@@ -138,28 +135,39 @@ const PopularCars = () => {
                     </div>
                   </div>
                   {/* End .row */}
+                  <div className="d-flex align-content-center align-items-center justify-content-between  ">
 
+                  <div>
                   <div className="d-flex items-center mt-20">
                     <div className="flex-center bg-yellow-1 rounded-4 size-30 text-12 fw-600 text-dark-1">
                       {item.ratings}
                     </div>
                     <div className="text-14 text-dark-1 fw-500 ml-10">
-                      Exceptional
+                      Agriculture Use
                     </div>
-                    <div className="text-14 text-light-1 ml-10">
-                      {item?.numberOfReviews} reviews
-                    </div>
+                    {/* <div className="text-14 text-light-1 ml-10">
+                       Rice Truck
+                    </div> */}
                   </div>
                   <div className="mt-5">
                     <div className="text-light-1">
-                      <span className="fw-500 text-dark-1">
-                        US${item?.price}
+                      <span className="fw-600 text-dark-1">
+                      ₹ 45,00,000
                       </span>{" "}
-                      total
+                      Ex-showroom
                     </div>
                   </div>
+                  </div>
+
+                  {/* Compare Button */}
+                  <div className=" mr-5">
+                  <CompareButton  />
+                    
+                  </div>
+
+                  </div>
+                  
                 </div>
-              </Link>
             </div>
           </SwiperSlide>
         ))}
