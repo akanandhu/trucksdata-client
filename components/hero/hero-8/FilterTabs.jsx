@@ -29,10 +29,13 @@ function FilterTabs() {
 
         <div className="tabs__content js-tabs-content">
           {dropdown.map((item) => (
-            <TabPanel>
+            <TabPanel key={item?.id}>
               <div className="d-flex p-2 bd-highlight justify-content-between">
                 {item.dropdownItem.map((dropdownDetails) => (
-                  <DropInput dropdownDetails={dropdownDetails} />
+                  <DropInput
+                    key={dropdownDetails?.id}
+                    dropdownDetails={dropdownDetails}
+                  />
                 ))}
                 <SearchButton />
               </div>
