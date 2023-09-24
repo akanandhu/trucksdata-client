@@ -80,7 +80,7 @@ const Header1 = () => {
 
                 <div className="mr-15 xxl:d-none">
                   {/* <Link href={"/"}> */}
-                  <button className="text-26 text-dark-1 d-flex">
+                  <button className="text-26 text-dark-1 d-flex position-relative ">
                     <MdOutlineCompare />
                   </button>
                   {/* </Link> */}

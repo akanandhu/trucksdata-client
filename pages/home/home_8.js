@@ -8,12 +8,12 @@ import Testimonial from "../../components/testimonial/Testimonial";
 import CounterDark from "../../components/counter/CounterDark";
 import Brand from "../../components/brand/Brand";
 import PopularCars from "../../components/home/home-8/PopularCars";
-import TopDestinations from "../../components/home/home-8/TopDestinations";
 import Counter4 from "../../components/counter/Counter4";
 import Faq from "../../components/faq/Faq";
 import AppBanner from "../../components/home/home-8/AppBanner";
 import Blog from "../../components/home/home-8/Blog";
 import Link from "next/link";
+import TopBrands from "../../components/top-brands/TopBrands";
 
 const home_8 = () => {
   return (
@@ -76,9 +76,9 @@ const home_8 = () => {
           <div className="row y-gap-20 justify-center text-center">
             <div className="col-auto">
               <div className="sectionTitle -md">
-                <h2 className="sectionTitle__title">Top Destinations in UK</h2>
+                <h2 className="sectionTitle__title">Top Brands</h2>
                 <p className=" sectionTitle__text mt-5 sm:mt-0">
-                  These popular destinations have a lot to offer
+                  These popular brands have a lot to variants to offer
                 </p>
               </div>
             </div>
@@ -86,55 +86,15 @@ const home_8 = () => {
           {/* End .row */}
 
           <div className="row y-gap-30 pt-40">
-            <TopDestinations />
+           <TopBrands />
           </div>
           {/* End .row */}
         </div>
         {/* End .container */}
       </section>
-      {/* Top Destinations Sections */}
+  
 
-      <section className="layout-pt-lg layout-pb-lg bg-dark-1">
-        <div className="container">
-          <div className="row justify-center text-center">
-            <div className="col-auto">
-              <div className="sectionTitle text-white">
-                <h2 className="sectionTitle__title">Customer Reviews</h2>
-                <p className=" sectionTitle__text mt-5 sm:mt-0">
-                  These popular destinations have a lot to offer
-                </p>
-              </div>
-            </div>
-          </div>
-          {/* End .row */}
-
-          <div className="overflow-hidden pt-60 lg:pt-40 sm:pt-30">
-            <div className="item_gap-x30">
-              <Testimonial />
-            </div>
-          </div>
-          {/* End .overflow-hidden */}
-
-          <div className="row y-gap-30 items-center pt-40 sm:pt-20">
-            <div className="col-xl-4">
-              <CounterDark />
-            </div>
-            {/* End .col */}
-
-            <div className="col-xl-8">
-              <div className="row y-gap-30 justify-between items-center">
-                <Brand />
-              </div>
-            </div>
-            {/* End .col */}
-          </div>
-          {/* End .row */}
-        </div>
-        {/* End .container */}
-      </section>
-      {/* End testimonial section */}
-
-      <section className="layout-pt-lg layout-pb-md">
+      <section className=" layout-pb-md">
         <div className="container">
           <div className="row y-gap-30 justify-between items-center">
             <div className="col-xl-5 col-lg-6">
