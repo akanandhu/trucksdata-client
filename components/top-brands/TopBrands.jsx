@@ -1,8 +1,7 @@
-import { destinations8 } from "../../../data/desinations";
 import Slider from "react-slick";
 import Link from "next/link";
 
-const TopDestinations = () => {
+const TopBrands = () => {
   var settings = {
     dots: true,
     infinite: true,
@@ -32,9 +31,48 @@ const TopDestinations = () => {
     ],
   };
 
+  const topBrands = [
+    {
+      id: 1,
+      logo: "/img/destinations/5/1.png",
+      brand: "Paris",
+      price: "29.52",
+      delayAnimation: "100",
+    },
+    {
+      id: 2,
+      logo: "/img/destinations/5/2.png",
+      brand: "London",
+      delayAnimation: "200",
+    },
+    {
+      id: 3,
+      logo: "/img/destinations/5/3.png",
+      brand: "Los Angeles",
+      delayAnimation: "300",
+    },
+    {
+      id: 4,
+      logo: "/img/destinations/5/4.png",
+      brand: "Amsterdam",
+      delayAnimation: "400",
+    },
+    {
+      id: 5,
+      logo: "/img/destinations/5/5.png",
+      brand: "Istanbul",
+      delayAnimation: "500",
+    },
+    {
+      id: 6,
+      logo: "/img/destinations/5/6.png",
+      delayAnimation: "600",
+    },
+  ];
+
   return (
     <Slider {...settings}>
-      {destinations8.map((item) => (
+      {topBrands.map((item) => (
         <div
           className="col-xl-2 col-lg-3 col-sm-6"
           key={item.id}
@@ -48,13 +86,13 @@ const TopDestinations = () => {
             <div className="citiesCard__image size-160 rounded-full mx-auto">
               <img
                 className="object-cover js-lazy"
-                src={item.img}
+                src={item.logo}
                 alt="image"
               />
             </div>
             <div className="citiesCard__content mt-10">
               <h4 className="text-18 lh-13 fw-500 text-dark-1">
-                {item.location}
+                {item.brand_name}
               </h4>
             </div>
           </Link>
@@ -64,4 +102,4 @@ const TopDestinations = () => {
   );
 };
 
-export default TopDestinations;
+export default TopBrands;
