@@ -2,7 +2,7 @@ import { useState } from "react";
 import { BiSolidFactory } from "react-icons/bi";
 
 function DropInput(props) {
-  const { dropdownDetails } = props;
+  const { dropdownDetails , titles} = props;
   const [searchValue, setSearchValue] = useState("");
   const [selectedItem, setSelectedItem] = useState(null);
 
@@ -20,7 +20,7 @@ function DropInput(props) {
           data-bs-offset="0,22"
         >
           <div className="d-flex justify-content-between align-items-center">
-            <div className="w-25">{dropdownDetails.icon}</div>
+            {/* <div className="w-25">{dropdownDetails.icon}</div> */}
             <div>
               <h4 className="text-15 fw-500 ls-2 lh-16">
                 {dropdownDetails.title}
@@ -29,7 +29,7 @@ function DropInput(props) {
                 <input
                   autoComplete="off"
                   type="search"
-                  placeholder={dropdownDetails.placeholder}
+                  placeholder={ dropdownDetails.placeholder}
                   className="js-search js-dd-focus"
                   value={searchValue}
                   onChange={(e) => setSearchValue(e.target.value)}
@@ -67,6 +67,7 @@ function DropInput(props) {
             </ul>
           </div>
         </div>
+        
       </div>
     </>
   );
