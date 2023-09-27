@@ -2,11 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper";
-import carsData from "../../../data/cars";
-import CompareButton from "../../truck-card/CompareButton";
-import isTextMatched from "../../../utils/isTextMatched";
+import isTextMatched from "../../utils/isTextMatched";
+import CompareButton from "../truck-card/CompareButton";
+import trucksData from '../../data/upcoming-trucks'
 
-const PopularCars = () => {
+const UpcomingTrucks = () => {
   return (
     <>
       <Swiper
@@ -37,7 +37,7 @@ const PopularCars = () => {
           },
         }}
       >
-        {carsData.slice(0, 8).map((item) => (
+        {trucksData.slice(0, 8).map((item) => (
           <SwiperSlide key={item.id}>
             <div
               key={item?.id}
@@ -84,8 +84,8 @@ const PopularCars = () => {
                   <div className="cardImage__leftBadge">
                     <div
                       className={`py-5 px-15 rounded-right-4 text-12 lh-16 fw-500 uppercase  ${
-                        isTextMatched(item?.tag, "best seller")
-                          ? "bg-blue-1 text-white"
+                        isTextMatched(item?.tag, "upcoming")
+                          ? "bg-green-500 text-white"
                           : ""
                       }`}
                     >
@@ -197,4 +197,4 @@ const PopularCars = () => {
   );
 };
 
-export default PopularCars;
+export default UpcomingTrucks

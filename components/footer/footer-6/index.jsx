@@ -18,10 +18,10 @@ const index = () => {
             <FooterContent />
             {/* End footer menu content */}
 
-            <div className="col-xl-4 col-lg-4 col-sm-6">
+            {/* <div className="col-xl-4 col-lg-4 col-sm-6">
               <h5 className="text-16 fw-500 mb-30">Get Updates & More</h5>
               <Subscribe />
-            </div>
+            </div> */}
           </div>
         </div>
         {/* End footer top */}

@@ -34,39 +34,45 @@ const TopBrands = () => {
   const topBrands = [
     {
       id: 1,
-      logo: "/img/destinations/5/1.png",
+      logo: "/img/brands/brand-logo.jpg",
       brand: "Paris",
       price: "29.52",
       delayAnimation: "100",
+      brand_name: "Ashok Leyland",
     },
     {
       id: 2,
-      logo: "/img/destinations/5/2.png",
+      logo: "/img/brands/brand-logo.jpg",
       brand: "London",
       delayAnimation: "200",
+      brand_name: "Bharat Benz",
     },
     {
       id: 3,
-      logo: "/img/destinations/5/3.png",
+      logo: "/img/brands/brand-logo.jpg",
       brand: "Los Angeles",
       delayAnimation: "300",
+      brand_name: "Volvo",
     },
     {
       id: 4,
-      logo: "/img/destinations/5/4.png",
+      logo: "/img/brands/brand-logo.jpg",
       brand: "Amsterdam",
       delayAnimation: "400",
+      brand_name: "Mahindra",
     },
     {
       id: 5,
-      logo: "/img/destinations/5/5.png",
+      logo: "/img/brands/brand-logo.jpg",
       brand: "Istanbul",
       delayAnimation: "500",
+      brand_name: "Tata",
     },
     {
       id: 6,
-      logo: "/img/destinations/5/6.png",
+      logo: "/img/brands/brand-logo.jpg",
       delayAnimation: "600",
+      brand_name: "Tata",
     },
   ];
 
@@ -90,9 +96,9 @@ const TopBrands = () => {
                 alt="image"
               />
             </div>
-            <div className="citiesCard__content mt-10">
-              <h4 className="text-18 lh-13 fw-500 text-dark-1">
-                {item.brand_name}
+            <div className="citiesCard__content mt-24">
+              <h4 className="text-18  lh-13 fw-500 text-dark-1">
+                {item.brand_name?.toUpperCase()}
               </h4>
             </div>
           </Link>
