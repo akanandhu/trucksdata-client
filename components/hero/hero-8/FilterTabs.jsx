@@ -31,6 +31,14 @@ function FilterTabs() {
             </Tab>
           ))}
         </TabList>
+        <div className="d-lg-none px-2">
+          <DropInput
+            title="Type"
+            // item={item}
+            placeHolder="Select Type"
+            dropdownDetails={dropdown}
+          />
+        </div>
         {/* End tab-controls */}
         <div className="tabs__content js-tabs-content">
           {dropdown.map((item) => (
