@@ -6,6 +6,7 @@ import carsData from "../../../data/cars";
 import CompareButton from "../../truck-card/CompareButton";
 import isTextMatched from "../../../utils/isTextMatched";
 
+
 const PopularCars = () => {
   return (
     <>
@@ -150,8 +151,8 @@ const PopularCars = () => {
                     </div> */}
                   </div>
                   <div className="mt-5">
-                    <div className="text-light-1">
-                      <span className="fw-600 text-dark-1">
+                    <div className="text-light-1 text-14">
+                      <span className="fw-600 text-20 text-dark-1">
                       ₹ 45,00,000
                       </span>{" "}
                       Ex-showroom

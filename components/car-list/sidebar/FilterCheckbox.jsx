@@ -1,15 +1,5 @@
-const LocationFilter = () => {
-  const filters = [
-    {
-      label: "Airport (meet & greet)",
-      count: 92,
-    },
-    {
-      label: "Airport (shuttle)",
-      count: 45,
-    },
-  ];
-
+const FilterCheckbox = ({filters}) => {
+  
   return (
     <>
       {filters.map((filter, index) => (
@@ -32,4 +22,4 @@ const LocationFilter = () => {
   );
 };
 
-export default LocationFilter;
+export default FilterCheckbox

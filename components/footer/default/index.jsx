@@ -19,7 +19,7 @@ const index = () => {
             {/* End footer menu content */}
 
             <div className="col-xl-2 col-lg-4 col-sm-6">
-              <h5 className="text-16 fw-500 mb-30">Mobile</h5>
+              <h5 className="text-16 fw-500 mb-30">Connect us on </h5>
               <AppButton />
             </div>
           </div>

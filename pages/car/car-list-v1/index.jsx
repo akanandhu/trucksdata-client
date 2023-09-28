@@ -15,10 +15,8 @@ const index = () => {
       {/* End Page Title */}
 
       <div className="header-margin"></div>
-      {/* header top margin */}
 
       <Header11 />
-      {/* End Header 1 */}
 
       <section className="pt-60">
         <div className="container">
@@ -27,14 +25,11 @@ const index = () => {
               <div className="text-center">
                 <h1 className="text-30 fw-600">London Rental Cars</h1>
               </div>
-              {/* End text-center */}
               <MainFilterSearchBox />
             </div>
-            {/* End col-12 */}
           </div>
         </div>
       </section>
-      {/* Top SearchBanner */}
 
       <section className="layout-pt-md layout-pb-lg">
         <div className="container">
@@ -61,23 +56,18 @@ const index = () => {
                     aria-label="Close"
                   ></button>
                 </div>
-                {/* End offcanvas header */}
 
                 <div className="offcanvas-body">
                   <aside className="sidebar y-gap-40  xl:d-block">
                     <Sidebar />
                   </aside>
                 </div>
-                {/* End offcanvas body */}
               </div>
-              {/* End mobile menu sidebar */}
             </div>
-            {/* End col */}
 
             <div className="col-xl-9 ">
               <TopHeaderFilter />
               <div className="mt-30"></div>
-              {/* End mt--30 */}
               <div className="row y-gap-30">
                 <CarPropertes />
               </div>

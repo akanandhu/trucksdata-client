@@ -46,7 +46,6 @@ const index = () => {
           data-aos-offset="0"
         >
           <MainFilterSearchBox />
-          {/* End Search filter box */}
 
           <div className="masthead-slider overflow-hidden js-masthead-slider-8">
             <Swiper
