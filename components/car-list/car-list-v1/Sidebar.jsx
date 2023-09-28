@@ -1,5 +1,5 @@
 import Map from "../sidebar/Map";
-import LocationFilters from "../sidebar/LocationFilters";
+import LocationFilters from "../sidebar/FilterCheckbox";
 import PirceSlider from "../sidebar/PirceSlider";
 import CategorieFilters from "../sidebar/CategorieFilters";
 import SupplierFilters from "../sidebar/SupplierFilters";
@@ -11,9 +11,7 @@ import FuelPolicyFilter from "../sidebar/FuelPolicyFilter";
 const Sidebar = () => {
   return (
     <>
-      <div className="sidebar__item -no-border position-relative">
-        <Map />
-      </div>
+      
       {/* End find map */}
 
       <div className="sidebar__item">
