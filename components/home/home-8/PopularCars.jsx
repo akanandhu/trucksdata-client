@@ -5,8 +5,6 @@ import { Navigation, Pagination } from "swiper";
 import carsData from "../../../data/cars";
 import CompareButton from "../../truck-card/CompareButton";
 import isTextMatched from "../../../utils/isTextMatched";
-// import CompareButton from "../../truck-card/CompareButton";
-
 
 const PopularCars = () => {
   return (
