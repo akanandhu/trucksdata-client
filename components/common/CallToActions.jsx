@@ -10,10 +10,10 @@ const CallToActions = () => {
               </div>
               <div className="col-auto">
                 <h4 className="text-26 text-white fw-600">
-                  Your Travel Journey Starts Here
+                  Find the best truck for you.
                 </h4>
                 <div className="text-white">
-                  Sign up and we`&apos;ll send the best deals to you
+                 Search for the best trucks of your need.
                 </div>
               </div>
             </div>
@@ -22,18 +22,10 @@ const CallToActions = () => {
 
           <div className="col-auto">
             <div className="single-field -w-410 d-flex x-gap-10 y-gap-20">
-              <div>
-                <input
-                  className="bg-white h-60"
-                  type="text"
-                  placeholder="Your Email"
-                />
-              </div>
-              {/* End email input */}
 
               <div>
                 <button className="button -md h-60 bg-blue-1 text-white">
-                  Subscribe
+                  Go To Search
                 </button>
               </div>
               {/* End subscribe btn */}

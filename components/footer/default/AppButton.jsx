@@ -2,18 +2,18 @@ const AppButton = () => {
   const appContent = [
     {
       id: 1,
-      icon: "icon-apple",
+      icon: "icon-instagram",
       link: "https://www.apple.com/app-store/",
-      text: "Download on the",
-      market: "Apple Store",
+      text: "Follow us on",
+      market: "Instagram",
       colClass: "",
     },
     {
       id: 2,
-      icon: "icon-play-market",
+      icon: "icon-linkedin",
       link: "https://play.google.com/store/apps/?hl=en&gl=US",
-      text: "Get in on",
-      market: "Google Play",
+      text: "Connect us on",
+      market: "LinkedIn",
       colClass: "mt-20",
     },
   ];
