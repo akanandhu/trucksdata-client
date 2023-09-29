@@ -7,7 +7,7 @@ import Link from "next/link";
 const CarPropertes = () => {
   return (
     <>
-      {carsData.slice(0, 5).map((item) => (
+      {carsData.slice(0, 5)?.map((item) => (
         <div className="col-12" key={item?.id}>
           <div className="border-top-light pt-30">
             <div className="row x-gap-20 y-gap-20">

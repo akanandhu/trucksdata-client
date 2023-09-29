@@ -42,7 +42,7 @@ function FilterTabs() {
         {/* End tab-controls */}
         <div className="tabs__content js-tabs-content">
           {dropdown.map((item) => (
-            <TabPanel>
+            <TabPanel key={item.id}>
               <div className="d-flex p-2 bd-highlight justify-content-between sm:flex-column md:flex-column">
                 {item.dropdownItem.map((dropdownDetails) => (
                   <DropInput
