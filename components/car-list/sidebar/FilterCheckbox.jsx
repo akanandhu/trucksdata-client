@@ -2,7 +2,7 @@ const FilterCheckbox = ({filters}) => {
   
   return (
     <>
-      {filters.map((filter, index) => (
+      {filters?.map((filter, index) => (
         <div className="row y-gap-10 items-center justify-between" key={index}>
           <div className="col-auto">
             <div className="form-checkbox d-flex items-center">
