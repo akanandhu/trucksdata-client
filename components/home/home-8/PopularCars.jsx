@@ -93,11 +93,11 @@ const PopularCars = () => {
                     </div>
                   </div>
                 </div>
-                </Link>
-                {/* End .tourCard__image */}
+              </Link>
+              {/* End .tourCard__image */}
 
-                <div className="carCard__content mt-10">
-                  {/* <div className="d-flex items-center lh-14 mb-5">
+              <div className="carCard__content mt-10">
+                {/* <div className="d-flex items-center lh-14 mb-5">
                     <div className="text-14 text-light-1">{item?.location}</div>
                     <div className="size-3 bg-light-1 rounded-full ml-10 mr-10" />
                     <div className="text-14 text-light-1 uppercase">
@@ -105,69 +105,63 @@ const PopularCars = () => {
                     </div>
                   </div> */}
 
-                  <h4 className="text-dark-1 text-18 lh-16 fw-500">
-                    {item?.title}{" "}
-                  </h4>
-                  <p className="text-light-1 lh-14 text-14 mt-5" />
+                <h4 className="text-dark-1 text-18 lh-16 fw-500">
+                  {item?.title}{" "}
+                </h4>
+                <p className="text-light-1 lh-14 text-14 mt-5" />
 
-                  <div className="row x-gap-20 y-gap-10 items-center pt-5">
-                    <div className="col-auto">
-                      <div className="d-flex items-center text-14 text-dark-1">
-                        <i className="icon-clock mr-10" />
-                        <div className="lh-14">{item?.seat}</div>
-                      </div>
-                    </div>
-
-                    
-
-                    <div className="col-auto">
-                      <div className="d-flex items-center text-14 text-dark-1">
-                        <i className="icon-transmission mr-10" />
-                        <div className="lh-14">{item?.transmission} </div>
-                      </div>
-                    </div>
-
-                    <div className="col-auto">
-                      <div className="d-flex items-center text-14 text-dark-1">
-                        <i className="icon-speedometer mr-10" />
-                        <div className="lh-14">{item?.speed}</div>
-                      </div>
+                <div className="row x-gap-20 y-gap-10 items-center pt-5">
+                  <div className="col-auto">
+                    <div className="d-flex items-center text-14 text-dark-1">
+                      <i className="icon-clock mr-10" />
+                      <div className="lh-14">{item?.seat}</div>
                     </div>
                   </div>
-                  {/* End .row */}
-                  <div className="d-flex align-content-center align-items-center justify-content-between  ">
 
+                  <div className="col-auto">
+                    <div className="d-flex items-center text-14 text-dark-1">
+                      <i className="icon-transmission mr-10" />
+                      <div className="lh-14">{item?.transmission} </div>
+                    </div>
+                  </div>
+
+                  <div className="col-auto">
+                    <div className="d-flex items-center text-14 text-dark-1">
+                      <i className="icon-speedometer mr-10" />
+                      <div className="lh-14">{item?.speed}</div>
+                    </div>
+                  </div>
+                </div>
+                {/* End .row */}
+                <div className="d-flex align-content-center align-items-center justify-content-between  ">
                   <div>
-                  <div className="d-flex items-center mt-20">
-                    <div className="flex-center bg-yellow-1 rounded-4 size-30 text-12 fw-600 text-dark-1">
-                      {item.ratings}
-                    </div>
-                    <div className="text-14 text-dark-1 fw-500 ml-10">
-                      Agriculture Use
-                    </div>
-                    {/* <div className="text-14 text-light-1 ml-10">
+                    <div className="d-flex items-center mt-20">
+                      <div className="flex-center bg-yellow-1 rounded-4 size-30 text-12 fw-600 text-dark-1">
+                        {item.ratings}
+                      </div>
+                      <div className="text-14 text-dark-1 fw-500 ml-10">
+                        Agriculture Use
+                      </div>
+                      {/* <div className="text-14 text-light-1 ml-10">
                        Rice Truck
                     </div> */}
-                  </div>
-                  <div className="mt-5">
-                    <div className="text-light-1 text-14">
-                      <span className="fw-600 text-20 text-dark-1">
-                      ₹ 45,00,000
-                      </span>{" "}
-                      Ex-showroom
                     </div>
-                  </div>
+                    <div className="mt-5">
+                      <div className="text-light-1 text-14">
+                        <span className="fw-600 text-20 text-dark-1">
+                          ₹ 45,00,000
+                        </span>{" "}
+                        Ex-showroom
+                      </div>
+                    </div>
                   </div>
 
                   {/* Compare Button */}
                   <div className=" mr-5">
-                  <CompareButton  />
-                    
+                    <CompareButton />
                   </div>
-
-                  </div>
-                  
                 </div>
+              </div>
             </div>
           </SwiperSlide>
         ))}
