@@ -6,7 +6,7 @@ const TopBrands = () => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 6,
+    slidesToShow: 5,
     slidesToScroll: 1,
     responsive: [
       {
@@ -80,7 +80,7 @@ const TopBrands = () => {
     <Slider {...settings}>
       {topBrands.map((item) => (
         <div
-          className="col-xl-2 col-lg-3 col-sm-6"
+          className="col-xl-2 col-lg-3 col-sm-8 border border-secondary p-3 rounded-3"
           key={item.id}
           data-aos="fade"
           data-aos-delay={item.delayAnimation}
@@ -89,7 +89,7 @@ const TopBrands = () => {
             href="/destinations"
             className="citiesCard -type-4 d-block text-center"
           >
-            <div className="citiesCard__image size-160 rounded-full mx-auto">
+            <div className="citiesCard__image size-120 rounded-full mx-auto">
               <img
                 className="object-cover js-lazy"
                 src={item.logo}

@@ -110,7 +110,7 @@ const home_8 = () => {
           </div>
           {/* End .row */}
 
-          <div className="row y-gap-30 pt-40">
+          <div className="row y-gap-30 pt-40 ">
             <div className="tabs -pills-2 pt-12">
               <TopFilter filterOptions={filterOptions} />
             </div>
@@ -126,14 +126,11 @@ const home_8 = () => {
           <div className="row y-gap-30 justify-between items-center">
             <div className="col-xl-5 col-lg-6">
               <h2 className="text-30 fw-600">Compare Data</h2>
-              <p className="mt-40 lg:mt-20">
-                Pick 2 trucks of your choice, then compare the data
-              </p>
+              <p className="mt-40 lg:mt-20">Pick 2 trucks of your choice, then compare the data</p>
 
               <div className="d-inline-block mt-40 lg:mt-20">
                 <a href="#" className="button -md -blue-1 bg-dark-1 text-white">
-                  Compare Trucks{" "}
-                  <div className="icon-arrow-top-right ml-15"></div>
+                  Compare Trucks <div className="icon-arrow-top-right ml-15"></div>
                 </a>
               </div>
             </div>
