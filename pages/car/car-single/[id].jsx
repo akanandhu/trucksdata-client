@@ -18,6 +18,7 @@ import SlideGallery from "../../../components/car-single/SlideGallery";
 import FilterBox from "../../../components/car-single/filter-box";
 import Faq from "../../../components/faq/Faq";
 import MapPropertyFinder from "../../../components/car-single/MapPropertyFinder";
+import PopularModals from "../../../components/car-single/PopularModals";
 
 const TourSingleV1Dynamic = () => {
   const router = useRouter();
@@ -54,22 +55,22 @@ const TourSingleV1Dynamic = () => {
                   <h1 className="text-30 sm:text-24 fw-600">{car?.title}</h1>
                   <div className="row x-gap-10 items-center pt-10">
                     <div className="col-auto">
-                      <div className="d-flex x-gap-5 items-center">
+                      {/* <div className="d-flex x-gap-5 items-center">
                         <i className="icon-location text-16 text-light-1" />
                         <div className="text-15 text-light-1">
                           {car?.location}
                         </div>
-                      </div>
+                      </div> */}
                     </div>
                     {/* End .col */}
-                    <div className="col-auto">
+                    {/* <div className="col-auto">
                       <button
                         data-x-click="mapFilter"
                         className="text-blue-1 text-15 underline"
                       >
                         Show on map
                       </button>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
                 {/* End title and other info */}
@@ -102,16 +103,25 @@ const TourSingleV1Dynamic = () => {
             {/* End col-lg-8 left car gallery */}
 
             <div className="col-lg-4">
-              <div className="d-flex justify-end">
+              <div className="d-flex justify-end flex-column">
                 <div className="px-30 py-30 rounded-4 border-light shadow-4 bg-white w-360 lg:w-full">
                   <div className="row y-gap-15 items-center justify-between">
                     <div className="col-auto">
                       <div className="text-14 text-light-1">
-                        From
+                        {/* From */}
                         <span className="text-20 fw-500 text-dark-1 ml-5">
-                          US{car?.price}
+                          Rs 28.12 - 29.19 lakh
+                        </span>
+                        <span className="text-12 fw-400 text-light-1 pl-5">
+                          Ex-showroom
                         </span>
                       </div>
+                      <a
+                        href="#"
+                        className="text-14 text-blue-1 underline px-2"
+                      >
+                        Get On Road Price
+                      </a>
                     </div>
                     {/* End .col-auto */}
 
@@ -137,16 +147,20 @@ const TourSingleV1Dynamic = () => {
                   </div>
                   {/* End .row */}
 
-                  <div className="row y-gap-20 pt-20">
+                  {/* <div className="row y-gap-20 pt-20">
                     <FilterBox />
-                  </div>
+                  </div> */}
                   {/* End .row */}
                 </div>
+
+                <div className="py-20">
+                  <PopularModals />
+                </div>
+
                 {/* End px-30 */}
               </div>
               {/* End d-flex */}
             </div>
-            {/* End col right car sidebar filter box */}
           </div>
           {/* End .row */}
         </div>
