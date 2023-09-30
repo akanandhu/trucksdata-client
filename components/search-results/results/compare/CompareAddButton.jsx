@@ -7,7 +7,6 @@ const CompareAddButton = () => {
     setIsChecked(!isChecked);
   };
 
-  console.log(isChecked, "isCheck");
 
   return (
     <button className="btn btn-primary " checked={isChecked} onClick={handleToggle}>
