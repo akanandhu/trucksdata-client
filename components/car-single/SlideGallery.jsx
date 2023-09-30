@@ -86,9 +86,8 @@ export default function SlideGallery() {
             <SwiperSlide>
               <div className="slider__image w-100 h-100">
                 <ReactPlayer
-                  url="https://www.youtube.com/watch?v=tb4oJnar4pg"
-                  height="100%"
-                  width="100%"
+                url='https://www.youtube.com/watch?v=tb4oJnar4pg'
+                // style={{height:'100%',width:''}}
                 />
               </div>
             </SwiperSlide>
