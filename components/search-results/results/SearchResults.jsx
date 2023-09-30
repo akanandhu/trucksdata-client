@@ -35,7 +35,6 @@ const SearchResults = () => {
                                 alt="image"
                               />
                             </div>
-                            
                           </div>
                         </SwiperSlide>
                       ))}
@@ -47,17 +46,13 @@ const SearchResults = () => {
               {/* End .col */}
 
               <div className="col-md">
-                <div className="d-flex flex-column h-full justify-between">
+                <div className="d-flex flex-column h-full justify-start">
                   <div>
-                    <h3 className="text-22 lh-16 fw-500">
-                      {item?.title}
-                    </h3>
+                    <h3 className="text-22 lh-16 fw-500">{item?.title}</h3>
 
                     <div className="row x-gap-5 items-center pt-5">
                       <div className="col-auto">
-                        <div className="text-14 text-light-1">
-                          Truck
-                        </div>
+                        <div className="text-14 text-light-1">Truck</div>
                       </div>
                       <div className="col-auto">
                         <div className="size-3 rounded-full bg-light-1" />
@@ -67,14 +62,39 @@ const SearchResults = () => {
                           Goods Carrier
                         </div>
                       </div>
-                     
                     </div>
                   </div>
-                  <div>
-                    <CompareAddButton />
-                  </div>
+                  <div className="y-gap-5 pt-5 pb-5">
+                      
+                      <div className="d-flex items-center">
+                      <Image className="mr-10" src={'/icons/engine.svg'} width={20} height={20} />
 
-                  <div className="row x-gap-10 y-gap-10 ">
+                        <div className="text-15">125 kW @ 2500 rpm</div>
+                      </div>
+                      <div className="d-flex items-center">
+                      <Image className="mr-10" src={'/icons/gears.png'} width={20} height={20} />
+
+                        <div className="text-15">4X2</div>
+                      </div>
+                      <div className="d-flex items-center">
+                        {/* <i className="icon-parking text-20 mr-10" /> */}
+                        <Image className="mr-10" src={'/icons/fuel.svg'} width={20} height={20} />
+                        <div className="text-15">Diesel</div>
+                      </div>
+                      <div className="d-flex items-center">
+                        <Image className="mr-10" src={'/icons/application.svg'} width={20} height={20} />
+                        <div className="text-15">Agriculture | Rice Truck</div>
+                      </div>
+                    </div>
+                  </div>
+                  {/* <div>
+                    <CompareAddButton />
+                  </div> */}
+
+                  <div>
+                    
+
+                  {/* <div className="row x-gap-10 y-gap-10 ">
                     <div className="col-auto">
                       <div className="border-light rounded-100 py-5 px-20 text-14 lh-14">
                         Diesel
@@ -90,36 +110,46 @@ const SearchResults = () => {
                         Day Cabin
                       </div>
                     </div>
-                    
-                  </div>
+                  </div> */}
                 </div>
               </div>
               {/* End col-md */}
 
-              <div className="col-md-auto text-right md:text-left">
-                <div className="row x-gap-10 y-gap-10 justify-end items-center md:justify-start">
+              <div className="col-md-auto d-flex flex-column justify-content-between  text-right md:text-left">
+                {/* <div className="row x-gap-10 y-gap-10 justify-end items-center md:justify-start">
                   <div className="col-auto">
                     <div className="text-14 lh-14 fw-500">Agriculture</div>
-                    <div className="text-14 lh-14 text-light-1">
-                      Rice Truck
-                    </div>
+                    <div className="text-14 lh-14 text-light-1">Rice Truck</div>
                   </div>
                   <div className="col-auto">
                     <div className="flex-center text-white fw-600 text-18 size-40 rounded-4 bg-blue-1">
-                      {/* <i className="icon-car"  /> */}
-                      <Image src={'/icons/farm-vehicle.png'} alt="agri" width={25} height={25} />
+                      <Image
+                        src={"/icons/farm-vehicle.png"}
+                        alt="agri"
+                        width={25}
+                        height={25}
+                      />
                     </div>
                   </div>
+                </div> */}
+                <CompareAddButton />
+                <div>
+                  <div>
+                    <div className="text-14 text-light-1  md:mt-20">
+                      Starting From
+                    </div>
+                    <div className="text-24 lh-12 fw-600 mt-5">
+                      ₹{item.price}{" "}
+                    </div>
+                    <div className="text-14 text-light-1 mt-5">Ex-showroom</div>
+                  </div>
+                  <Link
+                    href={`/rental/rental-single/${item.id}`}
+                    className="button -md -dark-1 bg-blue-1 text-white mt-24"
+                  >
+                    View More <div className="icon-arrow-top-right ml-15" />
+                  </Link>
                 </div>
-                <div className="text-14 text-light-1 mt-40 md:mt-20">From</div>
-                <div className="text-22 lh-12 fw-600 mt-5">₹{item.price}</div>
-                <div className="text-14 text-light-1 mt-5">Ex-showroom</div>
-                <Link
-                  href={`/rental/rental-single/${item.id}`}
-                  className="button -md -dark-1 bg-blue-1 text-white mt-24"
-                >
-                  View More <div className="icon-arrow-top-right ml-15" />
-                </Link>
               </div>
               {/* End col-md-auto */}
             </div>

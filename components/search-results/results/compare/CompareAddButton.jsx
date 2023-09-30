@@ -9,7 +9,7 @@ const CompareAddButton = () => {
 
 
   return (
-    <button className="btn btn-primary " checked={isChecked} onClick={handleToggle}>
+    <button className="btn border-primary text-blue-1 " checked={isChecked} onClick={handleToggle}>
         <div className="custom-radio">
           {isChecked ? (
         <span>&#10003; Added to Compare</span>
