@@ -80,7 +80,7 @@ const TopBrands = () => {
     <Slider {...settings}>
       {topBrands.map((item) => (
         <div
-          className="col-xl-2 col-lg-3 col-sm-8 border border-secondary p-3 rounded-3"
+          className="col-xl-2  col-lg-3 col-sm-8 border border-light-1 border-2  p-3 rounded-3"
           key={item.id}
           data-aos="fade"
           data-aos-delay={item.delayAnimation}
@@ -96,7 +96,7 @@ const TopBrands = () => {
                 alt="image"
               />
             </div>
-            <div className="citiesCard__content mt-24">
+            <div className="citiesCard__content mt-20">
               <h4 className="text-18  lh-13 fw-500 text-dark-1">
                 {item.brand_name?.toUpperCase()}
               </h4>
