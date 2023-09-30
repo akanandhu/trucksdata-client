@@ -1,12 +1,12 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Thumbs, Mousewheel } from "swiper";
 import { useState } from "react";
+import ReactPlayer from "react-player/youtube";
 
 const slides = [
-  "/img/cars/slides/1.png",
-  "/img/cars/slides/2.png",
-  "/img/cars/slides/3.png",
-  "/img/cars/slides/4.png",
+  "/img/cars/truck-white.jpg",
+  "/img/cars/truck-white.jpg",
+  "/img/cars/truck-white.jpg"
 ];
 
 export default function SlideGallery() {
@@ -41,6 +41,16 @@ export default function SlideGallery() {
                   </SwiperSlide>
                 );
               })}
+              <SwiperSlide>
+                <div className="slider__image">
+                <img src='/img/cars/truck-white.jpg' alt="" />
+                  {/* <iframe
+                    // width="420"
+                    // height="315"
+                    src="https://www.youtube.com/embed/aNrr70yud6k&autoplay=1"
+                  ></iframe> */}
+                </div>
+              </SwiperSlide>
             </Swiper>
           </div>
         </div>
@@ -72,6 +82,16 @@ export default function SlideGallery() {
                 </SwiperSlide>
               );
             })}
+
+            <SwiperSlide>
+              <div className="slider__image w-100 h-100">
+                <ReactPlayer
+                url='https://www.youtube.com/watch?v=tb4oJnar4pg'
+                // style={{height:'100%',width:''}}
+                />
+                
+              </div>
+            </SwiperSlide>
           </Swiper>
         </div>
       </div>
