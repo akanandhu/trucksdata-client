@@ -6,7 +6,7 @@ import ReactPlayer from "react-player/youtube";
 const slides = [
   "/img/cars/truck-white.jpg",
   "/img/cars/truck-white.jpg",
-  "/img/cars/truck-white.jpg"
+  "/img/cars/truck-white.jpg",
 ];
 
 export default function SlideGallery() {
@@ -43,7 +43,7 @@ export default function SlideGallery() {
               })}
               <SwiperSlide>
                 <div className="slider__image">
-                <img src='/img/cars/truck-white.jpg' alt="" />
+                  <img src="/img/cars/truck-white.jpg" alt="" />
                   {/* <iframe
                     // width="420"
                     // height="315"
@@ -86,10 +86,9 @@ export default function SlideGallery() {
             <SwiperSlide>
               <div className="slider__image w-100 h-100">
                 <ReactPlayer
-                url='https://www.youtube.com/watch?v=tb4oJnar4pg'
-                // style={{height:'100%',width:''}}
+                  url="https://www.youtube.com/watch?v=tb4oJnar4pg"
+                  // style={{height:'100%',width:''}}
                 />
-                
               </div>
             </SwiperSlide>
           </Swiper>
