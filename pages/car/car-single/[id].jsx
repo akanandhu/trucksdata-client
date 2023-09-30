@@ -178,7 +178,7 @@ const TourSingleV1Dynamic = () => {
                 <Overview />
               </div>
             </div>
-            
+
             {/* End .col-lg-8 */}
           </div>
           {/* End .row */}
