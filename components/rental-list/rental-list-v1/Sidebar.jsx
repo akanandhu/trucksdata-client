@@ -7,9 +7,7 @@ import PirceSlider from "../sidebar/PirceSlider";
 const Sidebar = () => {
   return (
     <>
-      <div className="sidebar__item -no-border position-relative">
-        <Map />
-      </div>
+      
       {/* End find map */}
 
       <div className="sidebar__item">

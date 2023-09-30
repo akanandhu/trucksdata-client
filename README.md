@@ -1,11 +1,13 @@
-// Brand Logo Box - Neeraj
-// Compare Post - Abhidev
-// Article Page
 
+# '/' - home
 
-// Search Page
-// View Page
+# '/search-results' - search page
 
 
 
 
+
+
+
+
+# search page result iamge prefered resolution 450X450

@@ -10,7 +10,7 @@ function SearchButton() {
       <div className="button-item">
         <button
           className="mainSearch__submit button  py-15 px-35 h-60 col-12 rounded-4 bg-dark-1 -blue-1 text-white"
-          onClick={() => router.push("/car/car-list-v2")}
+          onClick={() => router.push("/search-results")}
         >
           Search
           <i className="icon-arrow-right text-20 ml-10" />
