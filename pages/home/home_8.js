@@ -12,6 +12,7 @@ import Link from "next/link";
 import TopBrands from "../../components/top-brands/TopBrands";
 import TopFilter from "../../components/top-brands/TopFilter";
 import UpcomingTrucks from "../../components/trucks/UpcomingTrucks";
+import CompareVehicles from "../../components/compare/CompareVehicles";
 
 const home_8 = () => {
   const filterOptions = [
@@ -86,38 +87,8 @@ const home_8 = () => {
         {/* End .container */}
       </section>
 
-      <section className=" layout-pb-md">
-        <div className="container">
-          <div className="row y-gap-30 justify-between items-center">
-            <div className="col-xl-5 col-lg-6">
-              <h2 className="text-30 fw-600">Compare Data</h2>
-              <p className="mt-40 lg:mt-20">
-                Pick 2 trucks of your choice, then compare the data
-              </p>
-
-              <div className="d-inline-block mt-40 lg:mt-20">
-                <a href="#" className="button -md -blue-1 bg-dark-1 text-white">
-                  Compare Trucks{" "}
-                  <div className="icon-arrow-top-right ml-15"></div>
-                </a>
-              </div>
-            </div>
-            {/* End .col */}
-
-            <div className="col-xl-5 col-lg-6">
-              <div className="shadow-4">
-                <div className="row border-center">
-                  <Counter4 />
-                </div>
-              </div>
-            </div>
-            {/* End .col */}
-          </div>
-          {/* End .row */}
-        </div>
-        {/* End container */}
-      </section>
-      {/* End testimonial section */}
+      <CompareVehicles filterOptions={filterOptions} />
+      
 
       <section className="layout-pt-md layout-pb-md">
         <div className="container">
