@@ -3,14 +3,14 @@ const BlockGuide = () => {
     {
       id: 1,
       icon: "/img/featureIcons/1/1.svg",
-      title: "Best Price Guarantee",
+      title: "Genuine Data",
       text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.`,
       delayAnim: "100",
     },
     {
       id: 2,
       icon: "/img/featureIcons/1/2.svg",
-      title: "Easy & Quick Booking",
+      title: "Easy & Quick",
       text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.`,
       delayAnim: "200",
     },
