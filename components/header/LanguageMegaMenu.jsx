@@ -6,26 +6,9 @@ const LanguageMegaMenu = ({ textClass }) => {
   const handleCurrency = () => setClick((prevState) => !prevState);
 
   const languageContent = [
-    { id: 1, language: "English", country: "United States" },
-    { id: 2, language: "Türkçe", country: "Turkey" },
-    { id: 3, language: "Español", country: "España" },
-    { id: 4, language: "Français", country: "France" },
-    { id: 5, language: "Italiano", country: "Italia" },
-    { id: 6, language: "Dari, Pashto", country: "Afghanistan" },
-    { id: 7, language: "Albanian", country: "Albania" },
-    { id: 8, language: "Arabic, Berber", country: "	Algeria" },
-    { id: 9, language: "Catalan", country: "Andorra" },
-    { id: 10, language: "Kongo, Portuguese	", country: "Angola" },
-    { id: 11, language: "Spanish", country: "Argentina" },
-    { id: 12, language: "Armenian", country: "Armenia" },
-    { id: 13, language: "English", country: "Australia" },
-    { id: 14, language: "German", country: "Austria" },
-    { id: 15, language: "Azerbaijani", country: "Azerbaijan" },
-    { id: 16, language: "Bengali", country: "Bangladesh" },
-    { id: 17, language: "English", country: "Barbados" },
-    { id: 18, language: "Belarusian", country: "Belarus" },
-    { id: 19, language: "Dutch, French", country: "Belgium" },
-    { id: 20, language: "English", country: "Belize" },
+    { id: 1, language: "English", country: "India" },
+    { id: 2, language: "Hindi", country: "India" },
+    
   ];
 
   const [selectedCurrency, setSelectedCurrency] = useState(languageContent[0]);
@@ -44,15 +27,15 @@ const LanguageMegaMenu = ({ textClass }) => {
           onClick={handleCurrency}
         >
           <Image
-            width={20}
+            width={25}
             height={20}
             src="/img/general/lang.png"
             alt="image"
-            className="rounded-full mr-10"
+            className=" mr-10"
           />
           <span className="js-language-mainTitle">
             {" "}
-            {selectedCurrency.country}
+            {selectedCurrency.language}
           </span>
           <i className="icon-chevron-sm-down text-7 ml-15" />
         </button>
@@ -75,7 +58,7 @@ const LanguageMegaMenu = ({ textClass }) => {
             {languageContent.map((item) => (
               <li
                 className={`modalGrid__item js-item ${
-                  selectedCurrency.country === item.country ? "active" : ""
+                  selectedCurrency.language === item.language ? "active" : ""
                 }`}
                 key={item.id}
                 onClick={() => handleItemClick(item)}

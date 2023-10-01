@@ -3,10 +3,6 @@ import Seo from "../../components/common/Seo";
 import Footer6 from "../../components/footer/footer-6";
 import Header8 from "../../components/header/header-8";
 import Hero8 from "../../components/hero/hero-8";
-import BlockGuide from "../../components/home/home-8/BlockGuide";
-import Testimonial from "../../components/testimonial/Testimonial";
-import CounterDark from "../../components/counter/CounterDark";
-import Brand from "../../components/brand/Brand";
 import PopularCars from "../../components/home/home-8/PopularCars";
 import Counter4 from "../../components/counter/Counter4";
 import Faq from "../../components/faq/Faq";
@@ -14,8 +10,6 @@ import AppBanner from "../../components/home/home-8/AppBanner";
 import Blog from "../../components/home/home-8/Blog";
 import Link from "next/link";
 import TopBrands from "../../components/top-brands/TopBrands";
-import FilterHotelsTabs2 from "../../components/hotels/filter-tabs/FilterHotelsTabs2";
-import FilterHotels2 from "../../components/hotels/FilterHotels2";
 import TopFilter from "../../components/top-brands/TopFilter";
 import UpcomingTrucks from "../../components/trucks/UpcomingTrucks";
 
@@ -29,8 +23,6 @@ const home_8 = () => {
     // add more options as needed
   ];
 
-  
-
   return (
     <>
       <Seo pageTitle="Home" />
@@ -41,26 +33,6 @@ const home_8 = () => {
 
       <Hero8 />
       {/* End Hero 8 */}
-
-      {/* <section className="layout-pt-lg layout-pb-md">
-        <div className="container">
-          <div className="row justify-center text-center">
-            <div className="col-auto">
-              <div className="sectionTitle -md">
-                <h2 className="sectionTitle__title">Why Choose Us</h2>
-                <p className=" sectionTitle__text mt-5 sm:mt-0">
-                  These popular destinations have a lot to offer
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="row y-gap-40 justify-between pt-40 sm:pt-20">
-            <BlockGuide />
-          </div>
-        </div>
-      </section> */}
-      {/* End Why Coose Us */}
 
       <section className="layout-pt-md layout-pb-md">
         <div className="container">
@@ -119,11 +91,14 @@ const home_8 = () => {
           <div className="row y-gap-30 justify-between items-center">
             <div className="col-xl-5 col-lg-6">
               <h2 className="text-30 fw-600">Compare Data</h2>
-              <p className="mt-40 lg:mt-20">Pick 2 trucks of your choice, then compare the data</p>
+              <p className="mt-40 lg:mt-20">
+                Pick 2 trucks of your choice, then compare the data
+              </p>
 
               <div className="d-inline-block mt-40 lg:mt-20">
                 <a href="#" className="button -md -blue-1 bg-dark-1 text-white">
-                  Compare Trucks <div className="icon-arrow-top-right ml-15"></div>
+                  Compare Trucks{" "}
+                  <div className="icon-arrow-top-right ml-15"></div>
                 </a>
               </div>
             </div>

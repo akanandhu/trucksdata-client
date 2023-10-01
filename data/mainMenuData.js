@@ -337,7 +337,7 @@ export const categorieMegaMenuItems = [
         title: "Explore Tata Trucks",
         btnText: "See Trucks",
         btnRoute: "/rental/rental-list-v1",
-        menuItems:[
+        menuItems: [
           {
             id: 1,
             title: "Ecomet Star Series",
@@ -506,54 +506,56 @@ export const categorieMegaMenuItems = [
 export const categorieMobileItems = [
   {
     id: 1,
-    title: "",
+    title: "Trucks",
     menuItems: [
       {
         id: 1,
-        title: "Hotel List",
+        title: "Ashok Leyland",
         menuList: [
           {
-            name: "Hotel List v1",
+            name: "Ecomet Star Series",
             routePath: "/hotel/hotel-list-v1",
           },
           {
-            name: "Hotel List v2",
+            name: "Boss Series",
             routePath: "/hotel/hotel-list-v2",
           },
           {
-            name: "Hotel List v3",
+            name: "Other Variants",
             routePath: "/hotel/hotel-list-v3",
-          },
-          {
-            name: "Hotel List v4",
-            routePath: "/hotel/hotel-list-v4",
-          },
-          {
-            name: "Hotel List v5",
-            routePath: "/hotel/hotel-list-v5",
           },
         ],
       },
       {
         id: 2,
-        title: "Hotel Single",
+        title: "Bharat Benz",
         menuList: [
           {
-            name: "Hotel Single v1",
+            name: "Benz Series",
             routePath: "/hotel/hotel-single-v1/5",
           },
           {
-            name: "Hotel Single v2",
+            name: "Other Series",
             routePath: "/hotel/hotel-single-v2/5",
           },
         ],
       },
       {
         id: 3,
-        title: "Hotel Booking",
+        title: "Volvo",
         menuList: [
           {
-            name: "Booking Page",
+            name: "See all variants",
+            routePath: "/hotel/booking-page",
+          },
+        ],
+      },
+      {
+        id: 4,
+        title: "Tata",
+        menuList: [
+          {
+            name: "See all variants",
             routePath: "/hotel/booking-page",
           },
         ],
@@ -562,33 +564,57 @@ export const categorieMobileItems = [
   },
   {
     id: 2,
-    title: "Tour",
+    title: "Tippers",
     menuItems: [
       {
         id: 1,
-        title: "Tour List",
+        title: "Ashok Leyland",
         menuList: [
           {
-            name: "Tour List v1",
-            routePath: "/tour/tour-list-v1",
+            name: "Ecomet Star Series",
+            routePath: "/hotel/hotel-list-v1",
           },
           {
-            name: "Tour List v2",
-            routePath: "/tour/tour-list-v2",
+            name: "Boss Series",
+            routePath: "/hotel/hotel-list-v2",
+          },
+          {
+            name: "Other Variants",
+            routePath: "/hotel/hotel-list-v3",
           },
         ],
       },
       {
         id: 2,
-        title: "Tour Pages",
+        title: "Bharat Benz",
         menuList: [
           {
-            name: "Tour Map",
-            routePath: "/tour/tour-list-v3",
+            name: "Benz Series",
+            routePath: "/hotel/hotel-single-v1/5",
           },
           {
-            name: "Tour Single",
-            routePath: "/tour/tour-single/5",
+            name: "Other Series",
+            routePath: "/hotel/hotel-single-v2/5",
+          },
+        ],
+      },
+      {
+        id: 3,
+        title: "Volvo",
+        menuList: [
+          {
+            name: "See all variants",
+            routePath: "/hotel/booking-page",
+          },
+        ],
+      },
+      {
+        id: 4,
+        title: "Tata",
+        menuList: [
+          {
+            name: "See all variants",
+            routePath: "/hotel/booking-page",
           },
         ],
       },
@@ -596,67 +622,57 @@ export const categorieMobileItems = [
   },
   {
     id: 3,
-    title: "Activity",
+    title: "Trailers",
     menuItems: [
       {
         id: 1,
-        title: "Activity List",
+        title: "Ashok Leyland",
         menuList: [
           {
-            name: "Activity List v1",
-            routePath: "/activity/activity-list-v1",
+            name: "Ecomet Star Series",
+            routePath: "/hotel/hotel-list-v1",
           },
           {
-            name: "Activity List v2",
-            routePath: "/activity/activity-list-v2",
+            name: "Boss Series",
+            routePath: "/hotel/hotel-list-v2",
+          },
+          {
+            name: "Other Variants",
+            routePath: "/hotel/hotel-list-v3",
           },
         ],
       },
       {
         id: 2,
-        title: "Activity Pages",
+        title: "Bharat Benz",
         menuList: [
           {
-            name: "Activity Map",
-            routePath: "/activity/activity-list-v3",
+            name: "Benz Series",
+            routePath: "/hotel/hotel-single-v1/5",
           },
           {
-            name: "Activity Single",
-            routePath: "/activity/activity-single/3",
-          },
-        ],
-      },
-    ],
-  },
-  {
-    id: 4,
-    title: "Hotel Rentals",
-    menuItems: [
-      {
-        id: 1,
-        title: "Rental List",
-        menuList: [
-          {
-            name: "Rental List v1",
-            routePath: "/rental/rental-list-v1",
-          },
-          {
-            name: "Rental List v2",
-            routePath: "/rental/rental-list-v2",
+            name: "Other Series",
+            routePath: "/hotel/hotel-single-v2/5",
           },
         ],
       },
       {
-        id: 2,
-        title: "Rental Pages",
+        id: 3,
+        title: "Volvo",
         menuList: [
           {
-            name: "Rental Map",
-            routePath: "/rental/rental-list-v3",
+            name: "See all variants",
+            routePath: "/hotel/booking-page",
           },
+        ],
+      },
+      {
+        id: 4,
+        title: "Tata",
+        menuList: [
           {
-            name: "Rental Single",
-            routePath: "/rental/rental-single/3",
+            name: "See all variants",
+            routePath: "/hotel/booking-page",
           },
         ],
       },
@@ -664,33 +680,57 @@ export const categorieMobileItems = [
   },
   {
     id: 5,
-    title: "Car",
+    title: "Pick-ups",
     menuItems: [
       {
         id: 1,
-        title: "Car List",
+        title: "Ashok Leyland",
         menuList: [
           {
-            name: "Car List v1",
-            routePath: "/car/car-list-v1",
+            name: "Ecomet Star Series",
+            routePath: "/hotel/hotel-list-v1",
           },
           {
-            name: "Car List v2",
-            routePath: "/car/car-list-v2",
+            name: "Boss Series",
+            routePath: "/hotel/hotel-list-v2",
+          },
+          {
+            name: "Other Variants",
+            routePath: "/hotel/hotel-list-v3",
           },
         ],
       },
       {
         id: 2,
-        title: "Car Pages",
+        title: "Bharat Benz",
         menuList: [
           {
-            name: "Car Map",
-            routePath: "/car/car-list-v3",
+            name: "Benz Series",
+            routePath: "/hotel/hotel-single-v1/5",
           },
           {
-            name: "Car Single",
-            routePath: "/car/car-single/1",
+            name: "Other Series",
+            routePath: "/hotel/hotel-single-v2/5",
+          },
+        ],
+      },
+      {
+        id: 3,
+        title: "Volvo",
+        menuList: [
+          {
+            name: "See all variants",
+            routePath: "/hotel/booking-page",
+          },
+        ],
+      },
+      {
+        id: 4,
+        title: "Tata",
+        menuList: [
+          {
+            name: "See all variants",
+            routePath: "/hotel/booking-page",
           },
         ],
       },
@@ -698,33 +738,57 @@ export const categorieMobileItems = [
   },
   {
     id: 6,
-    title: "Cruise",
+    title: "Mini-Trucks",
     menuItems: [
       {
         id: 1,
-        title: "Cruise List",
+        title: "Ashok Leyland",
         menuList: [
           {
-            name: "Cruise List v1",
-            routePath: "/cruise/cruise-list-v1",
+            name: "Ecomet Star Series",
+            routePath: "/hotel/hotel-list-v1",
           },
           {
-            name: "Cruise List v2",
-            routePath: "/cruise/cruise-list-v2",
+            name: "Boss Series",
+            routePath: "/hotel/hotel-list-v2",
+          },
+          {
+            name: "Other Variants",
+            routePath: "/hotel/hotel-list-v3",
           },
         ],
       },
       {
         id: 2,
-        title: "Cruise Pages",
+        title: "Bharat Benz",
         menuList: [
           {
-            name: "Cruise Map",
-            routePath: "/cruise/cruise-list-v3",
+            name: "Benz Series",
+            routePath: "/hotel/hotel-single-v1/5",
           },
           {
-            name: "Cruise Single",
-            routePath: "/cruise/cruise-single/3",
+            name: "Other Series",
+            routePath: "/hotel/hotel-single-v2/5",
+          },
+        ],
+      },
+      {
+        id: 3,
+        title: "Volvo",
+        menuList: [
+          {
+            name: "See all variants",
+            routePath: "/hotel/booking-page",
+          },
+        ],
+      },
+      {
+        id: 4,
+        title: "Tata",
+        menuList: [
+          {
+            name: "See all variants",
+            routePath: "/hotel/booking-page",
           },
         ],
       },
@@ -732,15 +796,57 @@ export const categorieMobileItems = [
   },
   {
     id: 7,
-    title: "Flights",
+    title: "3-Wheelers",
     menuItems: [
       {
         id: 1,
-        title: "Flight List",
+        title: "Ashok Leyland",
         menuList: [
           {
-            name: "Flight List v1",
-            routePath: "/flight/flight-list-v1",
+            name: "Ecomet Star Series",
+            routePath: "/hotel/hotel-list-v1",
+          },
+          {
+            name: "Boss Series",
+            routePath: "/hotel/hotel-list-v2",
+          },
+          {
+            name: "Other Variants",
+            routePath: "/hotel/hotel-list-v3",
+          },
+        ],
+      },
+      {
+        id: 2,
+        title: "Bharat Benz",
+        menuList: [
+          {
+            name: "Benz Series",
+            routePath: "/hotel/hotel-single-v1/5",
+          },
+          {
+            name: "Other Series",
+            routePath: "/hotel/hotel-single-v2/5",
+          },
+        ],
+      },
+      {
+        id: 3,
+        title: "Volvo",
+        menuList: [
+          {
+            name: "See all variants",
+            routePath: "/hotel/booking-page",
+          },
+        ],
+      },
+      {
+        id: 4,
+        title: "Tata",
+        menuList: [
+          {
+            name: "See all variants",
+            routePath: "/hotel/booking-page",
           },
         ],
       },

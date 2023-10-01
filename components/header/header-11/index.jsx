@@ -57,7 +57,6 @@ const Header1 = () => {
                   </div>
                   {/* End vertical devider*/}
 
-                  <LanguageMegaMenu textClass="text-white" />
                   {/* End Megamenu for Language */}
                 </div>
                 {/* End language and currency selector */}

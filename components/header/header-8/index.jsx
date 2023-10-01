@@ -4,6 +4,7 @@ import { MdOutlineCompare } from "react-icons/md";
 import MainMenu from "../MainMenu";
 import SearchBoxContent from "../../hero/hero-8/SearchBoxContent";
 import MobileMenu from "../MobileMenu";
+import LanguageMegaMenu from "../LanguageMegaMenu";
 
 const Header1 = () => {
   const [navbar, setNavbar] = useState(false);
@@ -86,15 +87,10 @@ const Header1 = () => {
                   {/* </Link> */}
                 </div>
 
-                {/* Start btn-group */}
-                <div className="d-flex items-center ml-20 is-menu-opened-hide md:d-none">
-                  <div className="button px-30 fw-400 text-14 -blue-1 bg-dark-1 h-50 text-white">
-                    <i className="icon-globe mr-5" />
-                    English
-                  </div>
-                </div>
-                {/* End btn-group */}
+                <LanguageMegaMenu textClass="text-black" />
 
+
+               
                 {/* Start mobile menu icon */}
                 <div className="d-none xl:d-flex x-gap-20 items-center pl-30">
                   <div>
