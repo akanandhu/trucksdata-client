@@ -86,7 +86,8 @@ const TopBrands = () => {
           data-aos-delay={item.delayAnimation}
         >
           <Link
-            href="/destinations"
+            // href="/dest"
+            href={`/brands/${item.id}`}
             className="citiesCard -type-4 d-block text-center"
           >
             <div className="citiesCard__image size-120 rounded-full mx-auto">
