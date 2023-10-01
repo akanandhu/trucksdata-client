@@ -87,12 +87,17 @@ const Header1 = () => {
                   {/* </Link> */}
                 </div>
 
+                <div className="xxl:d-none">
                 <LanguageMegaMenu textClass="text-black" />
+
+                </div>
+
 
 
                
                 {/* Start mobile menu icon */}
                 <div className="d-none xl:d-flex x-gap-20 items-center pl-30">
+                  
                   <div>
                     <Link
                       href="/others-pages/login"
