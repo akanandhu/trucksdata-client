@@ -20,7 +20,7 @@ function FilterTabs() {
     setSelectedItem(item);
   };
   return (
-    <>
+    <div>
       <Tabs className="tabs -underline-2 js-tabs">
         <TabList className="sm:d-none md:d-none tabs__controls row x-gap-40 y-gap-10 lg:x-gap-20 pb-30 js-tabs-controls">
           {dropdown.map((item, i) => (
@@ -31,7 +31,7 @@ function FilterTabs() {
             </Tab>
           ))}
         </TabList>
-        <div className="d-lg-none px-2">
+        <div className="d-lg-none d-md-none px-2">
           <DropInput
             title="Type"
             // item={item}
@@ -57,7 +57,7 @@ function FilterTabs() {
         </div>
         {/* End tab_content */}
       </Tabs>
-    </>
+    </div>
   );
 }
 
