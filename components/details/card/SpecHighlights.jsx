@@ -1,38 +1,40 @@
+import Image from "next/image";
+
 const SpecHighlights = () => {
   const propertyContent = [
     {
       id: 1,
-      icon: "icon-user-2",
+      icon: "/icons/power.svg",
       name: "Power",
       content: "180 HP",
     },
     {
       id: 2,
-      icon: "icon-luggage",
+      icon: "/icons/weight.svg",
       name: "GVW",
       content: "41500 KG",
     },
     {
       id: 3,
-      icon: "icon-transmission",
+      icon: "/icons/engine.svg",
       name: "Engine",
       content: "H-Series 6 cylinder",
     },
     {
       id: 4,
-      icon: "icon-speedometer",
+      icon: "/icons/fuel-tank.svg",
       name: "Fuel Tank",
       content: "160 Ltr",
     },
     {
       id: 5,
-      icon: "icon-speedometer",
+      icon: "/icons/tyre.svg",
       name: "No. of Tyres",
       content: "6+1",
     },
     {
       id: 6,
-      icon: "icon-speedometer",
+      icon: "/icons/truck-wheel.svg",
       name: "Wheelbase",
       content: "205mm",
     },
@@ -43,9 +45,9 @@ const SpecHighlights = () => {
         {propertyContent.map((item) => (
           <div className="col-md-auto col-6" key={item.id}>
             <div className="d-block text-center">
-              <i className={`${item.icon} text-22 text-dark-1 mr-10`} />
+              <Image src={item.icon} width={22} height={22}  alt={'icon'} />
               <div className="text-15 lh-15">
-                {item.name}
+               <span className=" fw-semibold ">{item.name}</span> 
                 <br /> {item.content}
               </div>
             </div>
