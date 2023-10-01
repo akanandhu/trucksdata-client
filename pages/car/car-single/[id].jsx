@@ -20,6 +20,7 @@ import Faq from "../../../components/faq/Faq";
 import MapPropertyFinder from "../../../components/car-single/MapPropertyFinder";
 import PopularModals from "../../../components/car-single/PopularModals";
 import TruckDetails from "../../../components/car-single/TruckDetails";
+import Specifications from "../../../components/car-single/Specifications";
 
 const TourSingleV1Dynamic = () => {
   const router = useRouter();
@@ -108,11 +109,11 @@ const TourSingleV1Dynamic = () => {
             <div className="col-lg-4">
               <div className="d-flex justify-end flex-column">
                 <div>
-                    <TruckDetails/>
-                </div>    
-                <div className="py-20">
-                  <PopularModals />
+                  <TruckDetails />
                 </div>
+                {/* <div className="py-20">
+                  <PopularModals />
+                </div> */}
 
                 {/* End px-30 */}
               </div>
@@ -123,9 +124,8 @@ const TourSingleV1Dynamic = () => {
         </div>
         {/* End .containar */}
       </section>
-      {/* End Galler single */}
 
-      <section className="pt-40">
+      {/* <section className="pt-40">
         <div className="container">
           <div className="row">
             <div className="col-lg-8">
@@ -136,19 +136,39 @@ const TourSingleV1Dynamic = () => {
               </div>
             </div>
 
-            {/* End .col-lg-8 */}
           </div>
-          {/* End .row */}
         </div>
-        {/* End container */}
-      </section>
-      {/* End pt-40 */}
+      </section> */}
 
-      {/* End main content section */}
+      <section className="pt-40">
+        <div className="container">
+          {/* <div className="row"> */}
+          <div className="md:col sm:col row">
+            {/* <div className="d-flex justify-content-center"> */}
+            {/* <h3 className="text-22 fw-500">Property highlights</h3> */}
+            <div className="col-lg-8">
+              <div>
+                <h6 className="fw-500 text-22">Key Specifications</h6>
+                <PropertyHighlights />
+              </div>
+              <div className="mt-20">
+                <h6 className="fw-500 text-22">Specifications</h6>
+                <Specifications />
+              </div>
+            </div>
+            {/* <Overview /> */}
+            <div className="col-lg-1 ms-10">
+              <PopularModals />
+            </div>
+          </div>
+          {/* </div> */}
+        </div>
+        {/* </div> */}
+      </section>
 
       <section className="mt-40 pt-40">
         <div className="container">
-          <h3 className="text-22 fw-500 mb-20">Car Location</h3>
+          {/* <h3 className="text-22 fw-500 mb-20">Car Location</h3> */}
           <div className=" rounded-4 overflow-hidden map-500">
             <MapPropertyFinder />
           </div>
