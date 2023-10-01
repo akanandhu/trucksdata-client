@@ -23,6 +23,7 @@ import TruckDetailCard from "../../components/details/card/DetailCard";
 import DetailCard from "../../components/details/card/DetailCard";
 import DetailBox from "../../components/details/card/DetailBox";
 import MoreVehicles from "../../components/details/more/MoreVehicles";
+import SpecificationTable from "../../components/details/specification-table/SpecificationTable";
 
 const SinglePage = () => {
   const router = useRouter();
@@ -140,22 +141,43 @@ const SinglePage = () => {
             {/* <h3 className="text-22 fw-500">Property highlights</h3> */}
             <div className="col-lg-8">
               <div>
-                <h6 className="fw-500 text-22">Key Specifications</h6>
+                <h6 className="fw-500 text-22">Highlights</h6>
                 <SpecHighlights />
               </div>
-              <div className="mt-20">
+              <div className="mt-30">
                 <h6 className="fw-500 text-22">Specifications</h6>
                 <Specifications />
               </div>
             </div>
             {/* <Overview /> */}
             <div className="col-lg-4 ms-10 d-flex  justify-content-end sm:mt-20 lg:mt-4 ">
-                <PopularModals />
+              <PopularModals />
             </div>
           </div>
+
           {/* </div> */}
         </div>
         {/* </div> */}
+      </section>
+
+      <section className="pt-40 mb-40 ">
+        <div className="container bg-light-2 p-4 ">
+            <h4 className="mb-10">Specifications</h4>
+          <div className="row y-gap-20">
+            
+            <div className="col-lg-12">
+              <div
+                className="accordion -simple row y-gap-20 js-accordion"
+                id="Faq1"
+              >
+                <SpecificationTable />
+              </div>
+            </div>
+            {/* End .col */}
+          </div>
+          {/* End .row */}
+        </div>
+        {/* End .container */}
       </section>
 
       <section className="mt-40 pt-40">
@@ -167,6 +189,8 @@ const SinglePage = () => {
         </div>
       </section>
       {/* End Map */}
+
+      
 
       <section className="pt-40 mb-40">
         <div className="container ">
