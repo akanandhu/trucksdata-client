@@ -40,7 +40,7 @@ const index = () => {
         {/* End .container */}
 
         <div
-          className="masthead-bottom mt-80 md:mt-4"
+          className="masthead-bottom mt-80 md:mt-2"
           data-aos="fade-up"
           data-aos-delay="400"
           data-aos-offset="0"
