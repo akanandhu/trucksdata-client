@@ -22,6 +22,7 @@ import DefaultFooter from "../../components/footer/default";
 import TruckDetailCard from "../../components/details/card/DetailCard";
 import DetailCard from "../../components/details/card/DetailCard";
 import DetailBox from "../../components/details/card/DetailBox";
+import MoreVehicles from "../../components/details/more/MoreVehicles";
 
 const SinglePage = () => {
   const router = useRouter();
@@ -59,7 +60,7 @@ const SinglePage = () => {
                     {vehicle?.title}
                   </h1>
                   <div className="row x-gap-10 items-center pt-10">
-                  <div className="row x-gap-5 items-center pt-5">
+                    <div className="row x-gap-5 items-center pt-5">
                       <div className="col-auto">
                         <div className="text-14 text-light-1">Truck</div>
                       </div>
@@ -99,33 +100,18 @@ const SinglePage = () => {
                 <div className="px-30 py-30 rounded-4 border-light shadow-4 bg-white w-360 lg:w-full">
                   <div className="row y-gap-15 items-center justify-between">
                     <div className="col-auto">
-                      <div className="text-14 text-light-1">
-                        From
-                        <span className="text-20 fw-500 text-dark-1 ml-5">
-                          US{vehicle?.price}
-                        </span>
+                      <div className="text-14 text-light-1  md:mt-20">
+                        Starting From
+                      </div>
+                      <div className="text-24 lh-12 fw-600 mt-5">
+                        ₹{vehicle.price}{" "}
+                      </div>
+                      <div className="text-14 text-light-1 mt-5">
+                        Ex-showroom
                       </div>
                     </div>
                     {/* End .col-auto */}
 
-                    <div className="col-auto">
-                      <div className="d-flex items-center">
-                        <div className="text-14 text-right mr-10">
-                          <div className="lh-15 fw-500">Exceptional</div>
-                          <div className="lh-15 text-light-1">
-                            {vehicle?.numberOfReviews} reviews
-                          </div>
-                        </div>
-                        {/* End div */}
-
-                        <div className="size-40 flex-center bg-yellow-1 rounded-4">
-                          <div className="text-14 fw-600 text-dark-1">
-                            {vehicle?.ratings}
-                          </div>
-                        </div>
-                        {/* End div */}
-                      </div>
-                    </div>
                     {/* End .col-auto */}
                   </div>
                   {/* End .row */}
@@ -163,8 +149,8 @@ const SinglePage = () => {
               </div>
             </div>
             {/* <Overview /> */}
-            <div className="col-lg-1 ms-10">
-              <PopularModals />
+            <div className="col-lg-4 ms-10 d-flex  justify-content-end sm:mt-20 lg:mt-4 ">
+                <PopularModals />
             </div>
           </div>
           {/* </div> */}
@@ -182,13 +168,13 @@ const SinglePage = () => {
       </section>
       {/* End Map */}
 
-      <section className="pt-40">
+      <section className="pt-40 mb-40">
         <div className="container ">
           <div className="row y-gap-20">
             <div className="col-lg-4">
               <h2 className="text-22 fw-500">
                 FAQs about
-                <br /> The New Car Model
+                <br /> {vehicle?.title}
               </h2>
             </div>
             {/* End .row */}
@@ -208,58 +194,6 @@ const SinglePage = () => {
         {/* End .container */}
       </section>
       {/* End Faq about sections */}
-
-      <section className="mt-40 border-top-light pt-40">
-        <div className="container">
-          <div className="row y-gap-40 justify-between">
-            <div className="col-xl-3">
-              <h3 className="text-22 fw-500">Guest reviews</h3>
-              <ReviewProgress2 />
-              {/* End review with progress */}
-            </div>
-            {/* End col-xl-3 */}
-
-            <div className="col-xl-8">
-              <DetailsReview2 />
-            </div>
-            {/* End col-xl-8 */}
-          </div>
-          {/* End .row */}
-        </div>
-        {/* End .container */}
-        {/* End container */}
-      </section>
-      {/* End Review section */}
-
-      <section className="mt-40 border-top-light pt-40 layout-pb-lg">
-        <div className="container">
-          <div className="row y-gap-30 justify-between">
-            <div className="col-xl-3">
-              <div className="row">
-                <div className="col-auto">
-                  <h3 className="text-22 fw-500">Leave a Reply</h3>
-                  <p className="text-15 text-dark-1 mt-5">
-                    Your email address will not be published.
-                  </p>
-                </div>
-              </div>
-              {/* End .row */}
-
-              <ReplyFormReview2 />
-              {/* End ReplyFormReview */}
-            </div>
-            {/* End .col-xl-3 */}
-
-            <div className="col-xl-8">
-              <ReplyForm />
-            </div>
-            {/* End .col-xl-8 */}
-          </div>
-          {/* End .row */}
-        </div>
-        {/* End .container */}
-      </section>
-      {/* End Reply Comment box section */}
 
       <CallToActions />
       {/* End Call To Actions Section */}

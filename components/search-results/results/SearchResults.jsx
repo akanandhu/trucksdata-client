@@ -71,6 +71,7 @@ const SearchResults = () => {
                         src={"/icons/engine.svg"}
                         width={20}
                         height={20}
+                        alt="icon"
                       />
 
                       <div className="text-15">125 kW @ 2500 rpm</div>
@@ -81,6 +82,7 @@ const SearchResults = () => {
                         src={"/icons/gears.png"}
                         width={20}
                         height={20}
+                        alt="icon"
                       />
 
                       <div className="text-15">4X2</div>
@@ -92,6 +94,7 @@ const SearchResults = () => {
                         src={"/icons/fuel.svg"}
                         width={20}
                         height={20}
+                        alt="icon"
                       />
                       <div className="text-15">Diesel</div>
                     </div>
@@ -101,6 +104,7 @@ const SearchResults = () => {
                         src={"/icons/application.svg"}
                         width={20}
                         height={20}
+                        alt="icon"
                       />
                       <div className="text-15">Agriculture | Rice Truck</div>
                     </div>

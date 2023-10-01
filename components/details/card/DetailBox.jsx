@@ -1,15 +1,49 @@
+const DetailBlock = ({ data }) => {
+  return (
+    <div className="searchMenu-loc px-20 py-10 border-light rounded-4 js-form-dd js-liverSearch">
+      <div       >
+        <h4 className="text-15 fw-500 ls-2 lh-16">{data.heading}</h4>
+        <div className="text-15 text-light-1 ls-2 lh-16">
+          <label>{data?.value}</label>
+        </div>
+      </div>
+    </div>
+  );
+};
 
+const data = [
+  {
+    heading: 'Manufacturer',
+    value: 'Bharat Benz'
+  },
+  {
+    heading: 'Power Source',
+    value: 'Diesel'
+  },
+  {
+    heading: 'Category of Vehicle',
+    value: 'N2'
+  },
+  {
+    heading: 'Axle Configuartion',
+    value: '4X2'
+  },
+//   {
+//     heading: 'Chassis Options',
+//     value: 'Cab & Chassis (CBC)'
+//   },
+];
 
 const DetailBox = () => {
   return (
     <>
-      {/* <div className="col-12">
-        <LocationSearch />
-      </div> */}
-      {/* End .col-12 */}
-
-
-     
+      {data.map((obj) => {
+        return (
+          <div key={obj.heading} className="col-12">
+            <DetailBlock data={obj} />
+          </div>
+        );
+      })}
 
       <div className="col-12">
         <button
