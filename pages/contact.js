@@ -8,6 +8,7 @@ import Address from "../components/block/Address";
 import Social from "../components/common/social/Social";
 import ContactForm from "../components/common/ContactForm";
 import LocationTopBar from "../components/common/LocationTopBar";
+import Header1 from "../components/header/header-8";
 
 const Contact = () => {
   return (
@@ -16,35 +17,22 @@ const Contact = () => {
       {/* End Page Title */}
 
       <div className="header-margin"></div>
-      {/* header top margin */}
 
-      <DefaultHeader />
+      <Header1 />
       {/* End Header 1 */}
 
-      <LocationTopBar />
       {/* End location top bar section */}
 
       <div className="map-outer">
         <div className="map-canvas">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d182586.0420340798!2d-73.99038430252834!3d40.749936548349346!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sbd!4v1670824458615!5m2!1sen!2sbd"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d186537.49679729374!2d75.3552543642766!3d11.874477180862902!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba63b3f7c03a447%3A0xd4b3f84f3c48d84e!2sKannur%2C%20Kerala%2C%20India!5e0!3m2!1sen!2sbd!4v1670824458615!5m2!1sen!2sbd"
             loading="lazy"
           ></iframe>
         </div>
       </div>
       {/* End map section */}
 
-      <section className="relative container">
-        <div className="row justify-end">
-          <div className="col-xl-5 col-lg-7">
-            <div className="map-form px-40 pt-40 pb-50 lg:px-30 lg:py-30 md:px-24 md:py-24 bg-white rounded-4 shadow-4">
-              <div className="text-22 fw-500">Send a message</div>
-              <ContactForm />
-            </div>
-          </div>
-        </div>
-      </section>
-      {/* End contact section form */}
 
       <section className="layout-pt-md layout-pb-lg">
         <div className="container">

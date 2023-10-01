@@ -12,6 +12,7 @@ import FormReply from "../../../components/blog/blog-details/FormReply";
 import TopComment from "../../../components/blog/blog-details/TopComment";
 import BlogNavigator from "../../../components/blog/blog-details/BlogNavigator";
 import Comments from "../../../components/blog/blog-details/Comments";
+import Header1 from "../../../components/header/header-8";
 
 const BlogSingleDynamic = () => {
   const router = useRouter();
@@ -33,7 +34,7 @@ const BlogSingleDynamic = () => {
       <div className="header-margin"></div>
       {/* header top margin */}
 
-      <DefaultHeader />
+      <Header1 />
       {/* End Header 1 */}
 
       {/* <LocationTopBar /> */}

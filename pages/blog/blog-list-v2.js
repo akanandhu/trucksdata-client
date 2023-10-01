@@ -7,6 +7,7 @@ import LocationTopBar from "../../components/common/LocationTopBar";
 import Blog2 from "../../components/blog/Blog2";
 import BlogSidebar from "../../components/blog/blog-sidebar";
 import BlogPagination from "../../components/blog/BlogPagination";
+import Header1 from "../../components/header/header-8";
 
 const BlogListV2 = () => {
   return (
@@ -17,10 +18,9 @@ const BlogListV2 = () => {
       <div className="header-margin"></div>
       {/* header top margin */}
 
-      <DefaultHeader />
+      <Header1 />
       {/* End Header 1 */}
 
-      <LocationTopBar />
       {/* End location top bar section */}
 
       <section className="layout-pt-md">
@@ -28,9 +28,9 @@ const BlogListV2 = () => {
           <div className="row justify-center text-center">
             <div className="col-auto">
               <div className="sectionTitle -md">
-                <h2 className="sectionTitle__title">Travel articles</h2>
+                <h2 className="sectionTitle__title">Articles</h2>
                 <p className=" sectionTitle__text mt-5 sm:mt-0">
-                  Lorem ipsum is placeholder text commonly used in site.
+                  Read from our TruckExperts
                 </p>
               </div>
             </div>
@@ -47,7 +47,6 @@ const BlogListV2 = () => {
                 <Blog2 />
               </div>
               {/* End .row */}
-              <BlogPagination />
             </div>
             {/* End .col */}
 

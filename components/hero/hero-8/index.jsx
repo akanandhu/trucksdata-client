@@ -57,7 +57,10 @@ const index = () => {
               }}
             >
               <SwiperSlide>
-                <img src="/img/masthead/8/1.png" alt="image" />
+                <img className="lazy-load" src="/img/masthead/8/truck-hero.png" alt="image" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img className="lazy-load" src="/img/masthead/8/truck-hero-2.png" alt="image" />
               </SwiperSlide>
             </Swiper>
 
