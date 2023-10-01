@@ -14,6 +14,7 @@ module.exports = [
     transmission: "6X2",
     speed: "Diesel",
     delayAnimation: "100",
+    brand: "Ashok Leyland",
   },
   {
     id: 2,
@@ -30,6 +31,7 @@ module.exports = [
     transmission: "6X2",
     speed: "Diesel",
     delayAnimation: "100",
+    brand: "Ashok Leyland",
   },
 
   {
@@ -47,6 +49,7 @@ module.exports = [
     transmission: "6X2",
     speed: "Diesel",
     delayAnimation: "100",
+    brand: "Ashok Leyland",
   },
   {
     id: 4,
@@ -63,6 +66,7 @@ module.exports = [
     transmission: "6X2",
     speed: "Diesel",
     delayAnimation: "100",
+    brand: "Ashok Leyland",
   },
   {
     id: 5,
@@ -79,6 +83,7 @@ module.exports = [
     transmission: "6X2",
     speed: "Diesel",
     delayAnimation: "100",
+    brand: "Ashok Leyland",
   },
   {
     id: 6,
@@ -95,6 +100,7 @@ module.exports = [
     transmission: "6X2",
     speed: "Diesel",
     delayAnimation: "100",
+    brand: "Ashok Leyland",
   },
   {
     id: 7,
@@ -111,6 +117,7 @@ module.exports = [
     transmission: "6X2",
     speed: "Diesel",
     delayAnimation: "100",
+    brand: "Ashok Leyland",
   },
   {
     id: 8,
@@ -127,6 +134,7 @@ module.exports = [
     transmission: "6X2",
     speed: "Diesel",
     delayAnimation: "100",
+    brand: "Ashok Leyland",
   },
 
   {
@@ -144,6 +152,7 @@ module.exports = [
     transmission: "6X2",
     speed: "Diesel",
     delayAnimation: "100",
+    brand: "Ashok Leyland",
   },
   {
     id: 10,
@@ -160,6 +169,7 @@ module.exports = [
     transmission: "6X2",
     speed: "Diesel",
     delayAnimation: "100",
+    brand: "Ashok Leyland",
   },
   {
     id: 11,
@@ -176,6 +186,7 @@ module.exports = [
     transmission: "6X2",
     speed: "Diesel",
     delayAnimation: "100",
+    brand: "Ashok Leyland",
   },
   {
     id: 12,
@@ -192,6 +203,7 @@ module.exports = [
     transmission: "6X2",
     speed: "Diesel",
     delayAnimation: "100",
+    brand: "Ashok Leyland",
   },
 
   {
@@ -209,6 +221,7 @@ module.exports = [
     transmission: "6X2",
     speed: "Diesel",
     delayAnimation: "100",
+    brand: "Ashok Leyland",
   },
   {
     id: 14,
@@ -225,6 +238,7 @@ module.exports = [
     transmission: "6X2",
     speed: "Diesel",
     delayAnimation: "100",
+    brand: "Ashok Leyland",
   },
   {
     id: 15,
@@ -241,5 +255,6 @@ module.exports = [
     transmission: "6X2",
     speed: "Diesel",
     delayAnimation: "100",
+    brand: "Ashok Leyland",
   },
 ];

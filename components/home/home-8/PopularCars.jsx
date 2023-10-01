@@ -40,7 +40,7 @@ const PopularCars = () => {
         {carsData.slice(0, 8).map((item) => (
           <SwiperSlide key={item.id}>
             <Link
-                href={`/car/car-single/${item.id}`}
+                href={`/details/${item.id}`}
                 className="carCard -type-1 d-block rounded-4 hover-inside-slider"
               >
             <div

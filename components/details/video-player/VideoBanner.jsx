@@ -3,7 +3,7 @@ import ReactPlayer from "react-player";
 
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
-export default function MapPropertyFinder() {
+export default function VideoBanner() {
   const defaultProps = {
     center: {
       lat: 10.99835602,
