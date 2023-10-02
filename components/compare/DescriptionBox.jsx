@@ -13,7 +13,7 @@ const DescriptionBox = () => {
 
   return (
     <div
-      className="col-lg-12 px-lg-5  "
+      className="col-lg-12 px-lg-5"
       key={item.id}
       data-aos="fade"
       data-aos-delay={item.delayAnimation}

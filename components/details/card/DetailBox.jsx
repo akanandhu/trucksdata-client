@@ -1,7 +1,7 @@
 const DetailBlock = ({ data }) => {
   return (
     <div className="searchMenu-loc px-20 py-10 border-light rounded-4 js-form-dd js-liverSearch">
-      <div       >
+      <div>
         <h4 className="text-15 fw-500 ls-2 lh-16">{data.heading}</h4>
         <div className="text-15 text-light-1 ls-2 lh-16">
           <label>{data?.value}</label>
@@ -13,25 +13,25 @@ const DetailBlock = ({ data }) => {
 
 const data = [
   {
-    heading: 'Manufacturer',
-    value: 'Bharat Benz'
+    heading: "Manufacturer",
+    value: "Bharat Benz",
   },
   {
-    heading: 'Power Source',
-    value: 'Diesel'
+    heading: "Power Source",
+    value: "Diesel",
   },
   {
-    heading: 'Category of Vehicle',
-    value: 'N2'
+    heading: "Category of Vehicle",
+    value: "N2",
   },
   {
-    heading: 'Axle Configuartion',
-    value: '4X2'
+    heading: "Axle Configuartion",
+    value: "4X2",
   },
-//   {
-//     heading: 'Chassis Options',
-//     value: 'Cab & Chassis (CBC)'
-//   },
+  //   {
+  //     heading: 'Chassis Options',
+  //     value: 'Cab & Chassis (CBC)'
+  //   },
 ];
 
 const DetailBox = () => {
@@ -46,12 +46,8 @@ const DetailBox = () => {
       })}
 
       <div className="col-12">
-        <button
-          className="button -dark-1 py-15 px-35 h-60 col-12 rounded-4 bg-yellow-1 text-dark-1"
-          data-bs-dismiss="offcanvas"
-          aria-label="Close"
-        >
-          <i className="icon-search text-20 mr-10" />
+        <button className="button -dark-1 py-15 px-35 h-60 col-12 rounded-4 bg-yellow-1 text-dark-1">
+          {/* <i className="icon-search text-20 mr-10" /> */}
           Download Brochure
         </button>
 
