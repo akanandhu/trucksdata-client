@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import CompareAddButton from "./compare/CompareAddButton";
 
-const SearchResults = () => {
+const SearchResults = ({showError, setShow}) => {
   return (
     <>
       {rentalssData.map((item) => (
@@ -116,7 +116,7 @@ const SearchResults = () => {
               {/* End col-md */}
 
               <div className="col-md-auto d-flex flex-column justify-content-between  text-right md:text-left">
-                <CompareAddButton />
+                <CompareAddButton vehicle={item} showError={showError} setShow={setShow} />
                 <div>
                   <div>
                     <div className="text-14 text-light-1  md:mt-20">

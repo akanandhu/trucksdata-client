@@ -1,23 +1,37 @@
 import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  addToCompare,
+  removeFromCompare,
+} from "../../../../features/compare/compareSlice";
 
-const CompareAddButton = () => {
-  const [isChecked, setIsChecked] = useState(false);
+const CompareAddButton = ({ vehicle, showError, setShow }) => {
+  const compareItems = useSelector((store) => store.compare.vehicles);
+  const isVehicleExists = compareItems.some((item) => item.id === vehicle.id);
+
+  const dispatch = useDispatch();
 
   const handleToggle = () => {
-    setIsChecked(!isChecked);
+    if (isVehicleExists) {
+      dispatch(removeFromCompare(vehicle.id));
+    } else if (compareItems.length <= 2) {
+      dispatch(addToCompare(vehicle));
+    } else {
+      showError();
+    }
+
+    setShow(compareItems.length !== 0);
   };
 
-
   return (
-    <button className="btn border-primary text-blue-1 " checked={isChecked} onClick={handleToggle}>
-        <div className="custom-radio">
-          {isChecked ? (
-        <span>&#10003; Added to Compare</span>
-      ) : (
-        <span>Add to Compare</span>
-      )}
-        </div>
-      
+    <button className="btn border-primary text-blue-1 " onClick={handleToggle}>
+      <div className="custom-radio">
+        {isVehicleExists ? (
+          <span>&#10003; Added to Compare</span>
+        ) : (
+          <span>Add to Compare</span>
+        )}
+      </div>
     </button>
   );
 };

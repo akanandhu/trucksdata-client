@@ -8,8 +8,32 @@ import DefaultFooter from "../../components/footer/default";
 import Sidebar from "../../components/search-results/sidebar/Sidebar";
 import TopHeaderFilter from "../../components/search-results/header/TopHeaderFilter";
 import SearchResults from "../../components/search-results/results/SearchResults";
+import toast, { Toaster } from "react-hot-toast";
+import { useState } from "react";
+import CompareBar from "../../components/compare-bar/CompareBar";
 
-const index = () => {
+const toastStyles = {
+  icon: "🚚",
+  position: "top-right",
+  style: {
+    borderRadius: "10px",
+    background: "#333",
+    color: "#fff",
+  },
+};
+
+const SearchResultsPage = () => {
+
+  const [show, setShow] = useState(false)
+
+  
+
+  function handleCompareExceed() {
+    toast.error("Maximum of three vehicles selected", {
+      ...toastStyles,
+    });
+  }
+
   return (
     <>
       <Seo pageTitle="Search Results" />
@@ -54,7 +78,7 @@ const index = () => {
                 id="listingSidebar"
               >
                 <div className="offcanvas-header">
-                  <h5 className="offcanvas-title" id="offcanvasLabel">
+                  <h5 className="offcanvas-title " id="offcanvasLabel">
                     Filter out the Truck of your need!
                   </h5>
                   <button
@@ -76,13 +100,15 @@ const index = () => {
               {/* End mobile menu sidebar */}
             </div>
             {/* End col */}
+      <CompareBar />
+
 
             <div className="col-xl-9 ">
               <TopHeaderFilter />
               <div className="mt-30"></div>
               {/* End mt--30 */}
               <div className="row y-gap-30">
-                <SearchResults />
+                <SearchResults showError={handleCompareExceed} setShow={setShow} />
               </div>
               {/* End .row */}
             </div>
@@ -102,4 +128,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default SearchResultsPage;
