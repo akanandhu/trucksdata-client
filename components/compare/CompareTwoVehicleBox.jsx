@@ -46,14 +46,14 @@ const CompareTwoVehicleBox = ({ item }) => {
           {/* End .tourCard__image */}
 
           <div className="carCard__content px-3 py-4   ">
-            <h4 className="text-dark-1 text-14 lh-16 fw-500">{item?.title} </h4>
+            <h4 className="text-dark-1 text-14 lh-14 fw-500">{item?.title} </h4>
             <p className="text-light-1 lh-14 text-14 mt-5" />
 
             {/* End .row */}
             <div className="d-flex align-content-center align-items-center justify-content-between  ">
               <div>
                 <div className="text-light-1 text-14 ">
-                  <span className="fw-600 text-16 text-dark-1">
+                  <span className="fw-600 text-15 text-dark-1">
                     ₹ 45,00,000
                   </span>{" "}
                   Onwards
@@ -110,14 +110,14 @@ const CompareTwoVehicleBox = ({ item }) => {
           {/* End .tourCard__image */}
 
           <div className="carCard__content px-3 py-4 ">
-            <h4 className="text-dark-1 text-14 lh-16 fw-500">{item?.title} </h4>
+            <h4 className="text-dark-1 text-14 lh-14 fw-500">{item?.title} </h4>
             <p className="text-light-1 lh-14 text-14 mt-5" />
 
             {/* End .row */}
             <div className="d-flex align-content-center align-items-center justify-content-between  ">
               <div>
                 <div className="text-light-1 text-14">
-                  <span className="fw-600 text-16 text-dark-1">
+                  <span className="fw-600 text-15 text-dark-1">
                     ₹ 45,00,000
                   </span>{" "}
                   Onwards
