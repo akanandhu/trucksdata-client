@@ -18,7 +18,7 @@ const SpecificationTable = () => {
               data-bs-target={`#${item.collapseTarget}`}
             >
               
-              <div className="button text-dark-1 text-start">{item.title}</div>
+              <div className="button text-dark-1 text-start text-16 fw-700 ">{item.title}</div>
               <div className="accordion__icon size-40 flex-center bg-light-2 rounded-full mr-20">
                 <i className="icon-plus" />
                 <i className="icon-minus" />
