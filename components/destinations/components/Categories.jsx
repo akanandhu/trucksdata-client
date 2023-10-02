@@ -1,17 +1,26 @@
 import Slider from "react-slick";
+// import { ShoppingCart } from '@flaticon/flaticon-uicons';
 
 const Categories = () => {
+
+  const catContent = [
+    { id: 1, icon: '/icons/tipper.png', catName: "Tippers"},
+    { id: 2, icon: '/icons/truck-wheel.svg', catName: "Trucks" },
+    { id: 4, icon: "/icons/pick-up-truck.png", catName: "Pick-ups" },
+    { id: 5, icon: "/icons/trailer.png", catName: "Trailers" },
+    
+  ];
   var settings = {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 7,
+    slidesToShow: catContent.length,
     slidesToScroll: 1,
     responsive: [
       {
         breakpoint: 1199,
         settings: {
-          slidesToShow: 5,
+          slidesToShow: catContent.length,
         },
       },
       {
@@ -36,21 +45,20 @@ const Categories = () => {
     ],
   };
 
-  const catContent = [
-    { id: 1, icon: "icon-bed", catName: "Hotel" },
-    { id: 2, icon: "icon-destination", catName: "Tour" },
-    { id: 4, icon: "icon-ski", catName: "Activity" },
-    { id: 5, icon: "icon-home", catName: "Holiday Rentals" },
-    { id: 5, icon: "icon-car", catName: "Car" },
-    { id: 6, icon: "icon-yatch", catName: " Cruise" },
-    { id: 7, icon: "icon-tickets", catName: " Flights" },
-  ];
+  
   return (
     <Slider {...settings}>
       {catContent.map((item) => (
         <div className="col" key={item.id}>
           <button className="d-flex flex-column justify-center px-20 py-15 rounded-4 border-light text-16 lh-14 fw-500 col-12">
-            <i className={`${item.icon} text-25 mb-10`} />
+            {/* <i className={`${item.icon} text-25 mb-10`} /> */}
+            <div className="pb-20 w-25" >
+            <img
+            src={item.icon}
+            
+            />
+            </div>
+            {/* {item.icon} */}
             {item.catName}
           </button>
         </div>

@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@faker-js/faker": "^7.6.0",
+    "@flaticon/flaticon-uicons": "^2.4.0",
     "@popperjs/core": "^2.11.6",
     "@reduxjs/toolkit": "^1.9.1",
     "aos": "^2.3.4",

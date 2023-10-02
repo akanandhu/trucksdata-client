@@ -193,6 +193,13 @@
   resolved "https://registry.yarnpkg.com/@faker-js/faker/-/faker-7.6.0.tgz#9ea331766084288634a9247fcd8b84f16ff4ba07"
   integrity sha512-XK6BTq1NDMo9Xqw/YkYyGjSsg44fbNwYRx7QK2CuoQgyy+f1rrTDHoExVM5PsyXCtfl2vs2vVJ0MN0yN6LppRw==
 
+"@flaticon/flaticon-uicons@^2.4.0":
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/@flaticon/flaticon-uicons/-/flaticon-uicons-2.4.0.tgz#54f55eebdf213a86851f3bfefa3d8a39be545ee8"
+  integrity sha512-YCRztvWnLqnSBqah78H07CNp9oz7rxC2US/uGlaO/qPgSfkAgicFJH6x3UE2FYC9xL993cnyvByUueJaKTPviA==
+  optionalDependencies:
+    esbuild-linux-64 "^0.14.5"
+
 "@googlemaps/js-api-loader@^1.7.0":
   version "1.15.1"
   resolved "https://registry.yarnpkg.com/@googlemaps/js-api-loader/-/js-api-loader-1.15.1.tgz#7d5f1d55a4ec5c99b1d8f0708f3a46b83a71384c"
@@ -2278,6 +2285,11 @@ es-to-primitive@^1.2.1:
     is-callable "^1.1.4"
     is-date-object "^1.0.1"
     is-symbol "^1.0.2"
+
+esbuild-linux-64@^0.14.5:
+  version "0.14.54"
+  resolved "https://registry.yarnpkg.com/esbuild-linux-64/-/esbuild-linux-64-0.14.54.tgz#de5fdba1c95666cf72369f52b40b03be71226652"
+  integrity sha512-EgjAgH5HwTbtNsTqQOXWApBaPVdDn7XcK+/PtJwZLT1UmpLoznPd8c5CxqsH2dQK3j05YsB3L17T8vE7cp4cCg==
 
 escalade@^3.1.1:
   version "3.1.1"
