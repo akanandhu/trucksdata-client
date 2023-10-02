@@ -2,31 +2,31 @@ const Faq = () => {
   const faqContent = [
     {
       id: 1,
-      collapseTarget: "One",
+      collapseTarget: "One-Faq",
       title: "What is Trucks Data for?",
       content: `Trucks Data is for filtering the perfect truck for your need. We also deals with variety of vehicles.`,
     },
     {
       id: 2,
-      collapseTarget: "Two",
+      collapseTarget: "Two-Faq",
       title: "What is TrucksData for?",
       content: `Trucks Data is for filtering the perfect truck for your need. We also deals with variety of vehicles.`,
     },
     {
       id: 3,
-      collapseTarget: "Three",
+      collapseTarget: "Three-Faq",
       title: "What is TrucksData for?",
       content: `Trucks Data is for filtering the perfect truck for your need. We also deals with variety of vehicles.`,
     },
     {
       id: 4,
-      collapseTarget: "Four",
+      collapseTarget: "Four-Faq",
       title: "What is TrucksData for?",
       content: `Trucks Data is for filtering the perfect truck for your need. We also deals with variety of vehicles.`,
     },
     {
       id: 5,
-      collapseTarget: "Five",
+      collapseTarget: "Five-Faq",
       title: "What is TrucksData for?",
       content: `Trucks Data is for filtering the perfect truck for your need. We also deals with variety of vehicles.`,
     },
