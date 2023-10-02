@@ -16,7 +16,7 @@ const BrandIntro = () => {
           (comparable to Euro III). All BharatBenz (17 models) trucks are slated
           to be up to 9% more expensive but be 10% more fuel efficient than the
           competition. The Fuso medium and heavy-duty trucks produced in Chennai
-          are also being exported to markets of Africa and Asia, under Daimler's
+          are also being exported to markets of Africa and Asia, under Daimlers
           Asia Business Model. BharatBenz crossed 30,000 units sale mark in
           January 2016
           <br />
