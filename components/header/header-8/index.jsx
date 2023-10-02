@@ -8,11 +8,8 @@ import LanguageMegaMenu from "../LanguageMegaMenu";
 import { useRouter } from "next/router";
 
 const Header1 = () => {
-
-  const router = useRouter()
-  const isHome = router.asPath === '/'
-  console.log(!isHome,'routerCheck')
-
+  const router = useRouter();
+  const isHome = router.asPath === "/";
   const [navbar, setNavbar] = useState(!isHome);
 
   const changeBackground = () => {
@@ -25,7 +22,11 @@ const Header1 = () => {
 
   useEffect(() => {
     window.addEventListener("scroll", changeBackground);
-  }, []);
+  }, [])
+
+  function handleCompareRoute() {
+    router.push("/compare");
+  }
 
   return (
     <>
@@ -37,8 +38,6 @@ const Header1 = () => {
               <div className="d-flex items-center">
                 <Link href="/" className="header-logo mr-50">
                   <h3>TrucksData</h3>
-                  {/* <img src="/img/general/logo-dark-2.svg" alt="logo icon" /> */}
-                  {/* <img src="/img/general/logo-dark-2.svg" alt="logo icon" /> */}
                 </Link>
                 {/* End logo */}
 
@@ -87,23 +86,21 @@ const Header1 = () => {
 
                 <div className="mr-15 xxl:d-none">
                   {/* <Link href={"/"}> */}
-                  <button className="text-26 text-dark-1 d-flex">
+                  <button
+                    onClick={handleCompareRoute}
+                    className="text-26 text-dark-1 d-flex"
+                  >
                     <MdOutlineCompare />
                   </button>
                   {/* </Link> */}
                 </div>
 
                 <div className="xxl:d-none">
-                <LanguageMegaMenu textClass="text-black" />
-
+                  <LanguageMegaMenu textClass="text-black" />
                 </div>
 
-
-
-               
                 {/* Start mobile menu icon */}
                 <div className="d-none xl:d-flex x-gap-20 items-center pl-30">
-                  
                   <div>
                     <Link
                       href="/others-pages/login"

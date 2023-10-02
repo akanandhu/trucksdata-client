@@ -31,7 +31,7 @@ const SpecificationTable = () => {
               id={item.collapseTarget}
               data-bs-parent="#Faq1"
             >
-              <div className="pt-15 px-40">
+              <div className="pt-15 px-lg-4">
                 <SpecTable tableData={item.tableData} hasVariant={item.hasVariant} />
               </div>
             </div>

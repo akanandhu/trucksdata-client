@@ -2,7 +2,7 @@ const SpecTable = ({hasVariant, tableData}) => {
 
     return (
     <div className="overflow-scroll scroll-bar-1 pt-30">
-      <table className="table-2 col-12">
+      <table className="table-4 col-12">
         {hasVariant && <thead>
           <tr>
             <th></th>
