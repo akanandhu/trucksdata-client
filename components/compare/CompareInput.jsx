@@ -7,33 +7,23 @@ const CompareInput = () => {
   const locationSearchContent = [
     {
       id: 1,
-      name: "London",
-      address: "Greater London, United Kingdom",
+      model: "Ecomet Star ",
+      brand: "Ashok Leyland",
     },
     {
       id: 2,
-      name: "New York",
-      address: "New York State, United States",
+      model: "Boss Series",
+      brand: "Ashok Leyland",
     },
     {
-      id: 3,
-      name: "Paris",
-      address: "France",
-    },
-    {
-      id: 4,
-      name: "Madrid",
-      address: "Spain",
-    },
-    {
-      id: 5,
-      name: "Santorini",
-      address: "Greece",
-    },
+        id: 3,
+        model: "Agni Series",
+        brand: "TATA",
+      },
   ];
 
   const handleOptionClick = (item) => {
-    setSearchValue(item.name);
+    setSearchValue(item.model);
     setSelectedItem(item);
   };
 
@@ -73,10 +63,10 @@ const CompareInput = () => {
                   <div className="icon-location-2 text-light-1 text-20 pt-4" />
                   <div className="ml-10">
                     <div className="text-15 lh-12 fw-500 js-search-option-target">
-                      Select Brand/Model
+                      {item.model}
                     </div>
                     <div className="text-14 lh-12 text-black mt-5">
-                      {item.address}
+                      {item.brand}
                     </div>
                   </div>
                 </div>
