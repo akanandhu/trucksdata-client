@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { clearAllCompare } from "../../features/compare/compareSlice";
+import { useEffect } from "react";
 
 const CompareBar = () => {
   const compareItems = useSelector((store) => store.compare.vehicles);
@@ -9,6 +10,8 @@ const CompareBar = () => {
   function handleDeselect() {
     dispatch(clearAllCompare());
   }
+
+
 
   return compareItems.length ? (
     <div className="compare-bar">
