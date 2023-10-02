@@ -11,9 +11,7 @@ const LocationTopBar = () => {
               <div className="col-auto">
                 <div>Articles</div>
               </div>
-              
-              
-            </div>
+                          </div>
           </div>
           
         </div>

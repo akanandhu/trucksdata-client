@@ -6,20 +6,20 @@ import Banner from "../../components/destinations/components/Banner";
 import BrandIntro from "../../components/destinations/components/BrandIntro";
 import Categories from "../../components/destinations/components/Categories";
 import DefaultHeader from "../../components/header/default-header";
-import Cars from "../../data/cars";
 import Faq from "../../components/faq/Faq";
 import CallToActions from "../../components/common/CallToActions";
 import DefaultFooter from "../../components/footer/default";
+import UpcomingTrucks from '../../components/trucks/UpcomingTrucks'
+import Header1 from "../../components/header/header-8";
 
 const SingleBrand = () => {
   return (
     <>
-      <Seo pageTitle="Destinations" />
+      <Seo pageTitle="Brands" />
 
       <div className="header-margin"></div>
 
-      <DefaultHeader />
-
+      <Header1 />
       <LocationTopBar />
 
       <section className="layout-pb-md">
@@ -65,7 +65,7 @@ const SingleBrand = () => {
           </div>
 
           <div className="row y-gap-30 pt-40 sm:pt-20 item_gap-x30">
-            <Cars />
+            <UpcomingTrucks />
           </div>
         </div>
       </section>
@@ -92,7 +92,7 @@ const SingleBrand = () => {
           </div>
 
           <div className="row y-gap-30 pt-40 sm:pt-20 item_gap-x30">
-            <Cars />
+            <UpcomingTrucks />
           </div>
         </div>
       </section>
@@ -119,7 +119,7 @@ const SingleBrand = () => {
           </div>
 
           <div className="row y-gap-30 pt-40 sm:pt-20 item_gap-x30">
-            <Cars />
+            <UpcomingTrucks />
           </div>
         </div>
       </section>
