@@ -5,12 +5,18 @@ import MainMenu from "../MainMenu";
 import SearchBoxContent from "../../hero/hero-8/SearchBoxContent";
 import MobileMenu from "../MobileMenu";
 import LanguageMegaMenu from "../LanguageMegaMenu";
+import { useRouter } from "next/router";
 
 const Header1 = () => {
-  const [navbar, setNavbar] = useState(false);
+
+  const router = useRouter()
+  const isHome = router.asPath === '/'
+  console.log(!isHome,'routerCheck')
+
+  const [navbar, setNavbar] = useState(!isHome);
 
   const changeBackground = () => {
-    if (window.scrollY >= 10) {
+    if (window.scrollY >= 10 || !isHome) {
       setNavbar(true);
     } else {
       setNavbar(false);
