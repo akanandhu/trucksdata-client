@@ -5,15 +5,14 @@ const DescriptionBox = () => {
   const item = {
     id: 3,
     img: "/img/backgrounds/3.png",
-    title: "Tower of London",
-    text: ` Learn about British history at the Tower of London, a medieval
-              castle that was first built in 1066 by William the Conqueror.`,
+    title: "Compare Trucks",
+    text: `Compare two trucks of your choice with the best truck comparison tool in India on TrucksDekho. You can compare variant-wise prices, GVW, number of tyres, specifications, mileage, performance and more of as many as 3 trucks at one go to help you make the right choice.`,
     delayAnimation: "300",
   };
 
   return (
     <div
-      className="col-lg-12 px-lg-5"
+      className="col-lg-12 container"
       key={item.id}
       data-aos="fade"
       data-aos-delay={item.delayAnimation}

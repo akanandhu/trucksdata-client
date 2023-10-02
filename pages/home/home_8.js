@@ -21,7 +21,6 @@ const home_8 = () => {
     { label: "Pick-ups", value: "pick_ups" },
     { label: "Trailers", value: "trailers" },
     { label: "3-Wheelers", value: "three_wheelers" },
-    // add more options as needed
   ];
 
   return (
