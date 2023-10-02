@@ -9,8 +9,10 @@ import Sidebar from "../../components/search-results/sidebar/Sidebar";
 import TopHeaderFilter from "../../components/search-results/header/TopHeaderFilter";
 import SearchResults from "../../components/search-results/results/SearchResults";
 import toast, { Toaster } from "react-hot-toast";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import CompareBar from "../../components/compare-bar/CompareBar";
+import { useDispatch } from "react-redux";
+import { clearAllCompare } from "../../features/compare/compareSlice";
 
 const toastStyles = {
   icon: "🚚",
@@ -25,14 +27,19 @@ const toastStyles = {
 const SearchResultsPage = () => {
 
   const [show, setShow] = useState(false)
-
-  
-
   function handleCompareExceed() {
     toast.error("Maximum of three vehicles selected", {
       ...toastStyles,
     });
   }
+
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    return () => {
+        dispatch(clearAllCompare());
+    };
+  },[dispatch])
 
   return (
     <>

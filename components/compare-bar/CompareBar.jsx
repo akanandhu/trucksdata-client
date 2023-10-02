@@ -10,6 +10,8 @@ const CompareBar = () => {
     dispatch(clearAllCompare());
   }
 
+
+
   return compareItems.length ? (
     <div className="compare-bar">
       <div className="compare-info">
