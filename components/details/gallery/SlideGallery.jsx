@@ -44,11 +44,6 @@ export default function SlideGallery() {
               <SwiperSlide>
                 <div className="slider__image">
                   <img src="/img/cars/truck-white.jpg" alt="" />
-                  {/* <iframe
-                    // width="420"
-                    // height="315"
-                    src="https://www.youtube.com/embed/aNrr70yud6k&autoplay=1"
-                  ></iframe> */}
                 </div>
               </SwiperSlide>
             </Swiper>
@@ -61,7 +56,6 @@ export default function SlideGallery() {
             direction="horizontal"
             slidesPerView={1}
             spaceBetween={0}
-            mousewheel={true}
             breakpoints={{
               0: {
                 direction: "horizontal",

@@ -223,6 +223,7 @@ export const getSpecData = () => {
       content: `Trucks Data is for filtering the perfect truck for your need. We also deals with variety of vehicles.`,
       hasVariant: true,
       tableData: grossTableData,
+      icon:'/icons/truck-wheel.svg'
     },
     {
       id: 'two',
@@ -230,6 +231,7 @@ export const getSpecData = () => {
       title: "Engine Specification",
       content: `Trucks Data is for filtering the perfect truck for your need. We also deals with variety of vehicles.`,
       tableData: engineSpecData,
+      icon:'/icons/engine.png'
     },
     {
       id: 'three',
@@ -237,6 +239,7 @@ export const getSpecData = () => {
       title: "Transmission",
       content: `Trucks Data is for filtering the perfect truck for your need. We also deals with variety of vehicles.`,
       tableData: transmissionSpecData,
+      icon:'/icons/gears.png'
     },
     {
       id: 'four',
@@ -244,6 +247,7 @@ export const getSpecData = () => {
       title: "Chassis Frame & Suspension",
       content: `Trucks Data is for filtering the perfect truck for your need. We also deals with variety of vehicles.`,
       tableData: chasisSpecData,
+      icon:'/icons/suspension.png'
     },
     {
       id: 'five',
@@ -251,6 +255,7 @@ export const getSpecData = () => {
       title: "Steering & Braking",
       content: `Trucks Data is for filtering the perfect truck for your need. We also deals with variety of vehicles.`,
       tableData: steeringSpecData,
+      icon:'/icons/braking.png'
     },
     {
       id: 'six',
@@ -258,6 +263,7 @@ export const getSpecData = () => {
       title: "Tyre Size",
       content: `Trucks Data is for filtering the perfect truck for your need. We also deals with variety of vehicles.`,
       tableData: tyreSpecData,
+      icon:'/icons/wheels.png'
     },
     {
       id: 'seven',
@@ -265,6 +271,8 @@ export const getSpecData = () => {
       title: "Cabin & Electrical",
       content: `Trucks Data is for filtering the perfect truck for your need. We also deals with variety of vehicles.`,
       tableData: cabinSpecData,
+      icon:'/icons/electric-truck.png'
+
     },
     {
       id: 'eight',
@@ -272,6 +280,7 @@ export const getSpecData = () => {
       title: "Endurance",
       content: `Trucks Data is for filtering the perfect truck for your need. We also deals with variety of vehicles.`,
       tableData: enduranceSpecData,
+      icon:'/icons/endurance.png'
     },
     {
       id: 'nine',
@@ -279,12 +288,15 @@ export const getSpecData = () => {
       title: "Other Features",
       content: `Trucks Data is for filtering the perfect truck for your need. We also deals with variety of vehicles.`,
       tableData: otherSpecData,
+      icon:'/icons/tipper.png'
     },
     {
       id: 'ten',
       collapseTarget: "Ten",
       title: "Applications",
       content: `Trucks Data is for filtering the perfect truck for your need. We also deals with variety of vehicles.`,
+      icon:'/icons/pick-up-truck.png'
+    
     },
   ];
 

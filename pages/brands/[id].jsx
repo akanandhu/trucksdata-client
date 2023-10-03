@@ -5,11 +5,10 @@ import Seo from "../../components/common/Seo";
 import Banner from "../../components/destinations/components/Banner";
 import BrandIntro from "../../components/destinations/components/BrandIntro";
 import Categories from "../../components/destinations/components/Categories";
-import DefaultHeader from "../../components/header/default-header";
 import Faq from "../../components/faq/Faq";
 import CallToActions from "../../components/common/CallToActions";
 import DefaultFooter from "../../components/footer/default";
-import UpcomingTrucks from '../../components/trucks/UpcomingTrucks'
+import UpcomingTrucks from "../../components/trucks/UpcomingTrucks";
 import Header1 from "../../components/header/header-8";
 
 const SingleBrand = () => {

@@ -4,41 +4,51 @@ import SpecTable from "./SpecTable";
 import { getSpecData } from "../../../utils/getSpecData";
 
 const SpecificationTable = () => {
-  
-    const specContent = getSpecData()
+  const specContent = getSpecData();
 
   return (
     <>
-      {specContent?.map((item) => (
-        <div className="col-12" key={item.id}>
-          <div className="accordion__item px-20 py-20 border-light rounded-4">
+      
+      <div class="accordion" id="accordionExample">
+        {specContent?.map((item) => (
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button
+                className="d-flex accordion-button shadow-none bg-white text-black"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target={`#${item.collapseTarget}`}
+                aria-expanded="true"
+                // aria-controls="collapseOne"
+              >
+                <div className="me-2" style={{width:'100px' }}>
+                  <img
+                  src={item.icon}
+                  alt={item.id}
+                  width='50px'
+                  />
+                </div>
+                {item.title}
+              </button>
+            </h2>
             <div
-              className="accordion__button d-flex justify-content-between "
-              data-bs-toggle="collapse"
-              data-bs-target={`#${item.collapseTarget}`}
-            >
-              
-              <div className="button text-dark-1 text-start text-16 fw-700 ">{item.title}</div>
-              <div className="accordion__icon size-40 flex-center bg-light-2 rounded-full mr-20">
-                <i className="icon-plus" />
-                <i className="icon-minus" />
-              </div>
-            </div>
-            {/* End accordion button */}
-
-            <div
-              className="accordion-collapse collapse"
               id={item.collapseTarget}
-              data-bs-parent="#Faq1"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingOne"
+              data-bs-parent="#accordionExample"
             >
-              <div className="pt-15 px-lg-4">
-                <SpecTable tableData={item.tableData} hasVariant={item.hasVariant} />
+              <div class="accordion-body">
+                <div className="w-100">
+                  <SpecTable
+                    tableData={item.tableData}
+                    hasVariant={item.hasVariant}
+                  />
+                </div>
               </div>
             </div>
-            {/* End accordion conent */}
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </>
   );
 };

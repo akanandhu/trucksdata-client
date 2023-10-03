@@ -161,23 +161,12 @@ const SinglePage = () => {
       </section>
 
       <section className="pt-40 mb-40 ">
-        <div className="container bg-light-2 p-4 ">
+        <div className="container">
             <h4 className="mb-10">Specifications</h4>
-          <div className="row y-gap-20">
-            
-            <div className="col-lg-12">
-              <div
-                className="accordion -simple row y-gap-20 js-accordion"
-                id="Faq1"
-              >
+          <div className="w-full">              
                 <SpecificationTable />
-              </div>
-            </div>
-            {/* End .col */}
           </div>
-          {/* End .row */}
         </div>
-        {/* End .container */}
       </section>
 
       <section className="mt-40 pt-40">
