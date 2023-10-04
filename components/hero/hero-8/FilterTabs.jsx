@@ -4,6 +4,10 @@ import "react-tabs/style/react-tabs.css";
 import SearchButton from "./SearchButton";
 import DropInput from "./DropInput";
 import { dropdown } from "./DropdownItems";
+import { useDispatch, useSelector } from "react-redux";
+import { addCurrentTab } from "../../../features/hero/findPlaceSlice";
+import MobileTab from "../../search-filter/MobileTab";
+
 function FilterTabs() {
   const itemList = [
     "Manufacturer",
@@ -19,6 +23,9 @@ function FilterTabs() {
     setSearchValue(item.name);
     setSelectedItem(item);
   };
+
+
+
   return (
     <div>
       <Tabs className="tabs -underline-2 js-tabs">
@@ -31,14 +38,7 @@ function FilterTabs() {
             </Tab>
           ))}
         </TabList>
-        <div className="d-lg-none d-md-none px-2">
-          <DropInput
-            title="Type"
-            // item={item}
-            placeHolder="Select Type"
-            dropdownDetails={dropdown}
-          />
-        </div>
+        <MobileTab />
         {/* End tab-controls */}
         <div className="tabs__content js-tabs-content">
           {dropdown.map((item) => (

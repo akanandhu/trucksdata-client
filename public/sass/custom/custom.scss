@@ -1,0 +1,35 @@
+$font-size-xl: 30px;
+$font-size-small: 18px; 
+
+.search-font-custom {
+  font-size: $font-size-xl; 
+  
+  @media (max-width: 1199px) { 
+    font-size: $font-size-xl; 
+  }
+
+  @media (max-width: 991px) { 
+    font-size: $font-size-xl - 2px; 
+  }
+
+  @media (max-width: 767px) { 
+    font-size: $font-size-small;  
+  }
+} 
+
+.custom-padding-search {
+ padding: 40px 0px 40px 0px !important;
+ @media (max-width: 1199px) { 
+  padding: 40px 0px 40px 0px !important;
+}
+
+@media (max-width: 991px) { 
+  font-size: $font-size-xl - 2px; 
+}
+
+@media (max-width: 767px) { 
+  padding: 8px 0px 8px 0px !important;
+ 
+}
+   
+}

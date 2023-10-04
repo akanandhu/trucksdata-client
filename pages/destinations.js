@@ -79,12 +79,10 @@ const Destinations = () => {
             <div className="col-auto">
               <div className="sectionTitle -md">
                 <h2 className="sectionTitle__title">Recommended Trucks By Barath Benz</h2>
-                {/* <p className=" sectionTitle__text mt-5 sm:mt-0">
-                  Interdum et malesuada fames ac ante ipsum
-                </p> */}
+                
               </div>
             </div>
-            {/* End .col */}
+            
 
             <div className="col-auto">
               <Link

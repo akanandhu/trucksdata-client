@@ -9,7 +9,7 @@ const CompareTwoVehicleBox = ({ item }) => {
   return (
     <div className="border-light">
       <Link
-        href={`/car/car-single/${item.id}`}
+        href={`/compare`}
         className="carCard -type-1 d-flex rounded-4 hover-inside-slider "
       >
         <div

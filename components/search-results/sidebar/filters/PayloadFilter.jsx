@@ -1,22 +1,22 @@
 import React from "react";
-import FilterCheckbox from "./FilterCheckbox";
+import ButtonFilter from "../../../hero/hero-8/FilterButtons";
 
 const payloadData = [
   {
     label: "7650",
-    count: 330,
+    value: 330,
   },
   {
     label: "7570",
-    count: 1,
+    value: 1,
   },
   {
     label: "7525",
-    count: 20,
+    value: 20,
   },
   {
     label: "7445",
-    count: 111,
+    value: 111,
   },
 ];
 
@@ -25,7 +25,7 @@ const PayloadFilter = () => {
     <div className="sidebar__item">
       <h5 className="text-18 fw-500 mb-10">Payload (Range)(Kg)</h5>
       <div className="sidebar-checkbox">
-        <FilterCheckbox filters={payloadData} />
+        <ButtonFilter filters={payloadData} label={"Payload (Range)(Kg)"} />
       </div>
     </div>
   );

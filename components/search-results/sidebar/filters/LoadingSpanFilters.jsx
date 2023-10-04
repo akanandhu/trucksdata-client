@@ -1,23 +1,25 @@
 import React from "react";
 import FilterCheckbox from "./FilterCheckbox";
+import ButtonFilter from "../../../hero/hero-8/FilterButtons";
 
 const loadingSpanFilters = [
   {
     label: "15",
-    count: 20,
+    value: 20,
   },
   {
     label: "17",
-    count: 50,
+    value: 50,
   },
   {
     label: "20.1",
-    count: 60,
+    value: 60,
   },
   {
     label: "20.9",
-    count: 10,
+    value: 10,
   },
+  
 ];
 
 const LoadingSpanFilters = () => {
@@ -27,7 +29,7 @@ const LoadingSpanFilters = () => {
         Loading Span (ft) / Loading Capacity (Cu.M)
       </h5>
       <div className="sidebar-checkbox">
-          <FilterCheckbox filters={loadingSpanFilters} />
+          <ButtonFilter filters={loadingSpanFilters} label={'Loading Span (ft) / Loading Capacity (Cu.M)'}  />
       </div>
     </div>
   );

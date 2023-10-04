@@ -25,21 +25,20 @@ const toastStyles = {
 };
 
 const SearchResultsPage = () => {
-
-  const [show, setShow] = useState(false)
+  const [show, setShow] = useState(false);
   function handleCompareExceed() {
     toast.error("Maximum of three vehicles selected", {
       ...toastStyles,
     });
   }
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   useEffect(() => {
     return () => {
-        dispatch(clearAllCompare());
+      dispatch(clearAllCompare());
     };
-  },[dispatch])
+  }, [dispatch]);
 
   return (
     <>
@@ -51,12 +50,12 @@ const SearchResultsPage = () => {
       <Header8 />
       {/* End Header 1 */}
 
-      <section className="pt-40 pb-40 bg-light-2">
+      <section className="pb-40 pt-40 bg-light-2">
         <div className="container">
           <div className="row">
             <div className="col-12">
               <div className="text-center">
-                <h1 className="text-30 fw-600">
+                <h1 className="fw-600 search-font-custom  ">
                   Filter out the Truck of your need!
                 </h1>
               </div>
@@ -71,11 +70,11 @@ const SearchResultsPage = () => {
       </section>
       {/* Top SearchBanner */}
 
-      <section className="layout-pt-md layout-pb-lg">
+      <section className="layout-pt-md layout-pb-lg ">
         <div className="container">
           <div className="row y-gap-30">
             <div className="col-xl-3">
-              <aside className="sidebar y-gap-40 xl:d-none">
+              <aside className="sidebar y-gap-40 xl:d-none ">
                 <Sidebar />
               </aside>
 
@@ -97,8 +96,8 @@ const SearchResultsPage = () => {
                 </div>
                 {/* End offcanvas header */}
 
-                <div className="offcanvas-body">
-                  <aside className="sidebar y-gap-40  xl:d-block">
+                <div className="offcanvas-body ">
+                  <aside className="sidebar y-gap-40   xl:d-block">
                     <Sidebar />
                   </aside>
                 </div>
@@ -107,15 +106,17 @@ const SearchResultsPage = () => {
               {/* End mobile menu sidebar */}
             </div>
             {/* End col */}
-      <CompareBar />
-
+            <CompareBar />
 
             <div className="col-xl-9 ">
               <TopHeaderFilter />
               <div className="mt-30"></div>
               {/* End mt--30 */}
               <div className="row y-gap-30">
-                <SearchResults showError={handleCompareExceed} setShow={setShow} />
+                <SearchResults
+                  showError={handleCompareExceed}
+                  setShow={setShow}
+                />
               </div>
               {/* End .row */}
             </div>

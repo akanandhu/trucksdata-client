@@ -1,29 +1,30 @@
 import React from "react";
 import FilterCheckbox from "./FilterCheckbox";
+import ButtonFilter from "../../../hero/hero-8/FilterButtons";
 
 const VariantFilter = () => {
   const variantData = [
     {
       label: "CBC",
-      count: 20,
+      value: 20,
     },
     {
       label: "FSD",
-      count: 100,
+      value: 100,
     },
     {
       label: "HSD",
-      count: 120,
+      value: 120,
     },
   ];
 
   return (
     <div className="sidebar__item">
-      <h5 className="text-18 fw-500 mb-10">Variant Options</h5>
-      <div className="sidebar-checkbox">
-        <FilterCheckbox filters={variantData} />
-      </div>
+    <h5 className="text-18 fw-500 mb-10">Variant Options</h5>
+    <div className="sidebar-checkbox">
+      <ButtonFilter filters={variantData} label={"Chassis Options"} />
     </div>
+  </div>
   );
 };
 

@@ -1,5 +1,6 @@
 import React from "react";
 import FilterCheckbox from "./FilterCheckbox";
+import ButtonFilter from "../../../hero/hero-8/FilterButtons";
 
 const axelData = [
   {
@@ -11,11 +12,10 @@ const axelData = [
 const AxelFilter = () => {
   return (
     <div className="sidebar__item">
-      <h5 className="text-18 fw-500 mb-10">Axle Configuartion</h5>
+      <h5 className="text-18 fw-500 mb-10">Axel Configuration</h5>
       <div className="sidebar-checkbox">
-        <FilterCheckbox filters={axelData} />
+        <ButtonFilter filters={axelData} label={"Axel Configuration"} />
       </div>
-      {/* End Sidebar-checkbox */}
     </div>
   );
 };
