@@ -11,7 +11,7 @@ const SpecificationTable = () => {
       
       <div class="accordion" id="accordionExample">
         {specContent?.map((item) => (
-          <div class="accordion-item">
+          <div key={item.id} class="accordion-item">
             <h2 class="accordion-header" id="headingOne">
               <button
                 className="d-flex accordion-button shadow-none bg-white text-black"
