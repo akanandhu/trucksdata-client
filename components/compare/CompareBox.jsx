@@ -5,6 +5,7 @@ import TopFilter from "../top-brands/TopFilter";
 import CompareTwoVehiclesCard from "./CompareTwoVehiclesCard";
 import CompareVehicles from "./CompareVehicles";
 import SpecificationTable from "../details/specification-table/SpecificationTable";
+import CompareTable from "./CompareTable";
 
 const CompareBox = () => {
   const item = {
@@ -79,7 +80,7 @@ const CompareBox = () => {
       </div>
 
       <div className="mt-40 view_bordershadow   p-2 ">
-        <SpecificationTable />
+        <CompareTable  />
       </div>
 
       <div className="mt-40 view_bordershadow ">

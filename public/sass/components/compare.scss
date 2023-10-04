@@ -1,3 +1,11 @@
 .compareCard {
     padding-top: 120px;
 }
+
+
+.text-custom-responsive {
+    white-space: wrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide overflow text if needed */
+    text-overflow: ellipsis; /* Show ellipsis (...) for overflow text */
+  }
+  
