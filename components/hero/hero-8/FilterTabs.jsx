@@ -24,16 +24,17 @@ function FilterTabs() {
     setSelectedItem(item);
   };
 
-
-
   return (
     <div>
       <Tabs className="tabs -underline-2 js-tabs">
         <TabList className="sm:d-none md:d-none tabs__controls row x-gap-40 y-gap-10 lg:x-gap-20 pb-30 js-tabs-controls">
           {dropdown.map((item, i) => (
             <Tab className="col-auto" key={i}>
-              <button className="tabs__button text-light-1 fw-500 js-tabs-button">
-                {item.tabItem}
+              <button className="pb-2 tabs__button text-light-1 fw-500 js-tabs-button d-flex align-items-center">
+                <div className="w-25">
+                  <img src={item?.icon} alt="icons" width="50px" />
+                </div>
+                <div className="ps-2">{item.tabItem}</div>
               </button>
             </Tab>
           ))}

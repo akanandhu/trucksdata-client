@@ -46,9 +46,12 @@ const DetailBox = () => {
       })}
 
       <div className="col-12">
-        <button className="button -dark-1 py-15 px-35 h-60 col-12 rounded-4 bg-yellow-1 text-dark-1">
+        <button className="d-flex button -dark-1 py-15 px-35 h-60 col-12 rounded-4 bg-yellow-1 text-dark-1">
           {/* <i className="icon-search text-20 mr-10" /> */}
-          Download Brochure
+          <div className="w-25">
+            <img src="/icons/download.png" alt="download" width="19px" />
+          </div>
+          <div>Download Brochure</div>
         </button>
 
         {/* End search button_item */}

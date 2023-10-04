@@ -1,12 +1,11 @@
 import { BiSolidFactory } from "react-icons/bi";
 import { FaTruckMoving } from "react-icons/fa";
 
-
-
 const dropdown = [
   {
     id: 1,
     tabItem: "Manufacturer",
+    icon: "/icons/manufacturer.png",
     dropdownItem: [
       {
         title: "Manufacturer",
@@ -77,6 +76,7 @@ const dropdown = [
   {
     id: 2,
     tabItem: "Body Type",
+    icon: "/icons/big-truck.png",
     dropdownItem: [
       {
         title: "Body Type",
@@ -147,6 +147,7 @@ const dropdown = [
   {
     id: 3,
     tabItem: "Application",
+    icon: "/icons/pick-up-truck.png",
     dropdownItem: [
       {
         title: "Body Type",
@@ -217,6 +218,7 @@ const dropdown = [
   {
     id: 4,
     tabItem: "GVW",
+    icon: "/icons/weight.svg",
     dropdownItem: [
       {
         title: "Body Type",
@@ -287,6 +289,7 @@ const dropdown = [
   {
     id: 5,
     tabItem: "Power Source",
+    icon: "/icons/diesel.png",
     dropdownItem: [
       {
         title: "Body Type",
