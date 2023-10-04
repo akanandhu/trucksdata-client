@@ -7,7 +7,7 @@ import Header1 from "../../components/header/header-8";
 
 const ComparePage = () => {
     return (
-        <div className="position-relative  ">
+        <div className="position-relative   ">
             <Seo  pageTitle={'Compare'} />
             <div className="header-margin"></div>
             <Header1 />

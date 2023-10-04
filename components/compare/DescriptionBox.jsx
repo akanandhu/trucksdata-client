@@ -12,12 +12,12 @@ const DescriptionBox = () => {
 
   return (
     <div
-      className="col-lg-12 container"
+      className="col-lg-12 container "
       key={item.id}
       data-aos="fade"
       data-aos-delay={item.delayAnimation}
     >
-      <div className="rounded-4 border-light">
+      <div className="rounded-4 view_bordershadow">
         <div className="d-flex flex-wrap y-gap-30">
           <div className="col-auto"></div>
           <div className="col">
