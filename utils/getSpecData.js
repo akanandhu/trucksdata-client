@@ -223,7 +223,7 @@ export const getSpecData = () => {
       content: `Trucks Data is for filtering the perfect truck for your need. We also deals with variety of vehicles.`,
       hasVariant: true,
       tableData: grossTableData,
-      icon:'/icons/truck-wheel.svg'
+      icon:'/icons/delivery-truck.png'
     },
     {
       id: 'two',

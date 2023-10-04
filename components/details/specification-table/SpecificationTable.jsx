@@ -9,26 +9,30 @@ const SpecificationTable = () => {
   return (
     <>
       
-      <div class="accordion" id="accordionExample">
-        {specContent?.map((item) => (
-          <div key={item.id} class="accordion-item">
-            <h2 class="accordion-header" id="headingOne">
+      <div class="accordion lg:lh-1" id="accordionExample">
+        {specContent?.map((item,i) => (
+          <div class={i === specContent.length-1 ? 
+          "accordion-item border-top-0 border-start-0 border-end-0 border-bottom-0" : 
+          "accordion-item border-top-0 border-start-0 border-end-0"}>
+            <h2 class="accordion-header text-wrap " id="headingOne">
               <button
-                className="d-flex accordion-button shadow-none bg-white text-black"
+                className="d-flex accordion-button shadow-none bg-white text-black title_fontsize"
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target={`#${item.collapseTarget}`}
                 aria-expanded="true"
                 // aria-controls="collapseOne"
               >
-                <div className="me-2" style={{width:'100px' }}>
+                <div className="me-0" style={{width:'50px' }}>
                   <img
                   src={item.icon}
                   alt={item.id}
-                  width='50px'
+                  // width='50px'
                   />
                 </div>
+                <div className="mx-50 w-75" style={{paddingLeft:'5%'}}>
                 {item.title}
+                </div>
               </button>
             </h2>
             <div
@@ -37,7 +41,7 @@ const SpecificationTable = () => {
               aria-labelledby="headingOne"
               data-bs-parent="#accordionExample"
             >
-              <div class="accordion-body">
+              <div class="accordion-body ">
                 <div className="w-100">
                   <SpecTable
                     tableData={item.tableData}

@@ -160,11 +160,15 @@ const SinglePage = () => {
         {/* </div> */}
       </section>
 
-      <section className="pt-40 mb-40 ">
-        <div className="container">
+      <section className="pt-40 mb-40 container">
+        <div className="view_bordershadow">
+          <div className="container pt-20 pb-20 lg:px-30 sm:px-0">
+            <div className="ms-3">
             <h4 className="mb-10">Specifications</h4>
-          <div className="w-full">              
-                <SpecificationTable />
+            </div>
+            <div className="w-100">
+              <SpecificationTable />
+            </div>
           </div>
         </div>
       </section>
@@ -178,8 +182,6 @@ const SinglePage = () => {
         </div>
       </section>
       {/* End Map */}
-
-      
 
       <section className="pt-40 mb-40">
         <div className="container ">

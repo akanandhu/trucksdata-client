@@ -2,7 +2,7 @@ const SpecTable = ({hasVariant, tableData}) => {
 
     return (
     <div className="overflow-scroll scroll-bar-1">
-      <table className="table">
+      <table className="table table-responsive" >
         {hasVariant && 
         <thead>
           <tr >
@@ -13,14 +13,14 @@ const SpecTable = ({hasVariant, tableData}) => {
             <th>Option 4</th>
           </tr>
         </thead>}
-        <tbody>
+        <tbody >
           {tableData?.map((row, index) => (
-            <tr key={index}>
-              <td className="fw-500">{row.item}</td>
-              <td className="fw-300">{row.option_one}</td>
-              {hasVariant && <td className="fw-400">{row.option_two}</td>}
-              {hasVariant &&<td className="fw-400">{row.option_three}</td>}
-              {hasVariant &&<td className="fw-400">{row.option_four}</td>}
+            <tr key={index} >
+              <td className="fw-500 view_tablefontsize">{row.item}</td>
+              <td className="fw-300 view_tablefontsize">{row.option_one}</td>
+              {hasVariant && <td className="fw-400 view_tablefontsize">{row.option_two}</td>}
+              {hasVariant &&<td className="fw-400 view_tablefontsize">{row.option_three}</td>}
+              {hasVariant &&<td className="fw-400 view_tablefontsize">{row.option_four}</td>}
             </tr>
           ))}
         </tbody>
