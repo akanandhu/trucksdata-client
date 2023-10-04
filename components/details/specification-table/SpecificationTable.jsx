@@ -11,7 +11,7 @@ const SpecificationTable = () => {
       
       <div class="accordion lg:lh-1" id="accordionExample">
         {specContent?.map((item,i) => (
-          <div class={i === specContent.length-1 ? 
+          <div key={i} class={i === specContent.length-1 ? 
           "accordion-item border-top-0 border-start-0 border-end-0 border-bottom-0" : 
           "accordion-item border-top-0 border-start-0 border-end-0"}>
             <h2 class="accordion-header text-wrap " id="headingOne">
