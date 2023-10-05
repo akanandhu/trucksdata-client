@@ -43,18 +43,20 @@ const BlogSingleDynamic = () => {
       <section className="layout-pt-md layout-pb-md">
         <div className="container">
           <div className="row y-gap-40 justify-center text-center">
-            <div className="col-auto">
-              
-              <h1 className="text-30 fw-600">{blog?.title}</h1>
-              <div className="text-15 text-light-1 mt-10">{blog?.date}</div>
-            </div>
             <div className="col-12">
               <img
                 src={blog?.img}
                 alt={blog?.title}
-                className="col-12 rounded-8 w-100 img_large_details"
+                className="col-12 rounded-8 w-100 img_"
               />
             </div>
+          </div>
+          <div className="row y-gap-30 justify-center">
+            <div className="col-xl-8 col-lg-10 layout-pt-md">
+            <h1 className="text-30 fw-600">{blog?.title}</h1>
+            <div className="text-15 text-light-1 mt-10">{blog?.date}</div>
+            </div>
+            
           </div>
           {/* End .row top bar image and title */}
 
@@ -62,7 +64,6 @@ const BlogSingleDynamic = () => {
             <div className="col-xl-8 col-lg-10 layout-pt-md">
               <DetailsContent />
               {/* Details content */}
-
             </div>
             {/* End .col */}
           </div>
