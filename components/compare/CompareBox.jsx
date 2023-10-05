@@ -26,7 +26,7 @@ const CompareBox = () => {
 
   return (
     <div
-      className="col-lg-12 container compareCard   "
+      className="col-lg-12 container    "
       key={item.id}
       // data-aos="fade"
       // data-aos-delay={item.delayAnimation}

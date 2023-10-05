@@ -60,7 +60,7 @@ const CompareInput = () => {
                 onClick={() => handleOptionClick(item)}
               >
                 <div className="d-flex">
-                  <div className="icon-location-2 text-light-1 text-20 pt-4" />
+                  <div className="icon-car text-light-1 text-20 pt-4" />
                   <div className="ml-10">
                     <div className="text-15 lh-12 fw-500 js-search-option-target">
                       {item.model}

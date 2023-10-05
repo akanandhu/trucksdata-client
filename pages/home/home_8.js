@@ -61,7 +61,7 @@ const home_8 = () => {
       </section>
       {/* Popular Car Hire Sections */}
 
-      <section className="layout-pt-md layout-pb-lg">
+      <section className=" layout-pb-lg">
         <div className="container">
           <div className="row y-gap-20 justify-center text-center">
             <div className="col-auto">
@@ -88,7 +88,7 @@ const home_8 = () => {
 
       <CompareVehicles filterOptions={filterOptions} />
 
-      <section className="layout-pt-md layout-pb-md">
+      <section className=" layout-pb-md">
         <div className="container">
           <div className="row y-gap-20 justify-center text-center">
             <div className="col-auto">

@@ -1,17 +1,11 @@
 import React, { useEffect, useState } from "react";
 import CallToActions from "../../../components/common/CallToActions";
 import Seo from "../../../components/common/Seo";
-import DefaultHeader from "../../../components/header/default-header";
 import DefaultFooter from "../../../components/footer/default";
-import LocationTopBar from "../../../components/common/LocationTopBar";
 import RelatedBlog from "../../../components/blog/blog-details/RelatedBlog";
 import blogsData from "../../../data/blogs";
 import { useRouter } from "next/router";
 import DetailsContent from "../../../components/blog/blog-details/DetailsContent";
-import FormReply from "../../../components/blog/blog-details/FormReply";
-import TopComment from "../../../components/blog/blog-details/TopComment";
-import BlogNavigator from "../../../components/blog/blog-details/BlogNavigator";
-import Comments from "../../../components/blog/blog-details/Comments";
 import Header1 from "../../../components/header/header-8";
 
 const BlogSingleDynamic = () => {

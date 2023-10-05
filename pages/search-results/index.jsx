@@ -100,12 +100,25 @@ const SearchResultsPage = () => {
                   <aside className="sidebar y-gap-40   xl:d-block">
                     <Sidebar />
                   </aside>
+                  
                 </div>
-                {/* End offcanvas body */}
+                <div class="offcanvas-footer mt-3 p-2 border-light  d-flex justify-content-end gap-3 sticky-bottom    sticky-bottom   ">
+                    <button type="button"  className="btn btn-primary w-25 "
+                      data-bs-dismiss="offcanvas"
+                      >
+                      Apply
+                    </button>
+                    <button
+                      type="button"
+                      className="btn btn-secondary w-25"
+                      data-bs-dismiss="offcanvas"
+
+                    >
+                      Cancel
+                    </button>
+                  </div>
               </div>
-              {/* End mobile menu sidebar */}
             </div>
-            {/* End col */}
             <CompareBar />
 
             <div className="col-xl-9 ">

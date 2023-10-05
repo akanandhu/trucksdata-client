@@ -5,7 +5,7 @@ import CompareTwoVehiclesCard from "./CompareTwoVehiclesCard";
 
 const CompareVehicles = ({filterOptions}) => {
   return (
-    <section className="layout-pt-md layout-pb-md">
+    <section className=" layout-pb-md">
       <div className="container">
         <div className="row y-gap-20 justify-center text-center">
           <div className="col-auto">
