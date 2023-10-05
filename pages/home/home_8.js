@@ -75,8 +75,8 @@ const home_8 = () => {
           </div>
           {/* End .row */}
 
-          <div className="row y-gap-30 pt-40 item_gap-x30 ">
-            <div className="tabs -pills-2 pt-12">
+          <div className="row y-gap-30 pt-40 item_gap-x30  ">
+            <div className="tabs -pills-2 pt-12 ">
               <TopFilter filterOptions={filterOptions} />
             </div>
             <TopBrands />
@@ -87,7 +87,6 @@ const home_8 = () => {
       </section>
 
       <CompareVehicles filterOptions={filterOptions} />
-      
 
       <section className="layout-pt-md layout-pb-md">
         <div className="container">

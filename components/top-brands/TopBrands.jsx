@@ -80,7 +80,7 @@ const TopBrands = () => {
     <Slider {...settings}>
       {topBrands.map((item) => (
         <div
-          className="col-xl-2  col-lg-3 col-sm-8 border border-light-1 border-2  p-3 rounded-3"
+          className="col-xl-2  col-lg-3 col-sm-8 border border-light-1 border-2  p-3 rounded-3 "
           key={item.id}
           data-aos="fade"
           data-aos-delay={item.delayAnimation}

@@ -22,7 +22,7 @@ const Header1 = () => {
 
   useEffect(() => {
     window.addEventListener("scroll", changeBackground);
-  }, [])
+  }, []);
 
   function handleCompareRoute() {
     router.push("/compare");
@@ -101,13 +101,11 @@ const Header1 = () => {
 
                 {/* Start mobile menu icon */}
                 <div className="d-none xl:d-flex x-gap-20 items-center pl-30">
-                  <div>
-                    <Link
-                      href="/others-pages/login"
-                      className="d-flex items-center text-inherit text-22"
-                    >
-                      <MdOutlineCompare />
-                    </Link>
+                  <div
+                    className="d-flex items-center text-inherit text-22"
+                    onClick={handleCompareRoute}
+                  >
+                    <MdOutlineCompare />
                   </div>
                   <div>
                     <button
