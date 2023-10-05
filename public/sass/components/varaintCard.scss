@@ -1,0 +1,80 @@
+.shadow-common {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  border: 0.25px #ddd;
+}
+
+.truck-card {
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  border: 0.25px #ddd;
+  overflow: hidden;
+  transition: transform 0.2s;
+  margin-bottom: 20px;
+  max-width: 300px;
+}
+
+.truck-card:hover {
+  transform: scale(1.03);
+}
+
+.truck-card__image {
+  position: relative;
+}
+
+.truck-card img {
+  width: 100%;
+  height: auto;
+}
+
+.truck-card__content {
+  padding: 15px;
+}
+
+.truck-card__title {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.truck-card__description {
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.truck-card__details {
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem;
+  color: #777;
+  margin-bottom: 3px;
+}
+
+.truck-card__location,
+.truck-card__type {
+  margin-right: 10px;
+}
+
+.truck-card__divider {
+  width: 4px;
+  height: 4px;
+  background-color: #777;
+  border-radius: 50%;
+  margin: 0 10px;
+}
+
+.truck-card__price-range {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.truck-card__price-label {
+  margin-right: 5px;
+}
+
+.truck-card__price {
+  color: #ff6600;
+}
