@@ -39,92 +39,61 @@ const UpcomingTrucks = () => {
         {trucksData.slice(0, 8).map((item) => (
           <SwiperSlide key={item.id}>
             <Link
-                href={`/details/${item.id}`}
-                className="carCard -type-1 d-block rounded-4 hover-inside-slider"
-              >
-            <div
-              key={item?.id}
-              data-aos="fade"
-              data-aos-delay={item?.delayAnimation}
+              href={`/details/${item.id}`}
+              className="carCard -type-1 d-block rounded-4 hover-inside-slider"
             >
-              
-                <div className="carCard__image">
-                  <div className="cardImage ratio border-light ratio-6:5">
-                    <div className="cardImage__content custom_inside-slider">
-                      <Swiper
-                        className="mySwiper"
-                        modules={[Pagination, Navigation]}
-                        pagination={{
-                          clickable: true,
-                        }}
-                        navigation={true}
-                      >
-                        {item?.slideImg?.map((slide, i) => (
-                          <SwiperSlide key={i}>
-                            <Image
-                              width={300}
-                              height={300}
-                              className="rounded-4 col-12 js-lazy"
-                              src={slide}
-                              alt="image"
-                            />
-                          </SwiperSlide>
-                        ))}
-                      </Swiper>
-                    </div>
-                  </div>
-                  {/* End cartImage */}
+              <div
+                key={item?.id}
+                data-aos="fade"
+                data-aos-delay={item?.delayAnimation}
+                className="truck-card"
+              >
+                <div className="truck-card__image">
+                  <Swiper
+                    className="mySwiper"
+                    modules={[Pagination, Navigation]}
+                    pagination={{
+                      clickable: true,
+                    }}
+                    navigation={true}
+                  >
+                    {item?.slideImg?.map((slide, i) => (
+                      <SwiperSlide key={i}>
+                        <img
+                          width={300}
+                          height={300}
+                          className="rounded-4 col-12 js-lazy"
+                          src={slide}
+                          alt="image"
+                        />
+                      </SwiperSlide>
+                    ))}
+                  </Swiper>
+                </div>
 
-                  {/* <div className="cardImage__wishlist">
-                    <button className="button -blue-1 bg-white size-30 rounded-full shadow-2">
-                      <i className="icon-heart text-12" />
+                <div className="truck-card__content">
+                  <div className="truck-card__details">
+                    <div className="truck-card__location">{item?.location}</div>
+                    <div className="truck-card__divider" />
+                    <div className="truck-card__type">{item?.type}</div>
+                  </div>
+                  <h4 className="truck-card__title ">{item?.title}</h4>
+
+                  <div className="truck-card__price-range">
+                    <span className="truck-card__price text-blue-1">
+                      ₹75,00,000{" "}
+                    </span>
+                    <span className="truck-card__price-label text-13 text-secondary ">
+                      Onwards
+                    </span>
+                  </div>
+                  <div className="d-flex w-auto mt-5 ">
+                    <button className=" btn btn-primary d-flex justify-content-center   flex-grow-1 text-center  ">
+                      View More
                     </button>
-                  </div> */}
-
-                  <div className="cardImage__leftBadge">
-                    <div
-                      className={`py-5 px-15 rounded-right-4 text-12 lh-16 fw-500 uppercase  ${
-                        isTextMatched(item?.tag, "best seller")
-                          ? "bg-blue-1 text-white"
-                          : ""
-                      }`}
-                    >
-                      {item?.tag}
-                    </div>
-                  </div>
-                </div>
-              {/* End .tourCard__image */}
-
-              <div className="carCard__content mt-10">
-                <h4 className="text-dark-1 text-18 lh-16 fw-500">
-                  {item?.title}{" "}
-                </h4>
-                <p className="text-light-1 lh-14 text-14 mt-5" />
-                <div className="d-flex items-center lh-14 ">
-                  <div className="text-14 text-light-1">{item?.location}</div>
-                  <div className="size-3 bg-light-1 rounded-full ml-10 mr-10" />
-                  <div className="text-14 text-light-1 uppercase">
-                    {item?.type}
-                  </div>
-                </div>
-
-                {/* End .row */}
-                <div className="d-flex align-content-center align-items-center justify-content-between  ">
-                  <div>
-                    <div className="mt-5">
-                      <div className="text-light-1 text-14">
-                       
-                        <span className="fw-600 text-20 text-dark-1">
-                          ₹ 45,00,000 - ₹ 85,00,000
-                        </span>{" "}
-                        
-                      </div>
-                    </div>
                   </div>
                 </div>
               </div>
-
-            </div>
             </Link>
 
           </SwiperSlide>

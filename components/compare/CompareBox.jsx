@@ -26,15 +26,15 @@ const CompareBox = () => {
 
   return (
     <div
-      className="col-lg-12 container    "
+      className="col-lg-12 container  mt-40   "
       key={item.id}
       // data-aos="fade"
       // data-aos-delay={item.delayAnimation}
     >
-      <div className="rounded-4 layout-pt-md layout-pb-md  view_bordershadow  ">
+      <div className="rounded-4 layout-pt-md  layout-pb-md  view_bordershadow bg-white  ">
         <div className="d-flex flex-wrap y-gap-30   ">
           <div className="col-auto"></div>
-          <div className="col  ">
+          <div className="col d-xs-none d-md-block  ">
             <div className="d-flex gap-1 flex-column justify-center h-full px-30 py-20 ">
               <div className="rounded-4">
                 <ComparePlusButton />
@@ -75,15 +75,15 @@ const CompareBox = () => {
           </div>
         </div>
         <div className="d-flex justify-content-center py-20 ">
-          <button className="btn btn-primary w-25 ">Compare</button>
+          <button className="btn btn-primary w-25  ">Compare</button>
         </div>
       </div>
 
-      <div className="mt-40 view_bordershadow   p-2 ">
+      <div className="mt-40 view_bordershadow bg-white    p-2 ">
         <CompareTable  />
       </div>
 
-      <div className="mt-40 view_bordershadow ">
+      <div className="mt-40 view_bordershadow mb-40 ">
         <CompareVehicles filterOptions={filterOptions} />
       </div>
     </div>

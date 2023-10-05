@@ -134,7 +134,7 @@ const SinglePage = () => {
       </section>
 
       <section className="pt-40">
-        <div className="container">
+        <div className="container ">
           {/* <div className="row"> */}
           <div className="md:col sm:col row">
             {/* <div className="d-flex justify-content-center"> */}

@@ -13,6 +13,7 @@ import { useState, useEffect } from "react";
 import CompareBar from "../../components/compare-bar/CompareBar";
 import { useDispatch } from "react-redux";
 import { clearAllCompare } from "../../features/compare/compareSlice";
+import SearchResultsMobile from "../../components/search-results/results/SearchResultsMobile";
 
 const toastStyles = {
   icon: "🚚",
@@ -100,23 +101,23 @@ const SearchResultsPage = () => {
                   <aside className="sidebar y-gap-40   xl:d-block">
                     <Sidebar />
                   </aside>
-                  
                 </div>
                 <div class="offcanvas-footer mt-3 p-2 border-light  d-flex justify-content-end gap-3 sticky-bottom    sticky-bottom   ">
-                    <button type="button"  className="btn btn-primary w-25 "
-                      data-bs-dismiss="offcanvas"
-                      >
-                      Apply
-                    </button>
-                    <button
-                      type="button"
-                      className="btn btn-secondary w-25"
-                      data-bs-dismiss="offcanvas"
-
-                    >
-                      Cancel
-                    </button>
-                  </div>
+                  <button
+                    type="button"
+                    className="btn btn-primary w-25 "
+                    data-bs-dismiss="offcanvas"
+                  >
+                    Apply
+                  </button>
+                  <button
+                    type="button"
+                    className="btn btn-secondary w-25"
+                    data-bs-dismiss="offcanvas"
+                  >
+                    Cancel
+                  </button>
+                </div>
               </div>
             </div>
             <CompareBar />
@@ -125,11 +126,14 @@ const SearchResultsPage = () => {
               <TopHeaderFilter />
               <div className="mt-30"></div>
               {/* End mt--30 */}
-              <div className="row y-gap-30">
+              <div className="row y-gap-30 xl:d-none   ">
                 <SearchResults
                   showError={handleCompareExceed}
                   setShow={setShow}
                 />
+              </div>
+              <div className="row y-gap-30 d-md-none d-flex justify-content-center   ">
+                <SearchResultsMobile />
               </div>
               {/* End .row */}
             </div>

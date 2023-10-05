@@ -15,6 +15,12 @@
   max-width: 300px;
 }
 
+@media (max-width: 767px) {
+    .truck-card {
+      max-width: 100%; /* Change max-width to 100% on mobile screens */
+    }
+  }
+
 .truck-card:hover {
   transform: scale(1.03);
 }
