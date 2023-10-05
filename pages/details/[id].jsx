@@ -140,11 +140,11 @@ const SinglePage = () => {
             {/* <div className="d-flex justify-content-center"> */}
             {/* <h3 className="text-22 fw-500">Property highlights</h3> */}
             <div className="col-lg-8">
-              <div className="view_bordershadow ps-4 pe-4 pt-15 pb-15">
+              <div className="view_bordershadow ps-4 pe-4 pt-15 pb-15 bg-white">
                 <h6 className="fw-500 text-22">Highlights</h6>
                 <SpecHighlights />
               </div>
-              <div className="mt-30 view_bordershadow ps-4 pe-4 pt-15 pb-15">
+              <div className="mt-30 view_bordershadow ps-4 pe-4 pt-15 pb-15 bg-white">
                 <h6 className="fw-500 text-22">Specifications</h6>
                 <Specifications />
               </div>
@@ -161,7 +161,7 @@ const SinglePage = () => {
       </section>
 
       <section className="pt-40 mb-40 container">
-        <div className="view_bordershadow">
+        <div className="view_bordershadow bg-white">
           <div className="container pt-20 pb-20 lg:px-30 sm:px-0">
             <div className="ms-3">
               <h4 className="mb-10">Specifications</h4>

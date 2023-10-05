@@ -5,7 +5,7 @@ const dropdown = [
   {
     id: 1,
     tabItem: "Manufacturer",
-    icon: "/icons/manufacturer.png",
+    icon: "/icons/manufacture.png",
     dropdownItem: [
       {
         title: "Manufacturer",
@@ -218,7 +218,7 @@ const dropdown = [
   {
     id: 4,
     tabItem: "GVW",
-    icon: "/icons/weight.svg",
+    icon: "/icons/weighing.png",
     dropdownItem: [
       {
         title: "Body Type",

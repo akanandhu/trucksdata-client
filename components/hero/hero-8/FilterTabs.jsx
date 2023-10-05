@@ -30,7 +30,7 @@ function FilterTabs() {
         <TabList className="sm:d-none md:d-none tabs__controls row x-gap-40 y-gap-10 lg:x-gap-20 pb-30 js-tabs-controls">
           {dropdown.map((item, i) => (
             <Tab className="col-auto" key={i}>
-              <button className="pb-2 tabs__button text-light-1 fw-500 js-tabs-button d-flex align-items-center">
+              <button className="pb-2 tabs__button text-light-1 fw-500 js-tabs-button d-flex">
                 <div className="w-25">
                   <img src={item?.icon} alt="icons" width="50px" />
                 </div>

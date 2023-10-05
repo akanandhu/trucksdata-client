@@ -21,29 +21,31 @@ const SingleBrand = () => {
       <Header1 />
       <LocationTopBar />
 
-      <section className="layout-pb-md">
+      <section className="layout-pb-sm">
         <div className="container">
           <div className="row">
             <Banner />
           </div>
 
-          <div className="row x-gap-20 y-gap-20 items-center pt-20 item_gap-x10">
+          <div className="row x-gap-20 y-gap-20 items-center pt-20 item_gap-x10 layout-pb-sm">
             <Categories />
           </div>
 
-          <div className="row y-gap-20 pt-40">
+          <div className="container view_bordershadow bg-white">
+          <div className="row y-gap-20 px-10 pt-5">
             <div className="col-auto">
               <h2>About Bharath Benz</h2>
             </div>
           </div>
-          <div className="row y-gap-20">
+          <div className="row y-gap-20 px-10">
             <BrandIntro />
+          </div>
           </div>
         </div>
       </section>
 
-      <section className="layout-pt-md layout-pb-md">
-        <div className="container">
+      <section className="layout-pb-sm layout-pt-sm">
+        <div className="container view_bordershadow bg-white py-10">
           <div className="row y-gap-20 justify-between items-end">
             <div className="col-auto">
               <div className="sectionTitle -md">
@@ -63,14 +65,14 @@ const SingleBrand = () => {
             </div>
           </div>
 
-          <div className="row y-gap-30 pt-40 sm:pt-20 item_gap-x30">
+          <div className="row pt-40 sm:pt-20 item_gap-x30">
             <UpcomingTrucks />
           </div>
         </div>
       </section>
 
-      <section className="layout-pt-md layout-pb-md">
-        <div className="container">
+      <section className="layout-pt-sm layout-pb-sm">
+        <div className="container view_bordershadow bg-white">
           <div className="row y-gap-20 justify-between items-end">
             <div className="col-auto">
               <div className="sectionTitle -md">
@@ -96,8 +98,8 @@ const SingleBrand = () => {
         </div>
       </section>
 
-      <section className="layout-pt-md layout-pb-md">
-        <div className="container">
+      <section className="layout-pt-sm layout-pb-sm">
+        <div className="container view_bordershadow bg-white">
           <div className="row y-gap-20 justify-between items-end">
             <div className="col-auto">
               <div className="sectionTitle -md">
@@ -123,7 +125,7 @@ const SingleBrand = () => {
         </div>
       </section>
 
-      <section className="layout-pt-lg layout-pb-md">
+      <section className="layout-pt-sm layout-pb-sm">
         <div className="container">
           <div className="row y-gap-20">
             <div className="col-lg-4">

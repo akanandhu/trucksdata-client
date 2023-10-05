@@ -12,19 +12,18 @@ const MobileTab = () => {
         {tabs?.map((tab) => (
           <button
             key={tab?.id}
-            className={`d-flex tabs__button px-30 py-20 rounded-4 fw-600 text-black js-tabs-button ${
+            className={`d-flex justify-content-center flex-column tabs__button px-10 py-10 rounded-4 fw-600 text-black js-tabs-button ${
               tab?.name === currentTab ? "is-tab-el-active" : ""
             }`}
             onClick={() => dispatch(addCurrentTab(tab?.name))}
           >
-            {/* <div>
+            <div className="tab_iconsize">
               <img
               src={tab?.icon}
               alt="icons"
               width='50px'
               />
-              ix
-            </div> */}
+            </div>
             <div>{tab?.name}</div>
           </button>
         ))}

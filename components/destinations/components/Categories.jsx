@@ -50,7 +50,7 @@ const Categories = () => {
     <Slider {...settings}>
       {catContent.map((item) => (
         <div className="col" key={item.id}>
-          <button className="d-flex flex-column justify-center px-20 py-15 rounded-4 border-light text-16 lh-14 fw-500 col-12">
+          <button className="bg-white d-flex flex-column justify-center px-20 py-15 rounded-4 border-light text-16 lh-14 fw-500 col-12">
             {/* <i className={`${item.icon} text-25 mb-10`} /> */}
             <div className="pb-20 w-25" >
             <img

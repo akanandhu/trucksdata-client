@@ -35,7 +35,7 @@ const home_8 = () => {
       {/* End Hero 8 */}
 
       <section className="layout-pt-md layout-pb-md">
-        <div className="container">
+        <div className="container view_bordershadow bg-white">
           <div className="row y-gap-20 justify-center text-center">
             <div className="col-auto">
               <div className="sectionTitle -md">
@@ -61,8 +61,8 @@ const home_8 = () => {
       </section>
       {/* Popular Car Hire Sections */}
 
-      <section className=" layout-pb-lg">
-        <div className="container">
+      <section className="pb-60">
+        <div className="container view_bordershadow bg-white">
           <div className="row y-gap-20 justify-center text-center">
             <div className="col-auto">
               <div className="sectionTitle -md">
@@ -89,7 +89,7 @@ const home_8 = () => {
       <CompareVehicles filterOptions={filterOptions} />
 
       <section className=" layout-pb-md">
-        <div className="container">
+        <div className="container view_bordershadow bg-white">
           <div className="row y-gap-20 justify-center text-center">
             <div className="col-auto">
               <div className="sectionTitle -md">
@@ -115,7 +115,7 @@ const home_8 = () => {
       </section>
 
       <section className="layout-pt-md layout-pb-lg">
-        <div className="container">
+        <div className="container view_bordershadow bg-white">
           <div className="row y-gap-20 justify-between items-end">
             <div className="col-auto">
               <div className="sectionTitle -md">
