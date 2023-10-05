@@ -1,11 +1,11 @@
 import React from "react";
 import { useState } from "react";
 
-const TopFilter = ({filterOptions}) => {
-  const [filterOption, setFilterOption] = useState(filterOptions?.[0]?.value);  
+const TopFilter = ({ filterOptions }) => {
+  const [filterOption, setFilterOption] = useState(filterOptions?.[0]?.value);
 
   return (
-    <div className="tabs__controls d-flex js-tabs-controls   x-gap-15 justify-center  tabs__controls d-flex js-tabs-controls ">
+    <div className="tabs__controls d-flex js-tabs-controls   x-gap-15 justify-center   ">
       {filterOptions.map((option) => (
         <div className="col-auto" key={option.value}>
           <button
