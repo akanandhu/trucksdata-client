@@ -19,7 +19,23 @@ const SingleBrand = () => {
       <div className="header-margin"></div>
 
       <Header1 />
-      <LocationTopBar />
+
+      <section
+        data-aos="fade"
+        className="d-flex items-center py-15 border-top-light"
+      >
+        <div className="container">
+          <div className="row y-gap-10 items-center justify-between">
+            <div className="col-auto">
+              <div className="row x-gap-10 y-gap-5 items-center text-14 text-light-1">
+                <div className="col-auto">
+                  <div>Brands</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section className="layout-pb-sm">
         <div className="container">
@@ -31,21 +47,21 @@ const SingleBrand = () => {
             <Categories />
           </div>
 
-          <div className="container view_bordershadow bg-white">
-          <div className="row y-gap-20 px-10 pt-5">
-            <div className="col-auto">
-              <h2>About Bharath Benz</h2>
+          <div className="container view_bordershadow bg-white p-4">
+            <div className="row y-gap-20 px-10 pt-5">
+              <div className="col-auto">
+                <h2>About Bharath Benz</h2>
+              </div>
             </div>
-          </div>
-          <div className="row y-gap-20 px-10">
-            <BrandIntro />
-          </div>
+            <div className="row y-gap-20 px-10">
+              <BrandIntro />
+            </div>
           </div>
         </div>
       </section>
 
       <section className="layout-pb-sm layout-pt-sm">
-        <div className="container view_bordershadow bg-white py-10">
+        <div className="container view_bordershadow bg-white p-4 ">
           <div className="row y-gap-20 justify-between items-end">
             <div className="col-auto">
               <div className="sectionTitle -md">
@@ -72,8 +88,8 @@ const SingleBrand = () => {
       </section>
 
       <section className="layout-pt-sm layout-pb-sm">
-        <div className="container view_bordershadow bg-white">
-          <div className="row y-gap-20 justify-between items-end">
+        <div className="container view_bordershadow bg-white p-4">
+          <div className="row y-gap-22 justify-between items-end">
             <div className="col-auto">
               <div className="sectionTitle -md">
                 <h2 className="sectionTitle__title">
@@ -99,7 +115,7 @@ const SingleBrand = () => {
       </section>
 
       <section className="layout-pt-sm layout-pb-sm">
-        <div className="container view_bordershadow bg-white">
+        <div className="container view_bordershadow bg-white p-4">
           <div className="row y-gap-20 justify-between items-end">
             <div className="col-auto">
               <div className="sectionTitle -md">
@@ -132,7 +148,7 @@ const SingleBrand = () => {
               <h2 className="text-30 fw-500">
                 FAQs about
                 <br />
-                Trucks
+                Bharat Benz
               </h2>
             </div>
 

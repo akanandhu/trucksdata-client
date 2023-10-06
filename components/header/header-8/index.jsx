@@ -100,16 +100,16 @@ const Header1 = () => {
                       }
                     >
                       <div className="d-flex gap-1 text-center align-items-center  ">
-                        <div>
-                          <Link className="fw-500" href="/compare">Compare</Link>
-                        </div>
+                        
                         <div className="text-22">
                           <MdOutlineCompare />
+                        </div>
+                        <div>
+                          <Link className="fw-500" href="/compare">Compare</Link>
                         </div>
                       </div>
                     </li>
                   </ul>
-                  {/* </Link> */}
                 </div>
 
                 <div className="xxl:d-none">

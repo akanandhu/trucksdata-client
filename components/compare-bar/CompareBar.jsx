@@ -21,7 +21,8 @@ const CompareBar = () => {
         <button onClick={handleDeselect} className="deselect-btn text-black">
           Deselect All
         </button>
-        <button className="compare-btn text-white">Compare</button>
+        <button className="compare-btn bg-blue-1 text-white">Compare</button>
+        
       </div>
     </div>
   ) : null;

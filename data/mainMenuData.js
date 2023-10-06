@@ -144,7 +144,7 @@ export const categorieMegaMenuItems = [
         megaBanner: "/img/backgrounds/ashok.jpg",
         title: "Explore trucks of Ashok Leyland",
         btnText: "See More",
-        btnRoute: "/hotel/hotel-list-v1",
+        btnRoute: "/",
         menuItems: [
           {
             id: 1,
@@ -152,23 +152,23 @@ export const categorieMegaMenuItems = [
             menuList: [
               {
                 name: "1110 R",
-                routePath: "/hotel/hotel-list-v1",
+                routePath: '/',
               },
               {
                 name: "1120 R",
-                routePath: "/hotel/hotel-list-v2",
+                routePath: '/',
               },
               {
                 name: "1130 R",
-                routePath: "/hotel/hotel-list-v3",
+                routePath: '/',
               },
               {
                 name: "1140 R",
-                routePath: "/hotel/hotel-list-v4",
+                routePath: '/',
               },
               {
                 name: "1150 H",
-                routePath: "/hotel/hotel-list-v5",
+                routePath: '/',
               },
             ],
           },
@@ -178,11 +178,11 @@ export const categorieMegaMenuItems = [
             menuList: [
               {
                 name: "Boss 1100",
-                routePath: "/hotel/hotel-single-v1/5",
+                routePath: '/',
               },
               {
                 name: "Boss 1200",
-                routePath: "/hotel/hotel-single-v2/3",
+                routePath: '/',
               },
             ],
           },
@@ -192,7 +192,7 @@ export const categorieMegaMenuItems = [
             menuList: [
               {
                 name: "1200 R",
-                routePath: "/hotel/booking-page",
+                routePath: '/',
               },
             ],
           },
@@ -208,7 +208,7 @@ export const categorieMegaMenuItems = [
         megaBanner: "/img/backgrounds/8.png",
         title: "Explore trucks of Bharat Benz",
         btnText: "See Trucks",
-        btnRoute: "/tour/tour-list-v1",
+        btnRoute: "/",
         menuItems: [
           {
             id: 1,
@@ -216,23 +216,23 @@ export const categorieMegaMenuItems = [
             menuList: [
               {
                 name: "1110 R",
-                routePath: "/hotel/hotel-list-v1",
+                routePath: '/',
               },
               {
                 name: "1120 R",
-                routePath: "/hotel/hotel-list-v2",
+                routePath: '/',
               },
               {
                 name: "1130 R",
-                routePath: "/hotel/hotel-list-v3",
+                routePath: '/',
               },
               {
                 name: "1140 R",
-                routePath: "/hotel/hotel-list-v4",
+                routePath: '/',
               },
               {
                 name: "1150 H",
-                routePath: "/hotel/hotel-list-v5",
+                routePath: '/',
               },
             ],
           },
@@ -242,11 +242,11 @@ export const categorieMegaMenuItems = [
             menuList: [
               {
                 name: "Boss 1100",
-                routePath: "/hotel/hotel-single-v1/5",
+                routePath: '/',
               },
               {
                 name: "Boss 1200",
-                routePath: "/hotel/hotel-single-v2/3",
+                routePath: '/',
               },
             ],
           },
@@ -256,7 +256,7 @@ export const categorieMegaMenuItems = [
             menuList: [
               {
                 name: "1200 R",
-                routePath: "/hotel/booking-page",
+                routePath: '/',
               },
             ],
           },
@@ -272,7 +272,7 @@ export const categorieMegaMenuItems = [
         megaBanner: "/img/backgrounds/9.png",
         title: "Explore trucks of Volvo",
         btnText: "See Volvo trucks",
-        btnRoute: "/activity/activity-list-v1",
+        btnRoute: "/",
         menuItems: [
           {
             id: 1,
@@ -280,23 +280,23 @@ export const categorieMegaMenuItems = [
             menuList: [
               {
                 name: "1110 R",
-                routePath: "/hotel/hotel-list-v1",
+                routePath: '/',
               },
               {
                 name: "1120 R",
-                routePath: "/hotel/hotel-list-v2",
+                routePath: '/',
               },
               {
                 name: "1130 R",
-                routePath: "/hotel/hotel-list-v3",
+                routePath: '/',
               },
               {
                 name: "1140 R",
-                routePath: "/hotel/hotel-list-v4",
+                routePath: '/',
               },
               {
                 name: "1150 H",
-                routePath: "/hotel/hotel-list-v5",
+                routePath: '/',
               },
             ],
           },
@@ -306,11 +306,11 @@ export const categorieMegaMenuItems = [
             menuList: [
               {
                 name: "Boss 1100",
-                routePath: "/hotel/hotel-single-v1/5",
+                routePath: '/',
               },
               {
                 name: "Boss 1200",
-                routePath: "/hotel/hotel-single-v2/3",
+                routePath: '/',
               },
             ],
           },
@@ -320,7 +320,7 @@ export const categorieMegaMenuItems = [
             menuList: [
               {
                 name: "1200 R",
-                routePath: "/hotel/booking-page",
+                routePath: '/',
               },
             ],
           },
@@ -336,7 +336,7 @@ export const categorieMegaMenuItems = [
         megaBanner: "/img/backgrounds/10.png",
         title: "Explore Tata Trucks",
         btnText: "See Trucks",
-        btnRoute: "/rental/rental-list-v1",
+        btnRoute: "/",
         menuItems: [
           {
             id: 1,
@@ -344,23 +344,23 @@ export const categorieMegaMenuItems = [
             menuList: [
               {
                 name: "1110 R",
-                routePath: "/hotel/hotel-list-v1",
+                routePath: '/',
               },
               {
                 name: "1120 R",
-                routePath: "/hotel/hotel-list-v2",
+                routePath: '/',
               },
               {
                 name: "1130 R",
-                routePath: "/hotel/hotel-list-v3",
+                routePath: '/',
               },
               {
                 name: "1140 R",
-                routePath: "/hotel/hotel-list-v4",
+                routePath: '/',
               },
               {
                 name: "1150 H",
-                routePath: "/hotel/hotel-list-v5",
+                routePath: '/',
               },
             ],
           },
@@ -370,11 +370,11 @@ export const categorieMegaMenuItems = [
             menuList: [
               {
                 name: "Boss 1100",
-                routePath: "/hotel/hotel-single-v1/5",
+                routePath: '/',
               },
               {
                 name: "Boss 1200",
-                routePath: "/hotel/hotel-single-v2/3",
+                routePath: '/',
               },
             ],
           },
@@ -384,7 +384,7 @@ export const categorieMegaMenuItems = [
             menuList: [
               {
                 name: "1200 R",
-                routePath: "/hotel/booking-page",
+                routePath: '/',
               },
             ],
           },
@@ -392,115 +392,8 @@ export const categorieMegaMenuItems = [
       },
     ],
   },
-  {
-    id: 5,
-    menuCol: [
-      {
-        id: 1,
-        megaBanner: "/img/backgrounds/5.png",
-        title: "Things to do on your Next Car",
-        btnText: "See Car",
-        btnRoute: "/car/car-list-v1",
-        menuItems: [
-          {
-            id: 1,
-            title: "Car List",
-            menuList: [
-              {
-                name: "Car List v1",
-                routePath: "/car/car-list-v1",
-              },
-              {
-                name: "Car List v2",
-                routePath: "/car/car-list-v2",
-              },
-            ],
-          },
-          {
-            id: 2,
-            title: "Car Pages",
-            menuList: [
-              {
-                name: "Car Map",
-                routePath: "/car/car-list-v3",
-              },
-              {
-                name: "Car Single",
-                routePath: "/car/car-single/1",
-                routePath: "/car/car-single/1",
-              },
-            ],
-          },
-        ],
-      },
-    ],
-  },
-  {
-    id: 6,
-    menuCol: [
-      {
-        id: 1,
-        megaBanner: "/img/backgrounds/1.png",
-        title: "Things to do on your Cruise",
-        btnText: "See Cruise",
-        btnRoute: "/cruise/cruise-list-v1",
-        menuItems: [
-          {
-            id: 1,
-            title: "Cruise List",
-            menuList: [
-              {
-                name: "Cruise List v1",
-                routePath: "/cruise/cruise-list-v1",
-              },
-              {
-                name: "Cruise List v2",
-                routePath: "/cruise/cruise-list-v2",
-              },
-            ],
-          },
-          {
-            id: 2,
-            title: "Cruise Pages",
-            menuList: [
-              {
-                name: "Cruise Map",
-                routePath: "/cruise/cruise-list-v3",
-              },
-              {
-                name: "Cruise Single",
-                routePath: "/cruise/cruise-single/3",
-              },
-            ],
-          },
-        ],
-      },
-    ],
-  },
-  {
-    id: 7,
-    menuCol: [
-      {
-        id: 1,
-        megaBanner: "/img/backgrounds/2.png",
-        title: "Things to do on your flights",
-        btnText: "See Flights",
-        btnRoute: "/flight/flight-list-v1",
-        menuItems: [
-          {
-            id: 1,
-            title: "Flight List",
-            menuList: [
-              {
-                name: "Flight List v1",
-                routePath: "/flight/flight-list-v1",
-              },
-            ],
-          },
-        ],
-      },
-    ],
-  },
+ 
+  
 ];
 
 export const categorieMobileItems = [
@@ -514,15 +407,15 @@ export const categorieMobileItems = [
         menuList: [
           {
             name: "Ecomet Star Series",
-            routePath: "/hotel/hotel-list-v1",
+            routePath: '/',
           },
           {
             name: "Boss Series",
-            routePath: "/hotel/hotel-list-v2",
+            routePath: '/',
           },
           {
             name: "Other Variants",
-            routePath: "/hotel/hotel-list-v3",
+            routePath: '/',
           },
         ],
       },
@@ -532,11 +425,11 @@ export const categorieMobileItems = [
         menuList: [
           {
             name: "Benz Series",
-            routePath: "/hotel/hotel-single-v1/5",
+            routePath: '/',
           },
           {
             name: "Other Series",
-            routePath: "/hotel/hotel-single-v2/5",
+            routePath: '/',
           },
         ],
       },
@@ -546,7 +439,7 @@ export const categorieMobileItems = [
         menuList: [
           {
             name: "See all variants",
-            routePath: "/hotel/booking-page",
+            routePath: '/',
           },
         ],
       },
@@ -556,7 +449,7 @@ export const categorieMobileItems = [
         menuList: [
           {
             name: "See all variants",
-            routePath: "/hotel/booking-page",
+            routePath: '/',
           },
         ],
       },
@@ -572,15 +465,15 @@ export const categorieMobileItems = [
         menuList: [
           {
             name: "Ecomet Star Series",
-            routePath: "/hotel/hotel-list-v1",
+            routePath: '/',
           },
           {
             name: "Boss Series",
-            routePath: "/hotel/hotel-list-v2",
+            routePath: '/',
           },
           {
             name: "Other Variants",
-            routePath: "/hotel/hotel-list-v3",
+            routePath: '/',
           },
         ],
       },
@@ -590,11 +483,11 @@ export const categorieMobileItems = [
         menuList: [
           {
             name: "Benz Series",
-            routePath: "/hotel/hotel-single-v1/5",
+            routePath: '/',
           },
           {
             name: "Other Series",
-            routePath: "/hotel/hotel-single-v2/5",
+            routePath: '/',
           },
         ],
       },
@@ -604,7 +497,7 @@ export const categorieMobileItems = [
         menuList: [
           {
             name: "See all variants",
-            routePath: "/hotel/booking-page",
+            routePath: '/',
           },
         ],
       },
@@ -614,7 +507,7 @@ export const categorieMobileItems = [
         menuList: [
           {
             name: "See all variants",
-            routePath: "/hotel/booking-page",
+            routePath: '/',
           },
         ],
       },
@@ -630,15 +523,15 @@ export const categorieMobileItems = [
         menuList: [
           {
             name: "Ecomet Star Series",
-            routePath: "/hotel/hotel-list-v1",
+            routePath: '/',
           },
           {
             name: "Boss Series",
-            routePath: "/hotel/hotel-list-v2",
+            routePath: '/',
           },
           {
             name: "Other Variants",
-            routePath: "/hotel/hotel-list-v3",
+            routePath: '/',
           },
         ],
       },
@@ -648,11 +541,11 @@ export const categorieMobileItems = [
         menuList: [
           {
             name: "Benz Series",
-            routePath: "/hotel/hotel-single-v1/5",
+            routePath: '/',
           },
           {
             name: "Other Series",
-            routePath: "/hotel/hotel-single-v2/5",
+            routePath: '/',
           },
         ],
       },
@@ -662,7 +555,7 @@ export const categorieMobileItems = [
         menuList: [
           {
             name: "See all variants",
-            routePath: "/hotel/booking-page",
+            routePath: '/',
           },
         ],
       },
@@ -672,7 +565,7 @@ export const categorieMobileItems = [
         menuList: [
           {
             name: "See all variants",
-            routePath: "/hotel/booking-page",
+            routePath: '/',
           },
         ],
       },
@@ -688,15 +581,15 @@ export const categorieMobileItems = [
         menuList: [
           {
             name: "Ecomet Star Series",
-            routePath: "/hotel/hotel-list-v1",
+            routePath: '/',
           },
           {
             name: "Boss Series",
-            routePath: "/hotel/hotel-list-v2",
+            routePath: '/',
           },
           {
             name: "Other Variants",
-            routePath: "/hotel/hotel-list-v3",
+            routePath: '/',
           },
         ],
       },
@@ -706,11 +599,11 @@ export const categorieMobileItems = [
         menuList: [
           {
             name: "Benz Series",
-            routePath: "/hotel/hotel-single-v1/5",
+            routePath: '/',
           },
           {
             name: "Other Series",
-            routePath: "/hotel/hotel-single-v2/5",
+            routePath: '/',
           },
         ],
       },
@@ -720,7 +613,7 @@ export const categorieMobileItems = [
         menuList: [
           {
             name: "See all variants",
-            routePath: "/hotel/booking-page",
+            routePath: '/',
           },
         ],
       },
@@ -730,7 +623,7 @@ export const categorieMobileItems = [
         menuList: [
           {
             name: "See all variants",
-            routePath: "/hotel/booking-page",
+            routePath: '/',
           },
         ],
       },
@@ -746,15 +639,15 @@ export const categorieMobileItems = [
         menuList: [
           {
             name: "Ecomet Star Series",
-            routePath: "/hotel/hotel-list-v1",
+            routePath: '/',
           },
           {
             name: "Boss Series",
-            routePath: "/hotel/hotel-list-v2",
+            routePath: '/',
           },
           {
             name: "Other Variants",
-            routePath: "/hotel/hotel-list-v3",
+            routePath: '/',
           },
         ],
       },
@@ -764,11 +657,11 @@ export const categorieMobileItems = [
         menuList: [
           {
             name: "Benz Series",
-            routePath: "/hotel/hotel-single-v1/5",
+            routePath: '/',
           },
           {
             name: "Other Series",
-            routePath: "/hotel/hotel-single-v2/5",
+            routePath: '/',
           },
         ],
       },
@@ -778,7 +671,7 @@ export const categorieMobileItems = [
         menuList: [
           {
             name: "See all variants",
-            routePath: "/hotel/booking-page",
+            routePath: '/',
           },
         ],
       },
@@ -788,7 +681,7 @@ export const categorieMobileItems = [
         menuList: [
           {
             name: "See all variants",
-            routePath: "/hotel/booking-page",
+            routePath: '/',
           },
         ],
       },
@@ -804,15 +697,15 @@ export const categorieMobileItems = [
         menuList: [
           {
             name: "Ecomet Star Series",
-            routePath: "/hotel/hotel-list-v1",
+            routePath: '/',
           },
           {
             name: "Boss Series",
-            routePath: "/hotel/hotel-list-v2",
+            routePath: '/',
           },
           {
             name: "Other Variants",
-            routePath: "/hotel/hotel-list-v3",
+            routePath: '/',
           },
         ],
       },
@@ -822,11 +715,11 @@ export const categorieMobileItems = [
         menuList: [
           {
             name: "Benz Series",
-            routePath: "/hotel/hotel-single-v1/5",
+            routePath: '/',
           },
           {
             name: "Other Series",
-            routePath: "/hotel/hotel-single-v2/5",
+            routePath: '/',
           },
         ],
       },
@@ -836,7 +729,7 @@ export const categorieMobileItems = [
         menuList: [
           {
             name: "See all variants",
-            routePath: "/hotel/booking-page",
+            routePath: '/',
           },
         ],
       },
@@ -846,7 +739,7 @@ export const categorieMobileItems = [
         menuList: [
           {
             name: "See all variants",
-            routePath: "/hotel/booking-page",
+            routePath: '/',
           },
         ],
       },

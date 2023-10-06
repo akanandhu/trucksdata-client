@@ -36,6 +36,7 @@ const SinglePage = () => {
 
     return () => {};
   }, [id]);
+  
 
   return (
     <>
@@ -140,9 +141,9 @@ const SinglePage = () => {
             {/* <div className="d-flex justify-content-center"> */}
             {/* <h3 className="text-22 fw-500">Property highlights</h3> */}
             <div className="col-lg-8">
-              <div className="view_bordershadow ps-4 pe-4 pt-15 pb-15 bg-white">
+              <div className="view_bordershadow ps-4 pe-4 pt-15 pb-15 bg-white ">
                 <h6 className="fw-500 text-22">Highlights</h6>
-                <SpecHighlights />
+                <SpecHighlights  />
               </div>
               <div className="mt-30 view_bordershadow ps-4 pe-4 pt-15 pb-15 bg-white">
                 <h6 className="fw-500 text-22">Specifications</h6>

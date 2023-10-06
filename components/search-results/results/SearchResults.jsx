@@ -5,15 +5,37 @@ import Image from "next/image";
 import Link from "next/link";
 import CompareAddButton from "./compare/CompareAddButton";
 
-const SearchResults = ({showError, setShow}) => {
+const SearchResults = ({ showError, setShow }) => {
+  const propertyContent = [
+    {
+      id: 1,
+      icon: "/icons/power.svg",
+      name: "Power",
+      content: "180 HP",
+    },
+    {
+      id: 2,
+      icon: "/icons/weight.svg",
+      name: "GVW",
+      content: "41500 KG",
+    },
+
+    {
+      id: 4,
+      icon: "/icons/fuel-tank.svg",
+      name: "Fuel Tank",
+      content: "160 Ltr",
+    },
+  ];
+
   return (
     <>
       {rentalssData.map((item) => (
-        <div className="col-12" key={item?.id}>
+        <div className="col-4" key={item?.id}>
           <div className="border-top-light pt-30">
-            <div className="row x-gap-20 y-gap-20">
+            <div className="custom-shadow p-1 x-gap-20 y-gap-20">
               <div className="col-md-auto">
-                <div className="cardImage w-250 md:w-1/1 rounded-4">
+                <div className="cardImage  md:w-1/1 rounded-4">
                   <div className="cardImage-slider rounded-4  custom_inside-slider">
                     <Swiper
                       className="mySwiper"
@@ -28,8 +50,8 @@ const SearchResults = ({showError, setShow}) => {
                           <div className=" ratio ratio-1:1">
                             <div className="cardImage__content">
                               <Image
-                                width={250}
-                                height={250}
+                                width={300}
+                                height={300}
                                 className="rounded-4 col-12 js-lazy"
                                 src={slide}
                                 alt="image"
@@ -48,9 +70,7 @@ const SearchResults = ({showError, setShow}) => {
               <div className="col-md">
                 <div className="d-flex flex-column h-full justify-start">
                   <div>
-                    <h3 className="text-22 lh-16 fw-500">{item?.title}</h3>
-
-                    <div className="row x-gap-5 items-center pt-5">
+                    <div className="row x-gap-5 items-center ">
                       <div className="col-auto">
                         <div className="text-14 text-light-1">Truck</div>
                       </div>
@@ -63,50 +83,27 @@ const SearchResults = ({showError, setShow}) => {
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div className="y-gap-5 pt-5 pb-5">
-                    <div className="d-flex items-center">
-                      <Image
-                        className="mr-10"
-                        src={"/icons/engine.svg"}
-                        width={20}
-                        height={20}
-                        alt="icon"
-                      />
+                    <h3 className="text-18 lh-16 fw-500">{item?.title}</h3>
+                    <div className="truck-card__price-range">
+                  <span className="truck-card__price text-blue-1">
+                    ₹75,00,000 - ₹85,00,000
+                  </span>
+                  <span className="truck-card__price-label text-13 text-secondary ">
+                    
+                  </span>
+                </div>
 
-                      <div className="text-15">125 kW @ 2500 rpm</div>
-                    </div>
-                    <div className="d-flex items-center">
-                      <Image
-                        className="mr-10"
-                        src={"/icons/gears.png"}
-                        width={20}
-                        height={20}
-                        alt="icon"
-                      />
-
-                      <div className="text-15">4X2</div>
-                    </div>
-                    <div className="d-flex items-center">
-                      {/* <i className="icon-parking text-20 mr-10" /> */}
-                      <Image
-                        className="mr-10"
-                        src={"/icons/fuel.svg"}
-                        width={20}
-                        height={20}
-                        alt="icon"
-                      />
-                      <div className="text-15">Diesel</div>
-                    </div>
-                    <div className="d-flex items-center">
-                      <Image
-                        className="mr-10"
-                        src={"/icons/application.svg"}
-                        width={20}
-                        height={20}
-                        alt="icon"
-                      />
-                      <div className="text-15">Agriculture | Rice Truck</div>
+                    <div className="row y-gap-30 justify-between pt-5 indivitualCardGrid ">
+                      {propertyContent.map((item) => (
+                        <div className="col-md-auto col-2" key={item.id}>
+                          <div className="d-block text-start">
+                            <div className="text-15 lh-15">
+                              <span className=" fw-semibold ">{item.name}</span>
+                              <br /> {item.content}
+                            </div>
+                          </div>
+                        </div>
+                      ))}
                     </div>
                   </div>
                 </div>
@@ -116,20 +113,15 @@ const SearchResults = ({showError, setShow}) => {
               {/* End col-md */}
 
               <div className="col-md-auto d-flex flex-column justify-content-between  text-right md:text-left">
-                <CompareAddButton vehicle={item} showError={showError} setShow={setShow} />
+                <CompareAddButton
+                  vehicle={item}
+                  showError={showError}
+                  setShow={setShow}
+                />
                 <div>
-                  <div>
-                    <div className="text-14 text-light-1  md:mt-20">
-                      Starting From
-                    </div>
-                    <div className="text-24 lh-12 fw-600 mt-5">
-                      ₹{item.price}{" "}
-                    </div>
-                    <div className="text-14 text-light-1 mt-5">Ex-showroom</div>
-                  </div>
                   <Link
                     href={`/details/${item.id}`}
-                    className="button -md -dark-1 bg-blue-1 text-white mt-24"
+                    className="button -md -dark-1 bg-blue-1 text-white mt-2 "
                   >
                     View More <div className="icon-arrow-top-right ml-15" />
                   </Link>

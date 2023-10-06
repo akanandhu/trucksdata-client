@@ -68,7 +68,7 @@ const BlogSingleDynamic = () => {
       {/* Details Blog Details Content */}
 
       <section className="layout-pt-md layout-pb-lg">
-        <div className="container">
+        <div className="container ">
           <div className="row justify-center text-center">
             <div className="col-auto">
               <div className="sectionTitle -md">
