@@ -6,7 +6,6 @@ import CompareTwoVehiclesCard from "./CompareTwoVehiclesCard";
 import CompareVehicles from "./CompareVehicles";
 import SpecificationTable from "../details/specification-table/SpecificationTable";
 import CompareTable from "./CompareTable";
-import CompareBoxMobile from "./CompareBoxMobile";
 
 const CompareInputSeperate = () => {
   const [searchValue, setSearchValue] = useState("");
@@ -91,7 +90,7 @@ const CompareInputSeperate = () => {
   )
 }
 
-const CompareBox = () => {
+const CompareBoxMobile = () => {
   const item = {
     id: 3,
     img: "/img/backgrounds/3.png",
@@ -120,11 +119,9 @@ const CompareBox = () => {
           <div className="col-auto"></div>
           <div className="col d-xs-none d-md-block  ">
             <div className="d-flex gap-1 flex-column justify-center h-full px-30 py-20 ">
-              <div className="rounded-4">
-                <ComparePlusButton />
-              </div>
+              
               <div className="rounded-4 ">
-                <CompareInputSeperate />
+                <CompareInput />
               </div>
               <div className="rounded-4 ">
                 <CompareInputSeperate />
@@ -133,11 +130,11 @@ const CompareBox = () => {
           </div>
           <div className="col">
             <div className="d-flex gap-1 flex-column justify-center h-full px-30 py-20">
-              <div>
+              {/* <div>
                 <ComparePlusButton />
-              </div>
+              </div> */}
               <div className="rounded-4 ">
-                <CompareInputSeperate />
+                <CompareInput />
               </div>
               <div className="rounded-4 ">
                 <CompareInputSeperate />
@@ -146,11 +143,11 @@ const CompareBox = () => {
           </div>
           <div className="col">
             <div className="d-flex gap-1  flex-column justify-center h-full px-30 py-20">
-              <div>
+              {/* <div>
                 <ComparePlusButton />
-              </div>
+              </div> */}
               <div className="rounded-4 ">
-                <CompareInputSeperate />
+                <CompareInput />
               </div>
               <div className="rounded-4 ">
                 <CompareInputSeperate />
@@ -162,17 +159,10 @@ const CompareBox = () => {
           <button className="btn btn-primary w-25  ">Compare</button>
         </div>
       </div>
-      <CompareBoxMobile />
 
-      <div className="mt-40 view_bordershadow bg-white    p-2 ">
-        <CompareTable  />
-      </div>
-
-      <div className="mt-40 view_bordershadow mb-40 ">
-        <CompareVehicles filterOptions={filterOptions} />
-      </div>
+      
     </div>
   );
 };
 
-export default CompareBox;
+export default CompareBoxMobile;

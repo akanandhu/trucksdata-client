@@ -1,7 +1,7 @@
 const Specifications = () => {
   const speciContent = [
-    { id: 1, name: "Make", content: "Honda" },
-    { id: 2, name: "Model", content: "Honda" },
+    { id: 1, name: "Make", content: "Ashok Leyland" },
+    { id: 2, name: "Model", content: "E-comet Star Series" },
     { id: 3, name: "Made Year", content: "2022" },
     { id: 4, name: "Mileage", content: "120,556" },
     { id: 5, name: "Mileage", content: "120,556" },

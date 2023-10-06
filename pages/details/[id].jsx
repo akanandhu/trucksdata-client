@@ -146,7 +146,7 @@ const SinglePage = () => {
                 <SpecHighlights  />
               </div>
               <div className="mt-30 view_bordershadow ps-4 pe-4 pt-15 pb-15 bg-white">
-                <h6 className="fw-500 text-22">Specifications</h6>
+                <h6 className="fw-500 text-22">Key Specifications</h6>
                 <Specifications />
               </div>
             </div>

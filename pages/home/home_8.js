@@ -50,7 +50,7 @@ const home_8 = () => {
           {/* End .row */}
 
           <div className="row y-gap-30 pt-5 sm:pt-20 item_gap-x30">
-            <div className="tabs -pills-3 pt-12">
+            <div className="tabs -pills-2 pt-12">
               <TopFilter filterOptions={filterOptions} />
             </div>
             <PopularCars />

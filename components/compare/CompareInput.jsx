@@ -1,4 +1,8 @@
 import React, { useState } from "react";
+import ComparePlusButton from "./ComparePlusButton";
+import Image from "next/image";
+
+  
 
 const CompareInput = () => {
   const [searchValue, setSearchValue] = useState("");
@@ -16,10 +20,10 @@ const CompareInput = () => {
       brand: "Ashok Leyland",
     },
     {
-        id: 3,
-        model: "Agni Series",
-        brand: "TATA",
-      },
+      id: 3,
+      model: "Agni Series",
+      brand: "TATA",
+    },
   ];
 
   const handleOptionClick = (item) => {
@@ -35,14 +39,28 @@ const CompareInput = () => {
         data-bs-offset="0,22"
       >
         <h4 className="text-15 fw-500 ls-2 lh-16">Select Brand/Model</h4>
-        <div className="text-15 text-light-1 ls-2 lh-16">
-          <input
-            autoComplete="off"
-            type="search"
-            className="js-search js-dd-focus"
-            value={searchValue}
-            onChange={(e) => setSearchValue(e.target.value)}
-          />
+        <div className="text-15 text-light-1 ls-2 lh-16 d-flex  justify-content-between ">
+          <div>
+            <input
+              autoComplete="off"
+              type="search"
+              className="js-search js-dd-focus"
+              value={searchValue}
+              onChange={(e) => setSearchValue(e.target.value)}
+            />
+          </div>
+
+          <div className="rounded-4">
+          <div className="d-flex justify-content-center rounded-circle mb-xl-4   ">
+      <Image
+        src={"/img/compare/truck-compare.svg"}
+        alt="illustration"
+        width={90}
+        height={90}
+        className=" rounded-circle "
+      />
+    </div>
+          </div>
         </div>
       </div>
       {/* End location Field */}

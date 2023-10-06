@@ -6,6 +6,7 @@ import CompareLocationTop from "../../components/compare/location/CompareLocatio
 import Header1 from "../../components/header/header-8";
 import DefaultFooter from "../../components/footer/default/index";
 import CallToActions from "../../components/common/CallToActions";
+import CompareBoxMobile from "../../components/compare/CompareBoxMobile";
 
 const ComparePage = () => {
   return (
