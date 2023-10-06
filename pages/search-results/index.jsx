@@ -51,11 +51,11 @@ const SearchResultsPage = () => {
       <Header8 />
       {/* End Header 1 */}
 
-      <section className="pb-40 pt-40 bg-light-2">
+      <section className="pb-40 pt-40 sm:pt-0 sm:pb-0  bg-light-2">
         <div className="container">
           <div className="row">
             <div className="col-12">
-              <div className="text-center">
+              <div className="text-center sm:d-none">
                 <h1 className="fw-600 search-font-custom  ">
                   Filter out the Truck of your need!
                 </h1>

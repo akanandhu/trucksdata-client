@@ -37,7 +37,7 @@ const IndivitualVariants = ({ showError, setShow }) => {
           key={item?.id}
           data-aos="fade"
           data-aos-delay={item?.delayAnimation}
-          className=" my-5   custom-shadow"
+          className=" my-5 bg-white  custom-shadow p-3"
         >
           <Link
             key={item.id}
@@ -58,7 +58,7 @@ const IndivitualVariants = ({ showError, setShow }) => {
                     <img
                       width={300}
                       height={300}
-                      className="rounded-4 col-12  js-lazy"
+                      className="rounded-4 col-12 border-light  js-lazy"
                       src={slide}
                       alt="image"
                     />
@@ -87,7 +87,7 @@ const IndivitualVariants = ({ showError, setShow }) => {
                       {propertyContent.map((item) => (
                         <div className="col-md-auto col-12" key={item.id}>
                           <div className="d-block text-start">
-                            <div className="text-15 lh-15">
+                            <div className="text-12 lh-15">
                               <span className=" fw-semibold ">{item.name}</span>
                               <br /> {item.content}
                             </div>

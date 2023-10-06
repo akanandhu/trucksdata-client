@@ -91,6 +91,9 @@ const MainMenu = ({ style = "" }) => {
             />
           </div>
         </li>
+        <li className={router.pathname === "/contact" ? "current" : ""}>
+          <Link href="/compare">Compare</Link>
+        </li>
 
         <li className={router.pathname === "/contact" ? "current" : ""}>
           <Link href="/contact">Contact</Link>

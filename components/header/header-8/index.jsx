@@ -84,33 +84,7 @@ const Header1 = () => {
                   <SearchBoxContent />
                 </div>
 
-                <div className="mr-15 xxl:d-none">
-                  {/* <Link href={"/"}> */}
-                  {/* <button
-                    onClick={handleCompareRoute}
-                    className="text-26 text-dark-1 d-flex"
-                  >
-                    <span className="text-16 fw-500">Compare</span>
-                    <MdOutlineCompare />
-                  </button> */}
-                  <ul className={`menu__nav -is-active`}>
-                    <li
-                      className={
-                        router.pathname === "/compare" ? "current" : ""
-                      }
-                    >
-                      <div className="d-flex gap-1 text-center align-items-center  ">
-                        
-                        <div className="text-22">
-                          <MdOutlineCompare />
-                        </div>
-                        <div>
-                          <Link className="fw-500" href="/compare">Compare</Link>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
+               
 
                 <div className="xxl:d-none">
                   <LanguageMegaMenu textClass="text-black" />
