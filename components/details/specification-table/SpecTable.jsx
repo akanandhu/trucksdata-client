@@ -6,10 +6,10 @@ const SpecTable = ({ hasVariant, tableData }) => {
           <thead>
             <tr>
               <th></th>
-              { <th>Option 1</th>}
-              { <th>Option 2</th>}
-              { <th>Option 3</th>}
-              { <th>Option 4</th>}
+              { <th className="view_tablefontsize">Option 1</th>}
+              { <th className="view_tablefontsize">Option 2</th>}
+              { <th className="view_tablefontsize">Option 3</th>}
+              { <th className="view_tablefontsize">Option 4</th>}
             </tr>
           </thead>
         )}

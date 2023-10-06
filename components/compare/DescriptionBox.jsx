@@ -6,7 +6,7 @@ const DescriptionBox = () => {
     id: 3,
     img: "/img/backgrounds/3.png",
     title: "Compare Trucks",
-    text: `Compare two trucks of your choice with the best truck comparison tool in India on TrucksDekho. You can compare variant-wise prices, GVW, number of tyres, specifications, mileage, performance and more of as many as 3 trucks at one go to help you make the right choice.`,
+    text: `Compare two trucks of your choice with the best truck comparison tool in India . You can compare variant-wise prices, GVW, number of tyres, specifications, mileage, performance and more of as many as 3 trucks at one go to help you make the right choice.`,
     delayAnimation: "300",
   };
 
