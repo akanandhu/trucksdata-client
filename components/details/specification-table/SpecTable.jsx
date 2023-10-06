@@ -5,7 +5,7 @@ const SpecTable = ({ hasVariant, tableData }) => {
         {hasVariant && (
           <thead>
             <tr>
-              <th></th>
+              <th className="table_rowstext"></th>
               { <th className="view_tablefontsize">Option 1</th>}
               { <th className="view_tablefontsize">Option 2</th>}
               { <th className="view_tablefontsize">Option 3</th>}
@@ -27,7 +27,7 @@ const SpecTable = ({ hasVariant, tableData }) => {
                 </td>
               )}
               {row?.option_four && (
-                <td className="fw-400 view_tablefontsize">{row.option_four}</td>
+                <td className="fw-400 view_tablefontsize table_rowtext">{row.option_four}</td>
               )}
             </tr>
           ))}
