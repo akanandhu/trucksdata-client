@@ -5,7 +5,7 @@ const Blog = () => {
   return (
     <>
       {blogs.slice(0, 2).map((item) => (
-        <div className="col-lg-4 col-sm-6" key={item.id}>
+        <div className="col-lg-4 col-sm-6 " key={item.id}>
           <Link
             href={`/blog/blog-details/${item.id}`}
             className="blogCard -type-1 d-block "
@@ -26,7 +26,7 @@ const Blog = () => {
       <div className="col-lg-4">
         <div className="row y-gap-30">
           {blogs.slice(5, 8).map((item) => (
-            <div className="col-lg-12 col-md-6" key={item.id}>
+            <div className="col-lg-12 col-md-6  " key={item.id}>
               <Link
                 href={`/blog/blog-details/${item.id}`}
                 className="blogCard -type-1 d-flex items-center"

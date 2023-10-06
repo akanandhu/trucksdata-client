@@ -7,7 +7,7 @@ import isTextMatched from "../../utils/isTextMatched";
 
 const CompareTwoVehicleBox = ({ item }) => {
   return (
-    <div className="border-light">
+    <div className=" truck-card  p-1">
       <Link
         href={`/compare`}
         className="carCard -type-1 d-flex rounded-4 hover-inside-slider "
