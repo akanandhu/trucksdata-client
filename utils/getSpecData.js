@@ -239,7 +239,7 @@ export const getSpecData = () => {
       title: "Transmission",
       content: `Trucks Data is for filtering the perfect truck for your need. We also deals with variety of vehicles.`,
       tableData: transmissionSpecData,
-      icon:'/icons/gears.png'
+      icon:'/icons/transmissions.svg'
     },
     {
       id: 'four',
