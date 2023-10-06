@@ -37,7 +37,7 @@ const IndivitualVariants = ({ showError, setShow }) => {
           key={item?.id}
           data-aos="fade"
           data-aos-delay={item?.delayAnimation}
-          className=" my-5 bg-white  custom-shadow p-3"
+          className=" my-3 bg-white  custom-shadow p-3 mx-2"
         >
           <Link
             key={item.id}

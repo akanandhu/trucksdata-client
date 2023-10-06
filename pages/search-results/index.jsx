@@ -51,14 +51,14 @@ const SearchResultsPage = () => {
       <Header8 />
       {/* End Header 1 */}
 
-      <section className="pb-15 pt-0 bg-light-2">
+      <section className="pb-15 sm:pb-0 pt-0 bg-light-2">
         <div className="container">
           <div className="row">
             <div className="col-12">
               <div className="text-center">
               </div>
               {/* End text-center */}
-              <div className="pt-3 ">
+              <div className="pt-3">
                 <MainFilterSearchBox />
               </div>
             </div>
@@ -121,7 +121,7 @@ const SearchResultsPage = () => {
 
             <div className="col-xl-9 ">
               <TopHeaderFilter />
-              <div className="mt-30"></div>
+              <div className="mt-20"></div>
               {/* End mt--30 */}
               <div className="row y-gap-30 xl:d-none   ">
                 <SearchResults
