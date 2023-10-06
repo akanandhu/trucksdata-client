@@ -132,7 +132,7 @@ const SearchResultsPage = () => {
                   setShow={setShow}
                 />
               </div>
-              <div className="row y-gap-2  d-flex justify-content-center hideMobile ">
+              <div className="row y-gap-2  sm:d-flex justify-content-center d-none">
                 <SearchResultsMobile
                   setShow={setShow}
                   showError={handleCompareExceed}
