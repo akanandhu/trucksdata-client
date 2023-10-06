@@ -35,7 +35,7 @@ const CompareInputSeperate = () => {
   };
 
   return (
-    <div className="searchMenu-loc px-20 py-10 border-light rounded-4 js-form-dd js-liverSearch">
+    <div className="searchMenu-loc px-20 py-10 border-light rounded-4 js-form-dd js-liverSearch d-none md:d-block sm:d-block">
       <div
         data-bs-toggle="dropdown"
         data-bs-auto-close="true"
@@ -109,7 +109,7 @@ const CompareBoxMobile = () => {
 
   return (
     <div
-      className="col-lg-12 container  mt-40   "
+      className="col-lg-12 container  mt-40 d-lg-none"
       key={item.id}
       // data-aos="fade"
       // data-aos-delay={item.delayAnimation}

@@ -36,6 +36,7 @@ const CompareInputSeperate = () => {
   };
 
   return (
+    
     <div className="searchMenu-loc px-20 py-10 border-light rounded-4 js-form-dd js-liverSearch">
       <div
         data-bs-toggle="dropdown"
@@ -115,10 +116,10 @@ const CompareBox = () => {
       // data-aos="fade"
       // data-aos-delay={item.delayAnimation}
     >
-      <div className="rounded-4 layout-pt-md  layout-pb-md  view_bordershadow bg-white  ">
+      <div className="rounded-4 layout-pt-md  layout-pb-md  view_bordershadow bg-white d-lg-block sm:d-none md:none">
         <div className="d-flex flex-wrap y-gap-30   ">
           <div className="col-auto"></div>
-          <div className="col d-xs-none d-md-block  ">
+          <div className="col d-xs-none d-md-block">
             <div className="d-flex gap-1 flex-column justify-center h-full px-30 py-20 ">
               <div className="rounded-4">
                 <ComparePlusButton />
