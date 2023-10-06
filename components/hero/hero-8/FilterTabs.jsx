@@ -32,7 +32,7 @@ function FilterTabs() {
             <Tab className="col-auto" key={i}>
               <button className="pb-2 tabs__button text-light-1 fw-500 js-tabs-button d-flex">
                 <div className="w-25">
-                  <img src={item?.icon} alt="icons" width="50px" />
+                  <img src={item?.icon} alt="icons" width={item?.iconWidth} />
                 </div>
                 <div className="ps-2">{item.tabItem}</div>
               </button>

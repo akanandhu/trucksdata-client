@@ -6,6 +6,7 @@ const dropdown = [
     id: 1,
     tabItem: "Manufacturer",
     icon: "/icons/manufacture.png",
+    iconWidth: "35px",
     dropdownItem: [
       {
         title: "Manufacturer",
@@ -77,6 +78,7 @@ const dropdown = [
     id: 2,
     tabItem: "Body Type",
     icon: "/icons/big-truck.png",
+    iconWidth: "45px",
     dropdownItem: [
       {
         title: "Body Type",
@@ -148,6 +150,7 @@ const dropdown = [
     id: 3,
     tabItem: "Application",
     icon: "/icons/pick-up-truck.png",
+    iconWidth: "45px",
     dropdownItem: [
       {
         title: "Body Type",
@@ -219,6 +222,7 @@ const dropdown = [
     id: 4,
     tabItem: "GVW",
     icon: "/icons/weighing.png",
+    iconWidth: "50px",
     dropdownItem: [
       {
         title: "Body Type",
@@ -290,6 +294,7 @@ const dropdown = [
     id: 5,
     tabItem: "Power Source",
     icon: "/icons/diesel.png",
+    iconWidth: "25px",
     dropdownItem: [
       {
         title: "Body Type",

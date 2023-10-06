@@ -7,7 +7,6 @@ const MobileTab = () => {
 
   return (
     <div className="tabs -bookmark js-tabs d-md-none ">
-      {console.log("Tabs ", tabs)}
       <div className="tabs__controls d-flex items-center js-tabs-controls">
         {tabs?.map((tab) => (
           <button
@@ -17,11 +16,11 @@ const MobileTab = () => {
             }`}
             onClick={() => dispatch(addCurrentTab(tab?.name))}
           >
-            <div className="tab_iconsize">
+            <div>
               <img
               src={tab?.icon}
               alt="icons"
-              width='50px'
+              width={tab?.iconWidth}
               />
             </div>
             <div>{tab?.name}</div>
