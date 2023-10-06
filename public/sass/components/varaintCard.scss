@@ -84,3 +84,24 @@
 .truck-card__price {
   color: #ff6600;
 }
+
+
+.articlePadding {
+}
+
+@media (max-width: 767px) {
+  .articlePadding {
+    padding-top: 28px; 
+    padding-bottom: 28px; 
+}
+}
+
+@media (min-width: 768px) {
+  .articlePadding {
+    padding-top: 60px; 
+    padding-bottom: 60px; 
+  }
+}
+
+
+

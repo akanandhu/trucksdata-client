@@ -5,8 +5,8 @@ import CompareTwoVehiclesCard from "./CompareTwoVehiclesCard";
 
 const CompareVehicles = ({filterOptions}) => {
   return (
-    <section className="layout-pb-md">
-      <div className="container view_bordershadow bg-white">
+    <section className="pb-30">
+      <div className="container view_bordershadow bg-white p-5">
         <div className="row y-gap-20 justify-center text-center">
           <div className="col-auto">
             <div className="sectionTitle -md">
@@ -18,7 +18,7 @@ const CompareVehicles = ({filterOptions}) => {
           </div>
         </div>
 
-        <div className="row y-gap-30 pt-40 sm:pt-20 item_gap-x30">
+        <div className="row y-gap-30 pt-5 sm:pt-20 item_gap-x30">
           <div className="tabs -pills-2 pt-12">
             <TopFilter filterOptions={filterOptions} />
           </div>

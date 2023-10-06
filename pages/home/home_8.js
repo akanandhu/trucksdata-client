@@ -34,8 +34,8 @@ const home_8 = () => {
       <Hero8 />
       {/* End Hero 8 */}
 
-      <section className="layout-pt-md layout-pb-md">
-        <div className="container view_bordershadow bg-white">
+      <section className="layout-pt-md pb-30">
+        <div className="container view_bordershadow bg-white p-5">
           <div className="row y-gap-20 justify-center text-center">
             <div className="col-auto">
               <div className="sectionTitle -md">
@@ -49,8 +49,8 @@ const home_8 = () => {
           </div>
           {/* End .row */}
 
-          <div className="row y-gap-30 pt-40 sm:pt-20 item_gap-x30">
-            <div className="tabs -pills-2 pt-12">
+          <div className="row y-gap-30 pt-5 sm:pt-20 item_gap-x30">
+            <div className="tabs -pills-3 pt-12">
               <TopFilter filterOptions={filterOptions} />
             </div>
             <PopularCars />
@@ -61,8 +61,8 @@ const home_8 = () => {
       </section>
       {/* Popular Car Hire Sections */}
 
-      <section className="pb-60">
-        <div className="container view_bordershadow bg-white">
+      <section className="pb-30">
+        <div className="container view_bordershadow bg-white p-5">
           <div className="row y-gap-20 justify-center text-center">
             <div className="col-auto">
               <div className="sectionTitle -md">
@@ -75,7 +75,7 @@ const home_8 = () => {
           </div>
           {/* End .row */}
 
-          <div className="row y-gap-30 pt-40 item_gap-x30  ">
+          <div className="row y-gap-30 pt-5 item_gap-x30  ">
             <div className="tabs -pills-2 pt-12 ">
               <TopFilter filterOptions={filterOptions} />
             </div>
@@ -88,8 +88,8 @@ const home_8 = () => {
 
       <CompareVehicles filterOptions={filterOptions} />
 
-      <section className=" layout-pb-md">
-        <div className="container view_bordershadow bg-white">
+      <section className="pb-30">
+        <div className="container view_bordershadow bg-white p-5">
           <div className="row y-gap-20 justify-center text-center">
             <div className="col-auto">
               <div className="sectionTitle -md">
@@ -103,7 +103,7 @@ const home_8 = () => {
           </div>
           {/* End .row */}
 
-          <div className="row y-gap-30 pt-40 sm:pt-20 item_gap-x30">
+          <div className="row y-gap-30 pt-5 sm:pt-20 item_gap-x30">
             <div className="tabs -pills-2 pt-12">
               <TopFilter filterOptions={filterOptions} />
             </div>
@@ -114,8 +114,8 @@ const home_8 = () => {
         {/* End .container */}
       </section>
 
-      <section className="layout-pt-md layout-pb-lg">
-        <div className="container view_bordershadow bg-white">
+      <section className="pb-30">
+        <div className="container view_bordershadow bg-white p-5">
           <div className="row y-gap-20 justify-between items-end">
             <div className="col-auto">
               <div className="sectionTitle -md">

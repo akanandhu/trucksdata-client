@@ -100,7 +100,7 @@ const UpcomingTrucks = () => {
         ))}
       </Swiper>
 
-      <div className="d-flex x-gap-15 items-center justify-center pt-40 sm:pt-20">
+      <div className="d-flex x-gap-15 items-center justify-center pt-20 sm:pt-20">
         <div className="col-auto">
           <button className="d-flex items-center text-24 arrow-left-hover js-popular-car-prev">
             <i className="icon icon-arrow-left" />

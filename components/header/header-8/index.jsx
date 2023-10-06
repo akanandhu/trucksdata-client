@@ -86,12 +86,29 @@ const Header1 = () => {
 
                 <div className="mr-15 xxl:d-none">
                   {/* <Link href={"/"}> */}
-                  <button
+                  {/* <button
                     onClick={handleCompareRoute}
                     className="text-26 text-dark-1 d-flex"
                   >
+                    <span className="text-16 fw-500">Compare</span>
                     <MdOutlineCompare />
-                  </button>
+                  </button> */}
+                  <ul className={`menu__nav -is-active`}>
+                    <li
+                      className={
+                        router.pathname === "/compare" ? "current" : ""
+                      }
+                    >
+                      <div className="d-flex gap-1 text-center align-items-center  ">
+                        <div>
+                          <Link className="fw-500" href="/compare">Compare</Link>
+                        </div>
+                        <div className="text-22">
+                          <MdOutlineCompare />
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
                   {/* </Link> */}
                 </div>
 
@@ -102,7 +119,7 @@ const Header1 = () => {
                 {/* Start mobile menu icon */}
                 <div className="d-none xl:d-flex x-gap-20 items-center pl-30">
                   <div
-                    className="d-flex items-center text-inherit text-22"
+                    className="d-flex items-center text-inherit text-22 menu__nav -is-active"
                     onClick={handleCompareRoute}
                   >
                     <MdOutlineCompare />

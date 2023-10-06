@@ -88,7 +88,7 @@ const TopBrands = () => {
           <Link
             // href="/dest"
             href={`/brands/${item.id}`}
-            className="citiesCard -type-4 d-block text-center"
+            className="citiesCard -type-3 d-block text-center"
           >
             <div className="citiesCard__image size-120 rounded-full mx-auto">
               <img
@@ -97,11 +97,11 @@ const TopBrands = () => {
                 alt="image"
               />
             </div>
-            <div className="citiesCard__content mt-20">
-              <h4 className="text-18  lh-13 fw-500 text-dark-1">
+            {/* <div className="citiesCard__content mt-20">
+              <h4 className="text-12   lh-13 fw-500 text-dark-1">
                 {item.brand_name?.toUpperCase()}
               </h4>
-            </div>
+            </div> */}
           </Link>
         </div>
       ))}
