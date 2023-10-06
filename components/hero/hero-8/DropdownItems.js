@@ -220,9 +220,9 @@ const dropdown = [
   },
   {
     id: 4,
-    tabItem: "GVW",
-    icon: "/icons/weighing.png",
-    iconWidth: "50px",
+    tabItem: "G V W",
+    icon: "/icons/weight.png",
+    iconWidth: "45px",
     dropdownItem: [
       {
         title: "Body Type",

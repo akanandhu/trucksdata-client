@@ -5,7 +5,7 @@ const initialState = {
     { id: 1, name: "Manufacturer", icon: "/icons/manufacture.png",iconWidth:"40px" },
     { id: 2, name: "Body Type", icon: "/icons/big-truck.png",iconWidth:"40px" },
     { id: 3, name: "Application", icon: "/icons/pick-up-truck.png",iconWidth:"40px" },
-    { id: 4, name: "GVW", icon: "/icons/weight.png",iconWidth:"40px"},
+    { id: 4, name: "G V W", icon: "/icons/weight.png",iconWidth:"40px"},
     { id: 5, name: "Power Source", icon: "/icons/diesel.png",iconWidth:"40px" },
   ],
   currentTab: "Manufacturer",
