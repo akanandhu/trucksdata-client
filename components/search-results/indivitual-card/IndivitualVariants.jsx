@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import carsData from "../../../data/cars";
 import Image from "next/image";
 import CompareAddButton from "../results/compare/CompareAddButton";
+import { useRouter } from "next/router";
 
 const IndivitualVariants = ({ showError, setShow }) => {
   const propertyContent = [
@@ -29,6 +30,12 @@ const IndivitualVariants = ({ showError, setShow }) => {
     
     
   ];
+
+  const router = useRouter() 
+
+  function handleRoute (id) {
+    router.push(`/details/${id}`)
+  }
 
   return (
     <>
@@ -103,7 +110,7 @@ const IndivitualVariants = ({ showError, setShow }) => {
                 showError={showError}
                 setShow={setShow}
               />
-              <button className=" btn btn-primary  bg-blue-1 d-flex justify-content-center   flex-grow-1 text-center  ">
+              <button onClick={() => handleRoute(item.id)} className=" btn btn-primary  bg-blue-1 d-flex justify-content-center   flex-grow-1 text-center  ">
                 View More
               </button>
             </div>

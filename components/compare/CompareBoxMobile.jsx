@@ -35,14 +35,14 @@ const CompareInputSeperate = () => {
   };
 
   return (
-    <div className="searchMenu-loc px-20 py-10 border-light rounded-4 js-form-dd js-liverSearch d-none md:d-block sm:d-block">
+    <div className="searchMenu-loc px-1 py-2 border-light rounded-4 js-form-dd js-liverSearch d-none md:d-block sm:d-block">
       <div
         data-bs-toggle="dropdown"
         data-bs-auto-close="true"
         data-bs-offset="0,22"
       >
-        <h4 className="text-15 fw-500 ls-2 lh-16">Select Brand/Model</h4>
-        <div className="text-15 text-light-1 ls-2 lh-16 d-flex  justify-content-between ">
+        <h4 className="text-10 fw-500 ls-2 lh-16">Select Brand/Model</h4>
+        <div className="text-10 text-light-1 ls-2 lh-16 d-flex  justify-content-between ">
           <div>
             <input
               autoComplete="off"
@@ -112,11 +112,11 @@ const CompareBoxMobile = () => {
       // data-aos="fade"
       // data-aos-delay={item.delayAnimation}
     >
-      <div className="rounded-4 layout-pt-md  layout-pb-md  view_bordershadow bg-white  ">
-        <div className="d-flex flex-wrap y-gap-30   ">
+      <div className="rounded-4 layout-pt-md  layout-pb-md   view_bordershadow bg-white  ">
+        <div className="d-flex  y-gap-15   ">
           <div className="col-auto"></div>
           <div className="col d-xs-none d-md-block  ">
-            <div className="d-flex gap-1 flex-column justify-center h-full px-30 py-20 ">
+            <div className="d-flex gap-1 flex-column justify-center h-full  px-2 py-10 ">
               <div className="rounded-4 ">
                 <CompareInput />
               </div>
@@ -126,7 +126,7 @@ const CompareBoxMobile = () => {
             </div>
           </div>
           <div className="col">
-            <div className="d-flex gap-1 flex-column justify-center h-full px-30 py-20">
+            <div className="d-flex gap-1 flex-column justify-center h-full px-2 py-10">
               {/* <div>
                 <ComparePlusButton />
               </div> */}
@@ -138,17 +138,7 @@ const CompareBoxMobile = () => {
               </div>
             </div>
           </div>
-          <div className="col">
-            <div className="d-flex gap-1  flex-column justify-center h-full px-30 py-20">
-              
-              <div className="rounded-4 ">
-                <CompareInput />
-              </div>
-              <div className="rounded-4 ">
-                <CompareInputSeperate />
-              </div>
-            </div>
-          </div>
+         
         </div>
         <div className="d-flex justify-content-center py-20 ">
           <button className="btn btn-primary w-50  ">Compare</button>

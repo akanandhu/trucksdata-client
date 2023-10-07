@@ -10,3 +10,13 @@
   }
 
 
+  .large-screen-only {
+    display: none; /* Hide the element by default */
+  
+    /* Use a media query to display the element on large screens */
+    @media (min-width: 768px) {
+      display: table-cell; /* Display the element on large screens */
+    }
+  }
+
+

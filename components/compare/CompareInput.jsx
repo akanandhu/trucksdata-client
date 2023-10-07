@@ -30,7 +30,7 @@ const CompareInput = () => {
   };
 
   return (
-    <div className="searchMenu-loc px-20 py-10 border-light rounded-4 js-form-dd js-liverSearch">
+    <div className="searchMenu-loc px-lg-20 py-lg-10 py-2 px-1  border-light rounded-4 js-form-dd js-liverSearch">
       <div
         data-bs-toggle="dropdown"
         data-bs-auto-close="true"
@@ -38,13 +38,13 @@ const CompareInput = () => {
       >
         <div className="d-flex justify-content-between  ">
           <div className="text-15 text-light-1 ls-2 lh-16 d-flex flex-column align-content-start   justify-content-start ">
-            <h4 className="text-15 fw-500 ls-2 lh-16">Select Brand/Model</h4>
+            <h4 className=" text-10 fw-500 ls-2 lh-8">Select Brand/Model</h4>
 
             <div>
               <input
                 autoComplete="off"
                 type="search"
-                className="js-search js-dd-focus"
+                className="js-search js-dd-focus text-10"
                 value={searchValue}
                 onChange={(e) => setSearchValue(e.target.value)}
               />

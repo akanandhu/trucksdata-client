@@ -88,7 +88,7 @@ const UpcomingTrucks = () => {
                     </span>
                   </div>
                   <div className="d-flex w-auto mt-5 ">
-                    <button className=" btn btn-primary d-flex justify-content-center   flex-grow-1 text-center  ">
+                    <button className=" btn btn-primary bg-blue-1 d-flex justify-content-center   flex-grow-1 text-center  ">
                       View More
                     </button>
                   </div>

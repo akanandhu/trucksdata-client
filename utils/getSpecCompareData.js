@@ -92,26 +92,39 @@ const transmissionSpecData = [
   {
     item: "Gear Box Model",
     option_one: "G85",
+    option_two: "G85",
+    option_three: "G85",
   },
   {
     item: "Type",
     option_one: "Mechanical, Synchromesh type",
+    option_two: "Mechanical, Synchromesh type",
+
+    option_three: "Mechanical, Synchromesh type",
   },
   {
     item: "No. of Gears",
     option_one: "6 Forward + 1 reverse",
+    option_two: "6 Forward + 1 reverse",
+    option_three: "6 Forward + 1 reverse",
   },
   {
     item: "Clutch Type",
     option_one: "Dry - Single plate, Hydraulic actuated",
+    option_two: "Dry - Single plate, Hydraulic actuated",
+    option_three: "Dry - Single plate, Hydraulic actuated",
   },
   {
     item: "Clutch Diameter (mm)",
     option_one: "362",
+    option_two: "362",
+    option_three: "362",
   },
   {
     item: "Power Take Off (PTO Provision)",
     option_one: "No Provision",
+    option_two: "No Provision",
+    option_three: "No Provision",
   },
 ];
 
@@ -119,15 +132,23 @@ const chasisSpecData = [
   {
     item: "Frame size (mm)",
     option_one: "228 x 80 x 6",
+    option_two: "228 x 80 x 6",
+    option_three: "228 x 80 x 6",
   },
   {
     item: "Front Suspension",
     option_one:
       "Multileaf Spring, 2 Nos Hydraulic Telescopic double acting Shock absorber, Anti roll bar",
+    option_two:
+      "Multileaf Spring, 2 Nos Hydraulic Telescopic double acting Shock absorber, Anti roll bar",
+    option_three:
+      "Multileaf Spring, 2 Nos Hydraulic Telescopic double acting Shock absorber, Anti roll bar",
   },
   {
     item: "Rear Suspension",
     option_one: "Multileaf Spring, Anti roll bar-Optional",
+    option_two: "Multileaf Spring, Anti roll bar-Optional",
+    option_three: "Multileaf Spring, Anti roll bar-Optional",
   },
 ];
 
@@ -135,14 +156,20 @@ const steeringSpecData = [
   {
     item: "Steering Type",
     option_one: "Power assisted – Hydraulic, 400mm Steering wheel dia",
+    option_two: "Power assisted – Hydraulic, 400mm Steering wheel dia",
+    option_three: "Power assisted – Hydraulic, 400mm Steering wheel dia",
   },
   {
     item: "Service Brake",
     option_one: "Pneumatic, Foot Operated, Dual Line Non - ABS",
+    option_two: "Pneumatic, Foot Operated, Dual Line Non - ABS",
+    option_three: "Pneumatic, Foot Operated, Dual Line Non - ABS",
   },
   {
     item: "Parking Brake",
     option_one: "Spring Actuated with Hand Brake Valve @ cab",
+    option_two: "Spring Actuated with Hand Brake Valve @ cab",
+    option_three: "Spring Actuated with Hand Brake Valve @ cab",
   },
   {
     item: "Front Brake Size (mm)",
@@ -285,7 +312,8 @@ export const getSpecCompareData = () => {
       title: "Transmission",
       content: `Trucks Data is for filtering the perfect truck for your need. We also deals with variety of vehicles.`,
       tableData: transmissionSpecData,
-      icon:'/icons/transmissions.svg'
+      hasVariant: true,
+      icon: "/icons/transmissions.svg",
     },
     {
       id: "four",
@@ -301,6 +329,7 @@ export const getSpecCompareData = () => {
       title: "Steering & Braking",
       content: `Trucks Data is for filtering the perfect truck for your need. We also deals with variety of vehicles.`,
       tableData: steeringSpecData,
+      hasVariant: true,
       icon: "/icons/braking.png",
     },
     {

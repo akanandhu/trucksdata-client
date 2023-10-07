@@ -10,7 +10,7 @@ const CompareDataTable = ({ hasVariant, tableData }) => {
               <th className="table_rowstext"></th>
               {hasVariant && <th className="view_tablefontsize">Vehicle 1</th>}
               {hasVariant && <th className="view_tablefontsize">Vehicle 2</th>}
-              {hasVariant && <th className="view_tablefontsize">Vehicle 3</th>}
+              {hasVariant && <th className="view_tablefontsize large-screen-only">Vehicle 3</th>}
             </tr>
           </thead>
         )}
@@ -20,7 +20,7 @@ const CompareDataTable = ({ hasVariant, tableData }) => {
               <td className="fw-500 view_tablefontsize table_rowtext">{row.item}</td>
               <td className="fw-300 view_tablefontsize table_rowstext">{row.option_one}</td>
               {row?.option_two && (
-                <td className="fw-400 view_tablefontsize table_rowstext">{row.option_two}</td>
+                <td className="fw-400 view_tablefontsize large-screen-only table_rowstext">{row.option_two}</td>
               )}
               {row?.option_three && (
                 <td className="fw-400 view_tablefontsize table_rowstext">

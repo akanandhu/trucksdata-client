@@ -453,7 +453,7 @@ export const menuLists = [
 
   {
     id: 2,
-    title: "Tippers",
+    title: "Trailers",
     categorieMobileItems: [
       {
         id: 12,

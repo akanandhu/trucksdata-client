@@ -42,6 +42,8 @@ const PopularCars = () => {
             <Link
               href={`/details/${item.id}`}
               className="carCard -type-1 d-block rounded-4 hover-inside-slider"
+              data-aos="fade"
+          data-aos-delay={item.delayAnimation}
             >
               <div
                 key={item?.id}
