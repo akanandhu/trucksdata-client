@@ -13,15 +13,15 @@ export const menuLists = [
             menuList: [
               {
                 name: "1110 R",
-                routePath: "/hotel/hotel-list-v1",
+               routePath: '/',
               },
               {
                 name: "1120 R",
-                routePath: "/hotel/hotel-list-v2",
+                routePath: '/',
               },
               {
                 name: "Other Variants",
-                routePath: "/hotel/hotel-list-v3",
+                routePath: '/',
               },
             ],
           },
@@ -31,11 +31,11 @@ export const menuLists = [
             menuList: [
               {
                 name: "Boss 1110",
-                routePath: "/hotel/hotel-single-v1/5",
+                routePath: '/',
               },
               {
                 name: "Boss 1120",
-                routePath: "/hotel/hotel-single-v2/5",
+                routePath: '/',
               },
             ],
           },
@@ -51,15 +51,15 @@ export const menuLists = [
             menuList: [
               {
                 name: "Benz 1110",
-                routePath: "/hotel/hotel-list-v1",
+               routePath: '/',
               },
               {
                 name: "Benz 1120",
-                routePath: "/hotel/hotel-list-v2",
+                routePath: '/',
               },
               {
                 name: "Other Variants",
-                routePath: "/hotel/hotel-list-v3",
+                routePath: '/',
               },
             ],
           },
@@ -69,11 +69,11 @@ export const menuLists = [
             menuList: [
               {
                 name: "11100",
-                routePath: "/hotel/hotel-single-v1/5",
+                routePath: '/',
               },
               {
                 name: "View More",
-                routePath: "/hotel/hotel-single-v2/5",
+                routePath: '/',
               },
             ],
           },
@@ -89,11 +89,11 @@ export const menuLists = [
             menuList: [
               {
                 name: "Volvo V 1100",
-                routePath: "/hotel/hotel-list-v1",
+               routePath: '/',
               },
               {
                 name: "Other Variants",
-                routePath: "/hotel/hotel-list-v2",
+                routePath: '/',
               },
             ],
           },
@@ -103,7 +103,7 @@ export const menuLists = [
             menuList: [
               {
                 name: "1110000",
-                routePath: "/hotel/hotel-single-v1/5",
+                routePath: '/',
               },
             ],
           },
@@ -119,15 +119,15 @@ export const menuLists = [
             menuList: [
               {
                 name: "TATA 1100",
-                routePath: "/hotel/hotel-list-v1",
+               routePath: '/',
               },
               {
                 name: "TATA 1200",
-                routePath: "/hotel/hotel-list-v2",
+                routePath: '/',
               },
               {
                 name: "Other Variants",
-                routePath: "/hotel/hotel-list-v3",
+                routePath: '/',
               },
             ],
           },
@@ -137,11 +137,11 @@ export const menuLists = [
             menuList: [
               {
                 name: "TATA 1330",
-                routePath: "/hotel/hotel-single-v1/5",
+                routePath: '/',
               },
               {
                 name: "Other Varients",
-                routePath: "/hotel/hotel-single-v2/5",
+                routePath: '/',
               },
             ],
           },
@@ -163,15 +163,15 @@ export const menuLists = [
             menuList: [
               {
                 name: "1110 R",
-                routePath: "/hotel/hotel-list-v1",
+               routePath: '/',
               },
               {
                 name: "1120 R",
-                routePath: "/hotel/hotel-list-v2",
+                routePath: '/',
               },
               {
                 name: "Other Variants",
-                routePath: "/hotel/hotel-list-v3",
+                routePath: '/',
               },
             ],
           },
@@ -181,11 +181,11 @@ export const menuLists = [
             menuList: [
               {
                 name: "Boss 1110",
-                routePath: "/hotel/hotel-single-v1/5",
+                routePath: '/',
               },
               {
                 name: "Boss 1120",
-                routePath: "/hotel/hotel-single-v2/5",
+                routePath: '/',
               },
             ],
           },
@@ -201,15 +201,15 @@ export const menuLists = [
             menuList: [
               {
                 name: "Benz 1110",
-                routePath: "/hotel/hotel-list-v1",
+               routePath: '/',
               },
               {
                 name: "Benz 1120",
-                routePath: "/hotel/hotel-list-v2",
+                routePath: '/',
               },
               {
                 name: "Other Variants",
-                routePath: "/hotel/hotel-list-v3",
+                routePath: '/',
               },
             ],
           },
@@ -219,11 +219,11 @@ export const menuLists = [
             menuList: [
               {
                 name: "11100",
-                routePath: "/hotel/hotel-single-v1/5",
+                routePath: '/',
               },
               {
                 name: "View More",
-                routePath: "/hotel/hotel-single-v2/5",
+                routePath: '/',
               },
             ],
           },
@@ -239,11 +239,11 @@ export const menuLists = [
             menuList: [
               {
                 name: "Volvo V 1100",
-                routePath: "/hotel/hotel-list-v1",
+               routePath: '/',
               },
               {
                 name: "Other Variants",
-                routePath: "/hotel/hotel-list-v2",
+                routePath: '/',
               },
             ],
           },
@@ -253,7 +253,7 @@ export const menuLists = [
             menuList: [
               {
                 name: "1110000",
-                routePath: "/hotel/hotel-single-v1/5",
+                routePath: '/',
               },
             ],
           },
@@ -269,15 +269,15 @@ export const menuLists = [
             menuList: [
               {
                 name: "TATA 1100",
-                routePath: "/hotel/hotel-list-v1",
+               routePath: '/',
               },
               {
                 name: "TATA 1200",
-                routePath: "/hotel/hotel-list-v2",
+                routePath: '/',
               },
               {
                 name: "Other Variants",
-                routePath: "/hotel/hotel-list-v3",
+                routePath: '/',
               },
             ],
           },
@@ -287,11 +287,11 @@ export const menuLists = [
             menuList: [
               {
                 name: "TATA 1330",
-                routePath: "/hotel/hotel-single-v1/5",
+                routePath: '/',
               },
               {
                 name: "Other Varients",
-                routePath: "/hotel/hotel-single-v2/5",
+                routePath: '/',
               },
             ],
           },
@@ -314,15 +314,15 @@ export const menuLists = [
             menuList: [
               {
                 name: "1110 R",
-                routePath: "/hotel/hotel-list-v1",
+               routePath: '/',
               },
               {
                 name: "1120 R",
-                routePath: "/hotel/hotel-list-v2",
+                routePath: '/',
               },
               {
                 name: "Other Variants",
-                routePath: "/hotel/hotel-list-v3",
+                routePath: '/',
               },
             ],
           },
@@ -332,11 +332,11 @@ export const menuLists = [
             menuList: [
               {
                 name: "Boss 1110",
-                routePath: "/hotel/hotel-single-v1/5",
+                routePath: '/',
               },
               {
                 name: "Boss 1120",
-                routePath: "/hotel/hotel-single-v2/5",
+                routePath: '/',
               },
             ],
           },
@@ -352,15 +352,15 @@ export const menuLists = [
             menuList: [
               {
                 name: "Benz 1110",
-                routePath: "/hotel/hotel-list-v1",
+               routePath: '/',
               },
               {
                 name: "Benz 1120",
-                routePath: "/hotel/hotel-list-v2",
+                routePath: '/',
               },
               {
                 name: "Other Variants",
-                routePath: "/hotel/hotel-list-v3",
+                routePath: '/',
               },
             ],
           },
@@ -370,11 +370,11 @@ export const menuLists = [
             menuList: [
               {
                 name: "11100",
-                routePath: "/hotel/hotel-single-v1/5",
+                routePath: '/',
               },
               {
                 name: "View More",
-                routePath: "/hotel/hotel-single-v2/5",
+                routePath: '/',
               },
             ],
           },
@@ -390,11 +390,11 @@ export const menuLists = [
             menuList: [
               {
                 name: "Volvo V 1100",
-                routePath: "/hotel/hotel-list-v1",
+               routePath: '/',
               },
               {
                 name: "Other Variants",
-                routePath: "/hotel/hotel-list-v2",
+                routePath: '/',
               },
             ],
           },
@@ -404,7 +404,7 @@ export const menuLists = [
             menuList: [
               {
                 name: "1110000",
-                routePath: "/hotel/hotel-single-v1/5",
+                routePath: '/',
               },
             ],
           },
@@ -420,15 +420,15 @@ export const menuLists = [
             menuList: [
               {
                 name: "TATA 1100",
-                routePath: "/hotel/hotel-list-v1",
+               routePath: '/',
               },
               {
                 name: "TATA 1200",
-                routePath: "/hotel/hotel-list-v2",
+                routePath: '/',
               },
               {
                 name: "Other Variants",
-                routePath: "/hotel/hotel-list-v3",
+                routePath: '/',
               },
             ],
           },
@@ -438,11 +438,11 @@ export const menuLists = [
             menuList: [
               {
                 name: "TATA 1330",
-                routePath: "/hotel/hotel-single-v1/5",
+                routePath: '/',
               },
               {
                 name: "Other Varients",
-                routePath: "/hotel/hotel-single-v2/5",
+                routePath: '/',
               },
             ],
           },
@@ -465,15 +465,15 @@ export const menuLists = [
             menuList: [
               {
                 name: "1110 R",
-                routePath: "/hotel/hotel-list-v1",
+               routePath: '/',
               },
               {
                 name: "1120 R",
-                routePath: "/hotel/hotel-list-v2",
+                routePath: '/',
               },
               {
                 name: "Other Variants",
-                routePath: "/hotel/hotel-list-v3",
+                routePath: '/',
               },
             ],
           },
@@ -483,11 +483,11 @@ export const menuLists = [
             menuList: [
               {
                 name: "Boss 1110",
-                routePath: "/hotel/hotel-single-v1/5",
+                routePath: '/',
               },
               {
                 name: "Boss 1120",
-                routePath: "/hotel/hotel-single-v2/5",
+                routePath: '/',
               },
             ],
           },
@@ -503,15 +503,15 @@ export const menuLists = [
             menuList: [
               {
                 name: "Benz 1110",
-                routePath: "/hotel/hotel-list-v1",
+               routePath: '/',
               },
               {
                 name: "Benz 1120",
-                routePath: "/hotel/hotel-list-v2",
+                routePath: '/',
               },
               {
                 name: "Other Variants",
-                routePath: "/hotel/hotel-list-v3",
+                routePath: '/',
               },
             ],
           },
@@ -521,11 +521,11 @@ export const menuLists = [
             menuList: [
               {
                 name: "11100",
-                routePath: "/hotel/hotel-single-v1/5",
+                routePath: '/',
               },
               {
                 name: "View More",
-                routePath: "/hotel/hotel-single-v2/5",
+                routePath: '/',
               },
             ],
           },
@@ -541,11 +541,11 @@ export const menuLists = [
             menuList: [
               {
                 name: "Volvo V 1100",
-                routePath: "/hotel/hotel-list-v1",
+               routePath: '/',
               },
               {
                 name: "Other Variants",
-                routePath: "/hotel/hotel-list-v2",
+                routePath: '/',
               },
             ],
           },
@@ -555,7 +555,7 @@ export const menuLists = [
             menuList: [
               {
                 name: "1110000",
-                routePath: "/hotel/hotel-single-v1/5",
+                routePath: '/',
               },
             ],
           },
@@ -571,15 +571,15 @@ export const menuLists = [
             menuList: [
               {
                 name: "TATA 1100",
-                routePath: "/hotel/hotel-list-v1",
+               routePath: '/',
               },
               {
                 name: "TATA 1200",
-                routePath: "/hotel/hotel-list-v2",
+                routePath: '/',
               },
               {
                 name: "Other Variants",
-                routePath: "/hotel/hotel-list-v3",
+                routePath: '/',
               },
             ],
           },
@@ -589,11 +589,11 @@ export const menuLists = [
             menuList: [
               {
                 name: "TATA 1330",
-                routePath: "/hotel/hotel-single-v1/5",
+                routePath: '/',
               },
               {
                 name: "Other Varients",
-                routePath: "/hotel/hotel-single-v2/5",
+                routePath: '/',
               },
             ],
           },
@@ -616,15 +616,15 @@ export const menuLists = [
             menuList: [
               {
                 name: "1110 R",
-                routePath: "/hotel/hotel-list-v1",
+               routePath: '/',
               },
               {
                 name: "1120 R",
-                routePath: "/hotel/hotel-list-v2",
+                routePath: '/',
               },
               {
                 name: "Other Variants",
-                routePath: "/hotel/hotel-list-v3",
+                routePath: '/',
               },
             ],
           },
@@ -634,11 +634,11 @@ export const menuLists = [
             menuList: [
               {
                 name: "Boss 1110",
-                routePath: "/hotel/hotel-single-v1/5",
+                routePath: '/',
               },
               {
                 name: "Boss 1120",
-                routePath: "/hotel/hotel-single-v2/5",
+                routePath: '/',
               },
             ],
           },
@@ -654,15 +654,15 @@ export const menuLists = [
             menuList: [
               {
                 name: "Benz 1110",
-                routePath: "/hotel/hotel-list-v1",
+               routePath: '/',
               },
               {
                 name: "Benz 1120",
-                routePath: "/hotel/hotel-list-v2",
+                routePath: '/',
               },
               {
                 name: "Other Variants",
-                routePath: "/hotel/hotel-list-v3",
+                routePath: '/',
               },
             ],
           },
@@ -672,11 +672,11 @@ export const menuLists = [
             menuList: [
               {
                 name: "11100",
-                routePath: "/hotel/hotel-single-v1/5",
+                routePath: '/',
               },
               {
                 name: "View More",
-                routePath: "/hotel/hotel-single-v2/5",
+                routePath: '/',
               },
             ],
           },
@@ -692,11 +692,11 @@ export const menuLists = [
             menuList: [
               {
                 name: "Volvo V 1100",
-                routePath: "/hotel/hotel-list-v1",
+               routePath: '/',
               },
               {
                 name: "Other Variants",
-                routePath: "/hotel/hotel-list-v2",
+                routePath: '/',
               },
             ],
           },
@@ -706,7 +706,7 @@ export const menuLists = [
             menuList: [
               {
                 name: "1110000",
-                routePath: "/hotel/hotel-single-v1/5",
+                routePath: '/',
               },
             ],
           },
@@ -722,15 +722,15 @@ export const menuLists = [
             menuList: [
               {
                 name: "TATA 1100",
-                routePath: "/hotel/hotel-list-v1",
+               routePath: '/',
               },
               {
                 name: "TATA 1200",
-                routePath: "/hotel/hotel-list-v2",
+                routePath: '/',
               },
               {
                 name: "Other Variants",
-                routePath: "/hotel/hotel-list-v3",
+                routePath: '/',
               },
             ],
           },
@@ -740,11 +740,11 @@ export const menuLists = [
             menuList: [
               {
                 name: "TATA 1330",
-                routePath: "/hotel/hotel-single-v1/5",
+                routePath: '/',
               },
               {
                 name: "Other Varients",
-                routePath: "/hotel/hotel-single-v2/5",
+                routePath: '/',
               },
             ],
           },
@@ -767,15 +767,15 @@ export const menuLists = [
             menuList: [
               {
                 name: "1110 R",
-                routePath: "/hotel/hotel-list-v1",
+               routePath: '/',
               },
               {
                 name: "1120 R",
-                routePath: "/hotel/hotel-list-v2",
+                routePath: '/',
               },
               {
                 name: "Other Variants",
-                routePath: "/hotel/hotel-list-v3",
+                routePath: '/',
               },
             ],
           },
@@ -785,11 +785,11 @@ export const menuLists = [
             menuList: [
               {
                 name: "Boss 1110",
-                routePath: "/hotel/hotel-single-v1/5",
+                routePath: '/',
               },
               {
                 name: "Boss 1120",
-                routePath: "/hotel/hotel-single-v2/5",
+                routePath: '/',
               },
             ],
           },
@@ -805,15 +805,15 @@ export const menuLists = [
             menuList: [
               {
                 name: "Benz 1110",
-                routePath: "/hotel/hotel-list-v1",
+               routePath: '/',
               },
               {
                 name: "Benz 1120",
-                routePath: "/hotel/hotel-list-v2",
+                routePath: '/',
               },
               {
                 name: "Other Variants",
-                routePath: "/hotel/hotel-list-v3",
+                routePath: '/',
               },
             ],
           },
@@ -823,11 +823,11 @@ export const menuLists = [
             menuList: [
               {
                 name: "11100",
-                routePath: "/hotel/hotel-single-v1/5",
+                routePath: '/',
               },
               {
                 name: "View More",
-                routePath: "/hotel/hotel-single-v2/5",
+                routePath: '/',
               },
             ],
           },
@@ -843,11 +843,11 @@ export const menuLists = [
             menuList: [
               {
                 name: "Volvo V 1100",
-                routePath: "/hotel/hotel-list-v1",
+               routePath: '/',
               },
               {
                 name: "Other Variants",
-                routePath: "/hotel/hotel-list-v2",
+                routePath: '/',
               },
             ],
           },
@@ -857,7 +857,7 @@ export const menuLists = [
             menuList: [
               {
                 name: "1110000",
-                routePath: "/hotel/hotel-single-v1/5",
+                routePath: '/',
               },
             ],
           },
@@ -873,15 +873,15 @@ export const menuLists = [
             menuList: [
               {
                 name: "TATA 1100",
-                routePath: "/hotel/hotel-list-v1",
+               routePath: '/',
               },
               {
                 name: "TATA 1200",
-                routePath: "/hotel/hotel-list-v2",
+                routePath: '/',
               },
               {
                 name: "Other Variants",
-                routePath: "/hotel/hotel-list-v3",
+                routePath: '/',
               },
             ],
           },
@@ -891,11 +891,11 @@ export const menuLists = [
             menuList: [
               {
                 name: "TATA 1330",
-                routePath: "/hotel/hotel-single-v1/5",
+                routePath: '/',
               },
               {
                 name: "Other Varients",
-                routePath: "/hotel/hotel-single-v2/5",
+                routePath: '/',
               },
             ],
           },

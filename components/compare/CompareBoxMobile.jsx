@@ -52,8 +52,6 @@ const CompareInputSeperate = () => {
               onChange={(e) => setSearchValue(e.target.value)}
             />
           </div>
-
-          
         </div>
       </div>
       {/* End location Field */}
@@ -87,8 +85,8 @@ const CompareInputSeperate = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 const CompareBoxMobile = () => {
   const item = {
@@ -119,7 +117,6 @@ const CompareBoxMobile = () => {
           <div className="col-auto"></div>
           <div className="col d-xs-none d-md-block  ">
             <div className="d-flex gap-1 flex-column justify-center h-full px-30 py-20 ">
-              
               <div className="rounded-4 ">
                 <CompareInput />
               </div>
@@ -143,9 +140,7 @@ const CompareBoxMobile = () => {
           </div>
           <div className="col">
             <div className="d-flex gap-1  flex-column justify-center h-full px-30 py-20">
-              {/* <div>
-                <ComparePlusButton />
-              </div> */}
+              
               <div className="rounded-4 ">
                 <CompareInput />
               </div>
@@ -156,11 +151,9 @@ const CompareBoxMobile = () => {
           </div>
         </div>
         <div className="d-flex justify-content-center py-20 ">
-          <button className="btn btn-primary w-25  ">Compare</button>
+          <button className="btn btn-primary w-50  ">Compare</button>
         </div>
       </div>
-
-      
     </div>
   );
 };
