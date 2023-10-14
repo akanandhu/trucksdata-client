@@ -24,6 +24,7 @@ import DetailCard from "../../components/details/card/DetailCard";
 import DetailBox from "../../components/details/card/DetailBox";
 import MoreVehicles from "../../components/details/more/MoreVehicles";
 import SpecificationTable from "../../components/details/specification-table/SpecificationTable";
+import SimilarTrucks from "../../components/similar-trucks/SimilarTrucks";
 
 const SinglePage = () => {
   const router = useRouter();
@@ -210,6 +211,26 @@ const SinglePage = () => {
         {/* End .container */}
       </section>
       {/* End Faq about sections */}
+
+      <section className="pt-40 mb-40">
+        <div className="container ">
+          <div className="row y-gap-20">
+            <div className="col-lg-4">
+              <h2 className="text-22 fw-500">
+                Similar Trucks
+              </h2>
+            </div>
+            {/* End .row */}
+
+            <div className="col-lg-8">
+              <SimilarTrucks />
+            </div>
+            {/* End .col */}
+          </div>
+          {/* End .row */}
+        </div>
+        {/* End .container */}
+      </section>
 
       <CallToActions />
       {/* End Call To Actions Section */}
