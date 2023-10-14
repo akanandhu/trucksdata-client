@@ -75,9 +75,16 @@
   overflow: auto;
   scroll-snap-type: x mandatory;
   white-space: nowrap;
+  justify-content: center;
 
   > div {
     scroll-snap-align: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .tabs__controls {
+    justify-content: flex-start; /* Adjust as needed */
   }
 }
 

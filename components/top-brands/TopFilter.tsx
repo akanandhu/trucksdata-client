@@ -5,7 +5,7 @@ const TopFilter = ({ filterOptions }) => {
   const [filterOption, setFilterOption] = useState(filterOptions?.[0]?.value);
 
   return (
-    <div className="tabs__controls row x-gap-15 justify-center js-tabs-controls">
+    <div className="tabs__controls  d-flex x-gap-15  js-tabs-controls">
       {filterOptions.map((option) => (
         <div className="col-auto" key={option.value}>
           <button
