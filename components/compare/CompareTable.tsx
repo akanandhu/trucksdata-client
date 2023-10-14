@@ -1,13 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import CompareDataTable from "./CompareDataTable";
 import { getSpecCompareData } from "../../utils/getSpecCompareData";
 
 const CompareTable = () => {
   const specContent = getSpecCompareData();
+  const [expand, setExpand] = useState(false);
 
   return (
     <>
       <div className="accordion lg:lh-1" id="accordionExample">
+        <div className="accordion-item border-top-0 border-start-0 border-end-0">
+          <h2 className="accordion-header text-wrap" id="headingOne">
+            <div className="d-flex shadow-none bg-white text-black title_fontsize justify-content-between px-20 py-20">
+              <div>Compare Result</div>
+              <button className="bg-white text-black" onClick={()=>setExpand(!expand)}>
+                {!expand ? <u>expand all</u> : <u>collapse all</u>}
+              </button>
+            </div>
+          </h2>
+        </div>
         {specContent?.map((item, i) => (
           <div
             key={i}
@@ -40,7 +51,7 @@ const CompareTable = () => {
             </h2>
             <div
               id={item.collapseTarget}
-              className="accordion-collapse collapse show"
+              className={`accordion-collapse collapse ${expand ? 'show' : ''}`}
               aria-labelledby="headingOne"
               data-bs-parent="#accordionExample"
             >
