@@ -1,33 +1,37 @@
 const SpecTable = ({ hasVariant, tableData }) => {
   return (
     <div className="overflow-scroll scroll-bar-1">
-      <table className="table table-responsive view_tablefontsize">
+      <table className="table-3 -border-bottom col-12">
         {hasVariant && (
-          <thead>
+          <thead className="bg-light-2">
             <tr>
-              <th className="table_rowstext"></th>
-              { <th className="view_tablefontsize">Option 1</th>}
-              { <th className="view_tablefontsize">Option 2</th>}
-              { <th className="view_tablefontsize">Option 3</th>}
-              { <th className="view_tablefontsize">Option 4</th>}
+              <th></th>
+              {<th>Option 1</th>}
+              {<th>Option 2</th>}
+              {<th>Option 3</th>}
+              {<th>Option 4</th>}
             </tr>
           </thead>
         )}
         <tbody>
           {tableData?.map((row, index) => (
             <tr key={index}>
-              <td className="fw-500 view_tablefontsize table_rowtext">{row?.item}</td>
-              <td className="fw-300 view_tablefontsize">{row.option_one}</td>
+              <td >
+                {row?.item}
+              </td>
+              <td >{row.option_one}</td>
               {row?.option_two && (
-                <td className="fw-400 view_tablefontsize">{row.option_two}</td>
+                <td >{row.option_two}</td>
               )}
               {row?.option_three && (
-                <td className="fw-400 view_tablefontsize">
+                <td >
                   {row.option_three}
                 </td>
               )}
               {row?.option_four && (
-                <td className="fw-400 view_tablefontsize table_rowtext">{row.option_four}</td>
+                <td >
+                  {row.option_four}
+                </td>
               )}
             </tr>
           ))}
