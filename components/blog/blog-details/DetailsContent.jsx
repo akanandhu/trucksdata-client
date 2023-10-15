@@ -104,9 +104,9 @@ const DetailsContent = () => {
             </div>
           </div>
         </div>
-        {/* End social share */}
 
-        {/* End tags */}
+        
+
       </div>
     </>
   );

@@ -7,6 +7,7 @@ import blogsData from "../../../data/blogs";
 import { useRouter } from "next/router";
 import DetailsContent from "../../../components/blog/blog-details/DetailsContent";
 import Header1 from "../../../components/header/header-8";
+import BlogNavigator from "../../../components/blog/blog-details/BlogNavigator";
 
 const BlogSingleDynamic = () => {
   const router = useRouter();
@@ -57,11 +58,17 @@ const BlogSingleDynamic = () => {
           <div className="row y-gap-30 justify-center">
             <div className="col-xl-8 col-lg-10 layout-pt-md">
               <DetailsContent />
-              {/* Details content */}
+              <div className="mt-5">
+              <BlogNavigator />
+
+              </div>
+              
             </div>
             {/* End .col */}
+
           </div>
           {/* End .row */}
+
         </div>
         {/* End .container */}
       </section>
