@@ -595,6 +595,24 @@ $_displays: none, inline-block, block, flex;
     height: auto;
     transform: translateX(-50%);
   }
+
+  &__content-form {
+    position: absolute;
+    left: 50%;
+    z-index: 1;
+    max-width: 100%;
+    height: auto;
+    transform: translateX(-50%);
+  }
+
+  @media (max-width: 768px) {
+    &__content-form {
+      width: 100%;
+      max-width: 100%;
+      left: 0;
+      transform: none;
+    }
+  }
 }
 
 .relative {
@@ -2165,13 +2183,42 @@ table.table-5 {
 
 .custom-btn {
   background: white;
-  box-shadow: 0px 0px 5px rgba(203, 166, 34, 0.60);
+  box-shadow: 0px 0px 5px rgba(203, 166, 34, 0.6);
   transition: box-shadow 0.3s ease;
 }
 
 .custom-btn:hover {
-  background: linear-gradient(to right, #FF5733, #FFBD33);
-  box-shadow: 0px 0px 15px rgba(203, 166, 34, 0.80);
+  background: linear-gradient(to right, #ff5733, #ffbd33);
+  box-shadow: 0px 0px 15px rgba(203, 166, 34, 0.8);
 }
 
+.form-select {
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: 0 15px;
+  padding-top: 25px;
+  min-height: 70px;
+  transition: all 0.2s $easeOutQuart;
+  width: 100%;
+}
 
+.form-select:focus {
+  border: 2px solid #051036 !important;
+}
+
+.form-select:focus ~ label,
+.form-select:valid ~ label {
+  transform: translateY(-10px);
+}
+
+.form-select option {
+  background-color: white; /* Background color of options */
+  color: #000; /* Text color of options */
+  padding: 10px;
+  transition: background-color 0.2s, color 0.2s;
+  width: 100%;
+}
+
+.form-select option:hover {
+  background-color: #dddddd;
+}

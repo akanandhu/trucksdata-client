@@ -36,7 +36,6 @@ const CompareInputSeperate = () => {
   };
 
   return (
-    
     <div className="searchMenu-loc px-20 py-10 border-light rounded-4 js-form-dd js-liverSearch">
       <div
         data-bs-toggle="dropdown"
@@ -54,8 +53,6 @@ const CompareInputSeperate = () => {
               onChange={(e) => setSearchValue(e.target.value)}
             />
           </div>
-
-          
         </div>
       </div>
       {/* End location Field */}
@@ -89,8 +86,8 @@ const CompareInputSeperate = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 const CompareBox = () => {
   const item = {
@@ -166,7 +163,7 @@ const CompareBox = () => {
       <CompareBoxMobile />
 
       <div className="mt-40 view_bordershadow bg-white    p-2 ">
-        <CompareTable  />
+        <CompareTable />
       </div>
 
       <div className="mt-40 view_bordershadow mb-40 ">
