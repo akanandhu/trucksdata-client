@@ -9,16 +9,16 @@ const TopBreadCrumb = ({data}) => {
               {/* End .col-auto */}
               <div className="col-auto">&gt;</div>
               {/* End .col-auto */}
-              <div className="col-auto">{data.type}</div>
+              <div className="col-auto">{data?.type}</div>
               {/* End .col-auto */}
               <div className="col-auto">&gt;</div>
               {/* End .col-auto */}
-              <div className="col-auto">{data.brand}</div>
+              <div className="col-auto">{data?.brand}</div>
               {/* End .col-auto */}
               <div className="col-auto">&gt;</div>
               <div className="col-auto  ">
                 <div className="text-dark-1">
-                  {data.title}
+                  {data?.title}
                 </div>
               </div>
             </div>
@@ -26,7 +26,7 @@ const TopBreadCrumb = ({data}) => {
 
           <div className="col-auto">
             <a href="#" className="text-14 text-blue-1 underline">
-              View all {data.type}s
+              View all {data?.type}s
             </a>
           </div>
           {/* End col-auto */}
