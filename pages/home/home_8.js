@@ -4,7 +4,6 @@ import Footer6 from "../../components/footer/footer-6";
 import Header8 from "../../components/header/header-8";
 import Hero8 from "../../components/hero/hero-8";
 import PopularCars from "../../components/home/home-8/PopularCars";
-import Counter4 from "../../components/counter/Counter4";
 import Faq from "../../components/faq/Faq";
 import AppBanner from "../../components/home/home-8/AppBanner";
 import Blog from "../../components/home/home-8/Blog";
