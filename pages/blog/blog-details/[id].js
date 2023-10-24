@@ -6,8 +6,8 @@ import RelatedBlog from "../../../components/blog/blog-details/RelatedBlog";
 import blogsData from "../../../data/blogs";
 import { useRouter } from "next/router";
 import DetailsContent from "../../../components/blog/blog-details/DetailsContent";
-import Header1 from "../../../components/header/header-8";
 import BlogNavigator from "../../../components/blog/blog-details/BlogNavigator";
+import MainHeader from "../../../components/header/main-header";
 
 const BlogSingleDynamic = () => {
   const router = useRouter();
@@ -29,7 +29,7 @@ const BlogSingleDynamic = () => {
       <div className="header-margin"></div>
       {/* header top margin */}
 
-      <Header1 />
+      <MainHeader />
       {/* End Header 1 */}
 
       {/* <LocationTopBar /> */}

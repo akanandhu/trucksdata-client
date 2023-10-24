@@ -1,10 +1,6 @@
 import React, { useState } from "react";
-import CompareInput from "./CompareInput";
 import ComparePlusButton from "./ComparePlusButton";
-import TopFilter from "../top-brands/TopFilter";
-import CompareTwoVehiclesCard from "./CompareTwoVehiclesCard";
 import CompareVehicles from "./CompareVehicles";
-import SpecificationTable from "../details/specification-table/SpecificationTable";
 import CompareTable from "./CompareTable";
 import CompareBoxMobile from "./CompareBoxMobile";
 

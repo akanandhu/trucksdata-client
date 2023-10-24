@@ -1,19 +1,17 @@
 import Seo from "../../components/common/Seo";
-import MainFilterSearchBox from "../../components/hero/hero-8/MainFilterSearchBox";
-import RentalProperties from "../../components/rental-list/rental-list-v1/RentalProperties";
-import Pagination from "../../components/rental-list/common/Pagination";
+import MainFilterSearchBox from "../../components/Filter/SearchFilter/MainFilterSearchBox";
 import CallToActions from "../../components/common/CallToActions";
-import Header8 from "../../components/header/header-8/index";
 import DefaultFooter from "../../components/footer/default";
 import Sidebar from "../../components/search-results/sidebar/Sidebar";
 import TopHeaderFilter from "../../components/search-results/header/TopHeaderFilter";
 import SearchResults from "../../components/search-results/results/SearchResults";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 import { useState, useEffect } from "react";
 import CompareBar from "../../components/compare-bar/CompareBar";
 import { useDispatch } from "react-redux";
 import { clearAllCompare } from "../../features/compare/compareSlice";
 import SearchResultsMobile from "../../components/search-results/results/SearchResultsMobile";
+import MainHeader from "../../components/header/main-header/index";
 
 const toastStyles = {
   icon: "🚚",
@@ -48,7 +46,7 @@ const SearchResultsPage = () => {
 
       <div className="header-margin"></div>
 
-      <Header8 />
+      <MainHeader />
       {/* End Header 1 */}
 
       <section className="pb-15 sm:pb-0 pt-0 bg-light-2">

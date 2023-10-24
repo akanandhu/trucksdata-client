@@ -3,9 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import {
-  isActiveParent,
-  isActiveLink,
-  isActiveParentChaild,
+  isActiveLink
 } from "../../utils/linkActiveChecker";
 
 const CategoriesMegaMenu = ({itemList, categorieMegaMenuItems}) => {

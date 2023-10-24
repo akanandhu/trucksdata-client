@@ -1,10 +1,7 @@
-import Image from "next/image";
-import Link from "next/link";
 import React from "react";
 import { Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import trucksData from '../../data/upcoming-trucks'
-import isTextMatched from "../../utils/isTextMatched";
+import trucksData from '../../data/upcoming-trucks';
 import CompareTwoVehicleBox from "./CompareTwoVehicleBox";
 
 

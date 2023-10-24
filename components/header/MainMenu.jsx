@@ -1,18 +1,9 @@
 import Link from "next/link";
 
 import {
-  homeItems,
-  blogItems,
-  pageItems,
-  dashboardItems,
-  categorieMegaMenuItems,
+  categorieMegaMenuItems
 } from "../../data/mainMenuData";
 import CategoriesMegaMenu from "./CategoriesMegaMenu";
-import {
-  isActiveParent,
-  isActiveLink,
-  isActiveParentChaild,
-} from "../../utils/linkActiveChecker";
 import { useRouter } from "next/router";
 import { truckList } from "../../data/truckList";
 

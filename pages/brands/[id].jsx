@@ -1,6 +1,5 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import LocationTopBar from "../../components/common/LocationTopBar";
 import Seo from "../../components/common/Seo";
 import Banner from "../../components/destinations/components/Banner";
 import BrandIntro from "../../components/destinations/components/BrandIntro";
@@ -9,7 +8,7 @@ import Faq from "../../components/faq/Faq";
 import CallToActions from "../../components/common/CallToActions";
 import DefaultFooter from "../../components/footer/default";
 import UpcomingTrucks from "../../components/trucks/UpcomingTrucks";
-import Header1 from "../../components/header/header-8";
+import MainHeader from "../../components/header/main-header";
 
 const SingleBrand = () => {
   return (
@@ -18,7 +17,7 @@ const SingleBrand = () => {
 
       <div className="header-margin"></div>
 
-      <Header1 />
+      <MainHeader/>
 
       <section
         data-aos="fade"

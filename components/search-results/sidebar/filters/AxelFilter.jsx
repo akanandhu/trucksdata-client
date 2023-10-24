@@ -1,6 +1,6 @@
 import React from "react";
 import FilterCheckbox from "./FilterCheckbox";
-import ButtonFilter from "../../../hero/hero-8/FilterButtons";
+import ButtonFilter from "../../../Filter/SearchFilter/FilterButtons";
 
 const axelData = [
   {

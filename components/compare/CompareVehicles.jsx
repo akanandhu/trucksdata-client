@@ -1,6 +1,5 @@
 import React from "react";
 import TopFilter from "../top-brands/TopFilter";
-import UpcomingTrucks from "../trucks/UpcomingTrucks";
 import CompareTwoVehiclesCard from "./CompareTwoVehiclesCard";
 
 const CompareVehicles = ({filterOptions}) => {

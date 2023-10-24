@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper";
-import trucksData from '../../data/upcoming-trucks';
+import carsData from "../../data/cars";
 
-const UpcomingTrucks = () => {
+const PopularTrucks = () => {
   return (
     <>
       <Swiper
@@ -34,11 +34,13 @@ const UpcomingTrucks = () => {
           },
         }}
       >
-        {trucksData.slice(0, 8).map((item) => (
+        {carsData.slice(0, 8).map((item) => (
           <SwiperSlide key={item.id}>
             <Link
               href={`/details/${item.id}`}
               className="carCard -type-1 d-block rounded-4 hover-inside-slider"
+              data-aos="fade"
+              data-aos-delay={item.delayAnimation}
             >
               <div
                 key={item?.id}
@@ -86,14 +88,13 @@ const UpcomingTrucks = () => {
                     </span>
                   </div>
                   <div className="d-flex w-auto mt-5 ">
-                    <button className=" btn btn-primary bg-blue-1 d-flex justify-content-center   flex-grow-1 text-center  ">
+                    <button className=" btn btn-primary  bg-blue-1 d-flex justify-content-center   flex-grow-1 text-center  ">
                       View More
                     </button>
                   </div>
                 </div>
               </div>
             </Link>
-
           </SwiperSlide>
         ))}
       </Swiper>
@@ -122,4 +123,4 @@ const UpcomingTrucks = () => {
   );
 };
 
-export default UpcomingTrucks
+export default PopularTrucks;

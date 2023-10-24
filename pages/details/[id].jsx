@@ -3,28 +3,20 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import "photoswipe/dist/photoswipe.css";
 import Seo from "../../components/common/Seo";
-import Header1 from "../../components/header/header-8";
-import TopBreadCrumb from "../../components/car-single/TopBreadCrumb";
+import TopBreadCrumb from "../../components/truck-single/TopBreadCrumb";
 import carsData from "../../data/cars";
 import SlideGallery from "../../components/details/gallery/SlideGallery";
-import TruckDetails from "../../components/details/card/TruckDetails";
 import SpecHighlights from "../../components/details/card/SpecHighlights";
 import Specifications from "../../components/details/card/Specifications";
 import PopularModals from "../../components/details/card/PopularModals";
 import VideoBanner from "../../components/details/video-player/VideoBanner";
 import Faq from "../../components/faq/Faq";
-import ReviewProgress2 from "../../components/car-single/guest-reviews/ReviewProgress2";
-import DetailsReview2 from "../../components/car-single/guest-reviews/DetailsReview2";
-import ReplyFormReview2 from "../../components/car-single/ReplyFormReview2";
-import ReplyForm from "../../components/car-single/ReplyForm";
 import CallToActions from "../../components/common/CallToActions";
 import DefaultFooter from "../../components/footer/default";
-import TruckDetailCard from "../../components/details/card/DetailCard";
-import DetailCard from "../../components/details/card/DetailCard";
 import DetailBox from "../../components/details/card/DetailBox";
-import MoreVehicles from "../../components/details/more/MoreVehicles";
 import SpecificationTable from "../../components/details/specification-table/SpecificationTable";
 import SimilarTrucks from "../../components/similar-trucks/SimilarTrucks";
+import MainHeader from "../../components/header/main-header";
 
 const SinglePage = () => {
   const router = useRouter();
@@ -47,7 +39,7 @@ const SinglePage = () => {
       <div className="header-margin"></div>
       {/* header top margin */}
 
-      <Header1 />
+      <MainHeader />
       {/* End Header 1 */}
 
       <TopBreadCrumb data={vehicle} />

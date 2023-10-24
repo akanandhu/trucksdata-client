@@ -1,5 +1,5 @@
 import React from "react";
-import ButtonFilter from "../../../hero/hero-8/FilterButtons";
+import ButtonFilter from "../../../Filter/SearchFilter/FilterButtons";
 
 const payloadData = [
   {
