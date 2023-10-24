@@ -7,11 +7,11 @@ const ButtonFilter = ({ label, filters, showLabel }) => {
   const handleRatingClick = (rating) => {
     setActiveRating(rating);
   };
-  const [guestRating, setGuestRating] = useState(0);
+  // const [guestRating, setGuestRating] = useState(0);
 
-  const handleGuestRatingClick = (rating) => {
-    setGuestRating(rating);
-  };
+  // const handleGuestRatingClick = (rating) => {
+  //   setGuestRating(rating);
+  // };
 
   return (
     <>

@@ -22,8 +22,8 @@ const BrandIntro = () => {
           <br />
           <br />
           From November 2015, Daimler India Commercial Vehicles started delivery
-          of its first set of made-in-India buses. The front engine buses
-          are branded as BharatBenz and are based on the Mitsubishi Fuso Canter
+          of its first set of made-in-India buses. The front engine buses are
+          branded as BharatBenz and are based on the Mitsubishi Fuso Canter
           platform. These are available in school, staff and tourist variants.
           The rear engine buses are branded as Mercedes-Benz and are based on
           the Mercedes-Benz O-500 series. Daimler India Commercial Vehicles have
@@ -39,24 +39,6 @@ const BrandIntro = () => {
           Show More
         </a>
       </div>
-      {/* End .col */}
-
-      {/* <div className="col-xl-4 rounded-4 border-light shadow-4 bg-white">
-        <div className="d-flex justify-content-center align-items-center"> */}
-      {/* <img
-            src="/img/pages/destinations/map.png"
-            alt="image"
-            className="col-12 rounded-4"
-          /> */}
-      {/* Add spot */}
-      {/* <div className="absolute d-flex justify-center items-end col-12 h-full z-1 px-35 py-20"> */}
-      {/* <button className="button h-50 px-25 -blue-1 bg-white text-dark-1 text-14 fw-500 col-12">
-              <i className="icon-eye text-18 mr-10" />
-              See popular activities on the map
-            </button> */}
-      {/* </div>
-        </div>
-      </div> */}
     </>
   );
 };

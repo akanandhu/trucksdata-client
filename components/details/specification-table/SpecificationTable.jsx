@@ -1,19 +1,22 @@
 import React from "react";
-import RercentBooking from "../../../pages/vendor-dashboard/dashboard/components/RercentBooking";
 import SpecTable from "./SpecTable";
 import { getSpecData } from "../../../utils/getSpecData";
 
 const SpecificationTable = () => {
   const specContent = getSpecData();
-
+  
   return (
     <>
-      
       <div class="accordion lg:lh-1" id="accordionExample">
-        {specContent?.map((item,i) => (
-          <div key={i} class={i === specContent.length-1 ? 
-          "accordion-item border-top-0 border-start-0 border-end-0 border-bottom-0" : 
-          "accordion-item border-top-0 border-start-0 border-end-0"}>
+        {specContent?.map((item, i) => (
+          <div
+            key={i}
+            class={
+              i === specContent.length - 1
+                ? "accordion-item border-top-0 border-start-0 border-end-0 border-bottom-0"
+                : "accordion-item border-top-0 border-start-0 border-end-0"
+            }
+          >
             <h2 class="accordion-header text-wrap " id="headingOne">
               <button
                 className="d-flex accordion-button shadow-none bg-white text-black title_fontsize"
@@ -21,17 +24,12 @@ const SpecificationTable = () => {
                 data-bs-toggle="collapse"
                 data-bs-target={`#${item.collapseTarget}`}
                 aria-expanded="true"
-                // aria-controls="collapseOne"
               >
-                <div className="me-0" style={{width:'50px' }}>
-                  <img
-                  src={item.icon}
-                  alt={item.id}
-                  // width='50px'
-                  />
+                <div className="me-0" style={{ width: "50px" }}>
+                  <img src={item.icon} alt={item.id} />
                 </div>
-                <div className="mx-50 w-75" style={{paddingLeft:'5%'}}>
-                {item.title}
+                <div className="mx-50 w-75" style={{ paddingLeft: "5%" }}>
+                  {item.title}
                 </div>
               </button>
             </h2>

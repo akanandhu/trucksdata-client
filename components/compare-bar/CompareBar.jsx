@@ -9,8 +9,6 @@ const CompareBar = () => {
     dispatch(clearAllCompare());
   }
 
-
-
   return compareItems.length ? (
     <div className="compare-bar">
       <div className="compare-info">
@@ -21,7 +19,6 @@ const CompareBar = () => {
           Deselect All
         </button>
         <button className="compare-btn bg-blue-1 text-white">Compare</button>
-        
       </div>
     </div>
   ) : null;

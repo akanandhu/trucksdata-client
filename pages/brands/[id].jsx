@@ -17,7 +17,7 @@ const SingleBrand = () => {
 
       <div className="header-margin"></div>
 
-      <MainHeader/>
+      <MainHeader />
 
       <section
         data-aos="fade"
