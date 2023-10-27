@@ -36,6 +36,7 @@
     "react-photoswipe-gallery": "^2.2.6",
     "react-player": "^2.13.0",
     "react-pro-sidebar": "^1.0.0",
+    "react-query": "^3.39.3",
     "react-redux": "^8.0.5",
     "react-slick": "^0.29.0",
     "react-tabs": "^6.0.0",

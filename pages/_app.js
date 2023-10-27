@@ -11,6 +11,7 @@ import "../styles/index.scss";
 import { Provider } from "react-redux";
 import { store } from "../app/store";
 import { Toaster } from "react-hot-toast";
+import { QueryClientProvider, QueryClient } from "react-query";
 
 if (typeof window !== "undefined") {
   require("bootstrap/dist/js/bootstrap");
@@ -24,10 +25,15 @@ export default function App({ Component, pageProps }) {
     });
   }, []);
 
+  const queryClient = new QueryClient();
+
   return (
     <main>
       <Provider store={store}>
-        <Component {...pageProps} />
+        <QueryClientProvider client={queryClient}>
+          <Component {...pageProps} />
+        </QueryClientProvider>
+
         <Toaster position="top-right" />
         <SrollTop />
       </Provider>
