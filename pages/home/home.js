@@ -12,6 +12,9 @@ import UpcomingTrucks from "../../components/trucks/UpcomingTrucks";
 import CompareVehicles from "../../components/compare/CompareVehicles";
 import MainHeader from "../../components/header/main-header";
 import TopFilter from "../../components/top-brands/TopFilter";
+import { useQuery } from "react-query";
+import axios from "axios";
+import { axiosInstance } from "../../axios/AxiosInstance";
 
 const Home = () => {
   const filterOptions = [
@@ -21,6 +24,17 @@ const Home = () => {
     { label: "Trailers", value: "trailers" },
     { label: "3-Wheelers", value: "three_wheelers" },
   ];
+
+  async function getTodos () {
+    const response = await axiosInstance.get('manufacturers')
+    return response
+  }
+
+  const {data: query} = useQuery('todos', getTodos,{
+    staleTime: Infinity
+  })
+
+  console.log(query, 'queryCheck')
 
   return (
     <>
