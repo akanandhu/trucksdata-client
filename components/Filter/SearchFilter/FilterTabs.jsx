@@ -10,9 +10,7 @@ import { useSelector } from "react-redux";
 function FilterTabs(props) {
   const { manufacturerData, vehicleData } = props;
   const tab = useSelector((store) => store.hero);
-
   const dropdownComponent = (dropdowns, screen) => {
-    console.log("Dropp ",dropdown);
     const selectedTab = tab.currentTab;
     let filteredDropdown;
     const filtered = dropdown.filter((item) => item["tabItem"] === selectedTab);
@@ -33,7 +31,6 @@ function FilterTabs(props) {
         ))
     )
   }
-
   return (
     <div>
       <Tabs className="tabs -underline-2 js-tabs">
@@ -55,34 +52,11 @@ function FilterTabs(props) {
           {dropdown.map((item) => (
             <TabPanel key={item.id}>
               <div className="d-flex p-2 bd-highlight justify-content-between sm:d-block md:d-block">
-                {/* {item.dropdownItem.map((dropdownDetails) => (
-                  <DropInput
-                    key={dropdownDetails?.id}
-                    dropdownDetails={dropdownDetails}
-                    manufacturerData={manufacturerData}
-                    vehicleData={vehicleData}
-                  />
-                ))} */}
-
                 {typeof window !== "undefined" && window.innerWidth >= 992
                   ? dropdownComponent(item, "lg")
                   : dropdownComponent(item, "sm")}
                 <SearchButton />
               </div>
-
-              {/* <div className="lg:d-none p-2 bd-highlight justify-content-between sm:d-block md:d-block">
-                {item.dropdownItem.map((dropdownDetails) => (
-                  <DropInput
-                    key={dropdownDetails?.id}
-                    dropdownDetails={getMobileDropdown}
-                    manufacturerData={manufacturerData}
-                    vehicleData={vehicleData}
-                  />
-                ))}
-                <div className="lg:d-none sm:d-block md:d-block">
-                <SearchButton />
-                </div>
-              </div> */}
             </TabPanel>
           ))}
         </div>

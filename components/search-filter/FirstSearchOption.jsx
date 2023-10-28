@@ -34,7 +34,6 @@ const FirstSearchOption = () => {
         <div className="shadow-2 dropdown-menu min-width-400">
           <div className="bg-white px-20 py-20 sm:px-0 sm:py-15 rounded-4">
             <ul className="y-gap-5 js-results">
-              
               {dropdown?.[0]?.dropdownItem?.[0]?.items?.map((item) => (
                 <li
                   className={`-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option mb-1 ${
@@ -50,7 +49,6 @@ const FirstSearchOption = () => {
                       <div className="text-15  fw-500 js-search-option-target">
                         {item.name}
                       </div>
-                     
                     </div>
                   </div>
                 </li>
@@ -63,4 +61,4 @@ const FirstSearchOption = () => {
   );
 };
 
-export default FirstSearchOption
+export default FirstSearchOption;

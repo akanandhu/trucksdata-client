@@ -17,11 +17,7 @@ const MobileTab = () => {
             onClick={() => dispatch(addCurrentTab(tab?.name))}
           >
             <div>
-              <img
-              src={tab?.icon}
-              alt="icons"
-              width={tab?.iconWidth}
-              />
+              <img src={tab?.icon} alt="icons" width={tab?.iconWidth} />
             </div>
             <div>{tab?.name}</div>
           </button>

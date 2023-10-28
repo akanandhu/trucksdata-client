@@ -16,7 +16,7 @@ import useManufactures from "../../services/useManufactures";
 import useVehicleTypes from "../../services/useVehicleTypes";
 import { useDispatch, useSelector } from "react-redux";
 import { setManufacturer } from "../../features/manufacturer/manufacturerSlice";
-import {setVehiclesType} from '../../features/vehicleType/vehicleTypeSlice'
+import { setVehiclesType } from "../../features/vehicleType/vehicleTypeSlice";
 const Home = () => {
   const dispach = useDispatch();
   const filterOptions = [
@@ -29,24 +29,21 @@ const Home = () => {
 
   const { data: manufacturer } = useManufactures();
   const { data: vehicle } = useVehicleTypes();
-  
-  dispach(setVehiclesType(vehicle?.data['data']))
-  dispach(setManufacturer(manufacturer?.data['data']));
- 
+
+  dispach(setVehiclesType(vehicle?.data["data"]));
+  dispach(setManufacturer(manufacturer?.data["data"]));
+
   return (
     <>
-    {/* {console.log("TABBBBBB ",tab.currentTab)} */}
       <Seo pageTitle="Home" />
       {/* End Page Title */}
 
-      <MainHeader 
-      vehicleData={vehicle?.data["data"]} 
-      />
+      <MainHeader vehicleData={vehicle?.data["data"]} />
       {/* End Header 8 */}
 
-      <SearchFilter 
-      manufacturerData={manufacturer?.data['data']}
-      vehicleData={vehicle?.data["data"]}
+      <SearchFilter
+        manufacturerData={manufacturer?.data["data"]}
+        vehicleData={vehicle?.data["data"]}
       />
       {/* End Hero 8 */}
 
@@ -96,9 +93,9 @@ const Home = () => {
 
           <div className="row y-gap-30 pt-5 item_gap-x30  ">
             <div className="tabs -pills-2 pt-12 ">
-              <TopFilter 
-              filterOptions={filterOptions} 
-              vehicleData={vehicle?.data["data"]}
+              <TopFilter
+                filterOptions={filterOptions}
+                vehicleData={vehicle?.data["data"]}
               />
             </div>
             <TopBrands />
@@ -108,7 +105,10 @@ const Home = () => {
         {/* End .container */}
       </section>
 
-      <CompareVehicles filterOptions={filterOptions} vehicleData={vehicle?.data["data"]}/>
+      <CompareVehicles
+        filterOptions={filterOptions}
+        vehicleData={vehicle?.data["data"]}
+      />
 
       <section className="pb-30">
         <div className="container view_bordershadow bg-white p-5">
@@ -127,9 +127,9 @@ const Home = () => {
 
           <div className="row y-gap-30 pt-5 sm:pt-20 item_gap-x30">
             <div className="tabs -pills-2 pt-12">
-              <TopFilter 
-              filterOptions={filterOptions} 
-              vehicleData={vehicle?.data["data"]}
+              <TopFilter
+                filterOptions={filterOptions}
+                vehicleData={vehicle?.data["data"]}
               />
             </div>
             <UpcomingTrucks />

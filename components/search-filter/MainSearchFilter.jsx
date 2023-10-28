@@ -3,7 +3,6 @@ import { useSelector, useDispatch } from "react-redux";
 import FirstSearchOption from "./FirstSearchOption";
 import { addCurrentTab } from "../../features/hero/findPlaceSlice";
 
-
 const MainFilterSearchBox = () => {
   const { tabs, currentTab } = useSelector((state) => state.hero) || {};
   const dispatch = useDispatch();
@@ -32,12 +31,7 @@ const MainFilterSearchBox = () => {
           <div className="button-grid items-center">
             <FirstSearchOption />
 
-           
-            {/* End check-in-out */}
-
             <FirstSearchOption />
-
-            {/* End guest */}
 
             <div className="button-item">
               <button
