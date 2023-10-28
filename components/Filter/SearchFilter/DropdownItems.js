@@ -113,7 +113,7 @@ const dropdown = [
         ],
       },
       {
-        title: "Model",
+        title: "Manufacturer",
         placeholder: "Select Model",
         icon: <FaTruckMoving style={{ fontSize: "2.2em" }} />,
         items: [
@@ -225,7 +225,7 @@ const dropdown = [
     iconWidth: "45px",
     dropdownItem: [
       {
-        title: "Body Type",
+        title: "G V W option",
         placeholder: "Select Body Type",
         icon: <BiSolidFactory style={{ fontSize: "2.2em" }} />,
         items: [
@@ -257,7 +257,7 @@ const dropdown = [
         ],
       },
       {
-        title: "Model",
+        title: "Manufacturer",
         placeholder: "Select Model",
         icon: <FaTruckMoving style={{ fontSize: "2.2em" }} />,
         items: [
@@ -297,7 +297,7 @@ const dropdown = [
     iconWidth: "25px",
     dropdownItem: [
       {
-        title: "Body Type",
+        title: "Power Source",
         placeholder: "Select Body Type",
         icon: <BiSolidFactory style={{ fontSize: "2.2em" }} />,
         items: [
@@ -329,7 +329,7 @@ const dropdown = [
         ],
       },
       {
-        title: "Model",
+        title: "Manufacturer",
         placeholder: "Select Model",
         icon: <FaTruckMoving style={{ fontSize: "2.2em" }} />,
         items: [

@@ -2,7 +2,7 @@ import React from "react";
 import TopFilter from "../top-brands/TopFilter";
 import CompareTwoVehiclesCard from "./CompareTwoVehiclesCard";
 
-const CompareVehicles = ({filterOptions}) => {
+const CompareVehicles = ({filterOptions, vehicleData}) => {
   return (
     <section className="pb-30">
       <div className="container view_bordershadow bg-white p-5">
@@ -19,7 +19,7 @@ const CompareVehicles = ({filterOptions}) => {
 
         <div className="row y-gap-30 pt-5 sm:pt-20 item_gap-x30">
           <div className="tabs -pills-2 pt-12">
-            <TopFilter filterOptions={filterOptions} />
+            <TopFilter filterOptions={filterOptions} vehicleData={vehicleData}/>
           </div>
           <CompareTwoVehiclesCard />
         </div>

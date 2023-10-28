@@ -6,11 +6,15 @@ import SearchBoxContent from "../../Filter/SearchFilter/SearchBoxContent";
 import MobileMenu from "../MobileMenu";
 import LanguageMegaMenu from "../LanguageMegaMenu";
 import { useRouter } from "next/router";
+import { useSelector } from "react-redux";
+import { vehicle } from '../../../app/store';
 
-const MainHeader = () => {
+const MainHeader = (props) => {
+  const { vehicleData } = props;
   const router = useRouter();
   const isHome = router.asPath === "/";
   const [navbar, setNavbar] = useState(!isHome);
+  const data = useSelector((store) => store.vehicle.vehicleType)
 
   const changeBackground = () => {
     if (window.scrollY >= 10 || !isHome) {
@@ -43,7 +47,7 @@ const MainHeader = () => {
 
                 <div className="header-menu">
                   <div className="header-menu__content">
-                    <MainMenu style="text-dark-1" />
+                    <MainMenu style="text-dark-1" vehicleData={vehicleData}/>
                   </div>
                 </div>
                 {/* End header-menu */}
@@ -113,7 +117,7 @@ const MainHeader = () => {
                       aria-labelledby="offcanvasMenuLabel"
                       data-bs-scroll="true"
                     >
-                      <MobileMenu />
+                      <MobileMenu vehicleData={vehicleData}/>
                       {/* End MobileMenu */}
                     </div>
                   </div>

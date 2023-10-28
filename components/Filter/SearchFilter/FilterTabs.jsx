@@ -1,12 +1,39 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import SearchButton from "./SearchButton";
 import DropInput from "./DropInput";
 import { dropdown } from "./DropdownItems";
 import MobileTab from "../../search-filter/MobileTab";
+import { useSelector } from "react-redux";
 
-function FilterTabs() {
+function FilterTabs(props) {
+  const { manufacturerData, vehicleData } = props;
+  const tab = useSelector((store) => store.hero);
+
+  const dropdownComponent = (dropdowns, screen) => {
+    console.log("Dropp ",dropdown);
+    const selectedTab = tab.currentTab;
+    let filteredDropdown;
+    const filtered = dropdown.filter((item) => item["tabItem"] === selectedTab);
+    if(screen === "lg"){
+      filteredDropdown = dropdowns;
+    }
+    if(screen === "sm"){
+      filteredDropdown = filtered[0];
+    }
+    return(
+      filteredDropdown.dropdownItem.map((dropdownDetails) => (
+        <DropInput
+        key={dropdownDetails?.id}
+        dropdownDetails={dropdownDetails}
+        manufacturerData={manufacturerData}
+        vehicleData={vehicleData}
+        />
+        ))
+    )
+  }
+
   return (
     <div>
       <Tabs className="tabs -underline-2 js-tabs">
@@ -27,15 +54,35 @@ function FilterTabs() {
         <div className="tabs__content js-tabs-content">
           {dropdown.map((item) => (
             <TabPanel key={item.id}>
-              <div className="d-flex p-2 bd-highlight justify-content-between sm:flex-column md:flex-column">
-                {item.dropdownItem.map((dropdownDetails) => (
+              <div className="d-flex p-2 bd-highlight justify-content-between sm:d-block md:d-block">
+                {/* {item.dropdownItem.map((dropdownDetails) => (
                   <DropInput
                     key={dropdownDetails?.id}
                     dropdownDetails={dropdownDetails}
+                    manufacturerData={manufacturerData}
+                    vehicleData={vehicleData}
                   />
-                ))}
+                ))} */}
+
+                {typeof window !== "undefined" && window.innerWidth >= 992
+                  ? dropdownComponent(item, "lg")
+                  : dropdownComponent(item, "sm")}
                 <SearchButton />
               </div>
+
+              {/* <div className="lg:d-none p-2 bd-highlight justify-content-between sm:d-block md:d-block">
+                {item.dropdownItem.map((dropdownDetails) => (
+                  <DropInput
+                    key={dropdownDetails?.id}
+                    dropdownDetails={getMobileDropdown}
+                    manufacturerData={manufacturerData}
+                    vehicleData={vehicleData}
+                  />
+                ))}
+                <div className="lg:d-none sm:d-block md:d-block">
+                <SearchButton />
+                </div>
+              </div> */}
             </TabPanel>
           ))}
         </div>

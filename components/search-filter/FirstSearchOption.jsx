@@ -18,7 +18,7 @@ const FirstSearchOption = () => {
           data-bs-auto-close="true"
           data-bs-offset="0,22"
         >
-          <h4 className="text-15 fw-500 ls-2 lh-16">Manufacturer</h4>
+          {/* <h4 className="text-15 fw-500 ls-2 lh-16">Manufacturer</h4> */}
           <div className="text-15 text-light-1 ls-2 lh-16">
             <input
               autoComplete="off"
@@ -34,6 +34,7 @@ const FirstSearchOption = () => {
         <div className="shadow-2 dropdown-menu min-width-400">
           <div className="bg-white px-20 py-20 sm:px-0 sm:py-15 rounded-4">
             <ul className="y-gap-5 js-results">
+              
               {dropdown?.[0]?.dropdownItem?.[0]?.items?.map((item) => (
                 <li
                   className={`-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option mb-1 ${

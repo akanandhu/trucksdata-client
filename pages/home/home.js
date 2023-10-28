@@ -12,11 +12,13 @@ import UpcomingTrucks from "../../components/trucks/UpcomingTrucks";
 import CompareVehicles from "../../components/compare/CompareVehicles";
 import MainHeader from "../../components/header/main-header";
 import TopFilter from "../../components/top-brands/TopFilter";
-import { useQuery } from "react-query";
-import axios from "axios";
-import { axiosInstance } from "../../axios/AxiosInstance";
-
+import useManufactures from "../../services/useManufactures";
+import useVehicleTypes from "../../services/useVehicleTypes";
+import { useDispatch, useSelector } from "react-redux";
+import { setManufacturer } from "../../features/manufacturer/manufacturerSlice";
+import {setVehiclesType} from '../../features/vehicleType/vehicleTypeSlice'
 const Home = () => {
+  const dispach = useDispatch();
   const filterOptions = [
     { label: "Trucks", value: "trucks" },
     { label: "Tippers", value: "tippers" },
@@ -25,26 +27,27 @@ const Home = () => {
     { label: "3-Wheelers", value: "three_wheelers" },
   ];
 
-  async function getTodos () {
-    const response = await axiosInstance.get('manufacturers')
-    return response
-  }
-
-  const {data: query} = useQuery('todos', getTodos,{
-    staleTime: Infinity
-  })
-
-  console.log(query, 'queryCheck')
-
+  const { data: manufacturer } = useManufactures();
+  const { data: vehicle } = useVehicleTypes();
+  
+  dispach(setVehiclesType(vehicle?.data['data']))
+  dispach(setManufacturer(manufacturer?.data['data']));
+ 
   return (
     <>
+    {/* {console.log("TABBBBBB ",tab.currentTab)} */}
       <Seo pageTitle="Home" />
       {/* End Page Title */}
 
-      <MainHeader />
+      <MainHeader 
+      vehicleData={vehicle?.data["data"]} 
+      />
       {/* End Header 8 */}
 
-      <SearchFilter />
+      <SearchFilter 
+      manufacturerData={manufacturer?.data['data']}
+      vehicleData={vehicle?.data["data"]}
+      />
       {/* End Hero 8 */}
 
       <section className="layout-pt-md pb-30">
@@ -64,7 +67,10 @@ const Home = () => {
 
           <div className="row y-gap-30 pt-5 sm:pt-20 item_gap-x30">
             <div className="tabs -pills-2 pt-12">
-              <TopFilter filterOptions={filterOptions} />
+              <TopFilter
+                filterOptions={filterOptions}
+                vehicleData={vehicle?.data["data"]}
+              />
             </div>
             <PopularTrucks />
           </div>
@@ -90,7 +96,10 @@ const Home = () => {
 
           <div className="row y-gap-30 pt-5 item_gap-x30  ">
             <div className="tabs -pills-2 pt-12 ">
-              <TopFilter filterOptions={filterOptions} />
+              <TopFilter 
+              filterOptions={filterOptions} 
+              vehicleData={vehicle?.data["data"]}
+              />
             </div>
             <TopBrands />
           </div>
@@ -99,7 +108,7 @@ const Home = () => {
         {/* End .container */}
       </section>
 
-      <CompareVehicles filterOptions={filterOptions} />
+      <CompareVehicles filterOptions={filterOptions} vehicleData={vehicle?.data["data"]}/>
 
       <section className="pb-30">
         <div className="container view_bordershadow bg-white p-5">
@@ -118,7 +127,10 @@ const Home = () => {
 
           <div className="row y-gap-30 pt-5 sm:pt-20 item_gap-x30">
             <div className="tabs -pills-2 pt-12">
-              <TopFilter filterOptions={filterOptions} />
+              <TopFilter 
+              filterOptions={filterOptions} 
+              vehicleData={vehicle?.data["data"]}
+              />
             </div>
             <UpcomingTrucks />
           </div>

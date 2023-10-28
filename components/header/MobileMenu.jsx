@@ -25,7 +25,8 @@ import Social from "../common/social/Social";
 import ContactInfo from "./ContactInfo";
 import { menuLists } from "../../data/menuLists";
 
-const MobileMenu = () => {
+const MobileMenu = (props) => {
+  const { vehicleData } = props;
   const router = useRouter();
 
   return (
@@ -60,7 +61,7 @@ const MobileMenu = () => {
             </MenuItem>
             {/* End  All Home Menu */}
 
-            {menuLists?.map((obj) => {
+            {/* {menuLists?.map((obj) => {
               return (
                 <SubMenu key={obj?.id} label={obj.title}>
                   {obj?.categorieMobileItems?.map((item) => (
@@ -90,21 +91,12 @@ const MobileMenu = () => {
                   ))}
                 </SubMenu>
               );
-            })}
+            })} */}
 
-            <MenuItem
-              component={
-                <Link
-                  href="/contact"
-                  className={
-                    router.pathname === "/contact" ? "menu-active-link" : ""
-                  }
-                />
-              }
-            >
-              Contact
-            </MenuItem>
-            {/* End Contact  Menu */}
+            {/* vehicle type menu */}
+            {vehicleData?.map((vehicle) => (
+              vehicle['status'] === "active" ? <SubMenu label={vehicle["name"]} key={vehicle["id"]}></SubMenu> : null
+            ))}
           </Menu>
         </Sidebar>
       </ProSidebarProvider>
@@ -119,7 +111,6 @@ const MobileMenu = () => {
             <Social />
           </div>
         </div>
-        
       </div>
       {/* End pro-footer */}
     </>

@@ -2,7 +2,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper";
 import MainFilterSearchBox from "./MainFilterSearchBox";
 
-const index = () => {
+const index = (props) => {
+  const { manufacturerData,vehicleData } = props;
   return (
     <>
       <section className="masthead -type-8">
@@ -44,7 +45,10 @@ const index = () => {
           data-aos-delay="400"
           data-aos-offset="0"
         >
-          <MainFilterSearchBox />
+          <MainFilterSearchBox 
+          manufacturerData={manufacturerData}
+          vehicleData={vehicleData}
+          />
 
           <div className="masthead-slider overflow-hidden js-masthead-slider-8">
             <Swiper

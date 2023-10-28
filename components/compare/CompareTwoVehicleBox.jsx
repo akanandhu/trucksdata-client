@@ -7,15 +7,12 @@ import isTextMatched from "../../utils/isTextMatched";
 
 const CompareTwoVehicleBox = ({ item }) => {
   return (
-    <div className=" truck-card  p-1">
-      <Link
-        href={`/compare`}
-        className="carCard -type-1 d-flex rounded-4 hover-inside-slider "
-      >
+    <div className=" truck-card-compare  p-1">
+      <Link href={`/compare`} className="carCard -type-1 d-flex rounded-4">
         <div
           key={item?.id}
-          data-aos="fade"
-          data-aos-delay={item?.delayAnimation}
+          // data-aos="fade"
+          // data-aos-delay={item?.delayAnimation}
         >
           <div className="carCard__image">
             <div className="cardImage ratio  ratio-6:5">
@@ -44,7 +41,7 @@ const CompareTwoVehicleBox = ({ item }) => {
             </div>
           </div>
           {/* End .tourCard__image */}
-
+          
           <div className="carCard__content px-3 py-4   ">
             <h4 className="text-dark-1 text-14 lh-14 fw-500">{item?.title} </h4>
             <p className="text-light-1 lh-14 text-14 mt-5" />
@@ -63,6 +60,15 @@ const CompareTwoVehicleBox = ({ item }) => {
           </div>
         </div>
 
+        <div className="mt-30" >
+            <Image
+              width={50}
+              height={50}
+              className="rounded-4 js-lazy compare-vs"
+              src='/icons/vs.png'
+              alt="image"
+            />
+          </div>
         {/* Next Card  */}
         <div
           key={item?.id}
