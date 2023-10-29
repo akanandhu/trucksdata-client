@@ -3,6 +3,8 @@ import ChasisFilter from "./filters/ChasisFilter";
 import LoadingSpanFilters from "./filters/LoadingSpanFilters";
 import PayloadFilter from "./filters/PayloadFilter";
 import PriceFilter from "./filters/PriceFilter";
+import Status from "./filters/Status";
+import Tyres from "./filters/Tyres";
 import VariantFilter from "./filters/VariantFilter";
 
 const Sidebar = () => {
@@ -14,6 +16,8 @@ const Sidebar = () => {
       <PayloadFilter />
       <ChasisFilter />
       <VariantFilter />
+      <Tyres/>
+      <Status/>
     </>
   );
 };

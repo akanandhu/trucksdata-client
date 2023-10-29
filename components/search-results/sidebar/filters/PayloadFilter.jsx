@@ -1,5 +1,7 @@
 import React from "react";
 import ButtonFilter from "../../../Filter/SearchFilter/FilterButtons";
+import PriceSlider from "./PriceSlider";
+import PayloadSlider from "./PayloadSlider";
 
 const payloadData = [
   {
@@ -25,7 +27,8 @@ const PayloadFilter = () => {
     <div className="sidebar__item">
       <h5 className="text-18 fw-500 mb-10">Payload (Range)(Kg)</h5>
       <div className="sidebar-checkbox">
-        <ButtonFilter filters={payloadData} label={"Payload (Range)(Kg)"} />
+        {/* <ButtonFilter filters={payloadData} label={"Payload (Range)(Kg)"} /> */}
+        <PayloadSlider/>
       </div>
     </div>
   );
