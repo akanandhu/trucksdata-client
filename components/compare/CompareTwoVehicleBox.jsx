@@ -23,7 +23,7 @@ const CompareTwoVehicleBox = ({ item }) => {
                 >
                   {item?.slideImg?.map((slide, i) => (
                     <SwiperSlide key={i}>
-                      <Image
+                      <img
                         width={300}
                         height={300}
                         className="rounded-4 col-12 js-lazy"
@@ -56,7 +56,7 @@ const CompareTwoVehicleBox = ({ item }) => {
           </div>
         </div>
 
-        <div className="mt-30">
+        <div className="mt-30" >
           <Image
             width={50}
             height={50}

@@ -7,14 +7,13 @@ import MobileMenu from "../MobileMenu";
 import LanguageMegaMenu from "../LanguageMegaMenu";
 import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
-import { vehicle } from '../../../app/store';
+import { vehicle } from "../../../app/store";
 
-const MainHeader = (props) => {
-  const { vehicleData } = props;
+const MainHeader = () => {
   const router = useRouter();
   const isHome = router.asPath === "/";
   const [navbar, setNavbar] = useState(!isHome);
-  const data = useSelector((store) => store.vehicle.vehicleType)
+  const vehicleData = useSelector((store) => store.vehicle.vehicleType);
 
   const changeBackground = () => {
     if (window.scrollY >= 10 || !isHome) {
@@ -35,6 +34,7 @@ const MainHeader = (props) => {
   return (
     <>
       {" "}
+      {console.log("vehicle data ", vehicleData)}
       <header className={`header  ${navbar ? "is-sticky bg-white" : ""}`}>
         <div className="header__container header__container-1500 mx-auto px-30 sm:px-20">
           <div className="row justify-between items-center">
@@ -47,7 +47,7 @@ const MainHeader = (props) => {
 
                 <div className="header-menu">
                   <div className="header-menu__content">
-                    <MainMenu style="text-dark-1" vehicleData={vehicleData}/>
+                    <MainMenu style="text-dark-1" vehicleData={vehicleData} />
                   </div>
                 </div>
                 {/* End header-menu */}
@@ -88,8 +88,6 @@ const MainHeader = (props) => {
                   <SearchBoxContent />
                 </div>
 
-               
-
                 <div className="xxl:d-none">
                   <LanguageMegaMenu textClass="text-black" />
                 </div>
@@ -117,7 +115,7 @@ const MainHeader = (props) => {
                       aria-labelledby="offcanvasMenuLabel"
                       data-bs-scroll="true"
                     >
-                      <MobileMenu vehicleData={vehicleData}/>
+                      <MobileMenu vehicleData={vehicleData} />
                       {/* End MobileMenu */}
                     </div>
                   </div>

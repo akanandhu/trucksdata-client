@@ -6,6 +6,19 @@ import { truckList } from "../../data/truckList";
 
 const MainMenu = ({ style = "", vehicleData }) => {
   const router = useRouter();
+  /* Generate categorylist for each vehicle type */
+  const categoriesList = (vehicle) => {
+    const truckBrandsList = [];
+    vehicle["manufacturers"].map((brand) => {
+      truckBrandsList.push(brand["name"]);
+    });
+    return (
+      <CategoriesMegaMenu
+        itemList={truckBrandsList}
+        categorieMegaMenuItems={categorieMegaMenuItems}
+      />
+    );
+  };
   return (
     <nav className="menu js-navList">
       <ul className={`menu__nav ${style} -is-active`}>
@@ -22,12 +35,7 @@ const MainMenu = ({ style = "", vehicleData }) => {
                 <span className="mr-10">{vehicle["name"]}</span>
                 <i className="icon icon-chevron-sm-down" />
               </a>
-              <div className="mega">
-                <CategoriesMegaMenu
-                  itemList={truckList}
-                  categorieMegaMenuItems={categorieMegaMenuItems}
-                />
-              </div>
+              <div className="mega">{categoriesList(vehicle)}</div>
             </li>
           ) : null
         )}

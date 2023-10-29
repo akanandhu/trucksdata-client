@@ -1,3 +1,21 @@
+#custom_scroll::-webkit-scrollbar {
+  height: 6px !important;               
+}
+
+#custom_scroll{
+  overflow-x: auto;
+  scrollbar-width: thin !important;
+  
+}
+#custom_scroll::-webkit-scrollbar-track {
+  height: 2px !important;        
+}
+
+#custom_scroll::-webkit-scrollbar-thumb {
+  background-color: rgb(219, 219, 219);    
+  border-radius: 10px;       
+}
+
 .header-margin {
   margin-top: 90px;
 

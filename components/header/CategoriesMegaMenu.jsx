@@ -2,17 +2,17 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-import {
-  isActiveLink
-} from "../../utils/linkActiveChecker";
+import { isActiveLink } from "../../utils/linkActiveChecker";
 
-const CategoriesMegaMenu = ({itemList, categorieMegaMenuItems}) => {
+const CategoriesMegaMenu = ({ itemList, categorieMegaMenuItems }) => {
   const router = useRouter();
-
 
   return (
     <Tabs className="tabs -underline-2 js-tabs">
-      <TabList className="tabs__controls row x-gap-40 y-gap-10 lg:x-gap-20 pb-30 js-tabs-controls">
+      <TabList
+        className="tabs__controls row x-gap-40 y-gap-10 lg:x-gap-20 pb-5 js-tabs-controls"
+        id="custom_scroll"
+      >
         {itemList.map((item, i) => (
           <Tab className="col-auto" key={i}>
             <button className="tabs__button text-light-1 fw-500 js-tabs-button">
@@ -23,7 +23,7 @@ const CategoriesMegaMenu = ({itemList, categorieMegaMenuItems}) => {
       </TabList>
       {/* End tab-controls */}
 
-      <div className="tabs__content js-tabs-content">
+      <div className="tabs__content js-tabs-content mt-20">
         {categorieMegaMenuItems.map((megaMenu) => (
           <TabPanel key={megaMenu.id}>
             {megaMenu?.menuCol?.map((megaCol, i) => (

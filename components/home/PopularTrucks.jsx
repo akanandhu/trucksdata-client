@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper";
 import carsData from "../../data/cars";
+import Image from "next/image";
 
 const PopularTrucks = () => {
   return (
@@ -36,6 +37,7 @@ const PopularTrucks = () => {
       >
         {carsData.slice(0, 8).map((item) => (
           <SwiperSlide key={item.id}>
+            
             <Link
               href={`/details/${item.id}`}
               className="carCard -type-1 d-block rounded-4 hover-inside-slider"
@@ -59,7 +61,7 @@ const PopularTrucks = () => {
                   >
                     {item?.slideImg?.map((slide, i) => (
                       <SwiperSlide key={i}>
-                        <img
+                        <Image
                           width={300}
                           height={300}
                           className="rounded-4 col-12 js-lazy"
