@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   addToCompare,
@@ -14,12 +14,16 @@ const CompareAddButton = ({ vehicle, showError, setShow }) => {
   const handleToggle = () => {
     if (isVehicleExists) {
       dispatch(removeFromCompare(vehicle.id));
-    } else if (compareItems.length <= 2) {
+    } 
+    else if (typeof window !== "undefined" && window.innerWidth >= 992 && compareItems.length <= 2) {
       dispatch(addToCompare(vehicle));
-    } else {
+    }
+    else if (typeof window !== "undefined" && window.innerWidth < 992 && compareItems.length <= 1) {
+      dispatch(addToCompare(vehicle));
+    } 
+    else {
       showError();
     }
-
     setShow(compareItems.length !== 0);
   };
 

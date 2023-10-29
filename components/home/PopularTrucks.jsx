@@ -37,7 +37,6 @@ const PopularTrucks = () => {
       >
         {carsData.slice(0, 8).map((item) => (
           <SwiperSlide key={item.id}>
-            
             <Link
               href={`/details/${item.id}`}
               className="carCard -type-1 d-block rounded-4 hover-inside-slider"
@@ -50,28 +49,28 @@ const PopularTrucks = () => {
                 data-aos-delay={item?.delayAnimation}
                 className="truck-card"
               >
-                <div className="truck-card__image">
-                  <Swiper
-                    className="mySwiper"
-                    modules={[Pagination, Navigation]}
-                    pagination={{
-                      clickable: true,
-                    }}
-                    navigation={true}
-                  >
-                    {item?.slideImg?.map((slide, i) => (
-                      <SwiperSlide key={i}>
-                        <Image
+                <Swiper
+                  className="mySwiper"
+                  modules={[Pagination, Navigation]}
+                  pagination={{
+                    clickable: true,
+                  }}
+                  navigation={true}
+                >
+                  {item?.slideImg?.map((slide, i) => (
+                    <SwiperSlide key={i}>
+                      <div className="carCard__image truck-card-zoom">
+                        <img                        
                           width={300}
                           height={300}
                           className="rounded-4 col-12 js-lazy"
                           src={slide}
                           alt="image"
                         />
-                      </SwiperSlide>
-                    ))}
-                  </Swiper>
-                </div>
+                      </div>
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
 
                 <div className="truck-card__content">
                   <div className="truck-card__details">

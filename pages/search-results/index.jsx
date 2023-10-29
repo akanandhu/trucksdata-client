@@ -26,9 +26,18 @@ const toastStyles = {
 const SearchResultsPage = () => {
   const [show, setShow] = useState(false);
   function handleCompareExceed() {
-    toast.error("Maximum of three vehicles selected", {
-      ...toastStyles,
-    });
+    if(typeof window !== "undefined" && window.innerWidth >= 992){
+
+      toast.error("Maximum of three vehicles selected", {
+        ...toastStyles,
+      });
+    }
+    if(typeof window !== "undefined" && window.innerWidth < 992){
+
+      toast.error("Maximum of two vehicles selected", {
+        ...toastStyles,
+      });
+    }
   }
 
   const dispatch = useDispatch();
@@ -121,13 +130,13 @@ const SearchResultsPage = () => {
               <TopHeaderFilter />
               <div className="mt-20"></div>
               {/* End mt--30 */}
-              <div className="row y-gap-30 xl:d-none   ">
+              <div className="row y-gap-30 sm:d-none md:d-none">
                 <SearchResults
                   showError={handleCompareExceed}
                   setShow={setShow}
                 />
               </div>
-              <div className="row y-gap-2  sm:d-flex justify-content-center d-none">
+              <div className="row y-gap-2  sm:d-flex md:d-flex justify-content-center d-none">
                 <SearchResultsMobile
                   setShow={setShow}
                   showError={handleCompareExceed}

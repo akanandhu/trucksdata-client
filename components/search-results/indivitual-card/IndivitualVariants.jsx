@@ -51,7 +51,7 @@ const IndivitualVariants = ({ showError, setShow }) => {
             href={`/details/${item.id}`}
             className=" d-flex rounded-4  "
           >
-            <div className="truck-card__image">
+            <div className="truck-card__image w-100">
               <Swiper
                 className="mySwiper"
                 modules={[Pagination, Navigation]}
@@ -62,13 +62,15 @@ const IndivitualVariants = ({ showError, setShow }) => {
               >
                 {item?.slideImg?.map((slide, i) => (
                   <SwiperSlide key={i}>
+                    {/* <div className="w-75"> */}
                     <img
                       width={300}
                       height={300}
                       className="rounded-4 col-12 border-light  js-lazy"
                       src={slide}
                       alt="image"
-                    />
+                      />
+                    {/* </div> */}
                   </SwiperSlide>
                 ))}
               </Swiper>

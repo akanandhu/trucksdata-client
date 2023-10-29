@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper";
-import trucksData from '../../data/upcoming-trucks';
+import trucksData from "../../data/upcoming-trucks";
 
 const UpcomingTrucks = () => {
   return (
@@ -57,13 +57,15 @@ const UpcomingTrucks = () => {
                   >
                     {item?.slideImg?.map((slide, i) => (
                       <SwiperSlide key={i}>
-                        <img
-                          width={300}
-                          height={300}
-                          className="rounded-4 col-12 js-lazy"
-                          src={slide}
-                          alt="image"
-                        />
+                        <div className="truck-card-zoom">
+                          <img
+                            width={300}
+                            height={300}
+                            className="rounded-4 col-12 js-lazy"
+                            src={slide}
+                            alt="image"
+                          />
+                        </div>
                       </SwiperSlide>
                     ))}
                   </Swiper>
@@ -93,7 +95,6 @@ const UpcomingTrucks = () => {
                 </div>
               </div>
             </Link>
-
           </SwiperSlide>
         ))}
       </Swiper>
@@ -122,4 +123,4 @@ const UpcomingTrucks = () => {
   );
 };
 
-export default UpcomingTrucks
+export default UpcomingTrucks;
