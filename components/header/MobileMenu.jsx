@@ -9,21 +9,8 @@ import {
   MenuItem,
   SubMenu,
 } from "react-pro-sidebar";
-import {
-  homeItems,
-  blogItems,
-  pageItems,
-  dashboardItems,
-  categorieMobileItems,
-} from "../../data/mainMenuData";
-import {
-  isActiveLink,
-  isActiveParent,
-  isActiveParentChaild,
-} from "../../utils/linkActiveChecker";
 import Social from "../common/social/Social";
 import ContactInfo from "./ContactInfo";
-import { menuLists } from "../../data/menuLists";
 
 const MobileMenu = (props) => {
   const { vehicleData } = props;
@@ -95,7 +82,14 @@ const MobileMenu = (props) => {
 
             {/* vehicle type menu */}
             {vehicleData?.map((vehicle) => (
-              vehicle['status'] === "active" ? <SubMenu label={vehicle["name"]} key={vehicle["id"]}></SubMenu> : null
+              vehicle['status'] === "active" ? <SubMenu label={vehicle["name"]} key={vehicle["id"]}>
+                {console.log('Mobile vehicle ',vehicle['manufacturers'])}
+                {
+                  vehicle['manufacturers'].map((manufacturer)=>
+                  <SubMenu label={manufacturer["name"]} key={manufacturer["id"]}></SubMenu>
+                  )
+                }
+              </SubMenu> : null
             ))}
           </Menu>
         </Sidebar>
