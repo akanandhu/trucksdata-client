@@ -104,3 +104,4 @@ const TopBrands = () => {
 };
 
 export default TopBrands;
+  

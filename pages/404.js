@@ -4,6 +4,7 @@ import Seo from "../components/common/Seo";
 import DefaultHeader from "../components/header/default-header";
 import DefaultFooter from "../components/footer/default";
 import NotFound from "../components/common/NotFound";
+import MainHeader from "../components/header/main-header";
 
 const index = () => {
   return (
@@ -12,12 +13,13 @@ const index = () => {
       {/* End Page Title */}
 
       <div className="header-margin"></div>
-      {/* header top margin */}
+      {/* header top margin */} 
 
-      <DefaultHeader />
+      <MainHeader />
       {/* End Header 1 */}
 
       <NotFound />
+      
       {/* End 404 section */}
 
       <CallToActions />
