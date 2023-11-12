@@ -83,7 +83,6 @@ const MobileMenu = (props) => {
             {/* vehicle type menu */}
             {vehicleData?.map((vehicle) => (
               vehicle['status'] === "active" ? <SubMenu label={vehicle["name"]} key={vehicle["id"]}>
-                {console.log('Mobile vehicle ',vehicle['manufacturers'])}
                 {
                   vehicle['manufacturers'].map((manufacturer)=>
                   <SubMenu label={manufacturer["name"]} key={manufacturer["id"]}></SubMenu>

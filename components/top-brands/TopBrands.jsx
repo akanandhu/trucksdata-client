@@ -87,9 +87,7 @@ const TopBrands = (props) => {
   ];
 
   useEffect(() => {
-    console.log("Tab change !", topBrandDetails);
-    // const filteredBrand = topBrandDetails?.filter((item) => item.name === topBrandFilter);
-    // console.log("Filtered brand ",filteredBrand);
+    
     const reducedBrand = topBrandDetails?.reduce((acc, current) => {
       if (current.name === topBrandFilter) {
         acc = current;
@@ -163,7 +161,6 @@ const TopBrands = (props) => {
           },
         }}
       >
-        {console.log("mnu", manufacturers)}
         {manufacturers?.slice(0, 8).map((item) => (
           <SwiperSlide key={item.id + item.name}>
             <Link

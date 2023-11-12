@@ -13,7 +13,7 @@ import MainHeader from "../../components/header/main-header";
 import TopFilter from "../../components/top-brands/TopFilter";
 import useManufactures from "../../services/useManufactures";
 import useVehicleTypes from "../../services/useVehicleTypes";
-import { useDispatch, useSelector} from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setManufacturer } from "../../features/manufacturer/manufacturerSlice";
 import { setVehiclesType } from "../../features/vehicleType/vehicleTypeSlice";
 import { useState } from "react";
@@ -32,19 +32,6 @@ const Home = () => {
 
   dispach(setVehiclesType(vehicle?.data["data"]));
   dispach(setManufacturer(manufacturer?.data["data"]));
-
-  const [topBrand,setTopBrand] = useState([]);
-
-  const handleBrandFilter = (response) =>{
-    const reducedBrand = vehicle.data.data.reduce((acc,current)=>{
-      if(current.name === response){
-        return acc = current;
-      }
-      return acc;
-    })
-    console.log("REDUCED Brand",reducedBrand.manufacturer);
-    setTopBrand(reducedBrand.manufacturers);
-  }
 
   return (
     <>
@@ -77,10 +64,7 @@ const Home = () => {
 
           <div className="row y-gap-30 pt-5 sm:pt-20 item_gap-x30">
             <div className="tabs -pills-2 pt-12">
-              <TopFilter
-                filterOptions={filterOptions}
-                vehicleData={vehicle?.data["data"]}
-              />
+              <TopFilter vehicleData={vehicle?.data["data"]} />
             </div>
             <PopularTrucks />
           </div>
@@ -106,13 +90,9 @@ const Home = () => {
 
           <div className="row y-gap-30 pt-5 item_gap-x30  ">
             <div className="tabs -pills-2 pt-12 ">
-              <TopFilter
-                filterOptions={filterOptions}
-                vehicleData={vehicle?.data["data"]}
-                handleBrandFilter={handleBrandFilter}
-              />
+              <TopFilter vehicleData={vehicle?.data["data"]} flag="brands"/>
             </div>
-            <TopBrands topBrandDetails={vehicle?.data["data"]}/>
+            <TopBrands topBrandDetails={vehicle?.data["data"]} />
           </div>
           {/* End .row */}
         </div>
@@ -141,10 +121,7 @@ const Home = () => {
 
           <div className="row y-gap-30 pt-5 sm:pt-20 item_gap-x30">
             <div className="tabs -pills-2 pt-12">
-              <TopFilter
-                filterOptions={filterOptions}
-                vehicleData={vehicle?.data["data"]}
-              />
+              <TopFilter vehicleData={vehicle?.data["data"]} />
             </div>
             <UpcomingTrucks />
           </div>
