@@ -6,7 +6,6 @@ import PopularTrucks from "../../components/home/PopularTrucks";
 import Faq from "../../components/faq/Faq";
 import AppBanner from "../../components/home/AppBanner";
 import Blog from "../../components/home/Blog";
-import Link from "next/link";
 import TopBrands from "../../components/top-brands/TopBrands";
 import UpcomingTrucks from "../../components/trucks/UpcomingTrucks";
 import CompareVehicles from "../../components/compare/CompareVehicles";
@@ -14,9 +13,10 @@ import MainHeader from "../../components/header/main-header";
 import TopFilter from "../../components/top-brands/TopFilter";
 import useManufactures from "../../services/useManufactures";
 import useVehicleTypes from "../../services/useVehicleTypes";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector} from "react-redux";
 import { setManufacturer } from "../../features/manufacturer/manufacturerSlice";
 import { setVehiclesType } from "../../features/vehicleType/vehicleTypeSlice";
+import { useState } from "react";
 const Home = () => {
   const dispach = useDispatch();
   const filterOptions = [
@@ -32,6 +32,19 @@ const Home = () => {
 
   dispach(setVehiclesType(vehicle?.data["data"]));
   dispach(setManufacturer(manufacturer?.data["data"]));
+
+  const [topBrand,setTopBrand] = useState([]);
+
+  const handleBrandFilter = (response) =>{
+    const reducedBrand = vehicle.data.data.reduce((acc,current)=>{
+      if(current.name === response){
+        return acc = current;
+      }
+      return acc;
+    })
+    console.log("REDUCED Brand",reducedBrand.manufacturer);
+    setTopBrand(reducedBrand.manufacturers);
+  }
 
   return (
     <>
@@ -96,9 +109,10 @@ const Home = () => {
               <TopFilter
                 filterOptions={filterOptions}
                 vehicleData={vehicle?.data["data"]}
+                handleBrandFilter={handleBrandFilter}
               />
             </div>
-            <TopBrands />
+            <TopBrands topBrandDetails={vehicle?.data["data"]}/>
           </div>
           {/* End .row */}
         </div>
@@ -153,14 +167,14 @@ const Home = () => {
               </div>
             </div>
             {/* End .col */}
-            <div className="col-auto">
+            {/* <div className="col-auto">
               <Link
                 href="/blog/blog-list-v2"
                 className="button -md -blue-1 bg-blue-1-05 text-dark-1"
               >
                 More <div className="icon-arrow-top-right ml-15" />
               </Link>
-            </div>
+            </div> */}
             {/* End .col */}
           </div>
           {/* End .row */}

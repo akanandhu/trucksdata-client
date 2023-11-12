@@ -33,7 +33,6 @@ const MainHeader = () => {
   return (
     <>
       {" "}
-      {console.log("vehicle data ", vehicleData)}
       <header className={`header  ${navbar ? "is-sticky bg-white" : ""}`}>
         <div className="header__container header__container-1500 mx-auto px-30 sm:px-20">
           <div className="row justify-between items-center">
