@@ -86,8 +86,8 @@ function DropInput(props) {
           </div>
         </div>
 
-        <div className="shadow-2 dropdown-menu min-width-400">
-          <div className="bg-white px-20 py-20 sm:px-0 sm:py-15 rounded-4">
+        <div className="shadow-2 dropdown-menu min-width-400 filter_contents">
+          <div className="px-20 py-20 sm:px-0 sm:py-15 rounded-4">
             <ul className="y-gap-5 js-results">
               {handleDropDownDetails(dropdownDetails["title"])}
             </ul>
