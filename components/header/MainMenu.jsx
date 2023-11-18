@@ -9,13 +9,22 @@ const MainMenu = ({ style = "", vehicleData }) => {
   /* Generate categorylist for each vehicle type */
   const categoriesList = (vehicle) => {
     const truckBrandsList = [];
-    vehicle["manufacturers"].map((brand) => {
-      truckBrandsList.push(brand["name"]);
+    const series = [];
+    vehicle["manufacturers"].map((brand,index) => {
+      const brands = {id:index,brand:brand["name"]}
+      truckBrandsList.push(brands);
+      let seriesItem = [];
+      brand['series'].map((item,i)=>{
+      seriesItem.push(item);
+      })
+      const models = { id:index, brand:brand["name"], series:seriesItem }
+      series.push(models)
     });
     return (
       <CategoriesMegaMenu
         itemList={truckBrandsList}
         categorieMegaMenuItems={categorieMegaMenuItems}
+        vehicleModels={series}
       />
     );
   };
@@ -33,9 +42,10 @@ const MainMenu = ({ style = "", vehicleData }) => {
             >
               <a href="#">
                 <span className="mr-10">{vehicle["name"]}</span>
-                <i className="icon icon-chevron-sm-down" />
+                {vehicle?.manufacturers?.length !==0 ? <i className="icon icon-chevron-sm-down" /> : null}
               </a>
-              <div className="mega">{categoriesList(vehicle)}</div>
+              {console.log("Vehicle ",vehicle?.manufacturers?.length)}
+              {vehicle?.manufacturers?.length !==0 ? <div className="mega">{categoriesList(vehicle)}</div> :null}
             </li>
           ) : null
         )}
