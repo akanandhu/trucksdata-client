@@ -81,15 +81,28 @@ const MobileMenu = (props) => {
             })} */}
 
             {/* vehicle type menu */}
-            {vehicleData?.map((vehicle) => (
-              vehicle['status'] === "active" ? <SubMenu label={vehicle["name"]} key={vehicle["id"]}>
-                {
-                  vehicle['manufacturers'].map((manufacturer)=>
-                  <SubMenu label={manufacturer["name"]} key={manufacturer["id"]}></SubMenu>
-                  )
-                }
-              </SubMenu> : null
-            ))}
+            {vehicleData?.map((vehicle) =>
+              vehicle["status"] === "active" ? (
+                <SubMenu label={vehicle["name"]} key={vehicle["id"]}>
+                  {vehicle["manufacturers"].map((manufacturer) => (
+                    <SubMenu
+                      label={manufacturer["name"]}
+                      key={manufacturer["id"]}
+                    >
+                      {manufacturer["series"].map((series, i) => (
+                        <SubMenu label={series.title} key={series.title + i}>
+                          {series?.vehicles?.map((model, i) => (
+                            <MenuItem key={model.title + i}>
+                              {model.title}
+                            </MenuItem>
+                          ))}
+                        </SubMenu>
+                      ))}
+                    </SubMenu>
+                  ))}
+                </SubMenu>
+              ) : null
+            )}
           </Menu>
         </Sidebar>
       </ProSidebarProvider>

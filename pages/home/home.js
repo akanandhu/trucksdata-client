@@ -13,10 +13,11 @@ import MainHeader from "../../components/header/main-header";
 import TopFilter from "../../components/top-brands/TopFilter";
 import useManufactures from "../../services/useManufactures";
 import useVehicleTypes from "../../services/useVehicleTypes";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch} from "react-redux";
 import { setManufacturer } from "../../features/manufacturer/manufacturerSlice";
 import { setVehiclesType } from "../../features/vehicleType/vehicleTypeSlice";
-import { useState } from "react";
+import useVehicle from "../../services/useVehicle";
+
 const Home = () => {
   const dispach = useDispatch();
   const filterOptions = [
@@ -29,13 +30,14 @@ const Home = () => {
 
   const { data: manufacturer } = useManufactures();
   const { data: vehicle } = useVehicleTypes();
+  const {data: vehicleDetails} = useVehicle();
 
   dispach(setVehiclesType(vehicle?.data["data"]));
   dispach(setManufacturer(manufacturer?.data["data"]));
 
   return (
     <>
-    {console.log('Vehicle ',vehicle?.data?.data)}
+    {console.log('Vehicle details!',vehicle?.data["data"])}
       <Seo pageTitle="Home" />
       {/* End Page Title */}
 
@@ -65,9 +67,10 @@ const Home = () => {
 
           <div className="row y-gap-30 pt-5 sm:pt-20 item_gap-x30">
             <div className="tabs -pills-2 pt-12">
-              <TopFilter vehicleData={vehicle?.data["data"]} />
+              {console.log("Vehicle data ",vehicle?.data["data"])}
+              <TopFilter vehicleData={vehicle?.data["data"]} flag="popular"/>
             </div>
-            <PopularTrucks />
+            <PopularTrucks vehicleDetails={vehicleDetails?.data["data"]}/>
           </div>
           {/* End .row */}
         </div>

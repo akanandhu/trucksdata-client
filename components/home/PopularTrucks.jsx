@@ -3,10 +3,27 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper";
 import carsData from "../../data/cars";
 import Image from "next/image";
+import { useSelector } from "react-redux";
+import { useEffect } from "react";
+import useVehicle from "../../services/useVehicle";
 
 const PopularTrucks = () => {
+  const filterOption = useSelector(
+    (store) => store.topfilter['popular']?.currentTab
+  );
+  const filterId = useSelector(
+    (store) => store.topfilter['popular']?.id
+  );
+
+  const filterObject = useSelector(
+    (store) => store.topfilter['popular']
+  );
+  
+  const {data: vehicleDetails} = useVehicle(1,filterObject);
+  
   return (
     <>
+    {console.log("vehicle details ",vehicleDetails)}
       <Swiper
         spaceBetween={30}
         modules={[Navigation, Pagination]}

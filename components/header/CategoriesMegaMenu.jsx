@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import { isActiveLink } from "../../utils/linkActiveChecker";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const CategoriesMegaMenu = ({
   itemList,
@@ -12,10 +12,11 @@ const CategoriesMegaMenu = ({
 }) => {
   const router = useRouter();
   const [models, setModels] = useState([]);
+  useEffect(() => {
+    handleTabSelection(0);
+  }, [])
+  
   const handleTabSelection = (index) => {
-    console.log("Tab selection ", index);
-    console.log("VehicleModes ", vehicleModels);
-    console.log("list ", itemList[index].brand);
     const reducedModels = vehicleModels.reduce((acc, current) => {
       if (current.id === index && current.brand === itemList[index].brand) {
         acc = current;
@@ -23,7 +24,6 @@ const CategoriesMegaMenu = ({
       return acc;
     });
     setModels(reducedModels.series);
-    console.log("Reduced models ", reducedModels);
   };
   return (
     <Tabs
@@ -31,7 +31,6 @@ const CategoriesMegaMenu = ({
       onSelect={(index) => handleTabSelection(index)}
       defaultIndex={0}
     >
-      {console.log("Vehicle models ", models)}
       <TabList
         className="tabs__controls row x-gap-40 y-gap-10 lg:x-gap-20 pb-5 js-tabs-controls"
         id="custom_scroll"
@@ -110,7 +109,7 @@ const CategoriesMegaMenu = ({
                         <div className="mega__item" key={model.id}>
                           <div className="text-15 fw-500">{model.title}</div>
                           <div className="y-gap-5 text-15 pt-5">
-                            {model?.vehicles?.map((list, i) => (
+                            {model?.vehicles?.slice(0, 10).map((list, i) => (
                               <div
                                 key={i}
                                 // className={

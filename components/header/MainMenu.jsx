@@ -44,7 +44,6 @@ const MainMenu = ({ style = "", vehicleData }) => {
                 <span className="mr-10">{vehicle["name"]}</span>
                 {vehicle?.manufacturers?.length !==0 ? <i className="icon icon-chevron-sm-down" /> : null}
               </a>
-              {console.log("Vehicle ",vehicle?.manufacturers?.length)}
               {vehicle?.manufacturers?.length !==0 ? <div className="mega">{categoriesList(vehicle)}</div> :null}
             </li>
           ) : null
