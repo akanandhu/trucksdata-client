@@ -35,6 +35,7 @@ const Home = () => {
 
   return (
     <>
+    {console.log('Vehicle ',vehicle?.data?.data)}
       <Seo pageTitle="Home" />
       {/* End Page Title */}
 

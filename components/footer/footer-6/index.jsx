@@ -5,11 +5,21 @@ import Subscribe from "./Subscribe";
 
 const index = () => {
   return (
-    <footer className="footer -type-3 text-white bg-dark-1">
-      <div className="container">
-        <div className="pt-60 pb-60">
-          <div className="row y-gap-40 justify-between xl:justify-start">
-            <div className="col-xl-2 col-lg-4 col-sm-6">
+    <footer className="footer -type-3 text-white bg-dark-1 footerContainer">
+      <div 
+      // className="container"
+      >
+        <div 
+        // className="d-flex pt-60 pb-60 ps-2"
+        >
+          <div 
+          // className="row y-gap-40 justify-between xl:justify-start"
+        className="d-flex pt-60 pb-60 overflow-auto justify-content-between sm:flex-column md:flex-column ps-4 pe-4 px-sm-5"
+
+          >
+            <div 
+            // className="col-xl-2 col-lg-4 col-sm-6"
+            >
               <h5 className="text-16 fw-500 mb-30">Contact Us</h5>
               <ContactInfo />
             </div>
@@ -26,7 +36,7 @@ const index = () => {
         </div>
         {/* End footer top */}
 
-        <div className="py-20 border-top-white-15">
+        <div className="py-20 border-top-white-15 ps-4 pe-4 px-sm-5">
           <Copyright />
         </div>
         {/* End footer-copyright */}
