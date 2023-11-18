@@ -3,15 +3,15 @@ import { axiosInstance } from "../axios/AxiosInstance";
 import { useState } from "react";
 
 async function getVehicleDetails(id) {
-  const response = await axiosInstance.get(`vehicles/${id}`);
+  const response = await axiosInstance.get(`vehicles?vehicle_type=${id}`);
   return response;
 }
 
-export default function useVehicle(id,filter) {
-    console.log("IIID ",filter?.id);
+export default function useVehicle(id) {
+
   return useQuery(
     ["vehicleDetails",id],
-    ()=>getVehicleDetails(filter?.id),
+    ()=>getVehicleDetails(id),
     {
       staleTime: Infinity,
     //   enabled:!!id

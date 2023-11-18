@@ -1,18 +1,26 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setCurrentBrandTab } from "../../features/topFilter/topFilterSlice";
+import {
+  setCurrentBrandTab,
+  setCurrentPopularTab,
+} from "../../features/topFilter/topFilterSlice";
 
 const TopFilter = ({ vehicleData, flag }) => {
   const dispach = useDispatch();
   const filterOption = useSelector(
-    (store) => store.topfilter[flag]?.currentTab
+    // (store) => store.topfilter[flag]?.currentTab
+    (store) => store.topfilter
   );
-  const filterId = useSelector(
-    (store) => store.topfilter[flag]?.id
-  );
-  const handleFilter = (id, vehicle) => {
+  const mainStore = useSelector((store) => store.topfilter);
+  const handleFilter = (id, vehicle, flag) => {
     const filter = { id, vehicle };
-    dispach(setCurrentBrandTab({ ...filter }));
+    const filters = { [flag]: { id, vehicle } };
+    if (flag === "popular") {
+      dispach(setCurrentPopularTab(filters));
+    }
+    if (flag === "brands") {
+      dispach(setCurrentBrandTab(filters));
+    }
   };
   return (
     <div className="tabs__controls tabs__controls_buttons d-flex x-gap-15  js-tabs-controls">
@@ -30,23 +38,106 @@ const TopFilter = ({ vehicleData, flag }) => {
       ))} */}
       {vehicleData?.map((vehicleType) => (
         <div className="col-auto" key={vehicleType["id"]}>
-          {console.log("Filer ", filterOption)}
-          {console.log("ID ", filterId)}
-
-          {vehicleType["status"] === "active" ? (
-            <button
-              className={`tabs__button text-14 fw-500 px-20 py-10 rounded-4 bg-light-2 js-tabs-button mb-10 ${
-                filterOption && filterOption === vehicleType["name"]
+          {flag === "popular" && (
+            <>
+              {vehicleType["status"] === "active" ? (
+                <button
+                  className={`tabs__button text-14 fw-500 px-20 py-10 rounded-4 bg-light-2 js-tabs-button mb-10 
+              ${
+                filterOption?.popular?.currentTab === vehicleType["name"] &&
+                flag === "popular"
                   ? "is-tab-el-active"
                   : ""
               }`}
-              onClick={() =>
-                handleFilter(vehicleType["id"], vehicleType["name"])
-              }
-            >
-              {vehicleType["name"]}
-            </button>
-          ) : null}
+                  onClick={() =>
+                    handleFilter(
+                      vehicleType["id"],
+                      vehicleType["name"],
+                      "popular"
+                    )
+                  }
+                >
+                  {vehicleType["name"]}
+                </button>
+              ) : null}
+            </>
+          )}
+          {flag === "brands" && (
+            <>
+              {vehicleType["status"] === "active" ? (
+                <button
+                  className={`tabs__button text-14 fw-500 px-20 py-10 rounded-4 bg-light-2 js-tabs-button mb-10 
+              ${
+                filterOption?.brands?.currentTab === vehicleType["name"] &&
+                flag === "brands"
+                  ? "is-tab-el-active"
+                  : ""
+              }`}
+                  onClick={() =>
+                    handleFilter(
+                      vehicleType["id"],
+                      vehicleType["name"],
+                      "brands"
+                    )
+                  }
+                >
+                  {console.log("Filter options ", filterOption?.brands)}
+                  {vehicleType["name"]}
+                </button>
+              ) : null}
+            </>
+          )}
+          {flag === "compare" && (
+            <>
+              {vehicleType["status"] === "active" ? (
+                <button
+                  className={`tabs__button text-14 fw-500 px-20 py-10 rounded-4 bg-light-2 js-tabs-button mb-10 
+              ${
+                filterOption?.brands?.currentTab === vehicleType["name"] &&
+                flag === "brands"
+                  ? "is-tab-el-active"
+                  : ""
+              }`}
+                  onClick={() =>
+                    handleFilter(
+                      vehicleType["id"],
+                      vehicleType["name"],
+                      "compare"
+                    )
+                  }
+                >
+                  {console.log("Filter options ", filterOption?.brands)}
+                  {vehicleType["name"]}
+                </button>
+              ) : null}
+            </>
+          )}
+
+          {flag === "upcoming" && (
+            <>
+              {vehicleType["status"] === "active" ? (
+                <button
+                  className={`tabs__button text-14 fw-500 px-20 py-10 rounded-4 bg-light-2 js-tabs-button mb-10 
+              ${
+                filterOption?.brands?.currentTab === vehicleType["name"] &&
+                flag === "brands"
+                  ? "is-tab-el-active"
+                  : ""
+              }`}
+                  onClick={() =>
+                    handleFilter(
+                      vehicleType["id"],
+                      vehicleType["name"],
+                      "upcoming"
+                    )
+                  }
+                >
+                  {console.log("Filter options ", filterOption?.brands)}
+                  {vehicleType["name"]}
+                </button>
+              ) : null}
+            </>
+          )}
         </div>
       ))}
     </div>

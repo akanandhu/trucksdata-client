@@ -19,7 +19,7 @@ const CompareVehicles = ({filterOptions, vehicleData}) => {
 
         <div className="row y-gap-30 pt-5 sm:pt-20 item_gap-x30">
           <div className="tabs -pills-2 pt-12">
-            <TopFilter filterOptions={filterOptions} vehicleData={vehicleData}/>
+            <TopFilter filterOptions={filterOptions} vehicleData={vehicleData} flag='compare'/>
           </div>
           <CompareTwoVehiclesCard />
         </div>

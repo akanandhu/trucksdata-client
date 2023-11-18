@@ -23,12 +23,15 @@ export const currentTabSlice = createSlice({
   initialState,
   reducers: {
     setCurrentBrandTab: (state, { payload }) => {
-      console.log("PAYLOAD ",payload);
-      state.brands.currentTab = payload.vehicle;
-      state.brands.id = payload.id;
+      state.brands.currentTab = payload.brands.vehicle;
+      state.brands.id = payload.brands.id;
     },
+    setCurrentPopularTab: (state, { payload }) => {
+      state.popular.currentTab = payload.popular.vehicle;
+      state.popular.id = payload.popular.id;
+    }
   },
 });
 
-export const { setCurrentBrandTab } = currentTabSlice.actions;
+export const { setCurrentBrandTab,setCurrentPopularTab } = currentTabSlice.actions;
 export default currentTabSlice.reducer;

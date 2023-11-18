@@ -30,7 +30,6 @@ const Home = () => {
 
   const { data: manufacturer } = useManufactures();
   const { data: vehicle } = useVehicleTypes();
-  const {data: vehicleDetails} = useVehicle();
 
   dispach(setVehiclesType(vehicle?.data["data"]));
   dispach(setManufacturer(manufacturer?.data["data"]));
@@ -67,10 +66,9 @@ const Home = () => {
 
           <div className="row y-gap-30 pt-5 sm:pt-20 item_gap-x30">
             <div className="tabs -pills-2 pt-12">
-              {console.log("Vehicle data ",vehicle?.data["data"])}
               <TopFilter vehicleData={vehicle?.data["data"]} flag="popular"/>
             </div>
-            <PopularTrucks vehicleDetails={vehicleDetails?.data["data"]}/>
+            <PopularTrucks/>
           </div>
           {/* End .row */}
         </div>
@@ -125,7 +123,7 @@ const Home = () => {
 
           <div className="row y-gap-30 pt-5 sm:pt-20 item_gap-x30">
             <div className="tabs -pills-2 pt-12">
-              <TopFilter vehicleData={vehicle?.data["data"]} />
+              <TopFilter vehicleData={vehicle?.data["data"]} flag="upcoming"/>
             </div>
             <UpcomingTrucks />
           </div>
