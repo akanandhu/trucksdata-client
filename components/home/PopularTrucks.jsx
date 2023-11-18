@@ -1,26 +1,14 @@
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper";
-import carsData from "../../data/cars";
-import Image from "next/image";
 import { useSelector } from "react-redux";
-import { useEffect } from "react";
 import useVehicle from "../../services/useVehicle";
 
 const PopularTrucks = () => {
-  const filterOption = useSelector(
-    (store) => store.topfilter["popular"]?.currentTab
-  );
   const filterId = useSelector((store) => store.topfilter["popular"]?.id);
-
-  const filterObject = useSelector((store) => store.topfilter["popular"]);
-
   const { data: vehicleDetails } = useVehicle(filterId);
-
   return (
     <>
-      {console.log("vehicle details -----------------",vehicleDetails?.data["data"])}
-      {console.log("Cars data ", carsData)}
       <Swiper
         spaceBetween={30}
         modules={[Navigation, Pagination]}
@@ -49,133 +37,74 @@ const PopularTrucks = () => {
           },
         }}
       >
-        {/* {carsData.slice(0, 8).map((item) => (
-          <SwiperSlide key={item.id}>
-            <Link
-              href={`/details/${item.id}`}
-              className="carCard -type-1 d-block rounded-4 hover-inside-slider"
-              data-aos="fade"
-              data-aos-delay={item.delayAnimation}
-            >
-              <div
-                key={item?.id}
-                data-aos="fade"
-                data-aos-delay={item?.delayAnimation}
-                className="truck-card"
-              >
-                <Swiper
-                  className="mySwiper"
-                  modules={[Pagination, Navigation]}
-                  pagination={{
-                    clickable: true,
-                  }}
-                  navigation={true}
-                >
-                  {item?.slideImg?.map((slide, i) => (
-                    <SwiperSlide key={i}>
-                      <div className="carCard__image truck-card-zoom">
-                        <img                        
-                          width={300}
-                          height={300}
-                          className="rounded-4 col-12 js-lazy"
-                          src={slide}
-                          alt="image"
-                        />
-                      </div>
-                    </SwiperSlide>
-                  ))}
-                </Swiper>
-
-                <div className="truck-card__content">
-                  <div className="truck-card__details">
-                    <div className="truck-card__location">{item?.location}</div>
-                    <div className="truck-card__divider" />
-                    <div className="truck-card__type">{item?.type}</div>
-                  </div>
-                  <h4 className="truck-card__title ">{item?.title}</h4>
-
-                  <div className="truck-card__price-range">
-                    <span className="truck-card__price text-blue-1">
-                      ₹75,00,000{" "}
-                    </span>
-                    <span className="truck-card__price-label text-13 text-secondary ">
-                      Onwards
-                    </span>
-                  </div>
-                  <div className="d-flex w-auto mt-5 ">
-                    <button className=" btn btn-primary  bg-blue-1 d-flex justify-content-center   flex-grow-1 text-center  ">
-                      View More
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </Link>
-          </SwiperSlide>
-        ))} */}
-        {vehicleDetails?.data["data"].map((item,i) => (
-          item?.is_popular === 1 ?
-          <SwiperSlide key={item.id}>
-            <Link
-              href={`/details/${item.id}`}
-              className="carCard -type-1 d-block rounded-4 hover-inside-slider"
-              data-aos="fade"
-              data-aos-delay={i * 100}
-            >
-              <div
-                key={item?.id}
+        {vehicleDetails?.data["data"].map((item, i) =>
+          item?.is_popular === 1 ? (
+            <SwiperSlide key={item.id}>
+              <Link
+                href={`/details/${item.id}`}
+                className="carCard -type-1 d-block rounded-4 hover-inside-slider"
                 data-aos="fade"
                 data-aos-delay={i * 100}
-                className="truck-card"
               >
-                <Swiper
-                  className="mySwiper"
-                  modules={[Pagination, Navigation]}
-                  pagination={{
-                    clickable: true,
-                  }}
-                  navigation={true}
+                <div
+                  key={item?.id}
+                  data-aos="fade"
+                  data-aos-delay={i * 100}
+                  className="truck-card"
                 >
-                  <div>
-                    <div className="carCard__image truck-card-zoom">
-                      <img
-                        width={300}
-                        height={300}
-                        className="rounded-4 col-12 js-lazy"
-                        src={item?.images[0]?.thumbnail}
-                        alt="image"
-                      />
-                    </div>
-                    <div className="truck-card__content">
-                      <div className="truck-card__details">
-                        <div className="truck-card__type">{item?.vehicle_type?.name}</div>
-                        {/* <div className="truck-card__location">
+                  <div className="truck-card__image">
+                    <Swiper
+                      className="mySwiper"
+                      modules={[Pagination, Navigation]}
+                      pagination={{
+                        clickable: true,
+                      }}
+                      navigation={true}
+                    >
+                      <SwiperSlide>
+                        <div className="truck-card-zoom">
+                          <img
+                            width={300}
+                            height={300}
+                            className="rounded-4 col-12 js-lazy"
+                            src={item?.images[0]?.thumbnail}
+                            alt="image"
+                          />
+                        </div>
+                      </SwiperSlide>
+                      <div className="truck-card__content">
+                        <div className="truck-card__details">
+                          <div className="truck-card__type">
+                            {item?.vehicle_type?.name}
+                          </div>
+                          {/* <div className="truck-card__location">
                           {item?.location}
                         </div> */}
-                        {/* <div className="truck-card__divider" /> */}
-                      </div>
-                      <h4 className="truck-card__title ">{item?.title}</h4>
+                          {/* <div className="truck-card__divider" /> */}
+                        </div>
+                        <h4 className="truck-card__title ">{item?.title}</h4>
 
-                      <div className="truck-card__price-range">
-                        <span className="truck-card__price text-blue-1">
-                          {item?.max_price}{" "}
-                        </span>
-                        <span className="truck-card__price-label text-13 text-secondary ">
-                          Onwards
-                        </span>
+                        <div className="truck-card__price-range">
+                          <span className="truck-card__price text-blue-1">
+                            {item?.max_price}{" "}
+                          </span>
+                          <span className="truck-card__price-label text-13 text-secondary ">
+                            Onwards
+                          </span>
+                        </div>
+                        <div className="d-flex w-auto mt-5 ">
+                          <button className=" btn btn-primary  bg-blue-1 d-flex justify-content-center   flex-grow-1 text-center  ">
+                            View More
+                          </button>
+                        </div>
                       </div>
-                      <div className="d-flex w-auto mt-5 ">
-                        <button className=" btn btn-primary  bg-blue-1 d-flex justify-content-center   flex-grow-1 text-center  ">
-                          View More
-                        </button>
-                      </div>
-                    </div>
+                    </Swiper>
                   </div>
-                </Swiper>
-              </div>
-            </Link>
-          </SwiperSlide>
-          :null
-        ))}
+                </div>
+              </Link>
+            </SwiperSlide>
+          ) : null
+        )}
       </Swiper>
 
       <div className="d-flex x-gap-15 items-center justify-center pt-20 sm:pt-20">
@@ -184,19 +113,16 @@ const PopularTrucks = () => {
             <i className="icon icon-arrow-left" />
           </button>
         </div>
-        {/* End arrow prev */}
 
         <div className="col-auto">
           <div className="pagination -dots text-border js-car-pag_active" />
         </div>
-        {/* End arrow pagination */}
 
         <div className="col-auto">
           <button className="d-flex items-center text-24 arrow-right-hover js-popular-car-next">
             <i className="icon icon-arrow-right" />
           </button>
         </div>
-        {/* End arrow next */}
       </div>
     </>
   );

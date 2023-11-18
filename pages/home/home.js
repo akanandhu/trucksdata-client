@@ -36,7 +36,6 @@ const Home = () => {
 
   return (
     <>
-    {console.log('Vehicle details!',vehicle?.data["data"])}
       <Seo pageTitle="Home" />
       {/* End Page Title */}
 
@@ -127,9 +126,7 @@ const Home = () => {
             </div>
             <UpcomingTrucks />
           </div>
-          {/* End .row */}
         </div>
-        {/* End .container */}
       </section>
 
       <section className="pb-30">

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   setCurrentBrandTab,
   setCurrentPopularTab,
+  setCurrentUpcomingTab,
 } from "../../features/topFilter/topFilterSlice";
 
 const TopFilter = ({ vehicleData, flag }) => {
@@ -20,6 +21,9 @@ const TopFilter = ({ vehicleData, flag }) => {
     }
     if (flag === "brands") {
       dispach(setCurrentBrandTab(filters));
+    }
+    if (flag === "upcoming") {
+      dispach(setCurrentUpcomingTab(filters));
     }
   };
   return (
@@ -81,7 +85,6 @@ const TopFilter = ({ vehicleData, flag }) => {
                     )
                   }
                 >
-                  {console.log("Filter options ", filterOption?.brands)}
                   {vehicleType["name"]}
                 </button>
               ) : null}
@@ -93,8 +96,8 @@ const TopFilter = ({ vehicleData, flag }) => {
                 <button
                   className={`tabs__button text-14 fw-500 px-20 py-10 rounded-4 bg-light-2 js-tabs-button mb-10 
               ${
-                filterOption?.brands?.currentTab === vehicleType["name"] &&
-                flag === "brands"
+                filterOption?.compare?.currentTab === vehicleType["name"] &&
+                flag === "compare"
                   ? "is-tab-el-active"
                   : ""
               }`}
@@ -106,21 +109,19 @@ const TopFilter = ({ vehicleData, flag }) => {
                     )
                   }
                 >
-                  {console.log("Filter options ", filterOption?.brands)}
                   {vehicleType["name"]}
                 </button>
               ) : null}
             </>
           )}
-
           {flag === "upcoming" && (
             <>
               {vehicleType["status"] === "active" ? (
                 <button
                   className={`tabs__button text-14 fw-500 px-20 py-10 rounded-4 bg-light-2 js-tabs-button mb-10 
               ${
-                filterOption?.brands?.currentTab === vehicleType["name"] &&
-                flag === "brands"
+                filterOption?.upcoming?.currentTab === vehicleType["name"] &&
+                flag === "upcoming"
                   ? "is-tab-el-active"
                   : ""
               }`}
@@ -132,7 +133,6 @@ const TopFilter = ({ vehicleData, flag }) => {
                     )
                   }
                 >
-                  {console.log("Filter options ", filterOption?.brands)}
                   {vehicleType["name"]}
                 </button>
               ) : null}
