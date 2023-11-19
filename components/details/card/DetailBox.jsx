@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { states } from "../../../data/states";
 
-const DetailBlock = ({ data }) => {
-  const isActive = data?.value === "Active";
+const DetailBlock = ({data, vehicleDetails }) => {
+  const isActive = vehicleDetails?.vehicle_type[data.key] === "active";
   const isDiscontinued = data?.value === "Discontinued";
 
   return (
     <div className="searchMenu-loc px-20 py-10 border-light rounded-4 js-form-dd js-liverSearch">
+     {console.log("Vehicle ",vehicleDetails)}
       <div>
         <h4 className="text-15 fw-500 ls-2 lh-16">{data.heading}</h4>
         <div
@@ -18,7 +19,9 @@ const DetailBlock = ({ data }) => {
               : "text-black "
           } ls-2 lh-16`}
         >
-          <label>{data?.value}</label>
+          {data.key === 'status' ? <label>{vehicleDetails?.vehicle_type[data.key] }</label> : null}
+          {data.key === 'manufacturer_id' ? <label>{vehicleDetails?.manufacturer?.name}</label> : null}
+          {data.key === 'energy_source_id' ? <label>{vehicleDetails?.energy_source?.name}</label> : null}
         </div>
       </div>
     </div>
@@ -44,7 +47,26 @@ const data = [
   },
 ];
 
-const DetailBox = () => {
+const DetailBox = ({vehicleDetails}) => {
+  const details = [
+    {
+      heading: "Manufacturer",
+      key: "manufacturer_id",
+    },
+    {
+      heading: "Power Source",
+      key: "energy_source_id",
+    }
+    ,
+    {
+      heading: "Category of Vehicle",
+      key: "vehicle_type_id",
+    },
+    {
+      heading: "Status",
+      key: "status",
+    },
+  ];
   const [click, setClick] = useState(false);
   const [searchValue, setSearchValue] = useState("");
   const [districtValue, setDistrictValue] = useState("");
@@ -66,13 +88,15 @@ const DetailBox = () => {
 
   return (
     <>
-      {data.map((obj) => {
+      {details.map((obj) => {
         return (
           <div key={obj.heading} className="col-12">
-            <DetailBlock data={obj} />
+            <DetailBlock data={obj} vehicleDetails={vehicleDetails}/>
           </div>
         );
       })}
+
+     
 
       <div className="col-12">
         <button

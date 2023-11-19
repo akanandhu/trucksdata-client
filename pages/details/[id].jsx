@@ -17,6 +17,7 @@ import DetailBox from "../../components/details/card/DetailBox";
 import SpecificationTable from "../../components/details/specification-table/SpecificationTable";
 import SimilarTrucks from "../../components/similar-trucks/SimilarTrucks";
 import MainHeader from "../../components/header/main-header";
+import useViewVehicle from "../../services/useViewVehicle";
 
 const SinglePage = () => {
   const router = useRouter();
@@ -26,16 +27,16 @@ const SinglePage = () => {
   useEffect(() => {
     if (!id) <h1>Loading...</h1>;
     else setVehicle(carsData.find((item) => item.id == id));
-
     return () => {};
   }, [id]);
-  
+
+  const { data: vehicleData } = useViewVehicle(id);
 
   return (
     <>
       <Seo pageTitle={vehicle?.title ?? "Variant View Page"} />
       {/* End Page Title */}
-
+      {console.log("Data ", vehicleData?.data?.vehicle_specs)}
       <div className="header-margin"></div>
       {/* header top margin */}
 
@@ -52,25 +53,24 @@ const SinglePage = () => {
               <div className="row y-gap-20 justify-between items-end">
                 <div className="col-auto">
                   <h1 className="text-30 sm:text-24 fw-600">
-                    {vehicle?.title}
+                    {vehicleData?.data?.title}
                   </h1>
                   <div className="row x-gap-10 items-center pt-10">
                     <div className="row x-gap-5 items-center pt-5">
                       <div className="col-auto">
                         <div className="text-14 text-light-1">Truck</div>
                       </div>
-                      <div className="col-auto">
+                      {/* <div className="col-auto">
                         <div className="size-3 rounded-full bg-light-1" />
-                      </div>
-                      <div className="col-auto">
+                      </div> */}
+                      {/* <div className="col-auto">
                         <div className="text-14 text-light-1">
                           Goods Carrier
                         </div>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </div>
-                {/* End title and other info */}
 
                 <div className="col-auto">
                   <div className="row x-gap-10 y-gap-10">
@@ -82,14 +82,12 @@ const SinglePage = () => {
                     </div>
                   </div>
                 </div>
-                {/* End col button group */}
               </div>
 
               <div className="">
-                <SlideGallery />
+                <SlideGallery slides={vehicleData?.data?.images} />
               </div>
             </div>
-            {/* End col-lg-8 left car gallery */}
             <div className="col-lg-4">
               <div className="d-flex justify-end">
                 <div className="px-30 py-30 rounded-4 border-light shadow-4 bg-white w-360 lg:w-full">
@@ -99,26 +97,19 @@ const SinglePage = () => {
                         Starting From
                       </div>
                       <div className="text-24 lh-12 fw-600 mt-5">
-                        ₹{vehicle.price}{" "}
+                        ₹{vehicleData?.data["min_price"]}{" "}
                       </div>
                       <div className="text-14 text-light-1 mt-5">
                         Ex-showroom
                       </div>
                     </div>
-                    {/* End .col-auto */}
-
-                    {/* End .col-auto */}
                   </div>
-                  {/* End .row */}
 
                   <div className="row y-gap-20 pt-20">
-                    <DetailBox />
+                    <DetailBox vehicleDetails={vehicleData?.data} />
                   </div>
-                  {/* End .row */}
                 </div>
-                {/* End px-30 */}
               </div>
-              {/* End d-flex */}
             </div>
           </div>
 
@@ -136,7 +127,7 @@ const SinglePage = () => {
             <div className="col-lg-8">
               <div className="view_bordershadow ps-4 pe-4 pt-15 pb-15 bg-white ">
                 <h6 className="fw-500 text-22">Highlights</h6>
-                <SpecHighlights  />
+                <SpecHighlights />
               </div>
               <div className="mt-30 view_bordershadow ps-4 pe-4 pt-15 pb-15 bg-white">
                 <h6 className="fw-500 text-22">Key Specifications</h6>
@@ -161,7 +152,7 @@ const SinglePage = () => {
               <h4 className="mb-10">Specifications</h4>
             </div>
             <div className="w-100">
-              <SpecificationTable />
+              <SpecificationTable vehicleSpecs={vehicleData?.data?.vehicle_specs}/>
             </div>
           </div>
         </div>
@@ -186,7 +177,6 @@ const SinglePage = () => {
                 <br /> {vehicle?.title}
               </h2>
             </div>
-            {/* End .row */}
 
             <div className="col-lg-8">
               <div
@@ -196,36 +186,25 @@ const SinglePage = () => {
                 <Faq />
               </div>
             </div>
-            {/* End .col */}
           </div>
-          {/* End .row */}
         </div>
-        {/* End .container */}
       </section>
-      {/* End Faq about sections */}
 
       <section className="pt-40 mb-40">
         <div className="container ">
           <div className="row y-gap-20">
             <div className="col-lg-4">
-              <h2 className="text-22 fw-500">
-                Similar Trucks
-              </h2>
+              <h2 className="text-22 fw-500">Similar Trucks</h2>
             </div>
-            {/* End .row */}
 
             <div className="col-lg-8">
               <SimilarTrucks />
             </div>
-            {/* End .col */}
           </div>
-          {/* End .row */}
         </div>
-        {/* End .container */}
       </section>
 
       <CallToActions />
-      {/* End Call To Actions Section */}
 
       <DefaultFooter />
     </>

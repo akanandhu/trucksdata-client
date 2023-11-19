@@ -2,11 +2,12 @@ import React from "react";
 import SpecTable from "./SpecTable";
 import { getSpecData } from "../../../utils/getSpecData";
 
-const SpecificationTable = () => {
+const SpecificationTable = ({vehicleSpecs}) => {
   const specContent = getSpecData();
   
   return (
     <>
+    {console.log("Vehcile specs ",vehicleSpecs)}
       <div class="accordion lg:lh-1" id="accordionExample">
         {specContent?.map((item, i) => (
           <div

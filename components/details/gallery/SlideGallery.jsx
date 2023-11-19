@@ -3,13 +3,7 @@ import { Navigation, Thumbs, Mousewheel } from "swiper";
 import { useState } from "react";
 import ReactPlayer from "react-player/youtube";
 
-const slides = [
-  "/img/cars/truck-white.jpg",
-  "/img/cars/truck-white.jpg",
-  "/img/cars/truck-white.jpg",
-];
-
-export default function SlideGallery() {
+export default function SlideGallery({ slides }) {
   const [imagesNavSlider, setImagesNavSlider] = useState(null);
   return (
     <section className="slider">
@@ -32,18 +26,17 @@ export default function SlideGallery() {
               }}
               modules={[Navigation, Thumbs]}
             >
-              {slides.map((slide, index) => {
-                return (
-                  <SwiperSlide key={index}>
-                    <div className="slider__image">
-                      <img src={slide} alt="" />
-                    </div>
-                  </SwiperSlide>
-                );
-              })}
+              {slides?.map((item, id) => (
+                <SwiperSlide key={id}>
+                  <div className="slider__image">
+                    <img src={item.original} alt="" />
+                  </div>
+                </SwiperSlide>
+              ))}
+              {console.log("Slide ", slides)}
               <SwiperSlide>
                 <div className="slider__image">
-                  <img src="/img/cars/truck-white.jpg" alt="" />
+                  <img src={slides ? slides[0].original : null} alt="" />
                 </div>
               </SwiperSlide>
             </Swiper>
@@ -67,11 +60,11 @@ export default function SlideGallery() {
             className="swiper-container2"
             modules={[Navigation, Thumbs, Mousewheel]}
           >
-            {slides.map((slide, index) => {
+            {slides?.map((item, index) => {
               return (
                 <SwiperSlide key={index}>
                   <div className="slider__image">
-                    <img src={slide} alt="" />
+                    <img src={item.original} alt="" />
                   </div>
                 </SwiperSlide>
               );
