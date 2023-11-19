@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const SpecHighlights = () => {
+const SpecHighlights = ({vehicleDetails}) => {
   const propertyContent = [
     {
       id: 1,

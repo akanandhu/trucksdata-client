@@ -33,7 +33,6 @@ export default function SlideGallery({ slides }) {
                   </div>
                 </SwiperSlide>
               ))}
-              {console.log("Slide ", slides)}
               <SwiperSlide>
                 <div className="slider__image">
                   <img src={slides ? slides[0].original : null} alt="" />

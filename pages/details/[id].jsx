@@ -126,7 +126,7 @@ const SinglePage = () => {
             <div className="col-lg-8">
               <div className="view_bordershadow ps-4 pe-4 pt-15 pb-15 bg-white ">
                 <h6 className="fw-500 text-22">Highlights</h6>
-                <SpecHighlights />
+                <SpecHighlights vehicleDetails={vehicleData?.data}/>
               </div>
               <div className="mt-30 view_bordershadow ps-4 pe-4 pt-15 pb-15 bg-white">
                 <h6 className="fw-500 text-22">Key Specifications</h6>
@@ -135,7 +135,7 @@ const SinglePage = () => {
             </div>
             {/* <Overview /> */}
             <div className="col-lg-4 ms-10 d-flex  justify-content-end sm:mt-20 lg:mt-4 ">
-              <PopularModals />
+              <PopularModals vehicleDetails={vehicleData?.data}/>
             </div>
           </div>
 

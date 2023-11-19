@@ -13,10 +13,9 @@ import MainHeader from "../../components/header/main-header";
 import TopFilter from "../../components/top-brands/TopFilter";
 import useManufactures from "../../services/useManufactures";
 import useVehicleTypes from "../../services/useVehicleTypes";
-import { useDispatch} from "react-redux";
+import { useDispatch } from "react-redux";
 import { setManufacturer } from "../../features/manufacturer/manufacturerSlice";
 import { setVehiclesType } from "../../features/vehicleType/vehicleTypeSlice";
-import useVehicle from "../../services/useVehicle";
 
 const Home = () => {
   const dispach = useDispatch();
@@ -65,9 +64,9 @@ const Home = () => {
 
           <div className="row y-gap-30 pt-5 sm:pt-20 item_gap-x30">
             <div className="tabs -pills-2 pt-12">
-              <TopFilter vehicleData={vehicle?.data["data"]} flag="popular"/>
+              <TopFilter vehicleData={vehicle?.data["data"]} flag="popular" />
             </div>
-            <PopularTrucks/>
+            <PopularTrucks />
           </div>
           {/* End .row */}
         </div>
@@ -91,7 +90,7 @@ const Home = () => {
 
           <div className="row y-gap-30 pt-5 item_gap-x30  ">
             <div className="tabs -pills-2 pt-12 ">
-              <TopFilter vehicleData={vehicle?.data["data"]} flag="brands"/>
+              <TopFilter vehicleData={vehicle?.data["data"]} flag="brands" />
             </div>
             <TopBrands topBrandDetails={vehicle?.data["data"]} />
           </div>
@@ -122,7 +121,7 @@ const Home = () => {
 
           <div className="row y-gap-30 pt-5 sm:pt-20 item_gap-x30">
             <div className="tabs -pills-2 pt-12">
-              <TopFilter vehicleData={vehicle?.data["data"]} flag="upcoming"/>
+              <TopFilter vehicleData={vehicle?.data["data"]} flag="upcoming" />
             </div>
             <UpcomingTrucks />
           </div>
