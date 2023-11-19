@@ -48,7 +48,6 @@ const CategoriesMegaMenu = ({
       <div className="tabs__content js-tabs-content mt-20">
         {/* {categorieMegaMenuItems.map((megaMenu) => (
           <TabPanel key={megaMenu.id}>
-            {console.log('megha menu ',megaMenu)}
             {megaMenu?.menuCol?.map((megaCol, i) => (
               <ul className="mega__content" key={i}>
                 <li className="mega__grid">

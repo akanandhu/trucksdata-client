@@ -7,7 +7,6 @@ const SpecificationTable = ({vehicleSpecs}) => {
   
   return (
     <>
-    {console.log("Vehcile specs ",vehicleSpecs)}
       <div class="accordion lg:lh-1" id="accordionExample">
         {specContent?.map((item, i) => (
           <div
@@ -45,6 +44,8 @@ const SpecificationTable = ({vehicleSpecs}) => {
                   <SpecTable
                     tableData={item.tableData}
                     hasVariant={item.hasVariant}
+                    vehicleSpecs={vehicleSpecs}
+                    specId={item.specId}
                   />
                 </div>
               </div>

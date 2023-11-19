@@ -1,4 +1,5 @@
-const SpecTable = ({ hasVariant, tableData }) => {
+const SpecTable = ({ hasVariant, tableData, vehicleSpecs,specId }) => {
+  const specification = vehicleSpecs?.filter((item)=> item.specification.specification_category_id === specId)
   return (
     <div className="overflow-scroll scroll-bar-1">
       <table className="table-3 -border-bottom col-12">
@@ -14,25 +15,12 @@ const SpecTable = ({ hasVariant, tableData }) => {
           </thead>
         )}
         <tbody>
-          {tableData?.map((row, index) => (
-            <tr key={index}>
-              <td >
-                {row?.item}
-              </td>
-              <td >{row.option_one}</td>
-              {row?.option_two && (
-                <td >{row.option_two}</td>
-              )}
-              {row?.option_three && (
-                <td >
-                  {row.option_three}
-                </td>
-              )}
-              {row?.option_four && (
-                <td >
-                  {row.option_four}
-                </td>
-              )}
+          {specification?.map((spec, i) => (
+            <tr key={i}>
+              <td>{spec.specification.name}</td>
+              {spec.values.map((item) => (
+                <td key={item.id}>{item.value}</td>
+              ))}
             </tr>
           ))}
         </tbody>

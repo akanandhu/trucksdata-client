@@ -36,7 +36,6 @@ const SinglePage = () => {
     <>
       <Seo pageTitle={vehicle?.title ?? "Variant View Page"} />
       {/* End Page Title */}
-      {console.log("Data ", vehicleData?.data?.vehicle_specs)}
       <div className="header-margin"></div>
       {/* header top margin */}
 

@@ -7,7 +7,6 @@ const DetailBlock = ({data, vehicleDetails }) => {
 
   return (
     <div className="searchMenu-loc px-20 py-10 border-light rounded-4 js-form-dd js-liverSearch">
-     {console.log("Vehicle ",vehicleDetails)}
       <div>
         <h4 className="text-15 fw-500 ls-2 lh-16">{data.heading}</h4>
         <div

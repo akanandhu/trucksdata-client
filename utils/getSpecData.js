@@ -209,94 +209,98 @@ const otherSpecData = [
   },
 ];
 
-   
-    
-
-
 export const getSpecData = () => {
   const specContent = [
     {
-      id: 'one',
+      id: "one",
       collapseTarget: "One",
       title:
         "GVW, Kerb, Payload & Vehicle Dimensions (mm), All Dimensions are for cab & chassis (CBC)",
       content: `Trucks Data is for filtering the perfect truck for your need. We also deals with variety of vehicles.`,
       hasVariant: true,
       tableData: grossTableData,
-      icon:'/icons/delivery-truck.png'
+      icon: "/icons/delivery-truck.png",
+      specId: 1,
     },
     {
-      id: 'two',
+      id: "two",
       collapseTarget: "Two",
       title: "Engine Specification",
       content: `Trucks Data is for filtering the perfect truck for your need. We also deals with variety of vehicles.`,
       tableData: engineSpecData,
-      icon:'/icons/engine.png'
+      icon: "/icons/engine.png",
+      specId: 2,
     },
     {
-      id: 'three',
+      id: "three",
       collapseTarget: "Three",
       title: "Transmission",
       content: `Trucks Data is for filtering the perfect truck for your need. We also deals with variety of vehicles.`,
       tableData: transmissionSpecData,
-      icon:'/icons/transmissions.svg'
+      icon: "/icons/transmissions.svg",
+      specId: 3,
     },
     {
-      id: 'four',
+      id: "four",
       collapseTarget: "Four",
       title: "Chassis Frame & Suspension",
       content: `Trucks Data is for filtering the perfect truck for your need. We also deals with variety of vehicles.`,
       tableData: chasisSpecData,
-      icon:'/icons/suspension.png'
+      icon: "/icons/suspension.png",
+      specId: 4,
     },
     {
-      id: 'five',
+      id: "five",
       collapseTarget: "Five",
       title: "Steering & Braking",
       content: `Trucks Data is for filtering the perfect truck for your need. We also deals with variety of vehicles.`,
       tableData: steeringSpecData,
-      icon:'/icons/braking.png'
+      icon: "/icons/braking.png",
+      specId: 5,
     },
     {
-      id: 'six',
+      id: "six",
       collapseTarget: "Six",
       title: "Tyre Size",
       content: `Trucks Data is for filtering the perfect truck for your need. We also deals with variety of vehicles.`,
       tableData: tyreSpecData,
-      icon:'/icons/wheels.png'
+      icon: "/icons/wheels.png",
+      specId: 6,
     },
     {
-      id: 'seven',
+      id: "seven",
       collapseTarget: "Seven",
       title: "Cabin & Electrical",
       content: `Trucks Data is for filtering the perfect truck for your need. We also deals with variety of vehicles.`,
       tableData: cabinSpecData,
-      icon:'/icons/electric-truck.png'
-
+      icon: "/icons/electric-truck.png",
+      specId: 7,
     },
     {
-      id: 'eight',
+      id: "eight",
       collapseTarget: "Eight",
       title: "Endurance",
       content: `Trucks Data is for filtering the perfect truck for your need. We also deals with variety of vehicles.`,
       tableData: enduranceSpecData,
-      icon:'/icons/endurance.png'
+      icon: "/icons/endurance.png",
+      specId: 8,
     },
     {
-      id: 'nine',
+      id: "nine",
       collapseTarget: "Nine",
       title: "Other Features",
       content: `Trucks Data is for filtering the perfect truck for your need. We also deals with variety of vehicles.`,
       tableData: otherSpecData,
-      icon:'/icons/tipper.png'
+      icon: "/icons/tipper.png",
+      specId: 9,
     },
     {
-      id: 'ten',
+      id: "ten",
       collapseTarget: "Ten",
       title: "Applications",
       content: `Trucks Data is for filtering the perfect truck for your need. We also deals with variety of vehicles.`,
-      icon:'/icons/pick-up-truck.png'
-    
+      icon: "/icons/pick-up-truck.png",
+      specId: 10,
     },
   ];
 

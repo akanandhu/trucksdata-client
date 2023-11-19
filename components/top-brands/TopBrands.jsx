@@ -101,7 +101,6 @@ const TopBrands = (props) => {
     // <Slider
     // {...settings}
     // >
-    // {console.log("Manufacturers ",manufacturers)}
     //   {manufacturers?.map((item,i) => (
     //     <div
     //       // className="col-xl-2  col-lg-3 col-sm-8 border-2 truck-card p-3 rounded-3 d-flex justify-content-center"
