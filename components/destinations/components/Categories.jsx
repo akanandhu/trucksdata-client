@@ -1,6 +1,6 @@
 import Slider from "react-slick";
 
-const Categories = () => {
+const Categories = ({category}) => {
   const catContent = [
     { id: 1, icon: "/icons/tipper.png", catName: "Tippers" },
     { id: 2, icon: "/icons/truck-wheel.svg", catName: "Trucks" },
@@ -44,13 +44,13 @@ const Categories = () => {
 
   return (
     <Slider {...settings}>
-      {catContent.map((item) => (
+      {category?.map((item) => (
         <div className="col" key={item.id}>
           <button className="bg-white d-flex flex-column justify-center px-20 py-15 rounded-4 border-light text-16 lh-14 fw-500 col-12">
             <div className="pb-20 w-25">
               <img src={item.icon} />
             </div>
-            {item.catName}
+            {item.name}
           </button>
         </div>
       ))}

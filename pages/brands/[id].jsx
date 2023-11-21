@@ -9,8 +9,35 @@ import CallToActions from "../../components/common/CallToActions";
 import DefaultFooter from "../../components/footer/default";
 import UpcomingTrucks from "../../components/trucks/UpcomingTrucks";
 import MainHeader from "../../components/header/main-header";
+import { useRouter } from "next/router";
+import useBrand from "../../services/useBrands";
+import useManufactures from "../../services/useManufactures";
+import useVehicleTypes from "../../services/useVehicleTypes";
+import BrandModels from "../../components/trucks/BrandModels";
+import { useSelector } from "react-redux";
+import useVehicle from "../../services/useVehicle";
 
 const SingleBrand = () => {
+  const router = useRouter();
+  const brandId = router.query.id;
+  const { data: brandDetails } = useBrand(brandId);
+  const { data: manufacturer } = useManufactures();
+  const { data: vehicle } = useVehicleTypes();
+  const filterId = useSelector((store) => store.topfilter["brands"]?.id);
+  const { data: vehicleDetails } = useVehicle(filterId);
+  const { data: vehicleTypes } = useVehicleTypes();
+  const vehicleCategory = vehicleTypes?.data?.data.find(
+    (item) => item.id === filterId
+  );
+
+  const filteredVehicles = vehicleDetails?.data?.data?.filter(
+    (item) => item?.manufacturer?.name === brandDetails?.data?.name
+  );
+
+  const bannerDetails = {
+    title: brandDetails?.data?.name,
+    banners: brandDetails?.data?.banners,
+  };
   return (
     <>
       <Seo pageTitle="Brands" />
@@ -18,7 +45,6 @@ const SingleBrand = () => {
       <div className="header-margin"></div>
 
       <MainHeader />
-
       <section
         data-aos="fade"
         className="d-flex items-center py-15 border-top-light"
@@ -39,49 +65,22 @@ const SingleBrand = () => {
       <section className="layout-pb-sm">
         <div className="container">
           <div className="row">
-            <Banner />
+            <Banner bannerDetails={bannerDetails} />
           </div>
 
           <div className="row x-gap-20 y-gap-20 items-center pt-20 item_gap-x10 layout-pb-sm">
-            <Categories />
+            <Categories category={brandDetails?.data?.vehicle_types} />
           </div>
 
           <div className="container view_bordershadow bg-white p-4">
             <div className="row y-gap-20 px-10 pt-5">
               <div className="col-auto">
-                <h2>About Bharath Benz</h2>
+                <h2>About {brandDetails?.data?.name}</h2>
               </div>
             </div>
             <div className="row y-gap-20 px-10">
-              <BrandIntro />
+              <BrandIntro description={brandDetails?.data.description} />
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="layout-pb-sm layout-pt-sm">
-        <div className="container view_bordershadow bg-white p-4 ">
-          <div className="row y-gap-20 justify-between items-end">
-            <div className="col-auto">
-              <div className="sectionTitle -md">
-                <h2 className="sectionTitle__title">
-                  Recommended Trucks By Barath Benz
-                </h2>
-              </div>
-            </div>
-
-            <div className="col-auto">
-              <Link
-                href="#"
-                className="button -md -blue-1 bg-blue-1-05 text-blue-1"
-              >
-                More <div className="icon-arrow-top-right ml-15" />
-              </Link>
-            </div>
-          </div>
-
-          <div className="row pt-40 sm:pt-20 item_gap-x30">
-            <UpcomingTrucks />
           </div>
         </div>
       </section>
@@ -92,23 +91,32 @@ const SingleBrand = () => {
             <div className="col-auto">
               <div className="sectionTitle -md">
                 <h2 className="sectionTitle__title">
-                  Most Popular Trucks By Bharath Benz
+                  Most Popular {vehicleCategory?.name} By {bannerDetails.title}
                 </h2>
               </div>
-            </div>
-
-            <div className="col-auto">
-              <Link
-                href="#"
-                className="button -md -blue-1 bg-blue-1-05 text-blue-1"
-              >
-                More <div className="icon-arrow-top-right ml-15" />
-              </Link>
             </div>
           </div>
 
           <div className="row y-gap-30 pt-40 sm:pt-20 item_gap-x30">
-            <UpcomingTrucks />
+            <BrandModels vehicleDetails={filteredVehicles} flag="is_popular" />
+          </div>
+        </div>
+      </section>
+
+      <section className="layout-pb-sm layout-pt-sm">
+        <div className="container view_bordershadow bg-white p-4 ">
+          <div className="row y-gap-20 justify-between items-end">
+            <div className="col-auto">
+              <div className="sectionTitle -md">
+                <h2 className="sectionTitle__title">
+                  Latest {vehicleCategory?.name} By {bannerDetails.title}
+                </h2>
+              </div>
+            </div>
+          </div>
+
+          <div className="row pt-40 sm:pt-20 item_gap-x30">
+            <BrandModels vehicleDetails={filteredVehicles} flag="is_latest" />
           </div>
         </div>
       </section>
@@ -119,23 +127,14 @@ const SingleBrand = () => {
             <div className="col-auto">
               <div className="sectionTitle -md">
                 <h2 className="sectionTitle__title">
-                  Trending Trucks By Bharath Benz
+                  Upcoming {vehicleCategory?.name} By {bannerDetails.title}
                 </h2>
               </div>
-            </div>
-
-            <div className="col-auto">
-              <Link
-                href="#"
-                className="button -md -blue-1 bg-blue-1-05 text-blue-1"
-              >
-                More <div className="icon-arrow-top-right ml-15" />
-              </Link>
             </div>
           </div>
 
           <div className="row y-gap-30 pt-40 sm:pt-20 item_gap-x30">
-            <UpcomingTrucks />
+            <BrandModels vehicleDetails={filteredVehicles} flag="is_upcoming" />
           </div>
         </div>
       </section>

@@ -3,10 +3,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper";
 import { useSelector } from "react-redux";
 import useVehicle from "../../services/useVehicle";
+import useVehicleTypes from "../../services/useVehicleTypes";
 
-const UpcomingTrucks = () => {
+const UpcomingTrucks = ({}) => {
   const filterId = useSelector((store) => store.topfilter["upcoming"]?.id);
   const { data: vehicleDetails } = useVehicle(filterId);
+  
   return (
     <>
       <Swiper
@@ -37,7 +39,7 @@ const UpcomingTrucks = () => {
           },
         }}
       >
-        {vehicleDetails?.data["data"].map(
+        {vehicleDetails?.data.data.map(
           (item) =>
             item.is_upcoming === 1 && (
               <SwiperSlide key={item.id}>
@@ -105,7 +107,6 @@ const UpcomingTrucks = () => {
             )
         )}
       </Swiper>
-
       <div className="d-flex x-gap-15 items-center justify-center pt-20 sm:pt-20">
         <div className="col-auto">
           <button className="d-flex items-center text-24 arrow-left-hover js-popular-car-prev">

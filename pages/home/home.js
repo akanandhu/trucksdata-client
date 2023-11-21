@@ -122,7 +122,7 @@ const Home = () => {
             <div className="tabs -pills-2 pt-12">
               <TopFilter vehicleData={vehicle?.data["data"]} flag="upcoming" />
             </div>
-            <UpcomingTrucks />
+            <UpcomingTrucks vehicleDetails={vehicle?.data["data"]}/>
           </div>
         </div>
       </section>

@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper";
+import useVehicleTypes from "../../services/useVehicleTypes";
 
 const TopBrands = (props) => {
   const { topBrandDetails } = props;
@@ -12,79 +13,12 @@ const TopBrands = (props) => {
     (store) => store.topfilter.brands.currentTab
   );
   const [manufacturers, setManufacturers] = useState([]);
-  // var settings = {
-  //   dots: true,
-  //   infinite: true,
-  //   speed: 500,
-  //   slidesToShow: manufacturers?.length,
-  //   slidesToScroll: 1,
-  //   responsive: [
-  //     {
-  //       breakpoint: 1099,
-  //       settings: {
-  //         slidesToShow: 4,
-  //       },
-  //     },
 
-  //     {
-  //       breakpoint: 768,
-  //       settings: {
-  //         slidesToShow: 3,
-  //       },
-  //     },
-  //     {
-  //       breakpoint: 520,
-  //       settings: {
-  //         slidesToShow: 2,
-  //       },
-  //     },
-  //   ],
-  // };
+  const { data: vehicle } = useVehicleTypes();
+ 
+  const brandDetails = vehicle?.data?.data?.find((item)=> item.name === topBrandFilter)
 
-  const topBrands = [
-    {
-      id: 1,
-      logo: "/img/brands/brand-logo.jpg",
-      brand: "Paris",
-      price: "29.52",
-      delayAnimation: "100",
-      brand_name: "Ashok Leyland",
-    },
-    {
-      id: 2,
-      logo: "/img/brands/brand-logo.jpg",
-      brand: "London",
-      delayAnimation: "200",
-      brand_name: "Bharat Benz",
-    },
-    {
-      id: 3,
-      logo: "/img/brands/brand-logo.jpg",
-      brand: "Los Angeles",
-      delayAnimation: "300",
-      brand_name: "Volvo",
-    },
-    {
-      id: 4,
-      logo: "/img/brands/brand-logo.jpg",
-      brand: "Amsterdam",
-      delayAnimation: "400",
-      brand_name: "Mahindra",
-    },
-    {
-      id: 5,
-      logo: "/img/brands/brand-logo.jpg",
-      brand: "Istanbul",
-      delayAnimation: "500",
-      brand_name: "Tata",
-    },
-    {
-      id: 6,
-      logo: "/img/brands/brand-logo.jpg",
-      delayAnimation: "600",
-      brand_name: "Tata",
-    },
-  ];
+  
 
   useEffect(() => {
     
@@ -160,10 +94,10 @@ const TopBrands = (props) => {
           },
         }}
       >
-        {manufacturers?.slice(0, 8).map((item) => (
+        {brandDetails?.manufacturers?.slice(0, 8).map((item) => (
           <SwiperSlide key={item.id + item.name}>
             <Link
-              href={`/`}
+              href={`/brands/${item.id}`}
               // className="carCard -type-1 d-block rounded-4 hover-inside-slider"
               className="citiesCard -type-3 d-block text-center"
               data-aos="fade"
