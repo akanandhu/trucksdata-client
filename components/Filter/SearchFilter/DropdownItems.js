@@ -9,7 +9,9 @@ const dropdown = [
     iconWidth: "35px",
     dropdownItem: [
       {
+        optionId:1,
         title: "Manufacturer",
+        name:'manufacturer',
         placeholder: "Select Manufacturer",
         icon: <BiSolidFactory style={{ fontSize: "2.2em" }} />,
         items: [
@@ -41,7 +43,9 @@ const dropdown = [
         ],
       },
       {
+        optionId:2,
         title: "Model",
+        name:'model',
         placeholder: "Select Model",
         icon: <FaTruckMoving style={{ fontSize: "2.2em" }} />,
         items: [
@@ -81,7 +85,9 @@ const dropdown = [
     iconWidth: "45px",
     dropdownItem: [
       {
+        optionId:1,
         title: "Body Type",
+        name:'bodytype',
         placeholder: "Select Body Type",
         icon: <BiSolidFactory style={{ fontSize: "2.2em" }} />,
         items: [
@@ -113,8 +119,10 @@ const dropdown = [
         ],
       },
       {
+        optionId:2,
         title: "Manufacturer",
-        placeholder: "Select Model",
+        name:'manufacturer',
+        placeholder: "Select Manufacturer",
         icon: <FaTruckMoving style={{ fontSize: "2.2em" }} />,
         items: [
           {
@@ -153,7 +161,9 @@ const dropdown = [
     iconWidth: "45px",
     dropdownItem: [
       {
+        optionId:1,
         title: "Body Type",
+        name:'bodytype',
         placeholder: "Select Body Type",
         icon: <BiSolidFactory style={{ fontSize: "2.2em" }} />,
         items: [
@@ -185,7 +195,9 @@ const dropdown = [
         ],
       },
       {
+        optionId:2,
         title: "Model",
+        name:'model',
         placeholder: "Select Model",
         icon: <FaTruckMoving style={{ fontSize: "2.2em" }} />,
         items: [
@@ -225,7 +237,9 @@ const dropdown = [
     iconWidth: "45px",
     dropdownItem: [
       {
+        optionId:1,
         title: "G V W option",
+        name:'gvw',
         placeholder: "Select Body Type",
         icon: <BiSolidFactory style={{ fontSize: "2.2em" }} />,
         items: [
@@ -257,8 +271,10 @@ const dropdown = [
         ],
       },
       {
+        optionId:2,
         title: "Manufacturer",
         placeholder: "Select Model",
+        name:'model',
         icon: <FaTruckMoving style={{ fontSize: "2.2em" }} />,
         items: [
           {
@@ -294,9 +310,11 @@ const dropdown = [
     id: 5,
     tabItem: "Power Source",
     icon: "/icons/diesel.png",
+    name:'powersource',
     iconWidth: "25px",
     dropdownItem: [
       {
+        optionId:1,
         title: "Power Source",
         placeholder: "Select Body Type",
         icon: <BiSolidFactory style={{ fontSize: "2.2em" }} />,
@@ -329,7 +347,9 @@ const dropdown = [
         ],
       },
       {
+        optionId:2,
         title: "Manufacturer",
+        name:'manufacturer',
         placeholder: "Select Model",
         icon: <FaTruckMoving style={{ fontSize: "2.2em" }} />,
         items: [

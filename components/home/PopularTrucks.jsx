@@ -64,8 +64,8 @@ const PopularTrucks = () => {
                       <SwiperSlide>
                         <div className="truck-card-zoom">
                           <img
-                            width={300}
-                            height={300}
+                            // width={300}
+                            // height={300}
                             className="rounded-4 col-12 js-lazy"
                             src={item?.images[0]?.thumbnail}
                             alt="image"
@@ -86,7 +86,7 @@ const PopularTrucks = () => {
 
                         <div className="truck-card__price-range">
                           <span className="truck-card__price text-blue-1">
-                            {item?.max_price}{" "}
+                          ₹ {item?.min_price.split('.')[0]}{" "}
                           </span>
                           <span className="truck-card__price-label text-13 text-secondary ">
                             Onwards

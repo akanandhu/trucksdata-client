@@ -85,7 +85,7 @@ const UpcomingTrucks = () => {
 
                           <div className="truck-card__price-range">
                             <span className="truck-card__price text-blue-1">
-                              {item?.max_price}{" "}
+                            ₹ {item?.min_price.split('.')[0]}{" "}
                             </span>
                             <span className="truck-card__price-label text-13 text-secondary ">
                               Onwards

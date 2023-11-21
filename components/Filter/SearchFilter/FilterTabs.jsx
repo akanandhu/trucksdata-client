@@ -14,25 +14,24 @@ function FilterTabs(props) {
     const selectedTab = tab.currentTab;
     let filteredDropdown;
     const filtered = dropdown.filter((item) => item["tabItem"] === selectedTab);
-    if(screen === "lg"){
+    if (screen === "lg") {
       filteredDropdown = dropdowns;
     }
-    if(screen === "sm"){
+    if (screen === "sm") {
       filteredDropdown = filtered[0];
     }
-    return(
-      filteredDropdown.dropdownItem.map((dropdownDetails) => (
-        <DropInput
+    return filteredDropdown.dropdownItem.map((dropdownDetails) => (
+      <DropInput
         key={dropdownDetails?.id}
         dropdownDetails={dropdownDetails}
         manufacturerData={manufacturerData}
         vehicleData={vehicleData}
-        />
-        ))
-    )
-  }
+      />
+    ));
+  };
   return (
     <div>
+      {console.log("Drop down ",dropdown)}
       <Tabs className="tabs -underline-2 js-tabs">
         <TabList className="sm:d-none md:d-none tabs__controls row x-gap-40 y-gap-10 lg:x-gap-20 pb-30 js-tabs-controls">
           {dropdown.map((item, i) => (
@@ -47,7 +46,6 @@ function FilterTabs(props) {
           ))}
         </TabList>
         <MobileTab />
-        {/* End tab-controls */}
         <div className="tabs__content js-tabs-content">
           {dropdown.map((item) => (
             <TabPanel key={item.id}>
@@ -60,7 +58,6 @@ function FilterTabs(props) {
             </TabPanel>
           ))}
         </div>
-        {/* End tab_content */}
       </Tabs>
     </div>
   );

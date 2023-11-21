@@ -3,7 +3,7 @@ import { Navigation } from "swiper";
 import MainFilterSearchBox from "./MainFilterSearchBox";
 
 const index = (props) => {
-  const { manufacturerData,vehicleData } = props;
+  const { manufacturerData, vehicleData } = props;
   return (
     <>
       <section className="masthead -type-8">
@@ -37,7 +37,6 @@ const index = (props) => {
             </div>
           </div>
         </div>
-        {/* End .container */}
 
         <div
           className="masthead-bottom mt-80 md:mt-2"
@@ -45,9 +44,9 @@ const index = (props) => {
           data-aos-delay="400"
           data-aos-offset="0"
         >
-          <MainFilterSearchBox 
-          manufacturerData={manufacturerData}
-          vehicleData={vehicleData}
+          <MainFilterSearchBox
+            manufacturerData={manufacturerData}
+            vehicleData={vehicleData}
           />
 
           <div className="masthead-slider overflow-hidden js-masthead-slider-8">
@@ -60,14 +59,21 @@ const index = (props) => {
               }}
             >
               <SwiperSlide>
-                <img className="lazy-load" src="/img/masthead/8/truck-hero.png" alt="image" />
+                <img
+                  className="lazy-load"
+                  src="/img/masthead/8/truck-hero.png"
+                  alt="image"
+                />
               </SwiperSlide>
               <SwiperSlide>
-                <img className="lazy-load" src="/img/masthead/8/truck-hero-2.png" alt="image" />
+                <img
+                  className="lazy-load"
+                  src="/img/masthead/8/truck-hero-2.png"
+                  alt="image"
+                />
               </SwiperSlide>
             </Swiper>
 
-            {/* Start Slider Prev and Next */}
             <div className="masthead-slider__nav -prev">
               <button className="button -outline-white size-50 flex-center text-white rounded-full hero8-prev-active">
                 <i className="icon-arrow-left" />
@@ -79,13 +85,9 @@ const index = (props) => {
                 <i className="icon-arrow-right" />
               </button>
             </div>
-            {/* End Slider Prev and Next */}
           </div>
-          {/* End image slider */}
         </div>
-        {/* End masthead bottom slider */}
       </section>
-      {/* End section */}
     </>
   );
 };

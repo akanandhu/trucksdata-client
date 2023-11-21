@@ -57,7 +57,9 @@ const SinglePage = () => {
                   <div className="row x-gap-10 items-center pt-10">
                     <div className="row x-gap-5 items-center pt-5">
                       <div className="col-auto">
-                        <div className="text-14 text-light-1">Truck</div>
+                        <div className="text-14 text-light-1">
+                          {vehicleData?.data?.vehicle_type?.name}
+                        </div>
                       </div>
                       {/* <div className="col-auto">
                         <div className="size-3 rounded-full bg-light-1" />
@@ -126,20 +128,18 @@ const SinglePage = () => {
             <div className="col-lg-8">
               <div className="view_bordershadow ps-4 pe-4 pt-15 pb-15 bg-white ">
                 <h6 className="fw-500 text-22">Highlights</h6>
-                <SpecHighlights vehicleDetails={vehicleData?.data}/>
+                <SpecHighlights vehicleDetails={vehicleData?.data} />
               </div>
               <div className="mt-30 view_bordershadow ps-4 pe-4 pt-15 pb-15 bg-white">
                 <h6 className="fw-500 text-22">Key Specifications</h6>
                 <Specifications />
               </div>
             </div>
-            {/* <Overview /> */}
             <div className="col-lg-4 ms-10 d-flex  justify-content-end sm:mt-20 lg:mt-4 ">
-              <PopularModals vehicleDetails={vehicleData?.data}/>
+              <PopularModals vehicleDetails={vehicleData?.data} />
             </div>
           </div>
 
-          {/* </div> */}
         </div>
         {/* </div> */}
       </section>
@@ -151,7 +151,9 @@ const SinglePage = () => {
               <h4 className="mb-10">Specifications</h4>
             </div>
             <div className="w-100">
-              <SpecificationTable vehicleSpecs={vehicleData?.data?.vehicle_specs}/>
+              <SpecificationTable
+                vehicleSpecs={vehicleData?.data?.vehicle_specs}
+              />
             </div>
           </div>
         </div>

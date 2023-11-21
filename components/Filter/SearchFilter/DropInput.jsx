@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import usePowerSource from "../../../services/usePowerSource";
 
@@ -8,56 +8,43 @@ function DropInput(props) {
   const manufacturerData = useSelector(
     (store) => store.manufacturer.manufacturerDetails
   );
-  const [searchValue, setSearchValue] = useState("");
+  const tab = useSelector((store) => store.hero);
+  const [searchValue, setSearchValue] = useState({});
   const [selectedItem, setSelectedItem] = useState(null);
+  const [secondOption, setSecondOption] = useState(null);
+  const [dropListItem, setDropListItem] = useState({});
+  const [dropListItem2, setDropListItem2] = useState({
+    type: "model",
+    list: [23, 44],
+  });
+
   const { data: powesource } = usePowerSource();
 
-  const handleOptionClick = (item) => {
-    setSearchValue(item);
-    setSelectedItem(item);
+  const handleSearchValue = (e) => {
+    setSearchValue({
+      ...searchValue,
+      name: e.target.name,
+      value: e.target.value,
+    });
   };
 
-  const handleDropDownDetails = (title) => {
+  useEffect(() => {
     let dropdownList = [];
-    const power = powesource?.data["data"];
-    if (title === "Manufacturer") {
-      manufacturerData?.map((manufacturer) => {
-        dropdownList.push(manufacturer.name);
-      });
-    }
-    if (title === "Model") {
-      dropdownList = ["Model 1", "Model 2", "Model 3"];
-    }
-    if (title === "Body Type") {
-      vehicleData?.map((vehicle) => {
-        dropdownList.push(vehicle.name);
-      });
-    }
-    if (title === "Power Source") {
-      power?.map((vehicle) => {
-        dropdownList.push(vehicle.name);
-      });
-    }
+    manufacturerData?.map((manufacturer) => {
+      dropdownList.push(manufacturer.name);
+    });
+    setDropListItem({ type: "manufacturer", list: dropdownList });
+  }, []);
 
-    return dropdownList.map((item, i) => (
-      <li
-        className={`-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option mb-1 ${
-          selectedItem && selectedItem.id === item.id ? "active" : ""
-        }`}
-        key={item}
-        role="button"
-        onClick={() => handleOptionClick(item)}
-      >
-        <div className="d-flex">
-          <div className="ml-10">
-            <div className="text-15 lh-12 fw-500 js-search-option-target">
-              {item}
-            </div>
-          </div>
-        </div>
-      </li>
-    ));
+  const handleOptionClick = (item) => {
+    // if (searchValue.name === "manufacturer") {
+      setDropListItem2({ ...dropListItem2 ,type: "model", list: [] });
+      
+    setSelectedItem(item);
+    
   };
+
+
 
   return (
     <>
@@ -78,18 +65,65 @@ function DropInput(props) {
                   type="search"
                   placeholder={placeHolder || dropdownDetails.placeholder}
                   className="js-search js-dd-focus"
-                  value={searchValue}
-                  onChange={(e) => setSearchValue(e.target.value)}
+                  value={searchValue.value}
+                  onClick={handleSearchValue}
+                  name={dropdownDetails.name}
                 />
               </div>
             </div>
           </div>
         </div>
-
         <div className="shadow-2 dropdown-menu min-width-400 filter_contents">
           <div className="px-20 py-20 sm:px-0 sm:py-15 rounded-4">
             <ul className="y-gap-5 js-results">
-              {handleDropDownDetails(dropdownDetails["title"])}
+              {/* {handleDropDownDetails(
+                dropdownDetails["title"],
+                dropdownDetails["optionId"]
+              )} */}
+
+              {dropdownDetails.optionId === 1 &&
+                dropListItem?.list?.map((item, i) => (
+                  <li
+                    className={`-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option mb-1 ${
+                      selectedItem && selectedItem.id === item.id
+                        ? "active"
+                        : ""
+                    }`}
+                    key={item}
+                    role="button"
+                    onClick={() => handleOptionClick(item)}
+                  >
+                    <div className="d-flex">
+                      <div className="ml-10">
+                        <div className="text-15 lh-12 fw-500 js-search-option-target">
+                          {item}
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                ))}
+
+              {dropdownDetails.optionId === 2 &&
+                dropListItem2?.list?.map((item, i) => (
+                  <li
+                    className={`-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option mb-1 ${
+                      selectedItem && selectedItem.id === item.id
+                        ? "active"
+                        : ""
+                    }`}
+                    key={item}
+                    role="button"
+                    onClick={(e) => handleOptionClick(e, item)}
+                  >
+                    <div className="d-flex">
+                      <div className="ml-10">
+                        <div className="text-15 lh-12 fw-500 js-search-option-target">
+                          {item}
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                ))}
             </ul>
           </div>
         </div>

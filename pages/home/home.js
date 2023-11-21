@@ -40,7 +40,6 @@ const Home = () => {
 
       <MainHeader vehicleData={vehicle?.data["data"]} />
       {/* End Header 8 */}
-
       <SearchFilter
         manufacturerData={manufacturer?.data["data"]}
         vehicleData={vehicle?.data["data"]}

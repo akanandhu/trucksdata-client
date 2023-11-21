@@ -13,6 +13,8 @@
   transition: transform 0.2s;
   margin-bottom: 20px;
   max-width: 300px;
+  height: fit-content;
+
 }
 
 .brand-card {
@@ -58,6 +60,7 @@
   transform: scale(1.03);
 }
 .truck-card__image {
+
   position: relative;
 }
 .brand-card__image {
@@ -129,11 +132,13 @@
 .truck-card-zoom {
   overflow: hidden;
   margin: 0 auto;
+  height: 150px;
 }
 
 .truck-card-zoom img {
   width: 100%;
   transition: 0.5s all ease-in-out;
+  height: 150px;
 }
 
 .truck-card-zoom:hover img {
