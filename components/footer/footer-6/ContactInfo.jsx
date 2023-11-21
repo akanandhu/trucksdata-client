@@ -1,16 +1,18 @@
-const ContactInfo = () => {
+const ContactInfo = ({ contact }) => {
+  const { contact_number, email } = contact;
+
   const contactContent = [
     {
       id: 1,
       title: "Feel free to connect.",
-      action: "tel:+(1) 123 456 7890",
-      text: "+91-9100000000",
+      action: `tel:${contact_number}`,
+      text: `${contact_number}`,
     },
     {
       id: 2,
       title: "Need live support?",
-      action: "mailto:xyz@abc.com",
-      text: "trucksdata@gmail.com",
+      action: `mailto:${email}`,
+      text: `${email}`,
     },
   ];
   return (

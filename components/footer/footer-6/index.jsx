@@ -3,7 +3,7 @@ import Copyright from "./Copyright";
 import FooterContent from "./FooterContent";
 import Subscribe from "./Subscribe";
 
-const index = () => {
+const index = ({contact}) => {
   return (
     <footer className="footer -type-3 text-white bg-dark-1 footerContainer">
       <div 
@@ -21,11 +21,11 @@ const index = () => {
             // className="col-xl-2 col-lg-4 col-sm-6"
             >
               <h5 className="text-16 fw-500 mb-30">Contact Us</h5>
-              <ContactInfo />
+              <ContactInfo contact={contact} />
             </div>
             {/* End col */}
 
-            <FooterContent />
+            <FooterContent  />
             {/* End footer menu content */}
 
             {/* <div className="col-xl-4 col-lg-4 col-sm-6">

@@ -7,7 +7,6 @@ const LanguageMegaMenu = ({ textClass }) => {
 
   const languageContent = [
     { id: 1, language: "English", country: "India" },
-    { id: 2, language: "Hindi", country: "India" },
     
   ];
 

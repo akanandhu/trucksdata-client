@@ -3,7 +3,7 @@ import { Navigation } from "swiper";
 import MainFilterSearchBox from "./MainFilterSearchBox";
 
 const index = (props) => {
-  const { manufacturerData, vehicleData } = props;
+  const { manufacturerData, vehicleData, heading, subHeading } = props;
   return (
     <>
       <section className="masthead -type-8">
@@ -24,14 +24,15 @@ const index = (props) => {
                   data-aos="fade-up"
                   data-aos-delay="100"
                 >
-                  Search for the Best Trucks
+                  {heading || "Search for the Best Trucks"}
                 </h1>
                 <p
                   className="text-dark-1 mt-5"
                   data-aos="fade-up"
                   data-aos-delay="200"
                 >
-                  Navigate India&apos;s Trucking Landscape With Ease.
+                  {subHeading ??
+                    `Navigate India's Trucking Landscape With Ease.`}
                 </p>
               </div>
             </div>

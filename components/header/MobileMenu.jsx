@@ -11,15 +11,20 @@ import {
 } from "react-pro-sidebar";
 import Social from "../common/social/Social";
 import ContactInfo from "./ContactInfo";
+import Image from "next/image";
 
 const MobileMenu = (props) => {
-  const { vehicleData } = props;
+  const { vehicleData, logoImage } = props;
   const router = useRouter();
 
   return (
     <>
       <div className="pro-header d-flex align-items-center justify-between border-bottom-light">
-        <Link href="/">TrucksData</Link>
+        {logoImage ? (
+          <Image alt="logo" src={logoImage} width={100} height={100} />
+        ) : (
+          <Link href="/">TrucksData</Link>
+        )}
         {/* End logo */}
 
         <div

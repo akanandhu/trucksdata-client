@@ -7,8 +7,10 @@ import MobileMenu from "../MobileMenu";
 import LanguageMegaMenu from "../LanguageMegaMenu";
 import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
+import Image from "next/image";
 
-const MainHeader = () => {
+const MainHeader = ({ logo }) => {
+  const logoImage = logo?.[0]?.original
   const router = useRouter();
   const isHome = router.asPath === "/";
   const [navbar, setNavbar] = useState(!isHome);
@@ -39,7 +41,15 @@ const MainHeader = () => {
             <div className="col-auto">
               <div className="d-flex items-center">
                 <Link href="/" className="header-logo mr-50">
-                  <h3>TrucksData</h3>
+                  {!logoImage && <h3>TrucksData</h3>}
+                  {logoImage && (
+                    <Image
+                      src={logoImage}
+                      width={100}
+                      height={100}
+                      alt="logo"
+                    />
+                  )}
                 </Link>
                 <div className="header-menu">
                   <div className="header-menu__content">
@@ -103,7 +113,7 @@ const MainHeader = () => {
                       aria-labelledby="offcanvasMenuLabel"
                       data-bs-scroll="true"
                     >
-                      <MobileMenu vehicleData={vehicleData} />
+                      <MobileMenu vehicleData={vehicleData} logoImage={logoImage} />
                     </div>
                   </div>
                 </div>

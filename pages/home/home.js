@@ -17,7 +17,13 @@ import { useDispatch } from "react-redux";
 import { setManufacturer } from "../../features/manufacturer/manufacturerSlice";
 import { setVehiclesType } from "../../features/vehicleType/vehicleTypeSlice";
 
-const Home = () => {
+const Home = ({ general }) => {
+  const { logo, subheading, heading, faq, contact_number, email } =
+    general || {};
+  const contactDetails = { contact_number, email };
+
+  console.log(general, "generalCheck");
+
   const dispach = useDispatch();
   const filterOptions = [
     { label: "Trucks", value: "trucks" },
@@ -38,11 +44,13 @@ const Home = () => {
       <Seo pageTitle="Home" />
       {/* End Page Title */}
 
-      <MainHeader vehicleData={vehicle?.data["data"]} />
+      <MainHeader vehicleData={vehicle?.data["data"]} logo={logo} />
       {/* End Header 8 */}
       <SearchFilter
         manufacturerData={manufacturer?.data["data"]}
         vehicleData={vehicle?.data["data"]}
+        heading={heading}
+        subHeading={subheading}
       />
       {/* End Hero 8 */}
 
@@ -185,7 +193,7 @@ const Home = () => {
                 className="accordion -simple row y-gap-20 js-accordion"
                 id="Faq1"
               >
-                <Faq />
+                <Faq faq={faq} />
               </div>
             </div>
           </div>
@@ -195,7 +203,7 @@ const Home = () => {
       </section>
       {/* End faq section block */}
 
-      <Footer6 />
+      <Footer6 contact={contactDetails}   />
       {/* End Footer Section */}
     </>
   );
