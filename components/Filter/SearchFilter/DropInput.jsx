@@ -11,40 +11,52 @@ function DropInput(props) {
   const tab = useSelector((store) => store.hero);
   const [searchValue, setSearchValue] = useState({});
   const [selectedItem, setSelectedItem] = useState(null);
-  const [secondOption, setSecondOption] = useState(null);
-  const [dropListItem, setDropListItem] = useState({});
-  const [dropListItem2, setDropListItem2] = useState({
-    type: "model",
-    list: [23, 44],
-  });
+  const [dropListItem, setDropListItem] = useState([]);
 
   const { data: powesource } = usePowerSource();
 
-  const handleSearchValue = (e) => {
-    setSearchValue({
-      ...searchValue,
-      name: e.target.name,
-      value: e.target.value,
-    });
-  };
-
   useEffect(() => {
-    let dropdownList = [];
-    manufacturerData?.map((manufacturer) => {
-      dropdownList.push(manufacturer.name);
-    });
-    setDropListItem({ type: "manufacturer", list: dropdownList });
-  }, []);
+    if (searchValue["option1"]) {
+      let dropdownList = new Set();
+      let series = new Set();
+      vehicleData?.map((vehicle) => {
+        vehicle.manufacturers.map((item) => {
+          series.add(item);
+        });
+      });
 
-  const handleOptionClick = (item) => {
-    // if (searchValue.name === "manufacturer") {
-      setDropListItem2({ ...dropListItem2 ,type: "model", list: [] });
-      
-    setSelectedItem(item);
-    
+      const seriesArray = [...series];
+
+      const filteredSeries = seriesArray.filter(
+        (item) => item.name === searchValue["option1"]
+      );
+      filteredSeries.map((item) => {
+        item.series.map((seriesItem) => {
+          dropdownList.add(seriesItem.title);
+        });
+      });
+
+      setDropListItem([...dropdownList]);
+    }
+  }, [searchValue["option1"]]);
+
+  const handleSearchValue = (e) => {
+    let dropdownList = [];
+    if (e.target.name === "1") {
+      manufacturerData?.map((item) => {
+        dropdownList.push(item.name);
+      });
+      setDropListItem(dropdownList);
+    }
+    if (e.target.name === "2") {
+      setDropListItem(["m1", "m2"]);
+    }
   };
 
-
+  const handleOptionClick = (item, id) => {
+    setSearchValue({ ...searchValue, [`option${id}`]: item });
+    setSelectedItem(item);
+  };
 
   return (
     <>
@@ -65,9 +77,9 @@ function DropInput(props) {
                   type="search"
                   placeholder={placeHolder || dropdownDetails.placeholder}
                   className="js-search js-dd-focus"
-                  value={searchValue.value}
-                  onClick={handleSearchValue}
-                  name={dropdownDetails.name}
+                  value={searchValue["option" + dropdownDetails.optionId]}
+                  onClick={(e) => handleSearchValue(e, searchValue)}
+                  name={dropdownDetails.optionId}
                 />
               </div>
             </div>
@@ -76,56 +88,29 @@ function DropInput(props) {
         <div className="shadow-2 dropdown-menu min-width-400 filter_contents">
           <div className="px-20 py-20 sm:px-0 sm:py-15 rounded-4">
             <ul className="y-gap-5 js-results">
-              {/* {handleDropDownDetails(
-                dropdownDetails["title"],
-                dropdownDetails["optionId"]
-              )} */}
-
-              {dropdownDetails.optionId === 1 &&
-                dropListItem?.list?.map((item, i) => (
-                  <li
-                    className={`-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option mb-1 ${
-                      selectedItem && selectedItem.id === item.id
-                        ? "active"
-                        : ""
-                    }`}
-                    key={item}
-                    role="button"
-                    onClick={() => handleOptionClick(item)}
-                  >
-                    <div className="d-flex">
-                      <div className="ml-10">
-                        <div className="text-15 lh-12 fw-500 js-search-option-target">
-                          {item}
-                        </div>
+              {dropListItem?.map((item, i) => (
+                <li
+                  className={`-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option mb-1 ${
+                    selectedItem && selectedItem.id === item.id ? "active" : ""
+                  }`}
+                  key={item + i}
+                  role="button"
+                  onClick={() =>
+                    handleOptionClick(item, dropdownDetails.optionId)
+                  }
+                >
+                  <div className="d-flex">
+                    <div className="ml-10">
+                      <div className="text-15 lh-12 fw-500 js-search-option-target">
+                        {item}
                       </div>
                     </div>
-                  </li>
-                ))}
-
-              {dropdownDetails.optionId === 2 &&
-                dropListItem2?.list?.map((item, i) => (
-                  <li
-                    className={`-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option mb-1 ${
-                      selectedItem && selectedItem.id === item.id
-                        ? "active"
-                        : ""
-                    }`}
-                    key={item}
-                    role="button"
-                    onClick={(e) => handleOptionClick(e, item)}
-                  >
-                    <div className="d-flex">
-                      <div className="ml-10">
-                        <div className="text-15 lh-12 fw-500 js-search-option-target">
-                          {item}
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                ))}
+                  </div>
+                </li>
+              ))}
             </ul>
           </div>
+          {console.log("Search value ", searchValue)}
         </div>
       </div>
     </>
