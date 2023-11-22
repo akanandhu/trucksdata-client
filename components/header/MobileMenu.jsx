@@ -94,15 +94,22 @@ const MobileMenu = (props) => {
                       label={manufacturer["name"]}
                       key={manufacturer["id"]}
                     >
-                      {manufacturer["series"].map((series, i) => (
-                        <SubMenu label={series.title} key={series.title + i}>
-                          {series?.vehicles?.map((model, i) => (
-                            <MenuItem key={model.title + i}>
-                              {model.title}
-                            </MenuItem>
-                          ))}
-                        </SubMenu>
-                      ))}
+                      {manufacturer["series"].map((series, i) => {
+                        if (series?.vehicle_type_id === Number(vehicle?.id)) {
+                          return (
+                            <SubMenu
+                              label={series.title}
+                              key={series.title + i}
+                            >
+                              {series?.vehicles?.map((model, i) => (
+                                <MenuItem key={model.title + i}>
+                                  {model.title}
+                                </MenuItem>
+                              ))}
+                            </SubMenu>
+                          );
+                        }
+                      })}
                     </SubMenu>
                   ))}
                 </SubMenu>
