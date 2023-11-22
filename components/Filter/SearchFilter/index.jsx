@@ -3,7 +3,7 @@ import { Navigation } from "swiper";
 import MainFilterSearchBox from "./MainFilterSearchBox";
 
 const index = (props) => {
-  const { manufacturerData, vehicleData, heading, subHeading } = props;
+  const { manufacturerData, vehicleData, heading, subHeading, banners } = props;
   return (
     <>
       <section className="masthead -type-8">
@@ -59,20 +59,25 @@ const index = (props) => {
                 prevEl: ".hero8-prev-active",
               }}
             >
-              <SwiperSlide>
-                <img
-                  className="lazy-load"
-                  src="/img/masthead/8/truck-hero.png"
-                  alt="image"
-                />
-              </SwiperSlide>
-              <SwiperSlide>
+              {banners?.map((banner) => {
+                return (
+                  <SwiperSlide key={banner.orginal}>
+                    <img
+                      className="lazy-load"
+                      src={banner.original}
+                      alt="image"
+                    />
+                  </SwiperSlide>
+                );
+              })}
+
+              {/* <SwiperSlide>
                 <img
                   className="lazy-load"
                   src="/img/masthead/8/truck-hero-2.png"
                   alt="image"
                 />
-              </SwiperSlide>
+              </SwiperSlide> */}
             </Swiper>
 
             <div className="masthead-slider__nav -prev">

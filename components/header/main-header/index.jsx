@@ -1,3 +1,4 @@
+'use client'
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { MdOutlineCompare } from "react-icons/md";
@@ -9,8 +10,18 @@ import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
 import Image from "next/image";
 
-const MainHeader = ({ logo }) => {
-  const logoImage = logo?.[0]?.original
+const MainHeader = () => {
+  const [general, setGeneral] = useState();
+  useEffect(() => {
+    const hasData = window && !!window.localStorage["general-data"];
+    if (hasData) {
+      const generalData = hasData ? localStorage.getItem("general-data") : null;
+      const generalItems = hasData ? JSON.parse(generalData) : {};
+      setGeneral(generalItems);
+    }
+  }, []);
+
+  const logoImage = general?.logo?.[0]?.original;
   const router = useRouter();
   const isHome = router.asPath === "/";
   const [navbar, setNavbar] = useState(!isHome);
@@ -40,7 +51,7 @@ const MainHeader = ({ logo }) => {
           <div className="row justify-between items-center">
             <div className="col-auto">
               <div className="d-flex items-center">
-                <Link href="/" className="header-logo mr-50">
+                <Link href="/" className="  mr-50">
                   {!logoImage && <h3>TrucksData</h3>}
                   {logoImage && (
                     <Image
@@ -113,7 +124,10 @@ const MainHeader = ({ logo }) => {
                       aria-labelledby="offcanvasMenuLabel"
                       data-bs-scroll="true"
                     >
-                      <MobileMenu vehicleData={vehicleData} logoImage={logoImage} />
+                      <MobileMenu
+                        vehicleData={vehicleData}
+                        logoImage={logoImage}
+                      />
                     </div>
                   </div>
                 </div>

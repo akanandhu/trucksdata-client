@@ -1,5 +1,5 @@
 const ContactInfo = ({ contact }) => {
-  const { contact_number, email } = contact;
+  const { contact_number, email } = contact || {};
 
   const contactContent = [
     {

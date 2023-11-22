@@ -1,3 +1,4 @@
+'use client'
 import Seo from "../../components/common/Seo";
 import CompareBox from "../../components/compare/CompareBox";
 import DescriptionBox from "../../components/compare/DescriptionBox";

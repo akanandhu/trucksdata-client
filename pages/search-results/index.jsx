@@ -26,14 +26,12 @@ const toastStyles = {
 const SearchResultsPage = () => {
   const [show, setShow] = useState(false);
   function handleCompareExceed() {
-    if(typeof window !== "undefined" && window.innerWidth >= 992){
-
+    if (typeof window !== "undefined" && window.innerWidth >= 992) {
       toast.error("Maximum of three vehicles selected", {
         ...toastStyles,
       });
     }
-    if(typeof window !== "undefined" && window.innerWidth < 992){
-
+    if (typeof window !== "undefined" && window.innerWidth < 992) {
       toast.error("Maximum of two vehicles selected", {
         ...toastStyles,
       });
@@ -47,6 +45,13 @@ const SearchResultsPage = () => {
       dispatch(clearAllCompare());
     };
   }, [dispatch]);
+
+  const isClient = typeof window !== "undefined";
+
+  const generalData = isClient ? localStorage.getItem("general-data") : null;
+  const general = isClient ? JSON.parse(generalData) : {};
+  const { email, contact_number } = general || {};
+  const contactDetails = { email, contact_number };
 
   return (
     <>
@@ -62,8 +67,7 @@ const SearchResultsPage = () => {
         <div className="container">
           <div className="row">
             <div className="col-12">
-              <div className="text-center">
-              </div>
+              <div className="text-center"></div>
               {/* End text-center */}
               <div className="pt-3">
                 <MainFilterSearchBox />
@@ -155,7 +159,7 @@ const SearchResultsPage = () => {
       <CallToActions />
       {/* End Call To Actions Section */}
 
-      <DefaultFooter />
+      <DefaultFooter contact={contactDetails} />
     </>
   );
 };

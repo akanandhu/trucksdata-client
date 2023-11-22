@@ -18,6 +18,7 @@ import {
 } from "react-query";
 
 import axios from "axios";
+import useGetGeneralData from "../hooks/useGetGeneralData";
 if (typeof window !== "undefined") {
   require("bootstrap/dist/js/bootstrap");
 }
@@ -30,7 +31,9 @@ export default function App({ Component, pageProps }) {
     });
   }, []);
 
-  const queryClient = new QueryClient();
+  const queryClient = new QueryClient()
+
+  useGetGeneralData()
 
 
 

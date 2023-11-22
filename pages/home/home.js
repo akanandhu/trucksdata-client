@@ -17,13 +17,7 @@ import { useDispatch } from "react-redux";
 import { setManufacturer } from "../../features/manufacturer/manufacturerSlice";
 import { setVehiclesType } from "../../features/vehicleType/vehicleTypeSlice";
 
-const Home = ({ general }) => {
-  const { logo, subheading, heading, faq, contact_number, email } =
-    general || {};
-  const contactDetails = { contact_number, email };
-
-  console.log(general, "generalCheck");
-
+const Home = () => {
   const dispach = useDispatch();
   const filterOptions = [
     { label: "Trucks", value: "trucks" },
@@ -39,18 +33,25 @@ const Home = ({ general }) => {
   dispach(setVehiclesType(vehicle?.data["data"]));
   dispach(setManufacturer(manufacturer?.data["data"]));
 
+  const generalData = localStorage.getItem("general-data");
+  const general = JSON.parse(generalData);
+  const { heading, subheading, logo, faq, email, banners, contact_number } =
+    general || {};
+  const contactDetails = { email, contact_number };
+
   return (
     <>
       <Seo pageTitle="Home" />
       {/* End Page Title */}
 
-      <MainHeader vehicleData={vehicle?.data["data"]} logo={logo} />
+      <MainHeader vehicleData={vehicle?.data["data"]} />
       {/* End Header 8 */}
       <SearchFilter
         manufacturerData={manufacturer?.data["data"]}
         vehicleData={vehicle?.data["data"]}
         heading={heading}
         subHeading={subheading}
+        banners={banners}
       />
       {/* End Hero 8 */}
 
@@ -130,7 +131,7 @@ const Home = ({ general }) => {
             <div className="tabs -pills-2 pt-12">
               <TopFilter vehicleData={vehicle?.data["data"]} flag="upcoming" />
             </div>
-            <UpcomingTrucks vehicleDetails={vehicle?.data["data"]}/>
+            <UpcomingTrucks vehicleDetails={vehicle?.data["data"]} />
           </div>
         </div>
       </section>
@@ -149,14 +150,7 @@ const Home = ({ general }) => {
               </div>
             </div>
             {/* End .col */}
-            {/* <div className="col-auto">
-              <Link
-                href="/blog/blog-list-v2"
-                className="button -md -blue-1 bg-blue-1-05 text-dark-1"
-              >
-                More <div className="icon-arrow-top-right ml-15" />
-              </Link>
-            </div> */}
+
             {/* End .col */}
           </div>
           {/* End .row */}
@@ -203,7 +197,7 @@ const Home = ({ general }) => {
       </section>
       {/* End faq section block */}
 
-      <Footer6 contact={contactDetails}   />
+      <Footer6 contact={contactDetails} />
       {/* End Footer Section */}
     </>
   );

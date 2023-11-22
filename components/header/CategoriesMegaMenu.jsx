@@ -9,14 +9,16 @@ const CategoriesMegaMenu = ({
   itemList,
   categorieMegaMenuItems,
   vehicleModels,
+  vehicleId,
 }) => {
   const router = useRouter();
+
   const [models, setModels] = useState([]);
-  const [selectedTab,setSelectedTab] = useState(0)
+  const [selectedTab, setSelectedTab] = useState(0);
   useEffect(() => {
     handleTabSelection(0);
     setSelectedTab(1);
-  }, [])
+  }, []);
   
   const handleTabSelection = (index) => {
     const reducedModels = vehicleModels.reduce((acc, current) => {
@@ -25,13 +27,21 @@ const CategoriesMegaMenu = ({
       }
       return acc;
     });
-    const filteredSeries = reducedModels.series.filter((item)=> item.vehicle_type_id === index+1); 
+    const filteredSeries = reducedModels.series.filter(
+      (item) => item.vehicle_type_id === index + 1
+    );
     setModels(filteredSeries);
     // console.log("Reduced ",reducedModels);
     // console.log("Filtered ",filteredSeries);
     // console.log("Tab index",index+1);
-    setSelectedTab(index+1);
+    setSelectedTab(index + 1);
   };
+
+  useEffect(() => {
+    // const modelsToSeries = 
+  },[])
+
+
   return (
     <Tabs
       className="tabs -underline-2 js-tabs"
@@ -109,16 +119,18 @@ const CategoriesMegaMenu = ({
             <TabPanel key={i}>
               <ul className="mega__content" key={i}>
                 <li className="mega__grid">
-                {models.map((model,index) => {
-                  
-                  return (
+                  {models.map((model, index) => {
+                    return (
                       // {megaCol?.menuItems?.map((item) => (
                       //  model.vehicle_type_id === selectedTab &&
-                        <div className="mega__item" key={model.id}>
-                          <div className="text-15 fw-500">{model.title}</div>
-                          <div className="y-gap-5 text-15 pt-5">
-                            {model?.vehicles?.slice(0, 10).map((list, i) => (
-                              
+                      <div className="mega__item" key={model.id}>
+                        <div className="text-15 fw-500">{model.title}</div>
+                        <div className="y-gap-5 text-15 pt-5">
+                          {model?.vehicles?.slice(0, 10).map((list, i) => {
+                            const vehicleClassId = model?.vehicle_type_id;
+                            console.log(vehicleId, "vvvv");
+
+                            return (
                               <div
                                 key={i}
                                 // className={
@@ -127,21 +139,21 @@ const CategoriesMegaMenu = ({
                                 //     : ""
                                 // }
                               >
-                                
-                                <Link 
-                                // href={list.routePath}
-                                href={'/'}
-                                >{list.title}</Link>
+                                <Link
+                                  // href={list.routePath}
+                                  href={"/"}
+                                >
+                                  {list.title}
+                                </Link>
                               </div>
-                            ))}
-                          </div>
+                            );
+                          })}
                         </div>
-                        
-                      // ))}
+                      </div>
 
-                    
-                  );
-                })}
+                      // ))}
+                    );
+                  })}
                 </li>
                 {/* // <li className="mega__image d-flex relative">
                     //   <Image
