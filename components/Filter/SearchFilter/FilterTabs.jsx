@@ -8,6 +8,7 @@ import MobileTab from "../../search-filter/MobileTab";
 import { useSelector } from "react-redux";
 import getDropDown from "../../../functions/dropdown/dropdown";
 import useGetSpecification from "../../../services/useGetSpecification";
+import { useRouter } from "next/router";
 
 function FilterTabs(props) {
   const { manufacturerData, vehicleData } = props;
@@ -15,16 +16,15 @@ function FilterTabs(props) {
   const [filterParam, setFilterParam] = useState({});
   const [currTab, setCurrTab] = useState();
 
-  const {data: specs} = useGetSpecification()
-  const specifications = specs?.data?.data 
-  console.log(specifications,'specccccccc')
+  const { data: specs } = useGetSpecification();
+  const specifications = specs?.data?.data;
 
   const dropdown = getDropDown({
     manufacturers: manufacturerData,
     bodyTypes: vehicleData,
     currTab,
     filterParam,
-    specifications
+    specifications,
   });
 
   const dropdownComponent = (dropdowns, screen) => {
@@ -46,6 +46,7 @@ function FilterTabs(props) {
         vehicleData={vehicleData}
         setFilterParams={setFilterParam}
         filterParams={filterParam}
+        selectedTab={selectedTab}
       />
     ));
   };
@@ -53,6 +54,42 @@ function FilterTabs(props) {
   function handleTabChange(item, i) {
     console.log(item, i, "itemChecking");
     setCurrTab({ item, i });
+  }
+
+  const router = useRouter();
+  function handleSearch() {
+    const query = {
+      tab: JSON.stringify({
+        name: currTab?.item?.tabItem || "Manufacturer",
+        id: currTab?.item?.id || 1,
+      }),
+      option1_id: JSON.stringify({
+        id: filterParam?.option1?.id,
+        name: filterParam?.option1?.name,
+      }),
+      option2: JSON.stringify({
+        id: filterParam?.option2?.id,
+        name: filterParam?.option2?.name,
+      }),
+      ...(filterParam?.option3 && {
+        option3: JSON.stringify({
+          id: filterParam?.option3?.id,
+          name: filterParam?.name,
+        }),
+      }),
+    };
+    console.log(filterParam, currTab, "checkingSubmit");
+
+    const cleanQuery = Object.fromEntries(
+      Object.entries(query).filter(
+        ([_, value]) => value !== undefined && value !== null && value !== ""
+      )
+    );
+
+    router.push({
+      pathname: "/search-results",
+      query: cleanQuery,
+    });
   }
 
   return (
@@ -84,7 +121,7 @@ function FilterTabs(props) {
                 {typeof window !== "undefined" && window.innerWidth >= 992
                   ? dropdownComponent(item, "lg")
                   : dropdownComponent(item, "sm")}
-                <SearchButton />
+                <SearchButton handleSearch={handleSearch} />
               </div>
             </TabPanel>
           ))}
