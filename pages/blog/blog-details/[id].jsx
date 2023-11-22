@@ -8,22 +8,31 @@ import { useRouter } from "next/router";
 import DetailsContent from "../../../components/blog/blog-details/DetailsContent";
 import BlogNavigator from "../../../components/blog/blog-details/BlogNavigator";
 import MainHeader from "../../../components/header/main-header";
+import { useSelector } from "react-redux";
+import Spinner from "../../../components/loading/Spinner";
+import formattedDate from "../../../utils/formattedDate";
 
 const BlogSingleDynamic = () => {
   const router = useRouter();
   const [blog, setBlogItem] = useState({});
   const id = router.query.id;
+  const blogList = useSelector((store) => store.articles.articleDetails);
 
   useEffect(() => {
-    if (!id) <h1>Loading...</h1>;
-    else setBlogItem(blogsData.find((item) => item.id == id));
+    if (blogList) {
+      const currentBlog = blogList.find(
+        (blogItem) => blogItem.id === Number(id)
+      );
 
-    return () => {};
-  }, [id]);
+      setBlogItem(currentBlog);
+    } else {
+      return <Spinner />;
+    }
+  }, [blogList, id]);
 
   return (
     <>
-      <Seo pageTitle="Blog Single" />
+      <Seo pageTitle={blog.heading || "Blog Single"} />
       {/* End Page Title */}
 
       <div className="header-margin"></div>
@@ -40,7 +49,7 @@ const BlogSingleDynamic = () => {
           <div className="row y-gap-40 justify-center text-center">
             <div className="col-12">
               <img
-                src={blog?.img}
+                src={blog?.thumbnail?.[0]?.thumbnail}
                 alt={blog?.title}
                 className="col-12 rounded-8 w-100 img_"
               />
@@ -48,27 +57,24 @@ const BlogSingleDynamic = () => {
           </div>
           <div className="row y-gap-30 justify-center">
             <div className="col-xl-8 col-lg-10 layout-pt-md">
-            <h1 className="text-30 fw-600">{blog?.title}</h1>
-            <div className="text-15 text-light-1 mt-10">{blog?.date}</div>
+              <h1 className="text-30 fw-600">{blog?.heading}</h1>
+              <div className="text-15 text-light-1 mt-10">
+                {formattedDate(blog.created_at)}
+              </div>
             </div>
-            
           </div>
           {/* End .row top bar image and title */}
 
           <div className="row y-gap-30 justify-center">
             <div className="col-xl-8 col-lg-10 layout-pt-md">
-              <DetailsContent />
+              <div dangerouslySetInnerHTML={{ __html: blog.html_content }} />
               <div className="mt-5">
-              <BlogNavigator />
-
+                <BlogNavigator />
               </div>
-              
             </div>
             {/* End .col */}
-
           </div>
           {/* End .row */}
-
         </div>
         {/* End .container */}
       </section>
@@ -89,7 +95,7 @@ const BlogSingleDynamic = () => {
           {/* End .row */}
 
           <div className="row y-gap-30 pt-40">
-            <RelatedBlog />
+            <RelatedBlog blogs={blogList} id={id}  />
           </div>
           {/* End .row */}
         </div>

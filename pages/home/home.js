@@ -15,7 +15,9 @@ import useManufactures from "../../services/useManufactures";
 import useVehicleTypes from "../../services/useVehicleTypes";
 import { useDispatch, useSelector } from "react-redux";
 import { setManufacturer } from "../../features/manufacturer/manufacturerSlice";
-import { setVehiclesType } from "../../features/vehicleType/vehicleTypeSlice";
+import useGetArticles from "../../services/articles/useGetArticles";
+import { useEffect } from "react";
+import { setArticleDetails } from "../../features/articles/articleSlice";
 
 const Home = () => {
   const dispach = useDispatch();
@@ -28,7 +30,9 @@ const Home = () => {
   ];
 
   const { data: manufacturer } = useManufactures();
-  
+  const { data: articles, isFetched } = useGetArticles();
+  const blogs = articles?.data?.data
+
   dispach(setManufacturer(manufacturer?.data["data"]));
 
   const generalData = localStorage.getItem("general-data");
@@ -38,6 +42,12 @@ const Home = () => {
   const contactDetails = { email, contact_number };
 
   const vehicleData = useSelector((store) => store.vehicle.vehicleType);
+
+  useEffect(() => {
+    if (isFetched) {
+      dispach(setArticleDetails(articles?.data["data"]));
+    }
+  }, [articles?.data, dispach, isFetched]);
 
   return (
     <>
@@ -139,10 +149,10 @@ const Home = () => {
             <div className="col-auto">
               <div className="sectionTitle -md">
                 <h2 className="sectionTitle__title">
-                  Get to know about latest trucks
+                  Get to know the latest information
                 </h2>
                 <p className=" sectionTitle__text mt-5 sm:mt-0">
-                  Read articles about trucks
+                  Read articles
                 </p>
               </div>
             </div>
@@ -153,7 +163,7 @@ const Home = () => {
           {/* End .row */}
 
           <div className="row y-gap-30 pt-40">
-            <Blog />
+            <Blog blogs={blogs || []} />
           </div>
           {/* End .row */}
         </div>

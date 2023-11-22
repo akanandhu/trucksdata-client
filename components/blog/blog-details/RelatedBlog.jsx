@@ -1,10 +1,13 @@
 import Image from "next/image";
 import blogsData from "../../../data/blogs";
+import formattedDate from "../../../utils/formattedDate";
 
-const RelatedBlog = () => {
+const RelatedBlog = ({blogs, id}) => {
+  const notCurrentBlogs = blogs?.filter((blog) => blog.id !== Number(id))
+
   return (
     <>
-      {blogsData.slice(0, 4).map((item) => (
+      {notCurrentBlogs.slice(0, 4).map((item) => (
         <div className="col-lg-3 col-sm-6 " key={item.id}>
           <a
             href={`/blog/blog-details/${item.id}`}
@@ -16,15 +19,15 @@ const RelatedBlog = () => {
                   width={400}
                   height={300}
                   className="cover w-100 img-fluid"
-                  src={item.img}
+                  src={item?.thumbnail?.[0]?.thumbnail}
                   alt="image"
                 />
               </div>
             </div>
             <div className="px-20 py-20">
-              <h4 className="text-dark-1 text-18 fw-500  " >{item.title}</h4>
+              <h4 className="text-dark-1 text-18 fw-500  " >{item.heading}</h4>
               <div className="text-light-1 text-15 lh-14 mt-10">
-                {item.date}
+                {formattedDate(item?.created_at)}
               </div>
             </div>
           </a>

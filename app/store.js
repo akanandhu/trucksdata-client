@@ -4,6 +4,7 @@ import compareSlice from "../features/compare/compareSlice";
 import vehicleTypeSlice from "../features/vehicleType/vehicleTypeSlice";
 import manufacturerSlice from "../features/manufacturer/manufacturerSlice";
 import  currentTabSlice  from "../features/topFilter/topFilterSlice";
+import articleSlice from "../features/articles/articleSlice";
 
 export const store = configureStore({
     reducer: {
@@ -12,5 +13,6 @@ export const store = configureStore({
         vehicle: vehicleTypeSlice,
         manufacturer: manufacturerSlice,
         topfilter:currentTabSlice,
+        articles: articleSlice
     },
 });
