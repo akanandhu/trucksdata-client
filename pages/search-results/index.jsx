@@ -21,6 +21,7 @@ import getFlatData from "../../utils/getFlatData";
 import { useInView } from "react-intersection-observer";
 import { useReloadOnPageScroll } from "../../hooks/useReloadOnPageScroll";
 import Spinner from "../../components/loading/Spinner";
+import { getSearchParams } from "../../functions/params/getSearchParams";
 
 const toastStyles = {
   icon: "🚚",
@@ -57,7 +58,9 @@ const SearchResultsPage = () => {
   const opt2 = option2 ? JSON.parse(option2) : null;
   const opt3 = option3 ? JSON.parse(option3) : null;
   const tabs = tab ? JSON.parse(tab) : null;
-  const params = {};
+
+  const {params} = getSearchParams(tabs, opt1, opt2, opt3)
+
 
   const {
     data: results,
@@ -170,7 +173,7 @@ const SearchResultsPage = () => {
             <CompareBar />
 
             <div className="col-xl-9 ">
-              <TopHeaderFilter />
+              <TopHeaderFilter count={vehicles?.length ?? 0} />
               <div className="mt-20"></div>
               {/* End mt--30 */}
               <div className="row y-gap-30 sm:d-none md:d-none">
