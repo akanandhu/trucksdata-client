@@ -4,7 +4,8 @@ import FooterContent from "./FooterContent";
 import Subscribe from "./Subscribe";
 
 const index = ({className}) => {
-  const generalData = localStorage?.getItem("general-data");
+  const isClient = typeof window !== "undefined";
+  const generalData = isClient ? localStorage?.getItem("general-data") : null;
   const general = JSON.parse(generalData);
   const { email, contact_number } =
     general || {};
