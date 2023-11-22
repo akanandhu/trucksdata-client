@@ -63,7 +63,7 @@ function FilterTabs(props) {
         name: currTab?.item?.tabItem || "Manufacturer",
         id: currTab?.item?.id || 1,
       }),
-      option1_id: JSON.stringify({
+      option1: JSON.stringify({
         id: filterParam?.option1?.id,
         name: filterParam?.option1?.name,
       }),
@@ -78,7 +78,6 @@ function FilterTabs(props) {
         }),
       }),
     };
-    console.log(filterParam, currTab, "checkingSubmit");
 
     const cleanQuery = Object.fromEntries(
       Object.entries(query).filter(

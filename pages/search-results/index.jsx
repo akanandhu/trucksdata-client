@@ -12,6 +12,15 @@ import { useDispatch } from "react-redux";
 import { clearAllCompare } from "../../features/compare/compareSlice";
 import SearchResultsMobile from "../../components/search-results/results/SearchResultsMobile";
 import MainHeader from "../../components/header/main-header/index";
+import useVehicleTypes from "../../services/useVehicleTypes";
+import useGetVehicles, {
+  useGetVehiclesInfinite,
+} from "../../services/vehicles/useGetVehicles";
+import { useRouter } from "next/router";
+import getFlatData from "../../utils/getFlatData";
+import { useInView } from "react-intersection-observer";
+import { useReloadOnPageScroll } from "../../hooks/useReloadOnPageScroll";
+import Spinner from "../../components/loading/Spinner";
 
 const toastStyles = {
   icon: "🚚",
@@ -37,6 +46,36 @@ const SearchResultsPage = () => {
       });
     }
   }
+
+  const router = useRouter();
+
+  const vehicle = useVehicleTypes();
+  const vehicleData = vehicle?.data?.data?.data;
+  const queryParams = router?.query;
+  const { option1, option2, option3, tab } = queryParams || {};
+  const opt1 = option1 ? JSON.parse(option1) : null;
+  const opt2 = option2 ? JSON.parse(option2) : null;
+  const opt3 = option3 ? JSON.parse(option3) : null;
+  const tabs = tab ? JSON.parse(tab) : null;
+  const params = {};
+
+  const {
+    data: results,
+    fetchNextPage,
+    isFetchingNextPage,
+    hasNextPage,
+    isLoading
+  } = useGetVehiclesInfinite(params);
+
+  const vehicles = getFlatData(results || []);
+  const [ref, inView] = useInView();
+
+  useReloadOnPageScroll({
+    fetchNextPage,
+    inView,
+    isFetchingNextPage,
+    hasNextPage,
+  });
 
   const dispatch = useDispatch();
 
@@ -70,7 +109,7 @@ const SearchResultsPage = () => {
               <div className="text-center"></div>
               {/* End text-center */}
               <div className="pt-3">
-                <MainFilterSearchBox />
+                <MainFilterSearchBox vehicleData={vehicleData} />
               </div>
             </div>
             {/* End col-12 */}
@@ -138,8 +177,13 @@ const SearchResultsPage = () => {
                 <SearchResults
                   showError={handleCompareExceed}
                   setShow={setShow}
+                  vehicles={vehicles}
                 />
               </div>
+              <div ref={ref}></div>
+              {isLoading && <div className="mt-20">
+                <Spinner />
+              </div> }
               <div className="row y-gap-2  sm:d-flex md:d-flex justify-content-center d-none">
                 <SearchResultsMobile
                   setShow={setShow}
