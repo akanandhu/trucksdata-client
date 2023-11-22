@@ -1,60 +1,17 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import usePowerSource from "../../../services/usePowerSource";
+import { useRouter } from "next/router";
 
 function DropInput(props) {
-  const { dropdownDetails, title, placeHolder } = props;
-  const vehicleData = useSelector((store) => store.vehicle.vehicleType);
-  const manufacturerData = useSelector(
-    (store) => store.manufacturer.manufacturerDetails
-  );
-  const tab = useSelector((store) => store.hero);
+  const { dropdownDetails, title, placeHolder, setFilterParams, filterParams } =
+    props;
   const [searchValue, setSearchValue] = useState({});
   const [selectedItem, setSelectedItem] = useState(null);
-  const [dropListItem, setDropListItem] = useState([]);
-
-  const { data: powesource } = usePowerSource();
-
-  useEffect(() => {
-    if (searchValue["option1"]) {
-      let dropdownList = new Set();
-      let series = new Set();
-      vehicleData?.map((vehicle) => {
-        vehicle.manufacturers.map((item) => {
-          series.add(item);
-        });
-      });
-
-      const seriesArray = [...series];
-
-      const filteredSeries = seriesArray.filter(
-        (item) => item.name === searchValue["option1"]
-      );
-      filteredSeries.map((item) => {
-        item.series.map((seriesItem) => {
-          dropdownList.add(seriesItem.title);
-        });
-      });
-
-      setDropListItem([...dropdownList]);
-    }
-  }, [searchValue["option1"]]);
-
-  const handleSearchValue = (e) => {
-    let dropdownList = [];
-    if (e.target.name === "1") {
-      manufacturerData?.map((item) => {
-        dropdownList.push(item.name);
-      });
-      setDropListItem(dropdownList);
-    }
-    if (e.target.name === "2") {
-      setDropListItem(["m1", "m2"]);
-    }
-  };
 
   const handleOptionClick = (item, id) => {
-    setSearchValue({ ...searchValue, [`option${id}`]: item });
+    setFilterParams({ ...filterParams, [`option${id}`]: item });
+    setSearchValue({ ...searchValue, [`option${id}`]: item?.name });
     setSelectedItem(item);
   };
 
@@ -78,7 +35,6 @@ function DropInput(props) {
                   placeholder={placeHolder || dropdownDetails.placeholder}
                   className="js-search js-dd-focus"
                   value={searchValue["option" + dropdownDetails.optionId]}
-                  onClick={(e) => handleSearchValue(e, searchValue)}
                   name={dropdownDetails.optionId}
                 />
               </div>
@@ -88,7 +44,7 @@ function DropInput(props) {
         <div className="shadow-2 dropdown-menu min-width-400 filter_contents">
           <div className="px-20 py-20 sm:px-0 sm:py-15 rounded-4">
             <ul className="y-gap-5 js-results">
-              {dropListItem?.map((item, i) => (
+              {dropdownDetails?.items?.map((item, i) => (
                 <li
                   className={`-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option mb-1 ${
                     selectedItem && selectedItem.id === item.id ? "active" : ""
@@ -102,7 +58,7 @@ function DropInput(props) {
                   <div className="d-flex">
                     <div className="ml-10">
                       <div className="text-15 lh-12 fw-500 js-search-option-target">
-                        {item}
+                        {item?.name}
                       </div>
                     </div>
                   </div>
@@ -110,7 +66,6 @@ function DropInput(props) {
               ))}
             </ul>
           </div>
-          {console.log("Search value ", searchValue)}
         </div>
       </div>
     </>

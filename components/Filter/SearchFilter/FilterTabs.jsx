@@ -6,14 +6,32 @@ import DropInput from "./DropInput";
 import { dropdown } from "./DropdownItems";
 import MobileTab from "../../search-filter/MobileTab";
 import { useSelector } from "react-redux";
+import getDropDown from "../../../functions/dropdown/dropdown";
+import useGetSpecification from "../../../services/useGetSpecification";
 
 function FilterTabs(props) {
   const { manufacturerData, vehicleData } = props;
   const tab = useSelector((store) => store.hero);
+  const [filterParam, setFilterParam] = useState({});
+  const [currTab, setCurrTab] = useState();
+
+  const {data: specs} = useGetSpecification()
+  const specifications = specs?.data?.data 
+  console.log(specifications,'specccccccc')
+
+  const dropdown = getDropDown({
+    manufacturers: manufacturerData,
+    bodyTypes: vehicleData,
+    currTab,
+    filterParam,
+    specifications
+  });
+
   const dropdownComponent = (dropdowns, screen) => {
     const selectedTab = tab.currentTab;
     let filteredDropdown;
     const filtered = dropdown.filter((item) => item["tabItem"] === selectedTab);
+
     if (screen === "lg") {
       filteredDropdown = dropdowns;
     }
@@ -26,24 +44,37 @@ function FilterTabs(props) {
         dropdownDetails={dropdownDetails}
         manufacturerData={manufacturerData}
         vehicleData={vehicleData}
+        setFilterParams={setFilterParam}
+        filterParams={filterParam}
       />
     ));
   };
+
+  function handleTabChange(item, i) {
+    console.log(item, i, "itemChecking");
+    setCurrTab({ item, i });
+  }
+
   return (
     <div>
-      {console.log("Drop down ",dropdown)}
       <Tabs className="tabs -underline-2 js-tabs">
         <TabList className="sm:d-none md:d-none tabs__controls row x-gap-40 y-gap-10 lg:x-gap-20 pb-30 js-tabs-controls">
-          {dropdown.map((item, i) => (
-            <Tab className="col-auto" key={i}>
-              <button className="pb-2 tabs__button text-light-1 fw-500 js-tabs-button d-flex">
-                <div className="w-25">
-                  <img src={item?.icon} alt="icons" width={item?.iconWidth} />
-                </div>
-                <div className="ps-2">{item.tabItem}</div>
-              </button>
-            </Tab>
-          ))}
+          {dropdown.map((item, i) => {
+            return (
+              <Tab
+                onClick={() => handleTabChange(item, i)}
+                className="col-auto"
+                key={i}
+              >
+                <button className="pb-2 tabs__button text-light-1 fw-500 js-tabs-button d-flex">
+                  <div className="w-25">
+                    <img src={item?.icon} alt="icons" width={item?.iconWidth} />
+                  </div>
+                  <div className="ps-2">{item.tabItem}</div>
+                </button>
+              </Tab>
+            );
+          })}
         </TabList>
         <MobileTab />
         <div className="tabs__content js-tabs-content">

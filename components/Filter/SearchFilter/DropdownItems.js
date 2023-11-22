@@ -9,43 +9,17 @@ const dropdown = [
     iconWidth: "35px",
     dropdownItem: [
       {
-        optionId:1,
+        optionId: 1,
         title: "Manufacturer",
-        name:'manufacturer',
+        name: "manufacturer",
         placeholder: "Select Manufacturer",
         icon: <BiSolidFactory style={{ fontSize: "2.2em" }} />,
-        items: [
-          {
-            id: 1,
-            name: "Asok Leyland",
-            // address: "Greater London, United Kingdom",
-          },
-          {
-            id: 2,
-            name: "Tata Motors",
-            // address: "New York State, United States",
-          },
-          {
-            id: 3,
-            name: "Volvo",
-            // address: "France",
-          },
-          {
-            id: 4,
-            name: "Eicher",
-            // address: "Spain",
-          },
-          {
-            id: 5,
-            name: "Bharat Benz",
-            // address: "Greece",
-          },
-        ],
+        items: [],
       },
       {
-        optionId:2,
+        optionId: 2,
         title: "Model",
-        name:'model',
+        name: "model",
         placeholder: "Select Model",
         icon: <FaTruckMoving style={{ fontSize: "2.2em" }} />,
         items: [
@@ -85,9 +59,9 @@ const dropdown = [
     iconWidth: "45px",
     dropdownItem: [
       {
-        optionId:1,
+        optionId: 1,
         title: "Body Type",
-        name:'bodytype',
+        name: "bodytype",
         placeholder: "Select Body Type",
         icon: <BiSolidFactory style={{ fontSize: "2.2em" }} />,
         items: [
@@ -119,9 +93,9 @@ const dropdown = [
         ],
       },
       {
-        optionId:2,
+        optionId: 2,
         title: "Manufacturer",
-        name:'manufacturer',
+        name: "manufacturer",
         placeholder: "Select Manufacturer",
         icon: <FaTruckMoving style={{ fontSize: "2.2em" }} />,
         items: [
@@ -161,9 +135,9 @@ const dropdown = [
     iconWidth: "45px",
     dropdownItem: [
       {
-        optionId:1,
+        optionId: 1,
         title: "Body Type",
-        name:'bodytype',
+        name: "bodytype",
         placeholder: "Select Body Type",
         icon: <BiSolidFactory style={{ fontSize: "2.2em" }} />,
         items: [
@@ -195,9 +169,9 @@ const dropdown = [
         ],
       },
       {
-        optionId:2,
+        optionId: 2,
         title: "Model",
-        name:'model',
+        name: "model",
         placeholder: "Select Model",
         icon: <FaTruckMoving style={{ fontSize: "2.2em" }} />,
         items: [
@@ -237,9 +211,9 @@ const dropdown = [
     iconWidth: "45px",
     dropdownItem: [
       {
-        optionId:1,
+        optionId: 1,
         title: "G V W option",
-        name:'gvw',
+        name: "gvw",
         placeholder: "Select Body Type",
         icon: <BiSolidFactory style={{ fontSize: "2.2em" }} />,
         items: [
@@ -271,10 +245,10 @@ const dropdown = [
         ],
       },
       {
-        optionId:2,
+        optionId: 2,
         title: "Manufacturer",
         placeholder: "Select Model",
-        name:'model',
+        name: "model",
         icon: <FaTruckMoving style={{ fontSize: "2.2em" }} />,
         items: [
           {
@@ -310,11 +284,11 @@ const dropdown = [
     id: 5,
     tabItem: "Power Source",
     icon: "/icons/diesel.png",
-    name:'powersource',
+    name: "powersource",
     iconWidth: "25px",
     dropdownItem: [
       {
-        optionId:1,
+        optionId: 1,
         title: "Power Source",
         placeholder: "Select Body Type",
         icon: <BiSolidFactory style={{ fontSize: "2.2em" }} />,
@@ -347,9 +321,9 @@ const dropdown = [
         ],
       },
       {
-        optionId:2,
+        optionId: 2,
         title: "Manufacturer",
-        name:'manufacturer',
+        name: "manufacturer",
         placeholder: "Select Model",
         icon: <FaTruckMoving style={{ fontSize: "2.2em" }} />,
         items: [
