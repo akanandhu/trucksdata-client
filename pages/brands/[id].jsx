@@ -146,7 +146,7 @@ const SingleBrand = () => {
               <h2 className="text-30 fw-500">
                 FAQs about
                 <br />
-                Bharat Benz
+                {brandDetails?.data?.name}
               </h2>
             </div>
 
