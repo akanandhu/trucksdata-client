@@ -1,13 +1,14 @@
 import { useState } from "react";
 
-const ButtonFilter = ({ filters }) => {
+const ButtonFilter = ({ filters, sideParams, setSideParams, label }) => {
   // for start and guest rating code
   const [activeRating, setActiveRating] = useState(0);
 
   const handleRatingClick = (rating) => {
     setActiveRating(rating);
+    setSideParams({ ...sideParams, [label]: rating });
   };
-  
+
   return (
     <>
       <div className="row x-gap-10 y-gap-10 pt-10">

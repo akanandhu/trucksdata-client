@@ -3,32 +3,13 @@ import ButtonFilter from "../../../Filter/SearchFilter/FilterButtons";
 import PriceSlider from "./PriceSlider";
 import PayloadSlider from "./PayloadSlider";
 
-const payloadData = [
-  {
-    label: "7650",
-    value: 330,
-  },
-  {
-    label: "7570",
-    value: 1,
-  },
-  {
-    label: "7525",
-    value: 20,
-  },
-  {
-    label: "7445",
-    value: 111,
-  },
-];
 
-const PayloadFilter = () => {
+const PayloadFilter = ({sideParams,setSideParams}) => {
   return (
     <div className="sidebar__item">
       <h5 className="text-18 fw-500 mb-10">Payload (Range)(Kg)</h5>
       <div className="sidebar-checkbox">
-        {/* <ButtonFilter filters={payloadData} label={"Payload (Range)(Kg)"} /> */}
-        <PayloadSlider/>
+        <PayloadSlider sideParams={sideParams} setSideParams={setSideParams} label={'payload_range'} />
       </div>
     </div>
   );

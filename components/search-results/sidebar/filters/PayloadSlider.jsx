@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import InputRange from "react-input-range";
 
-function PayloadSlider() {
+function PayloadSlider({sideParams, setSideParams, label}) {
   const [payload, setPayload] = useState({
     value: { min: 60, max: 60000 },
   });
 
   const handleOnChange = (value) => {
     setPayload({ value });
+    setSideParams({ ...sideParams, [label]: value });
   };
   return (
     <div className="js-price-rangeSlider">

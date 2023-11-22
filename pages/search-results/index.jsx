@@ -35,6 +35,8 @@ const toastStyles = {
 
 const SearchResultsPage = () => {
   const [show, setShow] = useState(false);
+  const [sideParams, setSideParams] = useState({});
+  console.log(sideParams, "sidePP");
   function handleCompareExceed() {
     if (typeof window !== "undefined" && window.innerWidth >= 992) {
       toast.error("Maximum of three vehicles selected", {
@@ -59,16 +61,23 @@ const SearchResultsPage = () => {
   const opt3 = option3 ? JSON.parse(option3) : null;
   const tabs = tab ? JSON.parse(tab) : null;
 
-  const {params} = getSearchParams(tabs, opt1, opt2, opt3)
-
+  const { params } = getSearchParams(tabs, opt1, opt2, opt3);
+  const hasMinPrice = !!sideParams?.price?.min && sideParams?.price?.min !== "";
+  const hasMaxPrice = !!sideParams?.price?.min && sideParams?.price?.max !== "";
+  const advancedParams = {
+    ...(hasMaxPrice &&
+      hasMaxPrice && {
+        price: [sideParams?.price?.min, sideParams?.price?.max]?.join(","),
+      }),
+  };
 
   const {
     data: results,
     fetchNextPage,
     isFetchingNextPage,
     hasNextPage,
-    isLoading
-  } = useGetVehiclesInfinite(params);
+    isLoading,
+  } = useGetVehiclesInfinite({ ...params, ...advancedParams });
 
   const vehicles = getFlatData(results || []);
   const [ref, inView] = useInView();
@@ -126,7 +135,10 @@ const SearchResultsPage = () => {
           <div className="row y-gap-30">
             <div className="col-xl-3">
               <aside className="sidebar y-gap-40 xl:d-none ">
-                <Sidebar />
+                <Sidebar
+                  sideParams={sideParams}
+                  setSideParams={setSideParams}
+                />
               </aside>
 
               <div
@@ -149,7 +161,10 @@ const SearchResultsPage = () => {
 
                 <div className="offcanvas-body ">
                   <aside className="sidebar y-gap-40   xl:d-block">
-                    <Sidebar />
+                    <Sidebar
+                      sideParams={sideParams}
+                      setSideParams={setSideParams}
+                    />
                   </aside>
                 </div>
                 <div class="offcanvas-footer mt-3 p-2 border-light  d-flex justify-content-end gap-3 sticky-bottom    sticky-bottom   ">
@@ -184,9 +199,11 @@ const SearchResultsPage = () => {
                 />
               </div>
               <div ref={ref}></div>
-              {isLoading && <div className="mt-20">
-                <Spinner />
-              </div> }
+              {isLoading && (
+                <div className="mt-20">
+                  <Spinner />
+                </div>
+              )}
               <div className="row y-gap-2  sm:d-flex md:d-flex justify-content-center d-none">
                 <SearchResultsMobile
                   setShow={setShow}

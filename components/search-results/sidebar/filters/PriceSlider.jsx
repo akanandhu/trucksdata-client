@@ -2,13 +2,14 @@ import React from "react";
 import { useState } from "react";
 import InputRange from "react-input-range";
 
-const PriceSlider = () => {
+const PriceSlider = ({ sideParams, setSideParams, label }) => {
   const [price, setPrice] = useState({
     value: { min: 10000, max: 1000000 },
   });
 
   const handleOnChange = (value) => {
     setPrice({ value });
+    setSideParams({ ...sideParams, [label]: value });
   };
 
   return (

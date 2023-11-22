@@ -1,42 +1,42 @@
 import React from "react";
 import ButtonFilter from "../../../Filter/SearchFilter/FilterButtons";
 
-function Tyres() {
+function Tyres({sideParams, setSideParams}) {
   const tyreData = [
     {
       label: "3",
-      count: 20,
+      value: 3,
     },
     {
       label: "4",
-      count: 20,
+      value: 4,
     },
     {
       label: "6",
-      count: 20,
+      value: 6,
     },
     {
       label: "8",
-      count: 20,
+      value: 8,
     },
     {
       label: "10",
-      count: 20,
+      value: 10,
     },
     {
       label: "12",
-      count: 20,
+      value: 12,
     },
     {
       label: "16",
-      count: 20,
+      value: 16,
     },
   ];
   return (
     <div className="sidebar__item">
       <h5 className="text-18 fw-500 mb-10">Number Of Tyres</h5>
       <div className="sidebar-checkbox">
-        <ButtonFilter filters={tyreData} label={"Number Of Tyres"} />
+        <ButtonFilter setSideParams={setSideParams} sideParams={sideParams} filters={tyreData} label={"Number Of Tyres"} />
       </div>
     </div>
   );

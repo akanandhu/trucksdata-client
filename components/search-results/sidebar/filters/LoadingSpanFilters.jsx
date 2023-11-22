@@ -19,17 +19,21 @@ const loadingSpanFilters = [
     label: "20.9",
     value: 10,
   },
-  
 ];
 
-const LoadingSpanFilters = () => {
+const LoadingSpanFilters = ({ sideParams, setSideParams }) => {
   return (
     <div className="sidebar__item">
       <h5 className="text-18 fw-500 mb-10">
         Loading Span (ft) / Loading Capacity (Cu.M)
       </h5>
       <div className="sidebar-checkbox">
-          <ButtonFilter filters={loadingSpanFilters} label={'Loading Span (ft) / Loading Capacity (Cu.M)'}  />
+        <ButtonFilter
+          sideParams={sideParams}
+          setSideParams={setSideParams}
+          filters={loadingSpanFilters}
+          label={"loading_capacity"}
+        />
       </div>
     </div>
   );

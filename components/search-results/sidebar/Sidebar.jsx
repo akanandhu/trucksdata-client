@@ -7,17 +7,22 @@ import Status from "./filters/Status";
 import Tyres from "./filters/Tyres";
 import VariantFilter from "./filters/VariantFilter";
 
-const Sidebar = () => {
+const Sidebar = ({sideParams, setSideParams}) => {
+
+  const paramsProps = {
+    sideParams,setSideParams
+  }
+
   return (
     <>
-      <LoadingSpanFilters />
-      <PriceFilter />
-      <AxelFilter />
-      <PayloadFilter />
-      <ChasisFilter />
-      <VariantFilter />
-      <Tyres/>
-      <Status/>
+      <LoadingSpanFilters {...paramsProps} />
+      <PriceFilter {...paramsProps} />
+      <AxelFilter {...paramsProps} />
+      <PayloadFilter {...paramsProps} />
+      <ChasisFilter {...paramsProps} />
+      <VariantFilter {...paramsProps} />
+      <Tyres {...paramsProps} />
+      <Status {...paramsProps} />
     </>
   );
 };

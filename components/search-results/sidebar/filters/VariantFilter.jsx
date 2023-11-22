@@ -2,7 +2,7 @@ import React from "react";
 import FilterCheckbox from "./FilterCheckbox";
 import ButtonFilter from "../../../Filter/SearchFilter/FilterButtons";
 
-const VariantFilter = () => {
+const VariantFilter = ({sideParams, setSideParams}) => {
   const variantData = [
     {
       label: "CBC",
@@ -22,7 +22,7 @@ const VariantFilter = () => {
     <div className="sidebar__item">
     <h5 className="text-18 fw-500 mb-10">Variant Options</h5>
     <div className="sidebar-checkbox">
-      <ButtonFilter filters={variantData} label={"Chassis Options"} />
+      <ButtonFilter filters={variantData} setSideParams={setSideParams} sideParams={sideParams} label={"Chassis Options"} />
     </div>
   </div>
   );
