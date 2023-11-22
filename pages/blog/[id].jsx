@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from "react";
-import CallToActions from "../../../components/common/CallToActions";
-import Seo from "../../../components/common/Seo";
-import DefaultFooter from "../../../components/footer/default";
-import RelatedBlog from "../../../components/blog/blog-details/RelatedBlog";
-import blogsData from "../../../data/blogs";
+import CallToActions from "../../components/common/CallToActions";
+import Seo from "../../components/common/Seo";
+import DefaultFooter from "../../components/footer/default";
+import RelatedBlog from "../../components/blog/blog-details/RelatedBlog";
+import blogsData from "../../data/blogs";
 import { useRouter } from "next/router";
-import DetailsContent from "../../../components/blog/blog-details/DetailsContent";
-import BlogNavigator from "../../../components/blog/blog-details/BlogNavigator";
-import MainHeader from "../../../components/header/main-header";
+import DetailsContent from "../../components/blog/blog-details/DetailsContent";
+import BlogNavigator from "../../components/blog/blog-details/BlogNavigator";
+import MainHeader from "../../components/header/main-header";
 import { useSelector } from "react-redux";
-import Spinner from "../../../components/loading/Spinner";
-import formattedDate from "../../../utils/formattedDate";
-import useGetArticles from "../../../services/articles/useGetArticles";
+import Spinner from "../../components/loading/Spinner";
+import formattedDate from "../../utils/formattedDate";
+import useGetArticles from "../../services/articles/useGetArticles";
+import Footer from "../../components/footer/footer"
 
 const BlogSingleDynamic = () => {
   const router = useRouter();
@@ -106,7 +107,7 @@ const BlogSingleDynamic = () => {
       <CallToActions />
       {/* End Call To Actions Section */}
 
-      <DefaultFooter />
+      <Footer className="text-dark"/>
       {/* End Call To Actions Section */}
     </>
   );

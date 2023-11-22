@@ -1,10 +1,11 @@
 .blogCard.-type-1 {
   .blogCard {
+
     &__image {
       overflow: hidden;
-
       img {
         transition: all 0.3s $easeOutQuart;
+
       }
     }
   }
@@ -24,9 +25,10 @@
   .blogCard {
     &__image {
       overflow: hidden;
-
+      
       img {
         transition: all 0.6s $easeOutQuart;
+        height: 150px;
       }
     }
   }

@@ -37,7 +37,7 @@ const PopularTrucks = () => {
           },
         }}
       >
-        {vehicleDetails?.data["data"].map((item, i) =>
+        {vehicleDetails?.data["data"]?.slice(0, 8)?.reverse().map((item, i) =>
           item?.is_popular === 1 ? (
             <SwiperSlide key={item.id}>
               <Link

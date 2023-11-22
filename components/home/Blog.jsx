@@ -12,7 +12,7 @@ const Blog = ({ blogs }) => {
         return (
           <div className="col-lg-4 col-sm-6 " key={item.id}>
             <Link
-              href={`/blog/blog-details/${item.id}`}
+              href={`/blog/${item.id}`}
               className="blogCard -type-1 d-block "
             >
               <div className="blogCard__image">
@@ -44,7 +44,7 @@ const Blog = ({ blogs }) => {
             return (
             <div className="col-lg-12 col-md-6  " key={item.id}>
               <Link
-                href={`/blog/blog-details/${item.id}`}
+                href={`/blog/${item.id}`}
                 className="blogCard -type-1 d-flex items-center"
               >
                 <div className="blogCard__image size-130 rounded-8">

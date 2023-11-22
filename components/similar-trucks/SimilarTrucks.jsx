@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper";
 import trucksData from '../../data/upcoming-trucks'
 
-const SimilarTrucks = () => {
+const SimilarTrucks = ({similarVehicles}) => {
     return (
         <>
           <Swiper

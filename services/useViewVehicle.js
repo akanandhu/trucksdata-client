@@ -13,6 +13,7 @@ export default function useViewVehicle(id) {
     ()=>getVehicleData(id),
     {
       staleTime: Infinity,
+      enabled: !!{id}
     }
   );
 }

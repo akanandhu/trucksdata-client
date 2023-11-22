@@ -3,7 +3,7 @@ import { Navigation, Thumbs, Mousewheel } from "swiper";
 import { useState } from "react";
 import ReactPlayer from "react-player/youtube";
 
-export default function SlideGallery({ slides }) {
+export default function SlideGallery({ slides,videos }) {
   const [imagesNavSlider, setImagesNavSlider] = useState(null);
   return (
     <section className="slider">
@@ -69,15 +69,17 @@ export default function SlideGallery({ slides }) {
               );
             })}
 
+            
             <SwiperSlide>
               <div className="slider__image w-100 h-100">
                 <ReactPlayer
-                  url="https://www.youtube.com/watch?v=tb4oJnar4pg"
+                  url={videos && videos[0]?.url}
                   height="100%"
                   width="100%"
                 />
               </div>
             </SwiperSlide>
+        
           </Swiper>
         </div>
       </div>

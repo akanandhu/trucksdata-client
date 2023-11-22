@@ -41,7 +41,7 @@ function BrandModels({vehicleDetails,flag}) {
             },
           }}
         >
-          {vehicleDetails?.map(
+          {vehicleDetails?.slice(0, 8)?.reverse().map(
             (item) =>
               item[flag] === 1 && (
                 <SwiperSlide key={item.id}>
@@ -52,7 +52,7 @@ function BrandModels({vehicleDetails,flag}) {
                     <div
                       key={item?.id}
                       data-aos="fade"
-                      // data-aos-delay={item?.delayAnimation}
+                      data-aos-delay={i * 100}
                       className="truck-card"
                     >
                       <div className="truck-card__image">
@@ -115,19 +115,16 @@ function BrandModels({vehicleDetails,flag}) {
               <i className="icon icon-arrow-left" />
             </button>
           </div>
-          {/* End arrow prev */}
   
           <div className="col-auto">
             <div className="pagination -dots text-border js-car-pag_active" />
           </div>
-          {/* End arrow pagination */}
   
           <div className="col-auto">
             <button className="d-flex items-center text-24 arrow-right-hover js-popular-car-next">
               <i className="icon icon-arrow-right" />
             </button>
           </div>
-          {/* End arrow next */}
         </div>
       </>
     );

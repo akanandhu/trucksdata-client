@@ -39,7 +39,7 @@ const UpcomingTrucks = ({}) => {
           },
         }}
       >
-        {vehicleDetails?.data.data.map(
+        {vehicleDetails?.data?.data?.slice(0, 8)?.reverse().map(
           (item) =>
             item.is_upcoming === 1 && (
               <SwiperSlide key={item.id}>

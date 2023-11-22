@@ -18,27 +18,36 @@ import SpecificationTable from "../../components/details/specification-table/Spe
 import SimilarTrucks from "../../components/similar-trucks/SimilarTrucks";
 import MainHeader from "../../components/header/main-header";
 import useViewVehicle from "../../services/useViewVehicle";
+import Footer from '../../components/footer/footer'
+import useVehicle from "../../services/useVehicle";
+import { useSelector } from "react-redux";
+import useManufactures from "../../services/useManufactures";
+import useVehicleTypes from "../../services/useVehicleTypes";
 
 const SinglePage = () => {
   const router = useRouter();
   const [vehicle, setVehicle] = useState({});
   const id = router.query.id;
 
-  useEffect(() => {
-    if (!id) <h1>Loading...</h1>;
-    else setVehicle(carsData.find((item) => item.id == id));
-    return () => {};
-  }, [id]);
+  // useEffect(() => {
+  //   if (!id) <h1>Loading...</h1>;
+  //   else setVehicle(carsData.find((item) => item.id == id));
+  //   return () => {};
+  // }, [id]);
+  const filterId = useSelector((store) => store.topfilter["brands"]?.id);
+  const { data: vehicleDetails } = useVehicle(filterId);
 
   const { data: vehicleData } = useViewVehicle(id);
+  const {data: vehicletypes} = useVehicleTypes();
 
+  const similarVehicle = vehicletypes?.data?.data.find((item) => item.name === vehicleData?.data?.vehicle_type?.name)
+  const similarCategory = similarVehicle?.manufacturers.filter((item) => item.name === "Eicher");
   return (
     <>
-      <Seo pageTitle={vehicle?.title ?? "Variant View Page"} />
+      <Seo pageTitle={vehicleData?.data?.title ?? "Variant View Page"} />
       {/* End Page Title */}
       <div className="header-margin"></div>
       {/* header top margin */}
-
       <MainHeader />
       {/* End Header 1 */}
 
@@ -86,7 +95,7 @@ const SinglePage = () => {
               </div>
 
               <div className="">
-                <SlideGallery slides={vehicleData?.data?.images} />
+                <SlideGallery slides={vehicleData?.data?.images} videos={vehicleData?.data?.video_links}/>
               </div>
             </div>
             <div className="col-lg-4">
@@ -163,7 +172,7 @@ const SinglePage = () => {
         <div className="container">
           {/* <h3 className="text-22 fw-500 mb-20">Car Location</h3> */}
           <div className=" rounded-4 overflow-hidden map-500">
-            <VideoBanner />
+            <VideoBanner videos={vehicleData?.data?.video_links}/>
           </div>
         </div>
       </section>
@@ -175,7 +184,7 @@ const SinglePage = () => {
             <div className="col-lg-4">
               <h2 className="text-22 fw-500">
                 FAQs about
-                <br /> {vehicle?.title}
+                <br /> {vehicleData?.data?.title}
               </h2>
             </div>
 
@@ -184,7 +193,9 @@ const SinglePage = () => {
                 className="accordion -simple row y-gap-20 js-accordion"
                 id="Faq1"
               >
-                <Faq />
+                <Faq 
+                faq={vehicleData?.data?.faq}
+                />
               </div>
             </div>
           </div>
@@ -199,7 +210,7 @@ const SinglePage = () => {
             </div>
 
             <div className="col-lg-8">
-              <SimilarTrucks />
+              <SimilarTrucks similarVehicles={similarVehicle}/>
             </div>
           </div>
         </div>
@@ -207,7 +218,7 @@ const SinglePage = () => {
 
       <CallToActions />
 
-      <DefaultFooter />
+      <Footer className="text-dark"/>
     </>
   );
 };

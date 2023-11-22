@@ -1,5 +1,5 @@
 const SpecTable = ({ hasVariant, tableData, vehicleSpecs,specId }) => {
-  const specification = vehicleSpecs?.filter((item)=> item.specification.specification_category_id === specId)
+  const specification = vehicleSpecs?.filter((item)=> item?.specification?.specification_category_id === specId)
   return (
     <div className="overflow-scroll scroll-bar-1">
       <table className="table-3 -border-bottom col-12">

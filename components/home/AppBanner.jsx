@@ -12,16 +12,12 @@ const AppBanner = () => {
           <div className="col-xl-5 col-lg-6">
             <AppBlock />
           </div>
-          {/* End .col */}
 
           <div className="col-lg-6">
-            <img src="/img/app/1.png" alt="image" />
+            <img src="/img/mockup/mockup.svg" alt="image" />
           </div>
-          {/* End .col */}
         </div>
-        {/* End .row */}
       </div>
-      {/* End .container */}
     </section>
   );
 };

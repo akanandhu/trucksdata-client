@@ -16,6 +16,7 @@ import useVehicleTypes from "../../services/useVehicleTypes";
 import BrandModels from "../../components/trucks/BrandModels";
 import { useSelector } from "react-redux";
 import useVehicle from "../../services/useVehicle";
+import Footer from '../../components/footer/footer'
 
 const SingleBrand = () => {
   const router = useRouter();
@@ -161,7 +162,7 @@ const SingleBrand = () => {
 
       <CallToActions />
 
-      <DefaultFooter />
+      <Footer className="text-dark"/>
     </>
   );
 };

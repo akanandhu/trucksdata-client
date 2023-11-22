@@ -1,10 +1,10 @@
 import ReactPlayer from "react-player";
 
-export default function VideoBanner() {
+export default function VideoBanner({videos}) {
   return (
     // Important! Alwys set the container height explicitlya
     <ReactPlayer
-      url="https://www.youtube.com/watch?v=tb4oJnar4pg"
+      url={videos && videos[0]?.url}
       height="100%"
       width="100%"
     />

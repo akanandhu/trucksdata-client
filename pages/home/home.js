@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
 import Seo from "../../components/common/Seo";
-import Footer6 from "../../components/footer/footer-6";
+import Footer from "../../components/footer/footer";
 import SearchFilter from "../../components/Filter/SearchFilter";
 import PopularTrucks from "../../components/home/PopularTrucks";
 import Faq from "../../components/faq/Faq";
@@ -51,8 +51,8 @@ const Home = () => {
 
   return (
     <>
+    
       <Seo pageTitle="Home" />
-
       <MainHeader vehicleData={vehicleData} />
       <SearchFilter
         manufacturerData={manufacturer?.data["data"]}
@@ -204,7 +204,7 @@ const Home = () => {
       </section>
       {/* End faq section block */}
 
-      <Footer6 contact={contactDetails} />
+      <Footer className="bg-dark-1 text-white"/>
       {/* End Footer Section */}
     </>
   );

@@ -12,7 +12,6 @@ const CategoriesMegaMenu = ({
   vehicleId,
 }) => {
   const router = useRouter();
-  console.log(router, "items");
   const [models, setModels] = useState([]);
   const [selectedTab, setSelectedTab] = useState(0);
   useEffect(() => {

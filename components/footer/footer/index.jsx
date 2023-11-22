@@ -3,9 +3,14 @@ import Copyright from "./Copyright";
 import FooterContent from "./FooterContent";
 import Subscribe from "./Subscribe";
 
-const index = ({contact}) => {
+const index = ({className}) => {
+  const generalData = localStorage?.getItem("general-data");
+  const general = JSON.parse(generalData);
+  const { email, contact_number } =
+    general || {};
+  const contact = { email, contact_number };
   return (
-    <footer className="footer -type-3 text-white bg-dark-1 footerContainer">
+    <footer className={`footer -type-3 footerContainer ${className}`}>
       <div 
       // className="container"
       >

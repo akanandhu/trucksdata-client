@@ -13,12 +13,12 @@ const RelatedBlog = ({blogs, id}) => {
             href={`/blog/blog-details/${item.id}`}
             className="blogCard customBlog -type-2 d-block bg-white rounded-4 custom-shadow "
           >
-            <div className="blogCard__image">
+            <div className="blogCard__image blogcardView">
               <div className="rounded-4">
-                <Image
-                  width={400}
+                <img
+                  width={300}
                   height={300}
-                  className="cover w-100 img-fluid"
+                  // className="cover w-100 img-fluid"
                   src={item?.thumbnail?.[0]?.thumbnail}
                   alt="image"
                 />
