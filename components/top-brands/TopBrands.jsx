@@ -15,19 +15,20 @@ const TopBrands = (props) => {
   const [manufacturers, setManufacturers] = useState([]);
 
   const { data: vehicle } = useVehicleTypes();
- 
-  const brandDetails = vehicle?.data?.data?.find((item)=> item.name === topBrandFilter)
 
-  
+  const brandDetails = vehicle?.data?.data?.find(
+    (item) => item.name === topBrandFilter
+  );
 
   useEffect(() => {
-    
-    const reducedBrand = topBrandDetails?.reduce((acc, current) => {
-      if (current.name === topBrandFilter) {
-        acc = current;
-      }
-      return acc;
-    });
+    const reducedBrand =
+      topBrandDetails?.length &&
+      topBrandDetails?.reduce((acc, current) => {
+        if (current.name === topBrandFilter) {
+          acc = current;
+        }
+        return acc;
+      });
     setManufacturers(reducedBrand?.manufacturers);
   }, [topBrandFilter]);
 
@@ -110,9 +111,9 @@ const TopBrands = (props) => {
                 className="brand-card"
               >
                 <div
-                //  className="carCard__image truck-card-zoom"
-                 className="brand-card__image size-120 rounded-full mx-auto w-50 my-12"
-                 >
+                  //  className="carCard__image truck-card-zoom"
+                  className="brand-card__image size-120 rounded-full mx-auto w-50 my-12"
+                >
                   <img
                     width={300}
                     height={300}

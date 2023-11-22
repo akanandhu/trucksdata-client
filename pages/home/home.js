@@ -38,7 +38,6 @@ const Home = () => {
   const contactDetails = { email, contact_number };
 
   const vehicleData = useSelector((store) => store.vehicle.vehicleType);
-  
 
   return (
     <>
