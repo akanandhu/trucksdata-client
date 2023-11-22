@@ -13,7 +13,7 @@ import MainHeader from "../../components/header/main-header";
 import TopFilter from "../../components/top-brands/TopFilter";
 import useManufactures from "../../services/useManufactures";
 import useVehicleTypes from "../../services/useVehicleTypes";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setManufacturer } from "../../features/manufacturer/manufacturerSlice";
 import { setVehiclesType } from "../../features/vehicleType/vehicleTypeSlice";
 
@@ -28,9 +28,7 @@ const Home = () => {
   ];
 
   const { data: manufacturer } = useManufactures();
-  const { data: vehicle } = useVehicleTypes();
-
-  dispach(setVehiclesType(vehicle?.data["data"]));
+  
   dispach(setManufacturer(manufacturer?.data["data"]));
 
   const generalData = localStorage.getItem("general-data");
@@ -39,16 +37,19 @@ const Home = () => {
     general || {};
   const contactDetails = { email, contact_number };
 
+  const vehicleData = useSelector((store) => store.vehicle.vehicleType);
+  
+
   return (
     <>
       <Seo pageTitle="Home" />
       {/* End Page Title */}
 
-      <MainHeader vehicleData={vehicle?.data["data"]} />
+      <MainHeader vehicleData={vehicleData} />
       {/* End Header 8 */}
       <SearchFilter
         manufacturerData={manufacturer?.data["data"]}
-        vehicleData={vehicle?.data["data"]}
+        vehicleData={vehicleData}
         heading={heading}
         subHeading={subheading}
         banners={banners}
@@ -72,7 +73,7 @@ const Home = () => {
 
           <div className="row y-gap-30 pt-5 sm:pt-20 item_gap-x30">
             <div className="tabs -pills-2 pt-12">
-              <TopFilter vehicleData={vehicle?.data["data"]} flag="popular" />
+              <TopFilter vehicleData={vehicleData} flag="popular" />
             </div>
             <PopularTrucks />
           </div>
@@ -98,9 +99,9 @@ const Home = () => {
 
           <div className="row y-gap-30 pt-5 item_gap-x30  ">
             <div className="tabs -pills-2 pt-12 ">
-              <TopFilter vehicleData={vehicle?.data["data"]} flag="brands" />
+              <TopFilter vehicleData={vehicleData} flag="brands" />
             </div>
-            <TopBrands topBrandDetails={vehicle?.data["data"]} />
+            <TopBrands topBrandDetails={vehicleData} />
           </div>
           {/* End .row */}
         </div>
@@ -109,7 +110,7 @@ const Home = () => {
 
       <CompareVehicles
         filterOptions={filterOptions}
-        vehicleData={vehicle?.data["data"]}
+        vehicleData={vehicleData}
       />
 
       <section className="pb-30">
@@ -129,9 +130,9 @@ const Home = () => {
 
           <div className="row y-gap-30 pt-5 sm:pt-20 item_gap-x30">
             <div className="tabs -pills-2 pt-12">
-              <TopFilter vehicleData={vehicle?.data["data"]} flag="upcoming" />
+              <TopFilter vehicleData={vehicleData} flag="upcoming" />
             </div>
-            <UpcomingTrucks vehicleDetails={vehicle?.data["data"]} />
+            <UpcomingTrucks vehicleDetails={vehicleData} />
           </div>
         </div>
       </section>

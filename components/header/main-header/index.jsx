@@ -7,10 +7,14 @@ import SearchBoxContent from "../../Filter/SearchFilter/SearchBoxContent";
 import MobileMenu from "../MobileMenu";
 import LanguageMegaMenu from "../LanguageMegaMenu";
 import { useRouter } from "next/router";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Image from "next/image";
+import useVehicleTypes from "../../../services/useVehicleTypes";
+import { setVehiclesType } from "../../../features/vehicleType/vehicleTypeSlice";
 
 const MainHeader = () => {
+  const dispatch = useDispatch();
+
   const [general, setGeneral] = useState();
   useEffect(() => {
     const hasData = window && !!window.localStorage["general-data"];
@@ -25,7 +29,10 @@ const MainHeader = () => {
   const router = useRouter();
   const isHome = router.asPath === "/";
   const [navbar, setNavbar] = useState(!isHome);
-  const vehicleData = useSelector((store) => store.vehicle.vehicleType);
+
+  const { data: vehicle } = useVehicleTypes();
+  const vehicleData = vehicle?.data?.data || []
+  dispatch(setVehiclesType(vehicle?.data["data"]));
 
   const changeBackground = () => {
     if (window.scrollY >= 10 || !isHome) {
