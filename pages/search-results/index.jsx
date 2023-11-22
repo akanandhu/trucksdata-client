@@ -97,7 +97,6 @@ const SearchResultsPage = () => {
     hasNextPage,
     isLoading,
   } = useGetVehiclesInfinite({ ...params, ...advancedParams });
-
   const vehicles = getFlatData(results || []);
   const [ref, inView] = useInView();
 
@@ -122,6 +121,8 @@ const SearchResultsPage = () => {
   const general = isClient ? JSON.parse(generalData) : {};
   const { email, contact_number } = general || {};
   const contactDetails = { email, contact_number };
+
+  const count = results?.pages?.[0]?.data?.total ?? 0
 
   return (
     <>
@@ -209,7 +210,7 @@ const SearchResultsPage = () => {
             <CompareBar />
 
             <div className="col-xl-9 ">
-              <TopHeaderFilter count={vehicles?.length ?? 0} />
+              <TopHeaderFilter count={count} />
               <div className="mt-20"></div>
               {/* End mt--30 */}
               <div className="row y-gap-30 sm:d-none md:d-none">
