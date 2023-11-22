@@ -1,13 +1,13 @@
 import React from "react";
 import ButtonFilter from "../../../Filter/SearchFilter/FilterButtons";
 
-const ChasisFilter = ({ sideParams, setSideParams }) => {
-  const chasisData = [
-    {
-      label: "Cab & Chasis (CBC)",
-      value: "",
-    },
-  ];
+const ChasisFilter = ({ sideParams, setSideParams, options }) => {
+  const chasisData = options?.map((option) => {
+    return {
+      label: option?.option,
+      value: option?.option,
+    };
+  });
 
   return (
     <div className="sidebar__item">
@@ -17,7 +17,7 @@ const ChasisFilter = ({ sideParams, setSideParams }) => {
           sideParams={sideParams}
           setSideParams={setSideParams}
           filters={chasisData}
-          label={"Chassis Options"}
+          label={"chassis_option"}
         />
       </div>
     </div>

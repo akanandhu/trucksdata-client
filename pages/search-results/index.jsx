@@ -22,6 +22,7 @@ import { useInView } from "react-intersection-observer";
 import { useReloadOnPageScroll } from "../../hooks/useReloadOnPageScroll";
 import Spinner from "../../components/loading/Spinner";
 import { getSearchParams } from "../../functions/params/getSearchParams";
+import useGetSpecification from "../../services/useGetSpecification";
 
 const toastStyles = {
   icon: "🚚",
@@ -36,7 +37,7 @@ const toastStyles = {
 const SearchResultsPage = () => {
   const [show, setShow] = useState(false);
   const [sideParams, setSideParams] = useState({});
-  console.log(sideParams, "sidePP");
+  console.log(sideParams, "sideParams");
   function handleCompareExceed() {
     if (typeof window !== "undefined" && window.innerWidth >= 992) {
       toast.error("Maximum of three vehicles selected", {
@@ -54,6 +55,12 @@ const SearchResultsPage = () => {
 
   const vehicle = useVehicleTypes();
   const vehicleData = vehicle?.data?.data?.data;
+
+  const { data: specifications } = useGetSpecification();
+  const specs = specifications?.data?.data;
+  console.log(specs, "specccccc");
+
+  // For Vehicles
   const queryParams = router?.query;
   const { option1, option2, option3, tab } = queryParams || {};
   const opt1 = option1 ? JSON.parse(option1) : null;
@@ -65,10 +72,22 @@ const SearchResultsPage = () => {
   const hasMinPrice = !!sideParams?.price?.min && sideParams?.price?.min !== "";
   const hasMaxPrice = !!sideParams?.price?.min && sideParams?.price?.max !== "";
   const advancedParams = {
-    ...(hasMaxPrice &&
+    ...(hasMinPrice &&
       hasMaxPrice && {
         price: [sideParams?.price?.min, sideParams?.price?.max]?.join(","),
       }),
+    ...(sideParams?.loading_capacity_spec_id && {
+      loading_capacity: [
+        sideParams?.loading_capacity_spec_id,
+        sideParams?.loading_capacity,
+      ]?.join(","),
+    }),
+    ...(sideParams?.variant_options_spec_id && {
+      variant_options: [
+        sideParams?.variant_options_spec_id,
+        sideParams?.variant_options,
+      ]?.join(","),
+    }),
   };
 
   const {
@@ -138,6 +157,7 @@ const SearchResultsPage = () => {
                 <Sidebar
                   sideParams={sideParams}
                   setSideParams={setSideParams}
+                  specifications={specs ?? []}
                 />
               </aside>
 
@@ -164,6 +184,7 @@ const SearchResultsPage = () => {
                     <Sidebar
                       sideParams={sideParams}
                       setSideParams={setSideParams}
+                      specifications={specs ?? []}
                     />
                   </aside>
                 </div>

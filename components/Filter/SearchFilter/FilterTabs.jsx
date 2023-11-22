@@ -52,7 +52,20 @@ function FilterTabs(props) {
   };
 
   function handleTabChange(item, i) {
-    console.log(item, i, "itemChecking");
+    const isApplication = item?.tabItem === "Application";
+    const isGVW = item?.tabItem === "G V W";
+    if (isApplication) {
+      const application = specifications?.find(
+        (spec) => spec?.name === "Applications"
+      );
+      return setCurrTab({ item: { ...item, spec_id: application?.id }, i });
+    }
+    if (isGVW) {
+      const gvw = specifications?.find(
+        (spec) => spec?.name === "Gross Vehicle Weight (Kg)"
+      );
+      return setCurrTab({ item: { ...item, spec_id: gvw?.id }, i });
+    }
     setCurrTab({ item, i });
   }
 
@@ -62,6 +75,7 @@ function FilterTabs(props) {
       tab: JSON.stringify({
         name: currTab?.item?.tabItem || "Manufacturer",
         id: currTab?.item?.id || 1,
+        spec_id: currTab?.item?.spec_id || null
       }),
       option1: JSON.stringify({
         id: filterParam?.option1?.id,
