@@ -11,12 +11,15 @@ import MainHeader from "../../../components/header/main-header";
 import { useSelector } from "react-redux";
 import Spinner from "../../../components/loading/Spinner";
 import formattedDate from "../../../utils/formattedDate";
+import useGetArticles from "../../../services/articles/useGetArticles";
 
 const BlogSingleDynamic = () => {
   const router = useRouter();
   const [blog, setBlogItem] = useState({});
   const id = router.query.id;
-  const blogList = useSelector((store) => store.articles.articleDetails);
+  const {data} = useGetArticles()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const blogList = data?.data?.data || []
 
   useEffect(() => {
     if (blogList) {
@@ -32,7 +35,7 @@ const BlogSingleDynamic = () => {
 
   return (
     <>
-      <Seo pageTitle={blog.heading || "Blog Single"} />
+      <Seo pageTitle={blog?.heading || "Blog Single"} />
       {/* End Page Title */}
 
       <div className="header-margin"></div>
@@ -59,7 +62,7 @@ const BlogSingleDynamic = () => {
             <div className="col-xl-8 col-lg-10 layout-pt-md">
               <h1 className="text-30 fw-600">{blog?.heading}</h1>
               <div className="text-15 text-light-1 mt-10">
-                {formattedDate(blog.created_at)}
+                {formattedDate(blog?.created_at)}
               </div>
             </div>
           </div>
@@ -67,16 +70,13 @@ const BlogSingleDynamic = () => {
 
           <div className="row y-gap-30 justify-center">
             <div className="col-xl-8 col-lg-10 layout-pt-md">
-              <div dangerouslySetInnerHTML={{ __html: blog.html_content }} />
+              <div dangerouslySetInnerHTML={{ __html: blog?.html_content }} />
               <div className="mt-5">
-                <BlogNavigator />
+                <BlogNavigator blogs={blogList} id={id} />
               </div>
             </div>
-            {/* End .col */}
           </div>
-          {/* End .row */}
         </div>
-        {/* End .container */}
       </section>
       {/* Details Blog Details Content */}
 
@@ -85,7 +85,7 @@ const BlogSingleDynamic = () => {
           <div className="row justify-center text-center">
             <div className="col-auto">
               <div className="sectionTitle -md">
-                <h2 className="sectionTitle__title">Related content</h2>
+                <h2 className="sectionTitle__title">Read More From Us</h2>
                 <p className=" sectionTitle__text mt-5 sm:mt-0">
                   Explore other related articles
                 </p>

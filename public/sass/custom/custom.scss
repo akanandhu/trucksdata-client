@@ -33,3 +33,14 @@ $font-size-small: 18px;
 }
    
 }
+
+
+.link-like-container {
+  color: inherit; /* Use the default text color */
+  text-decoration: none; /* Remove default underline */
+  cursor: pointer; /* Set cursor to pointer on hover */
+}
+
+.link-like-container:hover {
+  color: blue; /* Change text color to blue on hover */
+}
