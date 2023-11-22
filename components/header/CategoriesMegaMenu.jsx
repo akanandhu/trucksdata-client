@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-import { isActiveLink } from "../../utils/linkActiveChecker";
+import { isActiveLink, isActiveSeriesLink } from "../../utils/linkActiveChecker";
 import { useEffect, useState } from "react";
 
 const CategoriesMegaMenu = ({
@@ -12,14 +12,14 @@ const CategoriesMegaMenu = ({
   vehicleId,
 }) => {
   const router = useRouter();
-
+  console.log(router, "items");
   const [models, setModels] = useState([]);
   const [selectedTab, setSelectedTab] = useState(0);
   useEffect(() => {
     handleTabSelection(0);
     setSelectedTab(1);
   }, []);
-  
+
   const handleTabSelection = (index) => {
     const reducedModels = vehicleModels.reduce((acc, current) => {
       if (current.id === index && current.brand === itemList[index].brand) {
@@ -31,16 +31,8 @@ const CategoriesMegaMenu = ({
       (item) => item.vehicle_type_id === index + 1
     );
     setModels(filteredSeries);
-    // console.log("Reduced ",reducedModels);
-    // console.log("Filtered ",filteredSeries);
-    // console.log("Tab index",index+1);
     setSelectedTab(index + 1);
   };
-
-  useEffect(() => {
-    // const modelsToSeries = 
-  },[])
-
 
   return (
     <Tabs
@@ -114,34 +106,36 @@ const CategoriesMegaMenu = ({
             ))}
           </TabPanel>
         ))} */}
-        {itemList.map((item, i) => {
+        {vehicleModels.map((item, i) => {
           return (
             <TabPanel key={i}>
               <ul className="mega__content" key={i}>
                 <li className="mega__grid">
-                  {models.map((model, index) => {
+                  {item?.series?.map((model, index) => {
+                    if (model.vehicle_type_id !== vehicleId) {
+                      return;
+                    }
+
                     return (
                       // {megaCol?.menuItems?.map((item) => (
                       //  model.vehicle_type_id === selectedTab &&
                       <div className="mega__item" key={model.id}>
-                        <div className="text-15 fw-500">{model.title}</div>
+                        <div className="text-16 fw-500">{model.title}</div>
                         <div className="y-gap-5 text-15 pt-5">
                           {model?.vehicles?.slice(0, 10).map((list, i) => {
-                            const vehicleClassId = model?.vehicle_type_id;
-                            console.log(vehicleId, "vvvv");
+                            
 
                             return (
                               <div
                                 key={i}
-                                // className={
-                                //   isActiveLink(list.routePath, router.asPath)
-                                //     ? "current"
-                                //     : ""
-                                // }
+                                className={
+                                  isActiveSeriesLink(`/details/${list?.id}`, router.asPath)
+                                    ? "current"
+                                    : ""
+                                }
                               >
                                 <Link
-                                  // href={list.routePath}
-                                  href={"/"}
+                                  href={`/details/${list?.id}`}
                                 >
                                   {list.title}
                                 </Link>

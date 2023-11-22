@@ -42,10 +42,8 @@ const Home = () => {
   return (
     <>
       <Seo pageTitle="Home" />
-      {/* End Page Title */}
 
       <MainHeader vehicleData={vehicleData} />
-      {/* End Header 8 */}
       <SearchFilter
         manufacturerData={manufacturer?.data["data"]}
         vehicleData={vehicleData}
@@ -53,7 +51,6 @@ const Home = () => {
         subHeading={subheading}
         banners={banners}
       />
-      {/* End Hero 8 */}
 
       <section className="layout-pt-md pb-30">
         <div className="container view_bordershadow bg-white p-5">
