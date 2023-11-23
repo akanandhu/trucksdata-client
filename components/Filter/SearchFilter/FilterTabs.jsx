@@ -17,7 +17,7 @@ function FilterTabs(props) {
   const [filterParam, setFilterParam] = useState({});
   const [currTab, setCurrTab] = useState();
   const router = useRouter();
-
+  console.log(filterParam, 'filterChecking')
   const { data: specs } = useGetSpecification();
   const specifications = specs?.data?.data;
 
@@ -64,12 +64,12 @@ function FilterTabs(props) {
       />
     ));
   };
-  
+  console.log(currTab, 'currTab')
   
   function handleSearch() {
     const query = {
       tab: JSON.stringify({
-        name: currTab?.item?.tabItem || "Manufacturer",
+        name: currTab?.item?.tabItem || currTab?.item?.name  || "Manufacturer",
         id: currTab?.item?.id || 1,
         spec_id: currTab?.item?.spec_id || null,
       }),
