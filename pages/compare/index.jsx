@@ -6,12 +6,16 @@ import CompareLocationTop from "../../components/compare/location/CompareLocatio
 import DefaultFooter from "../../components/footer/default/index";
 import CallToActions from "../../components/common/CallToActions";
 import MainHeader from "../../components/header/main-header";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const ComparePage = () => {
+  const determineDefaultValues = () => {
+    const isClient = typeof window !== "undefined"
+    const screenWidth = isClient ? window.innerWidth : null;
+    return screenWidth < 576 ? defaultValues.slice(0, 2) : defaultValues;
+  };
 
-
-  const [vehicle, setVehicle] = useState([
+  const defaultValues = [
     {
       index: 1,
     },
@@ -21,7 +25,21 @@ const ComparePage = () => {
     {
       index: 3,
     },
-  ]);
+  ];
+
+  const [vehicle, setVehicle] = useState(determineDefaultValues);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setVehicle(determineDefaultValues());
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <div className="position-relative   ">

@@ -1,5 +1,38 @@
 function getBasicTableData(datas) {
   console.log(datas, "datasCheck");
+  const basicTableData = [
+    {
+      item: "Manufacturer Name",
+      option_one: datas?.[0]?.manufacturer?.name ?? "-",
+      option_two: datas?.[1]?.manufacturer?.name ?? "-",
+      option_three: datas?.[2]?.manufacturer?.name ?? "-",
+    },
+    {
+      item: "Power Source",
+      option_one: datas?.[0]?.energy_source?.name ?? "-",
+      option_two: datas?.[1]?.energy_source?.name ?? "-",
+      option_three: datas?.[2]?.energy_source?.name ?? "-",
+    },
+    {
+      item: "Category",
+      option_one: datas?.[0]?.category_name ?? "-",
+      option_two: datas?.[1]?.category_name ?? "-",
+      option_three: datas?.[2]?.category_name ?? "-",
+    },
+    {
+      item: "Min-Price",
+      option_one: datas?.[0]?.min_price
+        ? `₹${Math.floor(datas?.[0]?.min_price)}`
+        : "-",
+      option_two: datas?.[1]?.min_price
+        ? `₹${Math.floor(datas?.[1]?.min_price)}`
+        : "-",
+      option_three: datas?.[2]?.min_price
+        ? `₹${Math.floor(datas?.[2]?.min_price)}`
+        : "-",
+    },
+  ];
+  return basicTableData;
 }
 
 function getIcon(index) {
@@ -108,7 +141,7 @@ export const getSpecCompareData = (compareData, specCategory, isViewPage) => {
       id: 1,
       collapseTarget: "Zero",
       title: "Basic Information",
-      hasVariant: true,
+      hasVariant: isViewPage ? false : true,
       tableData: getBasicTableData(compareData),
       icon: "/icons/delivery-truck.png",
     },
@@ -125,7 +158,7 @@ export const getSpecCompareData = (compareData, specCategory, isViewPage) => {
           id: spec?.id,
           title: spec?.name,
           icon: getIcon(index + 1),
-          hasVariant: (isViewPage && spec?.id !== 1) ? false : true,
+          hasVariant: isViewPage && spec?.id !== 1 ? false : true,
           tableData: tableData,
           collapseTarget: getCollapseTarget(index),
         };

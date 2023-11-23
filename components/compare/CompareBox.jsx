@@ -182,12 +182,7 @@ const CompareBox = ({ vehicle, setVehicle }) => {
   const isLoading = queries.some((query) => query.isLoading);
 
   return (
-    <div
-      className="col-lg-12 container  mt-40   "
-      key={item.id}
-      // data-aos="fade"
-      // data-aos-delay={item.delayAnimation}
-    >
+    <div key={item.id} className="col-lg-12 container mt-40">
       <div className="rounded-4 layout-pt-md  layout-pb-md  view_bordershadow bg-white d-lg-block sm:d-none md:none">
         <div className="d-flex flex-wrap y-gap-30  d-xs-none d-md-block ">
           <div className="col-auto"></div>
@@ -196,7 +191,6 @@ const CompareBox = ({ vehicle, setVehicle }) => {
               <div key={item.index} className="col ">
                 <div className="d-flex gap-1 flex-column justify-center h-full px-30 py-20 ">
                   <div className="rounded-4">
-                    {/* Image Component  */}
                     <ComparePlusButton index={item.index} vehicle={vehicle} />
                   </div>
                   <div className="rounded-4 ">
@@ -225,7 +219,7 @@ const CompareBox = ({ vehicle, setVehicle }) => {
           </button>
         </div>
       </div>
-      <CompareBoxMobile />
+      <CompareBoxMobile vehicle={vehicle} setVehicle={setVehicle} />
 
       {isLoading && (
         <div className="mt-5">
