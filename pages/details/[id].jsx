@@ -27,7 +27,6 @@ import useAllVehicles from "../../services/vehicles/useAllVehicles";
 
 const SinglePage = () => {
   const router = useRouter();
-  const [vehicle, setVehicle] = useState({});
   const id = router.query.id;
 
   // useEffect(() => {
@@ -46,7 +45,7 @@ const SinglePage = () => {
   const manufacturerId = vehicleData?.data?.manufacturer_id;
 
   console.log("Type id ", vehicleTypeId);
-  const vehiclePrice = vehicleData?.data["min_price"].split['.'];
+  const vehiclePrice = vehicleData?.data["min_price"].split["."];
   const similarVehicles = allVehicles?.data?.data?.filter(
     (item) => item?.vehicle_type_id === vehicleTypeId
   );
@@ -71,7 +70,10 @@ const SinglePage = () => {
       <MainHeader />
       {/* End Header 1 */}
 
-      <TopBreadCrumb  brand={vehicleData?.data?.manufacturer?.name} type={vehicleData?.data?.vehicle_type?.name}/>
+      <TopBreadCrumb
+        brand={vehicleData?.data?.manufacturer?.name}
+        type={vehicleData?.data?.vehicle_type?.name}
+      />
       {/* End top breadcrumb */}
 
       <section className="pt-40">
@@ -168,7 +170,7 @@ const SinglePage = () => {
                 <Specifications />
               </div>
             </div>
-            {popularModels?.length !==0 ? (
+            {popularModels?.length !== 0 ? (
               <div className="col-lg-4 ms-10 d-flex  justify-content-end sm:mt-20 lg:mt-4 ">
                 <PopularModals
                   popularModels={popularModels}
@@ -189,9 +191,7 @@ const SinglePage = () => {
               <h4 className="mb-10">Specifications</h4>
             </div>
             <div className="w-100">
-              <SpecificationTable
-                vehicleData={vehicleData?.data}
-              />
+              <SpecificationTable vehicleData={vehicleData?.data} />
             </div>
           </div>
         </div>
@@ -236,7 +236,9 @@ const SinglePage = () => {
         <div className="container ">
           <div className="row y-gap-20">
             <div className="col-lg-4">
-              <h2 className="text-22 fw-500">Similar {vehicleData?.data?.vehicle_type?.name}</h2>
+              <h2 className="text-22 fw-500">
+                Similar {vehicleData?.data?.vehicle_type?.name}
+              </h2>
             </div>
 
             <div className="col-lg-8">
