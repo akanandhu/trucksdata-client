@@ -91,7 +91,9 @@ const CompareInputSeperate = ({
         data-bs-auto-close="true"
         data-bs-offset="0,22"
       >
-        <h4 className="text-15 fw-500 ls-2 lh-16">Select Brand/Model</h4>
+        <h4 className="text-15 fw-500 ls-2 lh-16">
+          {isManufacturer ? "Select Model" : "Select Body Type"}
+        </h4>
         <div className="text-15 text-light-1 ls-2 lh-16 d-flex  justify-content-between ">
           <div>
             <input
@@ -128,6 +130,7 @@ const CompareInputSeperate = ({
                 </div>
               </li>
             ))}
+            {isManufacturer && <div ref={ref}></div>}
           </ul>
         </div>
       </div>
