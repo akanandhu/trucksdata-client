@@ -97,13 +97,7 @@ const CompareBoxMobile = () => {
     delayAnimation: "300",
   };
 
-  const filterOptions = [
-    { label: "Trucks", value: "trucks" },
-    { label: "Tippers", value: "tippers" },
-    { label: "Pick-ups", value: "pick_ups" },
-    { label: "Trailers", value: "trailers" },
-    { label: "3-Wheelers", value: "three_wheelers" },
-  ];
+ 
 
   return (
     <div

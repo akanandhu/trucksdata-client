@@ -161,7 +161,7 @@ const SinglePage = () => {
             </div>
             <div className="w-100">
               <SpecificationTable
-                vehicleSpecs={vehicleData?.data?.vehicle_specs}
+                vehicleData={vehicleData?.data}
               />
             </div>
           </div>

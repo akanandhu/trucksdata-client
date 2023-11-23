@@ -1,7 +1,7 @@
 import { useQuery } from "react-query";
 import { axiosInstance } from "../axios/AxiosInstance";
 
-async function getVehicleDetails(id) {
+export async function getVehicleDetails(id) {
   const response = await axiosInstance.get(`vehicles?vehicle_type=${id}`);
   return response;
 }

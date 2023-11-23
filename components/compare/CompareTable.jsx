@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 import CompareDataTable from "./CompareDataTable";
 import { getSpecCompareData } from "../../utils/getSpecCompareData";
+import useGetSpecificationCategories from "../../services/specs/useGetSpecCategories";
 
-const CompareTable = () => {
-  const specContent = getSpecCompareData();
+const CompareTable = ({ compareData, compared }) => {
+  const { data: categories } = useGetSpecificationCategories();
+  const specCategory = categories?.data?.data || [];
+
+  const specContent = getSpecCompareData(compareData, specCategory, false);
   const [expand, setExpand] = useState(false);
 
   return (
@@ -13,8 +17,11 @@ const CompareTable = () => {
           <h2 className="accordion-header text-wrap" id="headingOne">
             <div className="d-flex shadow-none bg-white text-black title_fontsize justify-content-between px-20 py-20">
               <div>Compare Result</div>
-              <button className="bg-white text-black" onClick={()=>setExpand(!expand)}>
-                {!expand ? <u>expand all</u> : <u>collapse all</u>}
+              <button
+                className="bg-white text-black"
+                onClick={() => setExpand(!expand)}
+              >
+                {!expand ? <u>Expand all</u> : <u>Collapse all</u>}
               </button>
             </div>
           </h2>
@@ -38,11 +45,7 @@ const CompareTable = () => {
                 // aria-controls="collapseOne"
               >
                 <div className="me-0" style={{ width: "50px" }}>
-                  <img
-                    src={item.icon}
-                    alt={item.id}
-                    width='50px'
-                  />
+                  <img src={item.icon} alt={item.id} width="50px" />
                 </div>
                 <div className="mx-50 w-75" style={{ paddingLeft: "5%" }}>
                   {item.title}
@@ -51,13 +54,16 @@ const CompareTable = () => {
             </h2>
             <div
               id={item.collapseTarget}
-              className={`accordion-collapse collapse ${expand ? 'show' : ''}`}
+              className={`accordion-collapse collapse ${expand ? "show" : ""}`}
               aria-labelledby="headingOne"
               data-bs-parent="#accordionExample"
             >
               <div className="accordion-body ">
                 <div className="w-100">
-                  <CompareDataTable tableData={item.tableData}  hasVariant={item.hasVariant}   />
+                  <CompareDataTable
+                    tableData={item.tableData}
+                    hasVariant={item.hasVariant}
+                  />
                 </div>
               </div>
             </div>

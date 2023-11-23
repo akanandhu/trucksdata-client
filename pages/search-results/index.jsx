@@ -98,6 +98,8 @@ const SearchResultsPage = () => {
     isLoading,
   } = useGetVehiclesInfinite({ ...params, ...advancedParams });
   const vehicles = getFlatData(results || []);
+  
+
   const [ref, inView] = useInView();
 
   useReloadOnPageScroll({

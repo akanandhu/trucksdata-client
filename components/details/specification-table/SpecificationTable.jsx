@@ -1,10 +1,15 @@
 import React from "react";
 import SpecTable from "./SpecTable";
 import { getSpecData } from "../../../utils/getSpecData";
+import { getSpecCompareData } from "../../../utils/getSpecCompareData";
+import useGetSpecificationCategories from "../../../services/specs/useGetSpecCategories";
 
-const SpecificationTable = ({vehicleSpecs}) => {
-  const specContent = getSpecData();
-  
+const SpecificationTable = ({ vehicleData }) => {
+  // const specContent = getSpecData();
+  const { data: categories } = useGetSpecificationCategories();
+  const categoriesData = categories?.data?.data || [];
+  const specContent = getSpecCompareData([vehicleData], categoriesData, true);
+
   return (
     <>
       <div class="accordion lg:lh-1" id="accordionExample">
@@ -44,7 +49,7 @@ const SpecificationTable = ({vehicleSpecs}) => {
                   <SpecTable
                     tableData={item.tableData}
                     hasVariant={item.hasVariant}
-                    vehicleSpecs={vehicleSpecs}
+                    vehicleSpecs={vehicleData?.vehicle_specs}
                     specId={item.specId}
                   />
                 </div>

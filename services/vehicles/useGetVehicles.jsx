@@ -5,7 +5,6 @@ async function getVehicles(params) {
   const filterParams = {
     ...params,
   };
-  console.log(params, "paramssssss");
 
   const response = await axiosInstance.get("vehicles", {
     params: filterParams,
@@ -14,7 +13,7 @@ async function getVehicles(params) {
 }
 
 export default function useGetVehicles(params) {
-  return useQuery(["vehicles"], getVehicles, {
+  return useQuery(["vehicles", params], getVehicles, {
     staleTime: Infinity,
   });
 }
@@ -30,6 +29,7 @@ export const useGetVehiclesInfinite = (params) => {
         return currPage < last_page ? currPage + 1 : undefined;
       },
       initialPageParam: 1,
+      staleTime: Infinity
     }
   );
 };

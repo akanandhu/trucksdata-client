@@ -44,3 +44,8 @@ $font-size-small: 18px;
 .link-like-container:hover {
   color: blue; /* Change text color to blue on hover */
 }
+
+.custom-dropdown-menu {
+  max-height: 300px; /* Set the maximum height for the dropdown menu */
+  overflow-y: auto; /* Enable vertical scrolling */
+}

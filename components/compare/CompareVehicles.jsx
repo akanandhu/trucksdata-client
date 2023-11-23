@@ -4,7 +4,7 @@ import CompareTwoVehiclesCard from "./CompareTwoVehiclesCard";
 import { useSelector } from "react-redux";
 import useGetComparisons from "../../services/compare/useGetComparisons";
 
-const CompareVehicles = ({ filterOptions, vehicleData }) => {
+const CompareVehicles = ({  vehicleData }) => {
   const topSelected = useSelector((store) => store?.topfilter?.compare);
   const params = {
     vehicle_type: topSelected?.id ?? 1
@@ -30,7 +30,6 @@ const CompareVehicles = ({ filterOptions, vehicleData }) => {
         <div className="row y-gap-30 pt-5 sm:pt-20 item_gap-x30">
           <div className="tabs -pills-2 pt-12">
             <TopFilter
-              filterOptions={filterOptions}
               vehicleData={vehicleData}
               flag="compare"
             />

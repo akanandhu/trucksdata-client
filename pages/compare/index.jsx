@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import Seo from "../../components/common/Seo";
 import CompareBox from "../../components/compare/CompareBox";
 import DescriptionBox from "../../components/compare/DescriptionBox";
@@ -6,8 +6,23 @@ import CompareLocationTop from "../../components/compare/location/CompareLocatio
 import DefaultFooter from "../../components/footer/default/index";
 import CallToActions from "../../components/common/CallToActions";
 import MainHeader from "../../components/header/main-header";
+import { useState } from "react";
 
 const ComparePage = () => {
+
+
+  const [vehicle, setVehicle] = useState([
+    {
+      index: 1,
+    },
+    {
+      index: 2,
+    },
+    {
+      index: 3,
+    },
+  ]);
+
   return (
     <div className="position-relative   ">
       <Seo pageTitle={"Compare"} />
@@ -15,7 +30,7 @@ const ComparePage = () => {
       <MainHeader />
       <CompareLocationTop />
       <DescriptionBox />
-      <CompareBox />
+      <CompareBox vehicle={vehicle} setVehicle={setVehicle} />
       <CallToActions />
       <DefaultFooter />
     </div>

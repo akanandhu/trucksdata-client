@@ -17,7 +17,6 @@ function FilterTabs(props) {
   const [filterParam, setFilterParam] = useState({});
   const [currTab, setCurrTab] = useState();
   const router = useRouter();
-  console.log(filterParam, 'filterChecking')
   const { data: specs } = useGetSpecification();
   const specifications = specs?.data?.data;
 
