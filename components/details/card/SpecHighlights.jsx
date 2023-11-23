@@ -1,7 +1,7 @@
 import Image from "next/image";
 
-const SpecHighlights = ({vehicleDetails}) => {
-  const keyspecs = vehicleDetails?.vehicle_specs?.filter((item)=> item.is_key_feature);
+const SpecHighlights = ({keyspecs}) => {
+  
   const propertyContent = [
     {
       id: 1,
@@ -48,6 +48,7 @@ const SpecHighlights = ({vehicleDetails}) => {
   }
   return (
     <div>
+      {console.log("Key ",keyspecs)}
       <div className="row y-gap-30 justify-between pt-30">
         {keyspecs?.slice(0,6)?.map((item) => (
           <div className="col-md-auto col-6" key={item.id}>

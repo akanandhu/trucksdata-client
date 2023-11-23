@@ -18,11 +18,12 @@ import SpecificationTable from "../../components/details/specification-table/Spe
 import SimilarTrucks from "../../components/similar-trucks/SimilarTrucks";
 import MainHeader from "../../components/header/main-header";
 import useViewVehicle from "../../services/useViewVehicle";
-import Footer from '../../components/footer/footer'
+import Footer from "../../components/footer/footer";
 import useVehicle from "../../services/useVehicle";
 import { useSelector } from "react-redux";
 import useManufactures from "../../services/useManufactures";
 import useVehicleTypes from "../../services/useVehicleTypes";
+import useAllVehicles from "../../services/vehicles/useAllVehicles";
 
 const SinglePage = () => {
   const router = useRouter();
@@ -38,12 +39,31 @@ const SinglePage = () => {
   const { data: vehicleDetails } = useVehicle(filterId);
 
   const { data: vehicleData } = useViewVehicle(id);
-  const {data: vehicletypes} = useVehicleTypes();
+  const { data: vehicletypes } = useVehicleTypes();
+  const { data: allVehicles } = useAllVehicles();
 
-  const similarVehicle = vehicletypes?.data?.data.find((item) => item.name === vehicleData?.data?.vehicle_type?.name)
-  const similarCategory = similarVehicle?.manufacturers.filter((item) => item.name === "Eicher");
+  const vehicleTypeId = vehicleData?.data?.vehicle_type_id;
+  const manufacturerId = vehicleData?.data?.manufacturer_id;
+
+  console.log("Type id ", vehicleTypeId);
+  const vehiclePrice = vehicleData?.data["min_price"].split['.'];
+  const similarVehicles = allVehicles?.data?.data?.filter(
+    (item) => item?.vehicle_type_id === vehicleTypeId
+  );
+  const keyspecs = vehicleData?.data?.vehicle_specs?.filter(
+    (item) => item.is_key_feature === true
+  );
+
+  const popularModels = allVehicles?.data?.data?.filter(
+    (item) =>
+      item.is_popular === 1 &&
+      item?.vehicle_type_id === vehicleTypeId &&
+      item?.manufacturer_id === manufacturerId
+  );
   return (
     <>
+      {console.log("ID ", manufacturerId)}
+      {console.log("popular ", popularModels)}
       <Seo pageTitle={vehicleData?.data?.title ?? "Variant View Page"} />
       {/* End Page Title */}
       <div className="header-margin"></div>
@@ -51,7 +71,7 @@ const SinglePage = () => {
       <MainHeader />
       {/* End Header 1 */}
 
-      <TopBreadCrumb data={vehicle} />
+      <TopBreadCrumb  brand={vehicleData?.data?.manufacturer?.name} type={vehicleData?.data?.vehicle_type?.name}/>
       {/* End top breadcrumb */}
 
       <section className="pt-40">
@@ -95,7 +115,10 @@ const SinglePage = () => {
               </div>
 
               <div className="">
-                <SlideGallery slides={vehicleData?.data?.images} videos={vehicleData?.data?.video_links}/>
+                <SlideGallery
+                  slides={vehicleData?.data?.images}
+                  videos={vehicleData?.data?.video_links}
+                />
               </div>
             </div>
             <div className="col-lg-4">
@@ -107,7 +130,7 @@ const SinglePage = () => {
                         Starting From
                       </div>
                       <div className="text-24 lh-12 fw-600 mt-5">
-                        ₹{vehicleData?.data["min_price"]}{" "}
+                        ₹ {vehiclePrice && vehiclePrice[0]}{" "}
                       </div>
                       <div className="text-14 text-light-1 mt-5">
                         Ex-showroom
@@ -127,7 +150,6 @@ const SinglePage = () => {
         </div>
         {/* End .containar */}
       </section>
-
       <section className="pt-40">
         <div className="container ">
           {/* <div className="row"> */}
@@ -135,20 +157,27 @@ const SinglePage = () => {
             {/* <div className="d-flex justify-content-center"> */}
             {/* <h3 className="text-22 fw-500">Property highlights</h3> */}
             <div className="col-lg-8">
-              <div className="view_bordershadow ps-4 pe-4 pt-15 pb-15 bg-white ">
-                <h6 className="fw-500 text-22">Highlights</h6>
-                <SpecHighlights vehicleDetails={vehicleData?.data} />
-              </div>
+              {keyspecs?.length !== 0 ? (
+                <div className="view_bordershadow ps-4 pe-4 pt-15 pb-15 bg-white ">
+                  <h6 className="fw-500 text-22">Highlights</h6>
+                  <SpecHighlights keyspecs={keyspecs} />
+                </div>
+              ) : null}
               <div className="mt-30 view_bordershadow ps-4 pe-4 pt-15 pb-15 bg-white">
                 <h6 className="fw-500 text-22">Key Specifications</h6>
                 <Specifications />
               </div>
             </div>
-            <div className="col-lg-4 ms-10 d-flex  justify-content-end sm:mt-20 lg:mt-4 ">
-              <PopularModals vehicleDetails={vehicleData?.data} />
-            </div>
+            {popularModels?.length !==0 ? (
+              <div className="col-lg-4 ms-10 d-flex  justify-content-end sm:mt-20 lg:mt-4 ">
+                <PopularModals
+                  popularModels={popularModels}
+                  manufacturer={vehicleData?.data?.manufacturer?.name}
+                  type={vehicleData?.data?.vehicle_type?.name}
+                />
+              </div>
+            ) : null}
           </div>
-
         </div>
         {/* </div> */}
       </section>
@@ -168,49 +197,50 @@ const SinglePage = () => {
         </div>
       </section>
 
-      <section className="mt-40 pt-40">
-        <div className="container">
-          {/* <h3 className="text-22 fw-500 mb-20">Car Location</h3> */}
-          <div className=" rounded-4 overflow-hidden map-500">
-            <VideoBanner videos={vehicleData?.data?.video_links}/>
-          </div>
-        </div>
-      </section>
-      {/* End Map */}
-
-      <section className="pt-40 mb-40">
-        <div className="container ">
-          <div className="row y-gap-20">
-            <div className="col-lg-4">
-              <h2 className="text-22 fw-500">
-                FAQs about
-                <br /> {vehicleData?.data?.title}
-              </h2>
+      {vehicleData?.data?.video_links.length !== 0 ? (
+        <section className="mt-40 pt-40">
+          <div className="container">
+            {/* <h3 className="text-22 fw-500 mb-20">Car Location</h3> */}
+            <div className=" rounded-4 overflow-hidden map-500">
+              <VideoBanner videos={vehicleData?.data?.video_links} />
             </div>
+          </div>
+        </section>
+      ) : null}
+      {/* End Map */}
+      {vehicleData?.data?.faq?.length !== 0 && (
+        <section className="pt-40 mb-40">
+          <div className="container ">
+            <div className="row y-gap-20">
+              <div className="col-lg-4">
+                <h2 className="text-22 fw-500">
+                  FAQs about
+                  <br /> {vehicleData?.data?.title}
+                </h2>
+              </div>
 
-            <div className="col-lg-8">
-              <div
-                className="accordion -simple row y-gap-20 js-accordion"
-                id="Faq1"
-              >
-                <Faq 
-                faq={vehicleData?.data?.faq}
-                />
+              <div className="col-lg-8">
+                <div
+                  className="accordion -simple row y-gap-20 js-accordion"
+                  id="Faq1"
+                >
+                  <Faq faq={vehicleData?.data?.faq} />
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       <section className="pt-40 mb-40">
         <div className="container ">
           <div className="row y-gap-20">
             <div className="col-lg-4">
-              <h2 className="text-22 fw-500">Similar Trucks</h2>
+              <h2 className="text-22 fw-500">Similar {vehicleData?.data?.vehicle_type?.name}</h2>
             </div>
 
             <div className="col-lg-8">
-              <SimilarTrucks similarVehicles={similarVehicle}/>
+              <SimilarTrucks similarVehicles={similarVehicles} />
             </div>
           </div>
         </div>
@@ -218,7 +248,7 @@ const SinglePage = () => {
 
       <CallToActions />
 
-      <Footer className="text-dark"/>
+      <Footer className="text-dark" />
     </>
   );
 };
