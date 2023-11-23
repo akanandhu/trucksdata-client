@@ -64,7 +64,6 @@ function FilterTabs(props) {
       />
     ));
   };
-  console.log(currTab, 'currTab')
   
   function handleSearch() {
     const query = {

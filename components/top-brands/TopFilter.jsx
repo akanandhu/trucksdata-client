@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   setCurrentBrandTab,
+  setCurrentCompareTab,
   setCurrentPopularTab,
   setCurrentUpcomingTab,
 } from "../../features/topFilter/topFilterSlice";
@@ -24,6 +25,9 @@ const TopFilter = ({ vehicleData, flag }) => {
     }
     if (flag === "upcoming") {
       dispach(setCurrentUpcomingTab(filters));
+    }
+    if (flag === "compare") {
+      dispach(setCurrentCompareTab(filters));
     }
   };
   return (

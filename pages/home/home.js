@@ -18,6 +18,7 @@ import { setManufacturer } from "../../features/manufacturer/manufacturerSlice";
 import useGetArticles from "../../services/articles/useGetArticles";
 import { useEffect } from "react";
 import { setArticleDetails } from "../../features/articles/articleSlice";
+import useGetComparisons from "../../services/compare/useGetComparisons";
 
 const Home = () => {
   const dispach = useDispatch();
@@ -32,6 +33,7 @@ const Home = () => {
   const { data: manufacturer } = useManufactures();
   const { data: articles, isFetched } = useGetArticles();
   const blogs = articles?.data?.data
+
 
   dispach(setManufacturer(manufacturer?.data["data"]));
 

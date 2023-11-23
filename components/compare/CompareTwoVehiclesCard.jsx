@@ -1,11 +1,12 @@
 import React from "react";
 import { Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import trucksData from '../../data/upcoming-trucks';
+import trucksData from "../../data/upcoming-trucks";
 import CompareTwoVehicleBox from "./CompareTwoVehicleBox";
 
+const CompareTwoVehiclesCard = ({ comparisonData }) => {
+ 
 
-const CompareTwoVehiclesCard = () => {
   return (
     <>
       <Swiper
@@ -36,7 +37,7 @@ const CompareTwoVehiclesCard = () => {
           },
         }}
       >
-        {trucksData.slice(0, 8).map((item) => (
+        {comparisonData?.slice(0, 8).map((item) => (
           <SwiperSlide key={item.id}>
             <CompareTwoVehicleBox item={item} />
           </SwiperSlide>

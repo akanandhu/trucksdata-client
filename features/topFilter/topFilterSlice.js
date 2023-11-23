@@ -13,6 +13,10 @@ const initialState = {
     currentTab: "Trucks",
     id: 1,
   },
+  compare: {
+    currentTab: "Trucks",
+    id: 1,
+  },
 };
 
 export const currentTabSlice = createSlice({
@@ -31,6 +35,10 @@ export const currentTabSlice = createSlice({
       state.upcoming.currentTab = payload?.upcoming?.vehicle;
       state.upcoming.id = payload?.upcoming?.id;
     },
+    setCurrentCompareTab: (state, { payload }) => {
+      state.compare.currentTab = payload?.compare?.vehicle;
+      state.compare.id = payload?.compare?.id;
+    },
   },
 });
 
@@ -38,5 +46,6 @@ export const {
   setCurrentBrandTab,
   setCurrentPopularTab,
   setCurrentUpcomingTab,
+  setCurrentCompareTab,
 } = currentTabSlice.actions;
 export default currentTabSlice.reducer;
