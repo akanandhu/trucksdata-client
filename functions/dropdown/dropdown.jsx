@@ -4,13 +4,16 @@ import { FaTruckMoving } from "react-icons/fa";
 
 function getManufacturerByVehicleType(currentTab, filterParam, bodyTypes) {
   const isManufacturer =
-    currentTab?.item?.tabItem === "Manufacturer" || currentTab === undefined;
+    currentTab?.item?.tabItem === "Manufacturer" ||
+    currentTab === undefined ||
+    currentTab?.item?.name === "Manufacturer";
 
   if (isManufacturer) {
     const bodyType = filterParam?.option1;
     const selected = bodyTypes?.find(
       (manufacturer) => manufacturer?.name === bodyType?.name
     );
+
     return selected?.manufacturers || [];
   }
 
@@ -18,7 +21,9 @@ function getManufacturerByVehicleType(currentTab, filterParam, bodyTypes) {
 }
 
 function getChildApps({ currTab, filterParam, parentApps }) {
-  const isApplication = currTab?.item?.tabItem === "Application";
+  const isApplication =
+    currTab?.item?.tabItem === "Application" ||
+    currTab?.item?.name === "Application";
   if (isApplication) {
     const parentObj = filterParam?.option2;
     const selected = parentApps?.find(
@@ -29,16 +34,16 @@ function getChildApps({ currTab, filterParam, parentApps }) {
   }
 }
 
-function getPowerSources ({currTab, filterParam, bodyTypes}) {
-    const isPower = currTab?.item?.tabItem === "Power Source";
-    if (isPower) {
-      const vehicleObj = filterParam?.option1;
-      const selected = bodyTypes?.find(
-        (type) => type.name === vehicleObj?.name
-      );
+function getPowerSources({ currTab, filterParam, bodyTypes }) {
+  const isPower =
+    currTab?.item?.tabItem === "Power Source" ||
+    currTab?.item?.name === "Power Source";
+  if (isPower) {
+    const vehicleObj = filterParam?.option1;
+    const selected = bodyTypes?.find((type) => type.name === vehicleObj?.name);
 
-      return selected?.energy_sources || [];
-    }
+    return selected?.energy_sources || [];
+  }
 }
 
 function getDropDown({
@@ -47,6 +52,7 @@ function getDropDown({
   currTab,
   filterParam,
   specifications,
+  queryValues,
 }) {
   const manufacturer = getManufacturerByVehicleType(
     currTab,
@@ -73,8 +79,8 @@ function getDropDown({
   const powerSources = getPowerSources({
     currTab,
     filterParam,
-    bodyTypes
-  })
+    bodyTypes,
+  });
 
   const dropdown = [
     {

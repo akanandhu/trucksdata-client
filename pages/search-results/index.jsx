@@ -89,7 +89,7 @@ const SearchResultsPage = () => {
       ]?.join(","),
     }),
   };
-
+  console.log(sideParams, "sideParams");
   const {
     data: results,
     fetchNextPage,
@@ -122,7 +122,7 @@ const SearchResultsPage = () => {
   const { email, contact_number } = general || {};
   const contactDetails = { email, contact_number };
 
-  const count = results?.pages?.[0]?.data?.total ?? 0
+  const count = results?.pages?.[0]?.data?.total ?? 0;
 
   return (
     <>
@@ -218,18 +218,18 @@ const SearchResultsPage = () => {
                   showError={handleCompareExceed}
                   setShow={setShow}
                   vehicles={vehicles}
+                  isLoading={isLoading}
+                  ref={ref}
                 />
               </div>
-              <div ref={ref}></div>
-              {isLoading && (
-                <div className="mt-20">
-                  <Spinner />
-                </div>
-              )}
+
               <div className="row y-gap-2  sm:d-flex md:d-flex justify-content-center d-none">
                 <SearchResultsMobile
                   setShow={setShow}
                   showError={handleCompareExceed}
+                  vehicles={vehicles}
+                  ref={ref}
+                  isLoading={isLoading}
                 />
               </div>
               {/* End .row */}

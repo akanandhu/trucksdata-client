@@ -4,8 +4,9 @@ import { Navigation, Pagination } from "swiper";
 import Image from "next/image";
 import Link from "next/link";
 import CompareAddButton from "./compare/CompareAddButton";
+import Spinner from "../../loading/Spinner";
 
-const SearchResults = ({ showError, setShow, vehicles }) => {
+const SearchResults = ({ showError, setShow, vehicles, ref, isLoading }) => {
   const propertyContent = [
     {
       id: 1,
@@ -141,6 +142,12 @@ const SearchResults = ({ showError, setShow, vehicles }) => {
           </div>
         );
       })}
+      <div ref={ref}></div>
+      {isLoading && (
+        <div className="mt-20">
+          <Spinner />
+        </div>
+      )}
     </>
   );
 };

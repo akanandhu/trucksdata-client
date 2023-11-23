@@ -9,15 +9,27 @@ import { useSelector } from "react-redux";
 import getDropDown from "../../../functions/dropdown/dropdown";
 import useGetSpecification from "../../../services/useGetSpecification";
 import { useRouter } from "next/router";
+import { handleTabChange } from "../../../functions/filter/handleTabChange";
 
 function FilterTabs(props) {
   const { manufacturerData, vehicleData } = props;
   const tab = useSelector((store) => store.hero);
   const [filterParam, setFilterParam] = useState({});
   const [currTab, setCurrTab] = useState();
+  const router = useRouter();
 
   const { data: specs } = useGetSpecification();
   const specifications = specs?.data?.data;
+
+  const queryItems = router?.query;
+  const { tab: tabs, option1, option2 } = queryItems;
+  const opt1 = option1 ? JSON.parse(option1) : null;
+  const tabsValue = tabs ? JSON.parse(tabs) : null;
+
+  const queryValues = {
+    opt1,
+    tabs: tabsValue,
+  };
 
   const dropdown = getDropDown({
     manufacturers: manufacturerData,
@@ -25,20 +37,22 @@ function FilterTabs(props) {
     currTab,
     filterParam,
     specifications,
+    queryValues,
   });
 
   const dropdownComponent = (dropdowns, screen) => {
     const selectedTab = tab.currentTab;
     let filteredDropdown;
     const filtered = dropdown.filter((item) => item["tabItem"] === selectedTab);
-
+    console.log(filtered, selectedTab, 'filterCheck')
     if (screen === "lg") {
       filteredDropdown = dropdowns;
     }
     if (screen === "sm") {
-      filteredDropdown = filtered[0];
+      filteredDropdown = filtered[0]
     }
-    return filteredDropdown.dropdownItem.map((dropdownDetails) => (
+
+    return filteredDropdown?.dropdownItem?.map((dropdownDetails) => (
       <DropInput
         key={dropdownDetails?.id}
         dropdownDetails={dropdownDetails}
@@ -50,32 +64,14 @@ function FilterTabs(props) {
       />
     ));
   };
-
-  function handleTabChange(item, i) {
-    const isApplication = item?.tabItem === "Application";
-    const isGVW = item?.tabItem === "G V W";
-    if (isApplication) {
-      const application = specifications?.find(
-        (spec) => spec?.name === "Applications"
-      );
-      return setCurrTab({ item: { ...item, spec_id: application?.id }, i });
-    }
-    if (isGVW) {
-      const gvw = specifications?.find(
-        (spec) => spec?.name === "Gross Vehicle Weight (Kg)"
-      );
-      return setCurrTab({ item: { ...item, spec_id: gvw?.id }, i });
-    }
-    setCurrTab({ item, i });
-  }
-
-  const router = useRouter();
+  
+  
   function handleSearch() {
     const query = {
       tab: JSON.stringify({
         name: currTab?.item?.tabItem || "Manufacturer",
         id: currTab?.item?.id || 1,
-        spec_id: currTab?.item?.spec_id || null
+        spec_id: currTab?.item?.spec_id || null,
       }),
       option1: JSON.stringify({
         id: filterParam?.option1?.id,
@@ -112,7 +108,7 @@ function FilterTabs(props) {
           {dropdown.map((item, i) => {
             return (
               <Tab
-                onClick={() => handleTabChange(item, i)}
+                onClick={() => handleTabChange(item, i, setCurrTab, specifications)}
                 className="col-auto"
                 key={i}
               >
@@ -126,7 +122,7 @@ function FilterTabs(props) {
             );
           })}
         </TabList>
-        <MobileTab />
+        <MobileTab setCurrTab={setCurrTab} specifications={specifications}  />
         <div className="tabs__content js-tabs-content">
           {dropdown.map((item) => (
             <TabPanel key={item.id}>
