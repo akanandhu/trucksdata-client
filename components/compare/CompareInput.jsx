@@ -19,7 +19,6 @@ const CompareInput = ({ index, isManufacturer, vehicle, setVehicle }) => {
     fetchNextPage,
     isFetchingNextPage,
     hasNextPage,
-    isLoading,
   } = useGetVehiclesInfinite({ vehicle_type: vehicleId });
 
   const vehicles = getFlatData(results || []);
@@ -34,7 +33,6 @@ const CompareInput = ({ index, isManufacturer, vehicle, setVehicle }) => {
     : vehicleData;
 
   const [ref, inView] = useInView();
-      console.log(dataToMap,'dataaaaaaaaa')
   useReloadOnPageScroll({
     fetchNextPage,
     inView,
@@ -63,7 +61,6 @@ const CompareInput = ({ index, isManufacturer, vehicle, setVehicle }) => {
   const logo = currentItem?.vehicle
     ? currentItem?.vehicle?.images?.[0]?.thumbnail
     : "";
-  console.log(currentItem, "logoCheck");
 
   return (
     <div className="searchMenu-loc px-lg-20 py-lg-10 py-2 px-1  border-light rounded-4 js-form-dd js-liverSearch">

@@ -1,21 +1,14 @@
 import React, { useEffect, useState } from "react";
-import ComparePlusButton from "./ComparePlusButton";
 import CompareVehicles from "./CompareVehicles";
 import CompareTable from "./CompareTable";
-import CompareBoxMobile from "./CompareBoxMobile";
 import useVehicleTypes from "../../services/useVehicleTypes";
-import useGetVehicles, {
-  useGetVehiclesInfinite,
-} from "../../services/vehicles/useGetVehicles";
-import { useInView } from "react-intersection-observer";
-import getFlatData from "../../utils/getFlatData";
-import { useReloadOnPageScroll } from "../../hooks/useReloadOnPageScroll";
 import { useQueries } from "react-query";
-import { getVehicleDetails } from "../../services/useVehicle";
 import { getVehicleData } from "../../services/useViewVehicle";
 import toast, { useToaster } from "react-hot-toast";
 import Spinner from "../loading/Spinner";
 import { useRouter } from "next/router";
+import CompareFields from "./CompareFields";
+import CompareBoxMobile from '../compare/CompareBoxMobile';
 
 const toastStyles = {
   icon: "🚚",
@@ -32,43 +25,16 @@ const CompareInputSeperate = ({
   isManufacturer,
   vehicle,
   setVehicle,
+  setVehicleId,
 }) => {
   const [searchValue, setSearchValue] = useState("");
   const [selectedItem, setSelectedItem] = useState(null);
   const { data: vehicleTypes } = useVehicleTypes();
   const vehicleData = vehicleTypes?.data?.data;
-  const vehicleId =
-    vehicleData?.find((vehicle) => vehicle?.name === searchValue)?.id ?? null;
-  const {
-    data: results,
-    fetchNextPage,
-    isFetchingNextPage,
-    hasNextPage,
-    isLoading,
-  } = useGetVehiclesInfinite({ vehicle_type: vehicleId });
-
-  const vehicles = getFlatData(results || []);
-
-  const dataToMap = isManufacturer
-    ? vehicles?.map((vehicleItem) => {
-        return {
-          ...vehicleItem,
-          name: vehicleItem.title,
-        };
-      })
-    : vehicleData;
-
-  const [ref, inView] = useInView();
-
-  useReloadOnPageScroll({
-    fetchNextPage,
-    inView,
-    isFetchingNextPage,
-    hasNextPage,
-  });
 
   const handleOptionClick = (item) => {
     setSearchValue(item.name);
+    setVehicleId(item?.id);
     setSelectedItem(item);
     if (isManufacturer) {
       const updatedVehicle = vehicle.map((vehicleItem) =>
@@ -112,7 +78,7 @@ const CompareInputSeperate = ({
       <div className="shadow-2 dropdown-menu min-width-400 position-absolute custom-dropdown-menu ">
         <div className="bg-white px-20 py-20 sm:px-0 sm:py-15 rounded-4">
           <ul className="y-gap-5 js-results">
-            {dataToMap?.map((item) => (
+            {vehicleData?.map((item) => (
               <li
                 className={`-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option mb-1 ${
                   selectedItem && selectedItem.id === item.id ? "active" : ""
@@ -159,6 +125,7 @@ const CompareBox = ({ vehicle, setVehicle }) => {
         return;
       }
     });
+
     const idCollection = idsToCall?.filter(Boolean);
 
     if (idCollection?.length >= 2) {
@@ -175,7 +142,7 @@ const CompareBox = ({ vehicle, setVehicle }) => {
   // vehicleId set
   const router = useRouter();
   const { vehicle_one, vehicle_two } = router?.query || {};
-  const hasIds = Boolean(vehicle_one) && Boolean(vehicle_two)
+  const hasIds = Boolean(vehicle_one) && Boolean(vehicle_two);
   console.log(hasIds, "routersssss");
 
   useEffect(() => {
@@ -203,6 +170,14 @@ const CompareBox = ({ vehicle, setVehicle }) => {
   const vehicleCollectedData = queries.map((query) => query?.data?.data);
   const isLoading = queries.some((query) => query.isLoading);
 
+
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return <></>;
+
   return (
     <div key={item.id} className="col-lg-12 container mt-40">
       <div className="rounded-4 layout-pt-md  layout-pb-md  view_bordershadow bg-white d-lg-block sm:d-none md:none">
@@ -211,26 +186,11 @@ const CompareBox = ({ vehicle, setVehicle }) => {
           {vehicle?.map((item, index) => {
             return (
               <div key={item.index} className="col ">
-                <div className="d-flex gap-1 flex-column justify-center h-full px-30 py-20 ">
-                  <div className="rounded-4">
-                    <ComparePlusButton index={item.index} vehicle={vehicle} />
-                  </div>
-                  <div className="rounded-4 ">
-                    <CompareInputSeperate
-                      index={item.index}
-                      vehicle={vehicle}
-                      setVehicle={setVehicle}
-                    />
-                  </div>
-                  <div className="rounded-4 ">
-                    <CompareInputSeperate
-                      index={item.index}
-                      vehicle={vehicle}
-                      setVehicle={setVehicle}
-                      isManufacturer={true}
-                    />
-                  </div>
-                </div>
+                <CompareFields
+                  item={item}
+                  vehicle={vehicle}
+                  setVehicle={setVehicle}
+                />
               </div>
             );
           })}

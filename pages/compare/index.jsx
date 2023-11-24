@@ -28,7 +28,7 @@ const ComparePage = () => {
   ];
 
   const [vehicle, setVehicle] = useState(determineDefaultValues);
-
+  
   useEffect(() => {
     const handleResize = () => {
       setVehicle(determineDefaultValues());

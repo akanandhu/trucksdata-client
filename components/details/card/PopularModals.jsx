@@ -2,7 +2,7 @@ import Link from "next/link";
 import React from "react";
 import { useSelector } from "react-redux";
 
-function PopularModals({ popularModels , manufacturer, type}) {
+function PopularModals({ popularModels , manufacturer, type, vehicleDetails}) {
   // const popular = useSelector((store) => store.vehicle.vehicleType);
   // const vehicleType = vehicleDetails?.vehicle_type?.name;
   // const vehicleBrand = vehicleDetails?.manufacturer?.name;
