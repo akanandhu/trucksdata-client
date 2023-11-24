@@ -11,12 +11,14 @@ const CompareTwoVehicleBox = ({ item }) => {
   const routeToRedirect = `/compare?vehicle_one=${vehicleOne}&vehicle_two=${vehicleTwo}`
 
   return (
-    <div className=" truck-card-compare  p-1">
-      <Link href={routeToRedirect} className="carCard -type-1 d-flex rounded-4">
+    <div className=" truck-card-compare ">
+      {console.log("ITEM !!!!!!!",item)}
+      <Link href={routeToRedirect} className="carCard -type-1 d-flex rounded-4 compare-card-link" >
         <div key={item?.id}>
           <div className="carCard__image">
             <div className="cardImage ratio  ratio-6:5">
               <div className="cardImage__content custom_inside-slider">
+              {/* <div className="truck-card__image"> */}
                 <Swiper
                   className="mySwiper"
                   modules={[Pagination, Navigation]}
@@ -24,17 +26,22 @@ const CompareTwoVehicleBox = ({ item }) => {
                   allowSlidePrev={false}
                   allowSlideNext={false}
                 >
+                  <div style={{minWidth:'500px'}}>
                   {item?.images?.map((slide, i) => (
+
                     <SwiperSlide key={i}>
+                      <div className="compare-image">
                       <img
                         width={300}
                         height={300}
                         className="rounded-4 col-12 js-lazy"
                         src={slide?.thumbnail}
                         alt="image"
-                      />
+                        />
+                      </div>
                     </SwiperSlide>
                   ))}
+                  </div>
                 </Swiper>
               </div>
             </div>
@@ -61,9 +68,10 @@ const CompareTwoVehicleBox = ({ item }) => {
 
         <div className="mt-30">
           <Image
-            width={50}
-            height={50}
-            className="rounded-4 js-lazy compare-vs"
+            width={30}
+            height={30}
+            className="compare-vs"
+            // className="position-fixed z-index-1"
             src="/icons/vs.png"
             alt="image"
           />
@@ -86,13 +94,16 @@ const CompareTwoVehicleBox = ({ item }) => {
                       allowSlideNext={false}
                     >
                       <SwiperSlide>
-                        <Image
+                       <div className="compare-image">
+
+                        <img
                           width={300}
                           height={300}
                           className="rounded-4 col-12 js-lazy"
                           src={vehicle?.images?.[0]?.thumbnail}
                           alt="image"
-                        />
+                          />
+                          </div>
                       </SwiperSlide>
                     </Swiper>
                   </div>
@@ -138,6 +149,8 @@ const CompareTwoVehicleBox = ({ item }) => {
         <button className="btn btn-primary flex-fill  ">Compare Now</button>
       </div>
     </div>
+
+    
   );
 };
 

@@ -19,6 +19,7 @@ import useGetArticles from "../../services/articles/useGetArticles";
 import { useEffect } from "react";
 import { setArticleDetails } from "../../features/articles/articleSlice";
 import useGetComparisons from "../../services/compare/useGetComparisons";
+import useAllVehicles from "../../services/vehicles/useAllVehicles";
 
 const Home = () => {
   const dispach = useDispatch();
@@ -29,7 +30,6 @@ const Home = () => {
     { label: "Trailers", value: "trailers" },
     { label: "3-Wheelers", value: "three_wheelers" },
   ];
-
   const { data: manufacturer } = useManufactures();
   const { data: articles, isFetched } = useGetArticles();
   const blogs = articles?.data?.data

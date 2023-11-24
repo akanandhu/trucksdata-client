@@ -1,4 +1,4 @@
-const TopBreadCrumb = ({data}) => {
+const TopBreadCrumb = ({brand, type}) => {
   return (
     <section className="py-10 d-flex items-center bg-light-2">
       <div className="container">
@@ -9,26 +9,26 @@ const TopBreadCrumb = ({data}) => {
               {/* End .col-auto */}
               <div className="col-auto">&gt;</div>
               {/* End .col-auto */}
-              <div className="col-auto">{data?.type}</div>
+              <div className="col-auto">{type}</div>
               {/* End .col-auto */}
               <div className="col-auto">&gt;</div>
               {/* End .col-auto */}
-              <div className="col-auto">{data?.brand}</div>
+              <div className="col-auto">{brand}</div>
               {/* End .col-auto */}
               <div className="col-auto">&gt;</div>
-              <div className="col-auto  ">
+              {/* <div className="col-auto  ">
                 <div className="text-dark-1">
                   {data?.title}
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
 
-          <div className="col-auto">
+          {/* <div className="col-auto">
             <a href="#" className="text-14 text-blue-1 underline">
               View all {data?.type}s
             </a>
-          </div>
+          </div> */}
           {/* End col-auto */}
         </div>
         {/* End .row */}

@@ -42,7 +42,7 @@ function BrandModels({vehicleDetails,flag}) {
           }}
         >
           {vehicleDetails?.slice(0, 8)?.reverse().map(
-            (item) =>
+            (item,i) =>
               item[flag] === 1 && (
                 <SwiperSlide key={item.id}>
                   <Link
