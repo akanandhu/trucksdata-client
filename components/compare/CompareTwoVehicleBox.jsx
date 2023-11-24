@@ -6,19 +6,21 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import isTextMatched from "../../utils/isTextMatched";
 
 const CompareTwoVehicleBox = ({ item }) => {
-  const vehicleOne = item?.id
-  const vehicleTwo = item?.compare_vehicle?.[0]?.id
-  const routeToRedirect = `/compare?vehicle_one=${vehicleOne}&vehicle_two=${vehicleTwo}`
+  const vehicleOne = item?.id;
+  const vehicleTwo = item?.compare_vehicle?.[0]?.id;
+  const routeToRedirect = `/compare?vehicle_one=${vehicleOne}&vehicle_two=${vehicleTwo}`;
 
   return (
     <div className=" truck-card-compare ">
-      {console.log("ITEM !!!!!!!",item)}
-      <Link href={routeToRedirect} className="carCard -type-1 d-flex rounded-4 compare-card-link" >
+      <Link
+        href={routeToRedirect}
+        className="carCard -type-1 d-flex rounded-4 compare-card-link"
+      >
         <div key={item?.id}>
           <div className="carCard__image">
             <div className="cardImage ratio  ratio-6:5">
               <div className="cardImage__content custom_inside-slider">
-              {/* <div className="truck-card__image"> */}
+                {/* <div className="truck-card__image"> */}
                 <Swiper
                   className="mySwiper"
                   modules={[Pagination, Navigation]}
@@ -26,21 +28,20 @@ const CompareTwoVehicleBox = ({ item }) => {
                   allowSlidePrev={false}
                   allowSlideNext={false}
                 >
-                  <div style={{minWidth:'500px'}}>
-                  {item?.images?.map((slide, i) => (
-
-                    <SwiperSlide key={i}>
-                      <div className="compare-image">
-                      <img
-                        width={300}
-                        height={300}
-                        className="rounded-4 col-12 js-lazy"
-                        src={slide?.thumbnail}
-                        alt="image"
-                        />
-                      </div>
-                    </SwiperSlide>
-                  ))}
+                  <div style={{ minWidth: "500px" }}>
+                    {item?.images?.map((slide, i) => (
+                      <SwiperSlide key={i}>
+                        <div className="compare-image">
+                          <img
+                            width={300}
+                            height={300}
+                            className="rounded-4 col-12 js-lazy"
+                            src={slide?.thumbnail}
+                            alt="image"
+                          />
+                        </div>
+                      </SwiperSlide>
+                    ))}
                   </div>
                 </Swiper>
               </div>
@@ -66,12 +67,11 @@ const CompareTwoVehicleBox = ({ item }) => {
           </div>
         </div>
 
-        <div className="mt-30">
+        <div className="mt-35">
           <Image
             width={30}
             height={30}
             className="compare-vs"
-            // className="position-fixed z-index-1"
             src="/icons/vs.png"
             alt="image"
           />
@@ -94,16 +94,15 @@ const CompareTwoVehicleBox = ({ item }) => {
                       allowSlideNext={false}
                     >
                       <SwiperSlide>
-                       <div className="compare-image">
-
-                        <img
-                          width={300}
-                          height={300}
-                          className="rounded-4 col-12 js-lazy"
-                          src={vehicle?.images?.[0]?.thumbnail}
-                          alt="image"
+                        <div className="compare-image">
+                          <img
+                            width={300}
+                            height={300}
+                            className="rounded-4 col-12 js-lazy"
+                            src={vehicle?.images?.[0]?.thumbnail}
+                            alt="image"
                           />
-                          </div>
+                        </div>
                       </SwiperSlide>
                     </Swiper>
                   </div>
@@ -123,7 +122,7 @@ const CompareTwoVehicleBox = ({ item }) => {
               </div>
               {/* End .tourCard__image */}
 
-              <div className="carCard__content px-3 py-4 ">
+              <div className="carCard__content px-3 py-4">
                 <h4 className="text-dark-1 text-14 lh-14 fw-500">
                   {item?.title}{" "}
                 </h4>
@@ -132,9 +131,9 @@ const CompareTwoVehicleBox = ({ item }) => {
                 {/* End .row */}
                 <div className="d-flex align-content-center align-items-center justify-content-between  ">
                   <div>
-                    <div className="text-light-1 text-14">
+                    <div className="text-light-1 text-14 ">
                       <span className="fw-600 text-15 text-dark-1">
-                        ₹ 45,00,000
+                        ₹ {item?.min_price}
                       </span>{" "}
                       Onwards
                     </div>
@@ -149,8 +148,6 @@ const CompareTwoVehicleBox = ({ item }) => {
         <button className="btn btn-primary flex-fill  ">Compare Now</button>
       </div>
     </div>
-
-    
   );
 };
 
