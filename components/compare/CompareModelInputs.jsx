@@ -22,7 +22,6 @@ export const CompareModelInput = ({
   } = useGetVehiclesInfinite({ vehicle_type: vehicleId });
 
   const vehicles = getFlatData(results || []);
-  console.log(vehicles,vehicleId,  "resultChecking");
 
   const dataToMap = vehicles?.map((vehicleItem) => {
     return {

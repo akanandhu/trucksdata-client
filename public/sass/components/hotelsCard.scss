@@ -224,11 +224,15 @@
 }
 
 .carCard.-type-1 {
-
+  max-height: 200px;
+  min-height: 200px;
   .carCard {
     &__image {
       overflow: hidden;
       // border-radius: 4px;
+      // height: 70px;
+      height: 100px;
+      width: 100%;
       .cardImage__content .swiper-slide,
       .cardImage__content > img {
         
@@ -242,7 +246,8 @@
     }
   }
   .cardImage__content{
-    height: 500px;
+    // height: 100px;
+    // background-color: red;
   }
 
   &:hover {
@@ -338,4 +343,9 @@
   }
 }
 
-
+.compare-image{
+  height: 100px;
+}
+.compare-image img{
+  height: 100px;
+}

@@ -15,6 +15,7 @@ const SimilarTrucks = ({similarVehicles}) => {
   return (
     
     <>
+    {console.log("SIMILAR TRUCKS ",similarVehicles)}
       <Swiper
         spaceBetween={30}
         modules={[Navigation, Pagination]}
@@ -43,7 +44,7 @@ const SimilarTrucks = ({similarVehicles}) => {
           },
         }}
       >
-        {similarVehicles?.slice(0, 4)?.map((item, i) =>
+        {similarVehicles?.slice(0, 5)?.map((item, i) =>
           item?.is_popular === 1 ? (
             <SwiperSlide key={item.id}>
               <Link

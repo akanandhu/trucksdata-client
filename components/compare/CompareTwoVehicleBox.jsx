@@ -14,9 +14,10 @@ const CompareTwoVehicleBox = ({ item }) => {
     <div className="truck-card-compare">
       <Link
         href={routeToRedirect}
-        className="carCard -type-1 d-flex compare-card-link"
+        className="carCard -type-1 d-flex compare-card-link w-100"
+        // className="d-flex"
       >
-        <div key={item?.id} className="rounded-0">
+        <div key={item?.id} className="rounded-0 w-50">
           <div className="carCard__image">
             <div className="cardImage ratio  ratio-6:5">
               <div className="cardImage__content custom_inside-slider">
@@ -28,10 +29,10 @@ const CompareTwoVehicleBox = ({ item }) => {
                   allowSlidePrev={false}
                   allowSlideNext={false}
                 >
-                  <div style={{ minWidth: "500px" }}>
+                  {/* <div style={{ minWidth: "500px" }}> */}
                     {item?.images?.map((slide, i) => (
                       <SwiperSlide key={i}>
-                        <div className="compare-image ">
+                        <div className="compare-image">
                           <img
                             width={300}
                             height={300}
@@ -42,25 +43,47 @@ const CompareTwoVehicleBox = ({ item }) => {
                         </div>
                       </SwiperSlide>
                     ))}
-                  </div>
+                  {/* </div> */}
                 </Swiper>
               </div>
             </div>
           </div>
           {/* End .tourCard__image */}
 
-          <div className="carCard__content px-3 py-4   ">
-            <h4 className="text-dark-1 text-14 lh-14 fw-500">{item?.title} </h4>
-            <p className="text-light-1 lh-14 text-14 mt-5" />
+          <div className="carCard__content ps-3 pe-2 py-4">
+            <div className="h-50">
+            <h4 className="w-100 text-dark-1 text-14 lh-14 fw-500">{item?.title}</h4>
+            </div>
+            {/* <p className="text-light-1 lh-14 text-14 mt-5" /> */}
 
             {/* End .row */}
-            <div className="d-flex align-content-center align-items-center justify-content-between  ">
+            {/* <div
+              className="d-flex flex-column align-content-center align-items-center justify-content-between  "
+              // className="d-block"
+            >
               <div>
-                <div className="text-light-1 text-14 ">
-                  <span className="fw-600 text-15 text-blue-1">
-                    ₹ {item?.min_price.split('.')[0]}
-                  </span>{" "}
-                  onwards
+                <div
+                // className="text-light-1 text-14 "
+                >
+                  <div className="fw-600 text-15 text-blue-1">
+                    ₹ {item?.min_price.split(".")[0]}
+                  </div>{" "}
+                  <div className="text-light-1 text-14">onwards</div>
+                </div>
+              </div>
+            </div> */}
+
+            <div
+              className="d-flex flex-column  justify-content-end"
+              // className="d-block"
+            >
+              <div>
+                <div>
+                  
+                  <div className="fw-600 text-15 text-blue-1">
+                    ₹ {item?.min_price.split(".")[0]}
+                  </div>{" "}
+                  <div className="text-light-1 text-14 compare_onwards">onwards</div>
                 </div>
               </div>
             </div>
@@ -77,13 +100,11 @@ const CompareTwoVehicleBox = ({ item }) => {
           />
         </div>
         {/* Next Card  */}
-        {item?.compare_vehicle?.map((vehicle) => {
+        <div className="w-50">
+
+        {item?.compare_vehicle?.map((vehicle, i) => {
           return (
-            <div
-              key={vehicle?.id}
-              data-aos="fade"
-              data-aos-delay={vehicle?.delayAnimation}
-            >
+            <div key={vehicle?.id} data-aos="fade" data-aos-delay={i * 100}>
               <div className="carCard__image">
                 <div className="cardImage ratio  ratio-6:5">
                   <div className="cardImage__content custom_inside-slider">
@@ -93,17 +114,19 @@ const CompareTwoVehicleBox = ({ item }) => {
                       allowSlidePrev={false}
                       allowSlideNext={false}
                     >
+
                       <SwiperSlide>
                         <div className="compare-image">
                           <img
                             width={300}
                             height={300}
-                            className="col-12 js-lazy"
+                            className="rounded-0"
                             src={vehicle?.images?.[0]?.thumbnail}
                             alt="image"
                           />
                         </div>
                       </SwiperSlide>
+
                     </Swiper>
                   </div>
                 </div>
@@ -111,31 +134,42 @@ const CompareTwoVehicleBox = ({ item }) => {
                 <div className="cardImage__leftBadge">
                   <div
                     className={`py-5 px-15 rounded-right-4 text-12 lh-16 fw-500 uppercase  ${
-                      isTextMatched(item?.tag, "best seller")
+                      isTextMatched(vehicle?.tag, "best seller")
                         ? "bg-blue-1 text-white"
                         : ""
                     }`}
                   >
-                    {item?.tag}
+                    {vehicle?.tag}
                   </div>
                 </div>
               </div>
               {/* End .tourCard__image */}
 
               <div className="carCard__content px-3 py-4">
+            <div className="h-50">
                 <h4 className="text-dark-1 text-14 lh-14 fw-500">
-                  {item?.title}{" "}
+                  {vehicle?.title}
                 </h4>
-                <p className="text-light-1 lh-14 text-14 mt-5" />
-
+                {/* <p className="text-light-1 lh-14 text-14 mt-5" /> */}
+            </div>        
                 {/* End .row */}
-                <div className="d-flex align-content-center align-items-center justify-content-between  ">
+                <div
+                  className="d-flex flex-column  justify-content-end"
+                  // className="d-block"
+                >
                   <div>
-                    <div className="text-light-1 text-14 ">
-                      <span className="fw-600 text-15 text-blue-1">
-                        ₹ {item?.min_price.split('.')[0]}
+                    <div
+                      // className="text-light-1 text-14 "
+                      className="text-start "
+                    >
+                      {/* <span className="fw-600 text-15 text-blue-1">
+                        ₹ {vehicle?.min_price.split('.')[0]}
                       </span>{" "}
-                      onwards
+                      onwards */}
+                      <div className="fw-600 text-15 text-blue-1">
+                        ₹ {vehicle?.min_price.split(".")[0]}
+                      </div>{" "}
+                      <div className="text-light-1 text-14 compare_onwards">onwards</div>
                     </div>
                   </div>
                 </div>
@@ -143,6 +177,8 @@ const CompareTwoVehicleBox = ({ item }) => {
             </div>
           );
         })}
+        </div>
+
       </Link>
       <div className="d-flex justify-content-lg-center pb-2 px-2 py-2">
         <button className="btn btn-primary flex-fill  ">Compare Now</button>

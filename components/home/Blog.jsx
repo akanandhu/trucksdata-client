@@ -5,7 +5,7 @@ import formattedDate from "../../utils/formattedDate";
 const Blog = ({ blogs }) => {
   return (
     <>
-      {blogs.slice(0, 2).map((item) => {
+      {blogs.slice(0, 2).reverse().map((item) => {
         const { thumbnail, heading, created_at } = item || {};
         const thumbImg = thumbnail?.[0]?.original;
 

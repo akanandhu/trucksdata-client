@@ -70,15 +70,17 @@ export default function SlideGallery({ slides,videos }) {
             })}
 
             
-            <SwiperSlide>
+            {videos && videos.length !==0 ? <SwiperSlide>
               <div className="slider__image w-100 h-100">
                 <ReactPlayer
-                  url={videos && videos[0]?.url}
+                  url={videos[0].url}
                   height="100%"
                   width="100%"
                 />
               </div>
             </SwiperSlide>
+            : null
+            }
         
           </Swiper>
         </div>

@@ -143,7 +143,6 @@ const CompareBox = ({ vehicle, setVehicle }) => {
   const router = useRouter();
   const { vehicle_one, vehicle_two } = router?.query || {};
   const hasIds = Boolean(vehicle_one) && Boolean(vehicle_two);
-  console.log(hasIds, "routersssss");
 
   useEffect(() => {
     if (vehicle_one && vehicle_two) {
