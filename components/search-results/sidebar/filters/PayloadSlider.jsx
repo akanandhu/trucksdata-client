@@ -30,8 +30,10 @@ function PayloadSlider({ sideParams, setSideParams, label, specId }) {
           formatLabel={(value) => ``}
           minValue={60}
           maxValue={60000}
+          step={10000}
           value={payload.value}
           onChange={(value) => handleOnChange(value)}
+         
         />
       </div>
     </div>
