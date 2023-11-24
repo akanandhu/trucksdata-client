@@ -4,8 +4,17 @@ import usePowerSource from "../../../services/usePowerSource";
 import { useRouter } from "next/router";
 
 function DropInput(props) {
-  const { dropdownDetails, title, placeHolder, setFilterParams, filterParams } =
-    props;
+  const {
+    dropdownDetails,
+    title,
+    placeHolder,
+    setFilterParams,
+    filterParams,
+    optOne,
+    optTwo,
+    optThree,
+    tabChanged,
+  } = props;
   const [searchValue, setSearchValue] = useState({});
   const [selectedItem, setSelectedItem] = useState(null);
 
@@ -13,8 +22,52 @@ function DropInput(props) {
     setFilterParams({ ...filterParams, [`option${id}`]: item });
     setSearchValue({ ...searchValue, [`option${id}`]: item?.name });
     setSelectedItem(item);
-  };
 
+    if (id === 2) {
+      setFilterParams({
+        ...filterParams,
+        [`option${id}`]: item,
+        [`option${id + 1}`]: {},
+      });
+      setSearchValue({
+        ...searchValue,
+        [`option${id}`]: item?.name,
+        [`option${id + 1}`]: "",
+      });
+      setSelectedItem(item);
+    
+    }
+  };
+  const dropdown = {
+    1: optOne,
+    2: optTwo,
+    3: optThree,
+  };
+  const selected = dropdown[dropdownDetails.optionId];
+
+  useEffect(() => {
+    if (!tabChanged) {
+      setFilterParams({
+        ...filterParams,
+        [`option${dropdownDetails.optionId}`]: selected,
+      });
+      setSearchValue({
+        ...searchValue,
+        [`option${dropdownDetails.optionId}`]: selected?.name,
+      });
+      setSelectedItem(selected);
+    } else {
+      setFilterParams({
+        ...filterParams,
+        [`option${dropdownDetails.optionId}`]: "",
+      });
+      setSearchValue({
+        ...searchValue,
+        [`option${dropdownDetails.optionId}`]: "",
+      });
+      setSelectedItem({});
+    }
+  }, [dropdownDetails.optionId, setFilterParams, tabChanged]);
 
   return (
     <>

@@ -84,7 +84,7 @@ function getDropDown({
 
   const dropdown = [
     {
-      id: 1,
+      id: 0,
       tabItem: "Manufacturer",
       icon: "/icons/manufacture.png",
       iconWidth: "35px",
@@ -108,7 +108,7 @@ function getDropDown({
       ],
     },
     {
-      id: 3,
+      id: 1,
       tabItem: "Application",
       icon: "/icons/pick-up-truck.png",
       iconWidth: "45px",
@@ -152,7 +152,7 @@ function getDropDown({
       ],
     },
     {
-      id: 4,
+      id: 2,
       tabItem: "G V W",
       icon: "/icons/weight.png",
       iconWidth: "45px",
@@ -182,7 +182,7 @@ function getDropDown({
       ],
     },
     {
-      id: 5,
+      id: 3,
       tabItem: "Power Source",
       icon: "/icons/diesel.png",
       name: "powersource",

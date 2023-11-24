@@ -14,17 +14,21 @@ import { handleTabChange } from "../../../functions/filter/handleTabChange";
 function FilterTabs(props) {
   const { manufacturerData, vehicleData } = props;
   const tab = useSelector((store) => store.hero);
+
   const [filterParam, setFilterParam] = useState({});
+  const [tabChanged, setTabChanged] = useState(false);
+
   const [currTab, setCurrTab] = useState();
   const router = useRouter();
   const { data: specs } = useGetSpecification();
   const specifications = specs?.data?.data;
-
   const queryItems = router?.query;
-  const { tab: tabs, option1, option2 } = queryItems;
+  const { tab: tabs, option1, option2, option3 } = queryItems;
   const opt1 = option1 ? JSON.parse(option1) : null;
+  const opt2 = option2 ? JSON.parse(option2) : null;
+  const opt3 = option3 ? JSON.parse(option3) : null;
   const tabsValue = tabs ? JSON.parse(tabs) : null;
-
+  console.log(tabsValue, "option1");
   const queryValues = {
     opt1,
     tabs: tabsValue,
@@ -47,7 +51,7 @@ function FilterTabs(props) {
       filteredDropdown = dropdowns;
     }
     if (screen === "sm") {
-      filteredDropdown = filtered[0]
+      filteredDropdown = filtered[0];
     }
 
     return filteredDropdown?.dropdownItem?.map((dropdownDetails) => (
@@ -59,14 +63,18 @@ function FilterTabs(props) {
         setFilterParams={setFilterParam}
         filterParams={filterParam}
         selectedTab={selectedTab}
+        optOne={opt1}
+        optTwo={opt2}
+        optThree={opt3}
+        tabChanged={tabChanged}
       />
     ));
   };
-  
+
   function handleSearch() {
     const query = {
       tab: JSON.stringify({
-        name: currTab?.item?.tabItem || currTab?.item?.name  || "Manufacturer",
+        name: currTab?.item?.tabItem || currTab?.item?.name || "Manufacturer",
         id: currTab?.item?.id || 1,
         spec_id: currTab?.item?.spec_id || null,
       }),
@@ -81,7 +89,7 @@ function FilterTabs(props) {
       ...(filterParam?.option3 && {
         option3: JSON.stringify({
           id: filterParam?.option3?.id,
-          name: filterParam?.name,
+          name: filterParam?.option3?.name,
         }),
       }),
     };
@@ -98,14 +106,37 @@ function FilterTabs(props) {
     });
   }
 
+  const [defaultIndex, setDefaultIndex] = useState(0);
+
+  useEffect(() => {
+    if (tabs && option1 && option2) {
+      const index = tabsValue?.name === "Manufacturer" ? 0 : tabsValue?.id;
+      setDefaultIndex(index);
+      handleTabChange(tabsValue, tabsValue?.id, setCurrTab, specifications);
+    }
+  }, []);
+
+  function handleTableChange(index) {
+    setDefaultIndex(index);
+    setTabChanged(tabChanged + 1);
+  }
+
+  const defaultId = defaultIndex;
+
   return (
     <div>
-      <Tabs className="tabs -underline-2 js-tabs">
+      <Tabs
+        selectedIndex={defaultId}
+        onSelect={(index) => handleTableChange(index)}
+        className="tabs -underline-2 js-tabs"
+      >
         <TabList className="sm:d-none md:d-none tabs__controls row x-gap-40 y-gap-10 lg:x-gap-20 pb-30 js-tabs-controls">
           {dropdown.map((item, i) => {
             return (
               <Tab
-                onClick={() => handleTabChange(item, i, setCurrTab, specifications)}
+                onClick={() =>
+                  handleTabChange(item, i, setCurrTab, specifications)
+                }
                 className="col-auto"
                 key={i}
               >
@@ -119,7 +150,7 @@ function FilterTabs(props) {
             );
           })}
         </TabList>
-        <MobileTab setCurrTab={setCurrTab} specifications={specifications}  />
+        <MobileTab setCurrTab={setCurrTab} specifications={specifications} />
         <div className="tabs__content js-tabs-content">
           {dropdown.map((item) => (
             <TabPanel key={item.id}>
