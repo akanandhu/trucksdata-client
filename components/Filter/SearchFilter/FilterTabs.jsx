@@ -28,7 +28,7 @@ function FilterTabs(props) {
   const opt2 = option2 ? JSON.parse(option2) : null;
   const opt3 = option3 ? JSON.parse(option3) : null;
   const tabsValue = tabs ? JSON.parse(tabs) : null;
-  console.log(tabsValue, "option1");
+  console.log(currTab, "option1");
   const queryValues = {
     opt1,
     tabs: tabsValue,
@@ -45,30 +45,24 @@ function FilterTabs(props) {
 
   const dropdownComponent = (dropdowns, screen) => {
     const selectedTab = tab.currentTab;
-    let filteredDropdown;
-    const filtered = dropdown.filter((item) => item["tabItem"] === selectedTab);
-    if (screen === "lg") {
-      filteredDropdown = dropdowns;
-    }
-    if (screen === "sm") {
-      filteredDropdown = filtered[0];
-    }
-
-    return filteredDropdown?.dropdownItem?.map((dropdownDetails) => (
-      <DropInput
-        key={dropdownDetails?.id}
-        dropdownDetails={dropdownDetails}
-        manufacturerData={manufacturerData}
-        vehicleData={vehicleData}
-        setFilterParams={setFilterParam}
-        filterParams={filterParam}
-        selectedTab={selectedTab}
-        optOne={opt1}
-        optTwo={opt2}
-        optThree={opt3}
-        tabChanged={tabChanged}
-      />
-    ));
+    
+    return dropdowns?.dropdownItem?.map((dropdownDetails) => {
+      return (
+        <DropInput
+          key={dropdownDetails?.id}
+          dropdownDetails={dropdownDetails}
+          manufacturerData={manufacturerData}
+          vehicleData={vehicleData}
+          setFilterParams={setFilterParam}
+          filterParams={filterParam}
+          selectedTab={selectedTab}
+          optOne={opt1}
+          optTwo={opt2}
+          optThree={opt3}
+          tabChanged={tabChanged}
+        />
+      );
+    });
   };
 
   function handleSearch() {
@@ -150,7 +144,15 @@ function FilterTabs(props) {
             );
           })}
         </TabList>
-        <MobileTab setCurrTab={setCurrTab} specifications={specifications} />
+        <MobileTab
+          setCurrTab={setCurrTab}
+          specifications={specifications}
+          setDefaultIndex={setDefaultIndex}
+          setTabChanged={setTabChanged}
+          handleTableChange={handleTableChange}
+          defaultIndex={defaultIndex}
+          dropdown={dropdown}
+        />
         <div className="tabs__content js-tabs-content">
           {dropdown.map((item) => (
             <TabPanel key={item.id}>

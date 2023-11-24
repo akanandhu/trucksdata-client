@@ -6,33 +6,12 @@ import Link from "next/link";
 import CompareAddButton from "./compare/CompareAddButton";
 import Spinner from "../../loading/Spinner";
 
-const SearchResults = ({ showError, setShow, vehicles, ref, isLoading }) => {
-  const propertyContent = [
-    {
-      id: 1,
-      icon: "/icons/power.svg",
-      name: "Power",
-      content: "180 HP",
-    },
-    {
-      id: 2,
-      icon: "/icons/weight.svg",
-      name: "GVW",
-      content: "41500 KG",
-    },
-
-    {
-      id: 4,
-      icon: "/icons/fuel-tank.svg",
-      name: "Fuel Tank",
-      content: "160 Ltr",
-    },
-  ];
+const SearchResults = ({ showError, setShow, vehicles, refItem, isLoading }) => {
+  
 
   return (
     <>
       {vehicles?.map((item) => {
-        console.log(item, "itemVehicle");
         const minPrice = Math.floor(item?.min_price ?? 0);
         const maxPrice = Math.floor(item?.max_price ?? 0);
         const payloads = item?.payload_spec?.values?.map((value) => {
@@ -171,7 +150,7 @@ const SearchResults = ({ showError, setShow, vehicles, ref, isLoading }) => {
           </div>
         );
       })}
-      <div ref={ref}></div>
+      <div ref={refItem}></div>
       {isLoading && (
         <div className="mt-20">
           <Spinner />

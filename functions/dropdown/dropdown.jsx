@@ -87,7 +87,7 @@ function getDropDown({
       id: 0,
       tabItem: "Manufacturer",
       icon: "/icons/manufacture.png",
-      iconWidth: "35px",
+      iconWidth: "45px",
       dropdownItem: [
         {
           optionId: 1,
@@ -186,7 +186,7 @@ function getDropDown({
       tabItem: "Power Source",
       icon: "/icons/diesel.png",
       name: "powersource",
-      iconWidth: "25px",
+      iconWidth: "45px",
       dropdownItem: [
         {
           optionId: 1,
