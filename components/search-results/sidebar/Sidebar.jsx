@@ -17,12 +17,12 @@ const Sidebar = ({ sideParams, setSideParams, specifications }) => {
     (item) => item?.name === "Loading Span (ft) / Loading Capacity (Cu.M)"
   );
 
-  const axelConfig = specifications?.find(
-    (item) => item?.name === "No of Axle (Nos)"
-  );
+  // const axelConfig = specifications?.find(
+  //   (item) => item?.name === "No of Axle (Nos)"
+  // );
 
   const chasisOptions = specifications?.find(
-    (item) => item?.name === "Chassis Option"
+    (item) => item?.name === "Chassis Options"
   );
 
   const variantOptions = specifications?.find(
@@ -34,6 +34,15 @@ const Sidebar = ({ sideParams, setSideParams, specifications }) => {
     (item) => item?.name === "Payload  (Kg)"
   );
 
+  const tyres = specifications?.find(
+    (item) => item?.name === "Number of Tyres"
+  );
+
+  const axelOptions = specifications?.find(
+    (item) => item?.name === "Axel Configuration"
+  );
+
+
   return (
     <>
       <LoadingSpanFilters
@@ -44,8 +53,8 @@ const Sidebar = ({ sideParams, setSideParams, specifications }) => {
       <PriceFilter {...paramsProps} />
       <AxelFilter
         {...paramsProps}
-        options={axelConfig?.options ?? []}
-        specId={axelConfig?.id}
+        options={axelOptions?.options ?? []}
+        specId={axelOptions?.id}
       />
       <PayloadFilter {...paramsProps} specId={payloadOptions?.id} />
       <ChasisFilter
@@ -58,7 +67,7 @@ const Sidebar = ({ sideParams, setSideParams, specifications }) => {
         options={variantOptions?.options ?? []}
         specId={variantOptions?.id}
       />
-      <Tyres {...paramsProps} />
+      <Tyres {...paramsProps} options={tyres?.options}  specId={tyres?.id} />
       <Status
         {...paramsProps}
         options={statusOptions?.options ?? []}

@@ -43,7 +43,6 @@ function FilterTabs(props) {
     const selectedTab = tab.currentTab;
     let filteredDropdown;
     const filtered = dropdown.filter((item) => item["tabItem"] === selectedTab);
-    console.log(filtered, selectedTab, 'filterCheck')
     if (screen === "lg") {
       filteredDropdown = dropdowns;
     }

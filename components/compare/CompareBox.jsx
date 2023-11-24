@@ -15,6 +15,7 @@ import { getVehicleDetails } from "../../services/useVehicle";
 import { getVehicleData } from "../../services/useViewVehicle";
 import toast, { useToaster } from "react-hot-toast";
 import Spinner from "../loading/Spinner";
+import { useRouter } from "next/router";
 
 const toastStyles = {
   icon: "🚚",
@@ -170,6 +171,27 @@ const CompareBox = ({ vehicle, setVehicle }) => {
       });
     }
   }
+
+  // vehicleId set
+  const router = useRouter();
+  const { vehicle_one, vehicle_two } = router?.query || {};
+  const hasIds = Boolean(vehicle_one) && Boolean(vehicle_two)
+  console.log(hasIds, "routersssss");
+
+  useEffect(() => {
+    if (vehicle_one && vehicle_two) {
+      const idsToCall = vehicle?.map((item) => {
+        if (item.vehicle) {
+          return item.vehicle.id;
+        } else {
+          return;
+        }
+      });
+      const idCollection = idsToCall?.filter(Boolean);
+
+      setIds(idCollection);
+    }
+  }, [vehicle, vehicle_one, vehicle_two]);
 
   const queries = useQueries(
     ids.map((id) => ({

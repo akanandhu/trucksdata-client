@@ -35,6 +35,10 @@ const SearchResults = ({ showError, setShow, vehicles, ref, isLoading }) => {
         console.log(item, "itemVehicle");
         const minPrice = Math.floor(item?.min_price ?? 0);
         const maxPrice = Math.floor(item?.max_price ?? 0);
+        const payloads = item?.payload_spec?.values?.map((value) => {
+          return value?.value;
+        });
+        const payloadValues = payloads?.length > 0 ? payloads?.join(", ") : "-";
 
         return (
           <div className="col-4" key={item?.id}>
@@ -100,18 +104,43 @@ const SearchResults = ({ showError, setShow, vehicles, ref, isLoading }) => {
                       </div>
 
                       <div className="row y-gap-30 justify-between pt-5 indivitualCardGrid ">
-                        {propertyContent.map((item) => (
-                          <div className="col-md-auto col-2" key={item.id}>
-                            <div className="d-block text-start">
-                              <div className="text-15 lh-15">
-                                <span className=" fw-semibold ">
-                                  {item.name}
-                                </span>
-                                <br /> {item.content}
-                              </div>
+                        <div className="col-md-auto col-2">
+                          <div className="d-block text-start">
+                            <div className="text-15 lh-15">
+                              <span className=" fw-semibold ">Category</span>
+                              <br /> {item?.category_name}
                             </div>
                           </div>
-                        ))}
+                        </div>
+
+                        <div className="col-md-auto col-2">
+                          <div className="d-block text-start">
+                            <div className="text-15 lh-15">
+                              <span className=" fw-semibold ">Power</span>
+                              <br /> {item?.energy_source?.name}
+                            </div>
+                          </div>
+                        </div>
+
+                        <div
+                          className="col-md-auto col-2"
+                          style={{ overflow: "hidden" }}
+                        >
+                          <div className="d-block text-start">
+                            <div
+                              className="text-15 lh-15"
+                              style={{
+                                whiteSpace: "nowrap",
+                                overflow: "hidden",
+                                textOverflow: "ellipsis",
+                              }}
+                            >
+                              <span className="fw-semibold">Payload</span>
+                              <br />
+                              {payloadValues}
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>

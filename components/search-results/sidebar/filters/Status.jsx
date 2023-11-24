@@ -1,10 +1,10 @@
 import React from "react";
 import ButtonFilter from "../../../Filter/SearchFilter/FilterButtons";
 
-function Status({ sideParams, setSideParams, options }) {
+function Status({ sideParams, setSideParams, options, specId }) {
   const statusData = options?.map((option) => {
     return {
-      option: option?.option,
+      value: option?.option,
       label: option?.option,
     };
   });
@@ -18,6 +18,7 @@ function Status({ sideParams, setSideParams, options }) {
           sideParams={sideParams}
           filters={statusData}
           label={"status"}
+          specId={specId}
         />
       </div>
     </div>

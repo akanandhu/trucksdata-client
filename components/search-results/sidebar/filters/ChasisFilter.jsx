@@ -1,7 +1,7 @@
 import React from "react";
 import ButtonFilter from "../../../Filter/SearchFilter/FilterButtons";
 
-const ChasisFilter = ({ sideParams, setSideParams, options }) => {
+const ChasisFilter = ({ sideParams, setSideParams, options,specId }) => {
   const chasisData = options?.map((option) => {
     return {
       label: option?.option,
@@ -18,6 +18,7 @@ const ChasisFilter = ({ sideParams, setSideParams, options }) => {
           setSideParams={setSideParams}
           filters={chasisData}
           label={"chassis_option"}
+          specId={specId}
         />
       </div>
     </div>

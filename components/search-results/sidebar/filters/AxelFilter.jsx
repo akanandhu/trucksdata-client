@@ -4,7 +4,7 @@ import ButtonFilter from "../../../Filter/SearchFilter/FilterButtons";
 
 
 
-const AxelFilter = ({ sideParams, setSideParams, options }) => {
+const AxelFilter = ({ sideParams, setSideParams, options, specId }) => {
   const axelData = options?.map((option) => {
 
     return {
@@ -23,6 +23,7 @@ const AxelFilter = ({ sideParams, setSideParams, options }) => {
           sideParams={sideParams}
           filters={axelData}
           label={"axle_configuration"}
+          specId={specId}
         />
       </div>
     </div>
