@@ -50,7 +50,7 @@ const CompareInputSeperate = ({ index, setVehicleId }) => {
                 onClick={() => handleOptionClick(item)}
               >
                 <div className="d-flex">
-                  <div className="icon-car text-light-1 text-20 pt-4" />
+                  {/* <div className="icon-car text-light-1 text-20 pt-4" /> */}
                   <div className="ml-10">
                     <div className="text-15  fw-500 js-search-option-target">
                       {item.name}

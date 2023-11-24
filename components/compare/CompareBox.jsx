@@ -196,7 +196,7 @@ const CompareBox = ({ vehicle, setVehicle }) => {
           })}
         </div>
         <div className="d-flex justify-content-center py-20 ">
-          <button onClick={handleCompare} className="btn btn-primary w-25  ">
+          <button onClick={handleCompare} className="btn btn-primary w-25 bg-blue-1  h-50 ">
             Compare
           </button>
         </div>
