@@ -8,7 +8,7 @@ import toast, { useToaster } from "react-hot-toast";
 import Spinner from "../loading/Spinner";
 import { useRouter } from "next/router";
 import CompareFields from "./CompareFields";
-import CompareBoxMobile from '../compare/CompareBoxMobile';
+import CompareBoxMobile from "../compare/CompareBoxMobile";
 
 const toastStyles = {
   icon: "🚚",
@@ -170,7 +170,6 @@ const CompareBox = ({ vehicle, setVehicle }) => {
   const vehicleCollectedData = queries.map((query) => query?.data?.data);
   const isLoading = queries.some((query) => query.isLoading);
 
-
   const [mounted, setMounted] = useState(false);
   useEffect(() => {
     setMounted(true);
@@ -196,7 +195,10 @@ const CompareBox = ({ vehicle, setVehicle }) => {
           })}
         </div>
         <div className="d-flex justify-content-center py-20 ">
-          <button onClick={handleCompare} className="btn btn-primary w-25 bg-blue-1  h-50 ">
+          <button
+            onClick={handleCompare}
+            className="btn btn-primary w-25 bg-blue-1  h-50 "
+          >
             Compare
           </button>
         </div>
