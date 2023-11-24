@@ -1,4 +1,5 @@
 export function getSearchParams(tabs, opt1, opt2, opt3) {
+  console.log(opt2,opt3, 'optionCheck')
   const params = {};
   if (tabs) {
     if (tabs?.name === "Manufacturer") {
@@ -6,7 +7,7 @@ export function getSearchParams(tabs, opt1, opt2, opt3) {
       params.manufacturer = opt2.id;
     } else if (tabs?.name === "Application") {
       params.vehicle_type = opt1.id;
-      params.application = [tabs?.spec_id, opt2?.id, opt3?.id]
+      params.application = [tabs?.spec_id, opt2?.name, opt3?.name]
         .filter(Boolean)
         .join(",")
     } else if (tabs?.name === "G V W") {
