@@ -7,6 +7,7 @@ const DetailBlock = ({data, vehicleDetails }) => {
 
   return (
     <div className="searchMenu-loc px-20 py-10 border-light rounded-4 js-form-dd js-liverSearch">
+      {console.log("Details ",vehicleDetails)}
       <div>
         <h4 className="text-15 fw-500 ls-2 lh-16">{data.heading}</h4>
         <div
@@ -23,6 +24,7 @@ const DetailBlock = ({data, vehicleDetails }) => {
           {data.key === 'energy_source_id' ? <label>{vehicleDetails?.energy_source?.name}</label> : null}
         </div>
       </div>
+      
     </div>
   );
 };

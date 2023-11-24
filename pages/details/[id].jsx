@@ -45,7 +45,7 @@ const SinglePage = () => {
   const manufacturerId = vehicleData?.data?.manufacturer_id;
 
   console.log("Type id ", vehicleTypeId);
-  const vehiclePrice = vehicleData?.data["min_price"].split["."];
+  // const vehiclePrice = vehicleData?.data["min_price"].split(".");
   const similarVehicles = allVehicles?.data?.data?.filter(
     (item) => item?.vehicle_type_id === vehicleTypeId
   );
@@ -132,7 +132,7 @@ const SinglePage = () => {
                         Starting From
                       </div>
                       <div className="text-24 lh-12 fw-600 mt-5">
-                        ₹ {vehiclePrice && vehiclePrice[0]}{" "}
+                        ₹ {vehicleData?.data["min_price"].split('.')[0]}{" "}
                       </div>
                       <div className="text-14 text-light-1 mt-5">
                         Ex-showroom
@@ -176,6 +176,7 @@ const SinglePage = () => {
                   popularModels={popularModels}
                   manufacturer={vehicleData?.data?.manufacturer?.name}
                   type={vehicleData?.data?.vehicle_type?.name}
+                  vehicleDetails={vehicleData?.data}
                 />
               </div>
             ) : null}

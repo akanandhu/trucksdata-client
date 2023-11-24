@@ -228,11 +228,11 @@
   .carCard {
     &__image {
       overflow: hidden;
-      border-radius: 4px;
+      // border-radius: 4px;
       .cardImage__content .swiper-slide,
       .cardImage__content > img {
         
-        transition: all 0.8s $easeOutQuart;
+        // transition: all 0.8s $easeOutQuart;
       }
 
       .swiper-slide-active {
@@ -250,7 +250,7 @@
       &__image {
         .cardImage__content > img,
         .swiper-slide {
-          transform: scale(1.05);
+          // transform: scale(1.05);
         }
       }
     }

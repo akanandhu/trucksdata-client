@@ -6,6 +6,7 @@ import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper";
 import useVehicleTypes from "../../services/useVehicleTypes";
+import Image from "next/image";
 
 const TopBrands = (props) => {
   const { topBrandDetails } = props;
@@ -33,38 +34,7 @@ const TopBrands = (props) => {
   }, [topBrandFilter]);
 
   return (
-    // <Slider
-    // {...settings}
-    // >
-    //   {manufacturers?.map((item,i) => (
-    //     <div
-    //       // className="col-xl-2  col-lg-3 col-sm-8 border-2 truck-card p-3 rounded-3 d-flex justify-content-center"
-    //       // className="bg-primary w-25"
-    //       key={i}
-    //       data-aos="fade"
-    //       data-aos-delay={i*100}
-    //     >
-    //       <Link
-    //         href={`/brands/${item.id}`}
-    //         // className="citiesCard -type-3 d-block text-center"
-    //       >
-    //         <div
-    //         // className="citiesCard__image size-60 rounded-full mx-auto"
-    //         >
-    //           {/* <img
-    //             className="object-cover js-lazy"
-    //             src={item.logo[0].thumbnail}
-    //             // src={item.logo}
-    //             alt="image"
-    //             width={100}
-    //             height={100}
-    //           /> */}
-    //           crd
-    //         </div>
-    //       </Link>
-    //     </div>
-    //   ))}
-    // </Slider>
+    
 
     <>
       <Swiper
@@ -112,12 +82,12 @@ const TopBrands = (props) => {
               >
                 <div
                   //  className="carCard__image truck-card-zoom"
-                  className="brand-card__image size-120 rounded-full mx-auto w-50 my-12"
+                  className="brand-card__image rounded-full mx-auto"
                 >
                   <img
                     width={300}
                     height={300}
-                    className="rounded-4 col-12 js-lazy"
+                    className="js-lazy"
                     src={item.logo[0].thumbnail}
                     alt="image"
                   />

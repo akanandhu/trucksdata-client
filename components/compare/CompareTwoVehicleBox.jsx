@@ -11,12 +11,12 @@ const CompareTwoVehicleBox = ({ item }) => {
   const routeToRedirect = `/compare?vehicle_one=${vehicleOne}&vehicle_two=${vehicleTwo}`;
 
   return (
-    <div className=" truck-card-compare ">
+    <div className="truck-card-compare">
       <Link
         href={routeToRedirect}
-        className="carCard -type-1 d-flex rounded-4 compare-card-link"
+        className="carCard -type-1 d-flex compare-card-link"
       >
-        <div key={item?.id}>
+        <div key={item?.id} className="rounded-0">
           <div className="carCard__image">
             <div className="cardImage ratio  ratio-6:5">
               <div className="cardImage__content custom_inside-slider">
@@ -31,11 +31,11 @@ const CompareTwoVehicleBox = ({ item }) => {
                   <div style={{ minWidth: "500px" }}>
                     {item?.images?.map((slide, i) => (
                       <SwiperSlide key={i}>
-                        <div className="compare-image">
+                        <div className="compare-image ">
                           <img
                             width={300}
                             height={300}
-                            className="rounded-4 col-12 js-lazy"
+                            className="rounded-0"
                             src={slide?.thumbnail}
                             alt="image"
                           />
@@ -57,10 +57,10 @@ const CompareTwoVehicleBox = ({ item }) => {
             <div className="d-flex align-content-center align-items-center justify-content-between  ">
               <div>
                 <div className="text-light-1 text-14 ">
-                  <span className="fw-600 text-15 text-dark-1">
-                    ₹ {item?.min_price}
+                  <span className="fw-600 text-15 text-blue-1">
+                    ₹ {item?.min_price.split('.')[0]}
                   </span>{" "}
-                  Onwards
+                  onwards
                 </div>
               </div>
             </div>
@@ -98,7 +98,7 @@ const CompareTwoVehicleBox = ({ item }) => {
                           <img
                             width={300}
                             height={300}
-                            className="rounded-4 col-12 js-lazy"
+                            className="col-12 js-lazy"
                             src={vehicle?.images?.[0]?.thumbnail}
                             alt="image"
                           />
@@ -132,10 +132,10 @@ const CompareTwoVehicleBox = ({ item }) => {
                 <div className="d-flex align-content-center align-items-center justify-content-between  ">
                   <div>
                     <div className="text-light-1 text-14 ">
-                      <span className="fw-600 text-15 text-dark-1">
-                        ₹ {item?.min_price}
+                      <span className="fw-600 text-15 text-blue-1">
+                        ₹ {item?.min_price.split('.')[0]}
                       </span>{" "}
-                      Onwards
+                      onwards
                     </div>
                   </div>
                 </div>
@@ -144,7 +144,7 @@ const CompareTwoVehicleBox = ({ item }) => {
           );
         })}
       </Link>
-      <div className="d-flex justify-content-lg-center pb-2 px-2  ">
+      <div className="d-flex justify-content-lg-center pb-2 px-2 py-2">
         <button className="btn btn-primary flex-fill  ">Compare Now</button>
       </div>
     </div>

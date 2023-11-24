@@ -2,7 +2,7 @@ import Link from "next/link";
 import React from "react";
 import { useSelector } from "react-redux";
 
-function PopularModals({ popularModels , manufacturer, type, vehicleDetails}) {
+function PopularModals({vehicleDetails, popularModels , manufacturer, type}) {
   // const popular = useSelector((store) => store.vehicle.vehicleType);
   // const vehicleType = vehicleDetails?.vehicle_type?.name;
   // const vehicleBrand = vehicleDetails?.manufacturer?.name;
@@ -22,7 +22,6 @@ function PopularModals({ popularModels , manufacturer, type, vehicleDetails}) {
         Popular {type} By {manufacturer}
       </div>
       <div className="py-10 w-100">
-        {console.log("Popular ITEM !",filteredPopularVehicle)}
         {filteredPopularVehicle?.slice(0, 5).map((item) => (
           <Link key={item.id} href={`/details/${item?.id}`}>
             
