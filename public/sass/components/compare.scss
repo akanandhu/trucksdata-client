@@ -25,13 +25,6 @@
     margin-left: -14px;
   }
 
-  // .compare-image{
-  //   height: 200px;
-  //   background-color: blueviolet;
-  // }
-  // .compare-image img{
-  //   height: 100px;
-  // }
 
   // .compare-card-link{
   //   width: 2;
@@ -46,4 +39,19 @@
 
   .compare_card_2{
     margin-top: -10px;
+  }
+
+  .compare_padding {
+    padding-left: 10px;
+    padding-right: 10px;
+
+    @media(min-width: 768px) {
+      padding-left: 15px; 
+    padding-right: 15px;
+    }
+
+    @media(min-width: 1200px) {
+      padding-left: 30px;
+      padding-right: 30px
+    }
   }

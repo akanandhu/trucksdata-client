@@ -8,13 +8,14 @@ const ComparePlusButton = ({ index, vehicle }) => {
     : "";
 
   return (
-    <div className="d-flex justify-content-center rounded-circle mb-xl-4   ">
+    <div className="d-flex justify-content-center h-100 w-100  mb-xl-4   ">
       <Image
         src={logo || "/img/compare/truck-compare.svg"}
         alt="illustration"
         width={250}
         height={200}
-        className=" rounded-circle "
+        
+        className="  "
       />
     </div>
   );

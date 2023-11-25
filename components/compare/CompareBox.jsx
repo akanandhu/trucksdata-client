@@ -202,7 +202,7 @@ const CompareBox = ({ vehicle, setVehicle }) => {
           </button>
         </div>
       </div>
-      <CompareBoxMobile vehicle={vehicle} setVehicle={setVehicle} />
+      <CompareBoxMobile vehicle={vehicle} setVehicle={setVehicle} handleCompare={handleCompare} />
 
       {isLoading && (
         <div className="mt-5">

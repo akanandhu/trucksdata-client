@@ -6,7 +6,7 @@ import CompareInputSeperate from "./CompareSelectField";
 const CompareFields = ({ item, vehicle, setVehicle }) => {
   const [vehicleId, setVehicleId] = useState("");
   return (
-    <div className="d-flex gap-1 flex-column justify-center h-full px-30 py-20 ">
+    <div className="d-flex gap-1 flex-column justify-center h-full compare_padding py-20 ">
       <div className="rounded-4">
         <ComparePlusButton index={item.index} vehicle={vehicle} />
       </div>

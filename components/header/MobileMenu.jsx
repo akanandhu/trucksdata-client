@@ -62,39 +62,7 @@ const MobileMenu = (props) => {
               Home
             </MenuItem>
             {/* End  All Home Menu */}
-
-            {/* {menuLists?.map((obj) => {
-              return (
-                <SubMenu key={obj?.id} label={obj.title}>
-                  {obj?.categorieMobileItems?.map((item) => (
-                    <SubMenu label={item.title} key={item.id}>
-                      {item.menuItems.map((single) => (
-                        <SubMenu label={single.title} key={single.id}>
-                          {single.menuList.map((menu, i) => (
-                            <MenuItem
-                              key={i}
-                              component={
-                                <Link
-                                  href={menu.routePath}
-                                  className={
-                                    isActiveLink(menu.routePath, router.asPath)
-                                      ? "menu-active-link"
-                                      : ""
-                                  }
-                                />
-                              }
-                            >
-                              {menu.name}
-                            </MenuItem>
-                          ))}
-                        </SubMenu>
-                      ))}
-                    </SubMenu>
-                  ))}
-                </SubMenu>
-              );
-            })} */}
-
+            
             {/* vehicle type menu */}
             {vehicleData?.map((vehicle) =>
               vehicle["status"] === "active" ? (

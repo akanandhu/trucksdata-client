@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import CompareInput from "./CompareInput";
 import CompareInputSeperate from "./CompareSelectField";
+import CompareMobileBodyField from "./mobile/CompareMobileBodyField";
+import CompareFields from "./CompareFields";
 
-const CompareBoxMobile = ({ vehicle, setVehicle }) => {
+const CompareBoxMobile = ({ vehicle, setVehicle, handleCompare }) => {
   const item = {
     id: 3,
     img: "/img/backgrounds/3.png",
@@ -13,40 +15,27 @@ const CompareBoxMobile = ({ vehicle, setVehicle }) => {
 
   return (
     <div
-      className="col-lg-12 container  mt-40 d-lg-none"
+      className="col-lg-12    d-lg-none"
       key={item.id}
-      // data-aos="fade"
-      // data-aos-delay={item.delayAnimation}
+      data-aos="fade"
+      data-aos-delay={300}
     >
       <div className="rounded-4 layout-pt-md  layout-pb-md   view_bordershadow bg-white  ">
+        <h5 className="pl-10">Select two vehicle models to compare.</h5>
         <div className="d-flex  y-gap-15 d-xs-none d-md-block ">
-          <div className="col-auto"></div>
           {vehicle?.map((obj, index) => {
             return (
-              <div key={obj?.id} className="col   ">
-                <div className="d-flex gap-1 flex-column justify-center h-full  px-2 py-10 ">
-                  <div className="rounded-4 ">
-                    <CompareInput
-                      index={index}
-                      vehicle={vehicle}
-                      setVehicle={setVehicle}
-                    />
-                  </div>
-                  <div className="rounded-4 ">
-                    <CompareInputSeperate
-                      index={obj?.id}
-                      isManufacturer={true}
-                      vehicle={vehicle}
-                      setVehicle={setVehicle}
-                    />
-                  </div>
-                </div>
-              </div>
+              <CompareFields
+                key={index}
+                item={obj}
+                setVehicle={setVehicle}
+                vehicle={vehicle}
+              />
             );
           })}
         </div>
         <div className="d-flex justify-content-center py-20 ">
-          <button className="btn btn-primary w-50  ">Compare</button>
+          <button onClick={handleCompare} className="btn btn-primary w-50  ">Compare</button>
         </div>
       </div>
     </div>
