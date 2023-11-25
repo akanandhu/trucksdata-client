@@ -16,6 +16,17 @@ const MobileMenu = (props) => {
   const { vehicleData, logoImage } = props;
   const router = useRouter();
 
+  const closeCanvas = () => {
+    document.querySelector('.fix-icon').click();
+  };
+
+  function handleRoute (id) {
+    router.push(`/details/${id}`)
+    closeCanvas()
+  }
+
+  
+
   return (
     <>
       <div className="pro-header d-flex align-items-center justify-between border-bottom-light">
@@ -101,7 +112,7 @@ const MobileMenu = (props) => {
                               key={series.title + i}
                             >
                               {series?.vehicles?.map((model, i) => (
-                                <MenuItem key={model.title + i}>
+                                <MenuItem onClick={() => handleRoute(model?.id)} key={model.title + i}>
                                   {model.title}
                                 </MenuItem>
                               ))}
