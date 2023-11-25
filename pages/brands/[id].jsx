@@ -39,10 +39,12 @@ const SingleBrand = () => {
     title: brandDetails?.data?.name,
     banners: brandDetails?.data?.banners,
   };
+
+  const faq = brandDetails?.data?.faq;
   return (
     <>
       <Seo pageTitle="Brands" />
-
+    {console.log("Manufacturer ",brandDetails)}
       <div className="header-margin"></div>
 
       <MainHeader />
@@ -140,7 +142,7 @@ const SingleBrand = () => {
         </div>
       </section>
 
-      <section className="layout-pt-sm layout-pb-sm">
+     {faq ? <section className="layout-pt-sm layout-pb-sm">
         <div className="container">
           <div className="row y-gap-20">
             <div className="col-lg-4">
@@ -153,12 +155,14 @@ const SingleBrand = () => {
 
             <div className="col-lg-8">
               <div className="accordion -simple row y-gap-20 js-accordion">
-                <Faq />
+                <Faq faq={faq}/>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </section>:
+      null
+    }
 
       <CallToActions />
 

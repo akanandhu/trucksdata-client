@@ -38,6 +38,7 @@ const TopBrands = (props) => {
 
     <>
       <Swiper
+        
         spaceBetween={20}
         modules={[Navigation, Pagination]}
         navigation={{

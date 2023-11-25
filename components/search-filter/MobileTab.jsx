@@ -28,13 +28,13 @@ const MobileTab = ({
           return (
             <button
               key={tab?.id}
-              className={`d-flex justify-content-center flex-column tabs__button px-10 py-10 rounded-4 fw-600 text-black js-tabs-button ${
+              className={`d-flex justify-content-center flex-column tabs__button px-15 py-10 rounded-4 fw-600 text-black js-tabs-button ${
                 tab?.tabItem === currentTab ? "is-tab-el-active" : ""
               }`}
               onClick={() => handleTab(tab, i)}
             >
-              <div>
-                <img src={tab?.icon} alt="icons" width={tab?.iconWidth} />
+              <div className="filter_icons">
+                <img src={tab?.icon} alt="icons" />
               </div>
               <div>{tab?.tabItem}</div>
             </button>

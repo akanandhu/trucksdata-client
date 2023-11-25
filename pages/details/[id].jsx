@@ -24,6 +24,7 @@ import { useSelector } from "react-redux";
 import useManufactures from "../../services/useManufactures";
 import useVehicleTypes from "../../services/useVehicleTypes";
 import useAllVehicles from "../../services/vehicles/useAllVehicles";
+import BrandIntro from "../../components/destinations/components/BrandIntro";
 
 const SinglePage = () => {
   const router = useRouter();
@@ -61,11 +62,10 @@ const SinglePage = () => {
   );
   return (
     <>
-      {console.log("ID ", manufacturerId)}
-      {console.log("popular ", popularModels)}
       <Seo pageTitle={vehicleData?.data?.title ?? "Variant View Page"} />
       {/* End Page Title */}
       <div className="header-margin"></div>
+      {console.log("Desctription ", vehicleData?.data)}
       {/* header top margin */}
       <MainHeader />
       {/* End Header 1 */}
@@ -132,7 +132,7 @@ const SinglePage = () => {
                         Starting From
                       </div>
                       <div className="text-24 lh-12 fw-600 mt-5">
-                        ₹ {vehicleData?.data["min_price"].split('.')[0]}{" "}
+                        ₹ {vehicleData?.data["min_price"].split(".")[0]}{" "}
                       </div>
                       <div className="text-14 text-light-1 mt-5">
                         Ex-showroom
@@ -165,10 +165,10 @@ const SinglePage = () => {
                   <SpecHighlights keyspecs={keyspecs} />
                 </div>
               ) : null}
-              <div className="mt-30 view_bordershadow ps-4 pe-4 pt-15 pb-15 bg-white">
+              {/* <div className="mt-30 view_bordershadow ps-4 pe-4 pt-15 pb-15 bg-white">
                 <h6 className="fw-500 text-22">Key Specifications</h6>
                 <Specifications />
-              </div>
+              </div> */}
             </div>
             {popularModels?.length !== 0 ? (
               <div className="col-lg-4 ms-10 d-flex  justify-content-end sm:mt-20 lg:mt-4 ">
@@ -184,6 +184,18 @@ const SinglePage = () => {
         </div>
         {/* </div> */}
       </section>
+      {vehicleData?.data?.description ? <section className="mt-40">
+        <div className="container view_bordershadow bg-white p-4">
+          <div className="row y-gap-20 px-10 pt-5">
+            <div className="col-auto">
+              <h2>About {vehicleData?.data?.title}</h2>
+            </div>
+          </div>
+          <div className="row y-gap-20 px-10">
+            <BrandIntro description={vehicleData?.data?.description} />
+          </div>
+        </div>
+      </section> : null}
 
       <section className="pt-40 mb-40 container">
         <div className="view_bordershadow bg-white">

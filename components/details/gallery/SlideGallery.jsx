@@ -33,11 +33,13 @@ export default function SlideGallery({ slides,videos }) {
                   </div>
                 </SwiperSlide>
               ))}
-              <SwiperSlide>
+              {videos && videos.length !==0 ? <SwiperSlide>
                 <div className="slider__image">
                   <img src={slides ? slides[0].original : null} alt="" />
                 </div>
               </SwiperSlide>
+            :null  
+            }
             </Swiper>
           </div>
         </div>

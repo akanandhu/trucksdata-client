@@ -19,9 +19,10 @@ const DetailBlock = ({data, vehicleDetails }) => {
               : "text-black "
           } ls-2 lh-16`}
         >
-          {data.key === 'status' ? <label>{vehicleDetails?.vehicle_type[data.key] }</label> : null}
+          {data.key === 'vehicle_type' ? <label>{vehicleDetails?.vehicle_type["status"] }</label> : null}
           {data.key === 'manufacturer_id' ? <label>{vehicleDetails?.manufacturer?.name}</label> : null}
           {data.key === 'energy_source_id' ? <label>{vehicleDetails?.energy_source?.name}</label> : null}
+          {data.key === 'category_name' ? <label>{vehicleDetails?.category_name}</label> : null}
         </div>
       </div>
       
@@ -61,11 +62,11 @@ const DetailBox = ({vehicleDetails}) => {
     ,
     {
       heading: "Category of Vehicle",
-      key: "vehicle_type_id",
+      key: "category_name",
     },
     {
       heading: "Status",
-      key: "status",
+      key: "vehicle_type",
     },
   ];
   const [click, setClick] = useState(false);
@@ -90,10 +91,13 @@ const DetailBox = ({vehicleDetails}) => {
   return (
     <>
       {details.map((obj) => {
+        console.log("Blcok ",obj);
         return (
+          vehicleDetails && vehicleDetails[obj.key] || vehicleDetails && vehicleDetails[obj.key]?.status? 
           <div key={obj.heading} className="col-12">
             <DetailBlock data={obj} vehicleDetails={vehicleDetails}/>
           </div>
+          :null
         );
       })}
 

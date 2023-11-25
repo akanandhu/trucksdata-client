@@ -10,6 +10,7 @@ const PopularTrucks = () => {
   return (
     <>
       <Swiper
+      
         spaceBetween={30}
         modules={[Navigation, Pagination]}
         navigation={{

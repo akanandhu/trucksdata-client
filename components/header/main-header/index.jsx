@@ -78,7 +78,7 @@ const MainHeader = () => {
             </div>
             <div className="col-auto">
               <div className="d-flex items-center">
-                <div className="mr-15 xxl:d-none d-flex">
+                {/* <div className="mr-15 xxl:d-none d-flex">
                   <button
                     className="text-26 text-dark-1"
                     data-bs-toggle="offcanvas"
@@ -87,7 +87,7 @@ const MainHeader = () => {
                   >
                     <div className="icon-search"></div>
                   </button>
-                </div>
+                </div> */}
                 <div
                   className="offcanvas offcanvas-top vh-100"
                   tabIndex={-1}
