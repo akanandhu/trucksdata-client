@@ -3,6 +3,17 @@
   height: 100px;
 }
 
+.brandCardImage{
+  height: 120px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.brandCardImage img{
+  height: 70% !important;
+}
+
 .citiesCard.-type-1 {
   position: relative;
   z-index: 0;
@@ -100,13 +111,15 @@
 .citiesCard.-type-3 {
   position: relative;
   z-index: 0;
+  // height: 120px;
+  // width: 100%;
 
   .citiesCard {
     &__image {
       overflow: hidden;
       border-radius: inherit;
       width: 100%;
-      height: 100%;
+      // height: 100%;
 
       img {
         border-radius: inherit;

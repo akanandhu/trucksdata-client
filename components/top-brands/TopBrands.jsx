@@ -1,65 +1,81 @@
 import Slider from "react-slick";
 import Link from "next/link";
 import { useSelector } from "react-redux";
-import { useEffect } from "react";
-import { useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper";
 import useVehicleTypes from "../../services/useVehicleTypes";
-import Image from "next/image";
 
-const TopBrands = (props) => {
-  const { topBrandDetails } = props;
-  const topBrandFilter = useSelector(
-    (store) => store.topfilter.brands.currentTab
+const TopBrands = () => {
+  const topBrandFilterId = useSelector(
+    (store) => store.topfilter.brands.id
   );
-  const [manufacturers, setManufacturers] = useState([]);
 
   const { data: vehicle } = useVehicleTypes();
 
   const brandDetails = vehicle?.data?.data?.find(
-    (item) => item.name === topBrandFilter
+    (item) => item.id === topBrandFilterId
   );
 
-  useEffect(() => {
-    const reducedBrand =
-      topBrandDetails?.length &&
-      topBrandDetails?.reduce((acc, current) => {
-        if (current.name === topBrandFilter) {
-          acc = current;
-        }
-        return acc;
-      });
-    setManufacturers(reducedBrand?.manufacturers);
-  }, [topBrandFilter]);
+  const manufacturerLength = brandDetails?.manufacturers.length;
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: manufacturerLength >= 5 ? 5 : manufacturerLength,
+    slidesToScroll: 1,
+    centerMode: manufacturerLength >= 5 ? false : true,
+    variableWidth: false,
+    responsive: [
+      {
+        breakpoint: 1099,
+        settings: {
+          slidesToShow: manufacturerLength >= 3 ? 3 : manufacturerLength,
+          centerMode: false,
+          variableWidth: false,
+        },
+      },
+
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          centerMode: false,
+          variableWidth: false,
+        },
+      },
+      {
+        breakpoint: 520,
+        settings: {
+          slidesToShow: 2,
+          centerMode: false,
+          variableWidth: false
+        },
+      },
+    ],
+  };
 
   return (
     <Slider {...settings}>
-      {console.log("Manufacturers ", brandDetails)}
-      {brandDetails?.manufacturers?.slice(0, 8).map((item) => (
+      {console.log("Vehicle ",topBrandFilterId)}
+      {brandDetails?.manufacturers?.slice(0, 8).map((item, i) => (
         <div
-          // className="col-xl-2  col-lg-3 col-sm-8 border-2 truck-card p-3 rounded-3 d-flex justify-content-center"
-          // className="bg-primary w-25"
+          className="col-xl-2  col-lg-3 col-sm-8 border-2 truck-card p-3 rounded-3 d-flex justify-content-center"
           key={i}
           data-aos="fade"
           data-aos-delay={i * 100}
         >
+
           <Link
             href={`/brands/${item.id}`}
-            // className="citiesCard -type-3 d-block text-center"
+            className="citiesCard -type-3 d-block text-center"
           >
-            <div
-            // className="citiesCard__image size-60 rounded-full mx-auto"
-            >
-              {/* <img
+            <div className="citiesCard__image size-60 rounded-full mx-auto brandCardImage">
+              <img
                 className="object-cover js-lazy"
                 src={item.logo[0].thumbnail}
-                // src={item.logo}
                 alt="image"
                 width={100}
                 height={100}
-              /> */}
-              crd
+              />
             </div>
           </Link>
         </div>
