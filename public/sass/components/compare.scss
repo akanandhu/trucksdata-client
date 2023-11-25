@@ -36,3 +36,14 @@
   // .compare-card-link{
   //   width: 2;
   // }
+
+  .compareContents{
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .compare_card_2{
+    margin-top: -10px;
+  }

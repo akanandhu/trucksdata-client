@@ -224,8 +224,8 @@
 }
 
 .carCard.-type-1 {
-  max-height: 200px;
-  min-height: 200px;
+  // max-height: 200px;
+  // min-height: 200px;
   .carCard {
     &__image {
       overflow: hidden;
@@ -263,10 +263,12 @@
 }
 
 .cruiseCard.-type-1 {
+  max-height: 220px;
+  min-height: 220px;
   .cruiseCard {
     &__image {
       overflow: hidden;
-      border-radius: 4px;
+      
 
       .cardImage__content .swiper-slide,
       .cardImage__content > img {
@@ -294,7 +296,7 @@
       &__image {
         .cardImage__content > img,
         .swiper-slide {
-          transform: scale(1.15);
+          // transform: scale(1.15);
         }
       }
 
