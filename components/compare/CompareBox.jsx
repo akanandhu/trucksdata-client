@@ -131,6 +131,12 @@ const CompareBox = ({ vehicle, setVehicle }) => {
     if (idCollection?.length >= 2) {
       setCompared(true);
       setIds(idCollection);
+      const compareTableSection = document.getElementById(
+        "compareTableSection"
+      );
+      if (compareTableSection) {
+        compareTableSection.scrollIntoView({ behavior: "smooth" });
+      }
     } else {
       setCompared(false);
       toast.error("Select Atleast 2 Vehicle Models To Compare", {
@@ -202,7 +208,11 @@ const CompareBox = ({ vehicle, setVehicle }) => {
           </button>
         </div>
       </div>
-      <CompareBoxMobile vehicle={vehicle} setVehicle={setVehicle} handleCompare={handleCompare} />
+      <CompareBoxMobile
+        vehicle={vehicle}
+        setVehicle={setVehicle}
+        handleCompare={handleCompare}
+      />
 
       {isLoading && (
         <div className="mt-5">
@@ -212,7 +222,10 @@ const CompareBox = ({ vehicle, setVehicle }) => {
       )}
 
       {compared && (
-        <div className="mt-40 view_bordershadow bg-white    p-2 ">
+        <div
+          id={"compareTableSection"}
+          className="mt-40 view_bordershadow bg-white    p-2 "
+        >
           <CompareTable compareData={vehicleCollectedData} />
         </div>
       )}

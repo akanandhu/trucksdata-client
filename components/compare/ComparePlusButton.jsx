@@ -8,13 +8,13 @@ const ComparePlusButton = ({ index, vehicle }) => {
     : "";
 
   return (
-    <div className="d-flex justify-content-center h-100 w-100  mb-xl-4   ">
+    <div className="d-flex justify-content-center  mb-xl-4   ">
       <Image
         src={logo || "/img/compare/truck-compare.svg"}
         alt="illustration"
         width={250}
         height={200}
-        
+        style={{ objectFit: "cover", width: "100%", height: '240px' }}
         className="  "
       />
     </div>
