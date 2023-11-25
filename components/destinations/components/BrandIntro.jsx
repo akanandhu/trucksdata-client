@@ -5,7 +5,7 @@ const BrandIntro = ({ description }) => {
 
   return (
     <>
-      <div className="col-xl-8">
+      {description ? <div className="col-xl-8">
         <p className="text-15 text-dark-1">
           {showMore ? description : `${description?.substring(0, 545)}`}
         </p>
@@ -21,7 +21,7 @@ const BrandIntro = ({ description }) => {
             </span>
           ) : null}
         </a>
-      </div>
+      </div>:null}
     </>
   );
 };

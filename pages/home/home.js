@@ -20,6 +20,8 @@ import { useEffect } from "react";
 import { setArticleDetails } from "../../features/articles/articleSlice";
 import useGetComparisons from "../../services/compare/useGetComparisons";
 import useAllVehicles from "../../services/vehicles/useAllVehicles";
+import ModelSlides from "../../components/models/ModelSlides";
+import useVehicle from "../../services/useVehicle";
 
 const Home = () => {
   const dispach = useDispatch();
@@ -30,10 +32,17 @@ const Home = () => {
     { label: "Trailers", value: "trailers" },
     { label: "3-Wheelers", value: "three_wheelers" },
   ];
+  const popularFilterId = useSelector((store) => store.topfilter["popular"]?.id);
+  const upcomingFilterId = useSelector((store) => store.topfilter["upcoming"]?.id);
   const { data: manufacturer } = useManufactures();
   const { data: articles, isFetched } = useGetArticles();
+  const { data: popularVehicels } = useVehicle(popularFilterId);
+  const {data: upcomingVehicles } = useVehicle(upcomingFilterId);
   const blogs = articles?.data?.data
 
+  const popularModels = popularVehicels?.data?.data.filter((item)=> item['is_popular'] === 1);
+
+  const upcomingModels = upcomingVehicles?.data?.data.filter((item)=> item['is_upcoming'] === 1);
 
   dispach(setManufacturer(manufacturer?.data["data"]));
 
@@ -83,7 +92,7 @@ const Home = () => {
             <div className="tabs -pills-2 pt-12">
               <TopFilter vehicleData={vehicleData} flag="popular" />
             </div>
-            <PopularTrucks />
+            <ModelSlides vehicleDetails={popularModels}/>
           </div>
           {/* End .row */}
         </div>
@@ -140,7 +149,8 @@ const Home = () => {
             <div className="tabs -pills-2 pt-12">
               <TopFilter vehicleData={vehicleData} flag="upcoming" />
             </div>
-            <UpcomingTrucks vehicleDetails={vehicleData} />
+            <ModelSlides vehicleDetails={upcomingModels}/>
+
           </div>
         </div>
       </section>

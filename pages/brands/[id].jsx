@@ -17,6 +17,7 @@ import BrandModels from "../../components/trucks/BrandModels";
 import { useSelector } from "react-redux";
 import useVehicle from "../../services/useVehicle";
 import Footer from '../../components/footer/footer'
+import ModelSlides from "../../components/models/ModelSlides";
 
 const SingleBrand = () => {
   const router = useRouter();
@@ -41,10 +42,14 @@ const SingleBrand = () => {
   };
 
   const faq = brandDetails?.data?.faq;
+
+  const mostPopularVehicles = filteredVehicles?.filter((item)=> item.is_popular === 1);
+  const latestVehicles = filteredVehicles?.filter((item)=> item.is_latest === 1);
+  const upcomingVehicles = filteredVehicles?.filter((item)=>item.is_upcoming === 1)
   return (
     <>
       <Seo pageTitle="Brands" />
-    {console.log("Manufacturer ",brandDetails)}
+    {console.log("Most Popular ",mostPopularVehicles)}
       <div className="header-margin"></div>
 
       <MainHeader />
@@ -101,7 +106,8 @@ const SingleBrand = () => {
           </div>
 
           <div className="row y-gap-30 pt-40 sm:pt-20 item_gap-x30">
-            <BrandModels vehicleDetails={filteredVehicles} flag="is_popular" />
+            {/* <BrandModels vehicleDetails={filteredVehicles} flag="is_popular" /> */}
+            <ModelSlides vehicleDetails={mostPopularVehicles}/>
           </div>
         </div>
       </section>
@@ -119,7 +125,8 @@ const SingleBrand = () => {
           </div>
 
           <div className="row pt-40 sm:pt-20 item_gap-x30">
-            <BrandModels vehicleDetails={filteredVehicles} flag="is_latest" />
+            <ModelSlides vehicleDetails={latestVehicles}/>
+
           </div>
         </div>
       </section>
@@ -137,7 +144,8 @@ const SingleBrand = () => {
           </div>
 
           <div className="row y-gap-30 pt-40 sm:pt-20 item_gap-x30">
-            <BrandModels vehicleDetails={filteredVehicles} flag="is_upcoming" />
+            {/* <BrandModels vehicleDetails={filteredVehicles} flag="is_upcoming" /> */}
+            <ModelSlides vehicleDetails={upcomingVehicles}/>
           </div>
         </div>
       </section>

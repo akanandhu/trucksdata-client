@@ -1,4 +1,4 @@
-const TopBreadCrumb = ({brand, type}) => {
+const TopBreadCrumb = ({brand, type, vehicle}) => {
   return (
     <section className="py-10 d-flex items-center bg-light-2">
       <div className="container">
@@ -16,6 +16,7 @@ const TopBreadCrumb = ({brand, type}) => {
               <div className="col-auto">{brand}</div>
               {/* End .col-auto */}
               <div className="col-auto">&gt;</div>
+              <div className="col-auto">{vehicle}</div>
               {/* <div className="col-auto  ">
                 <div className="text-dark-1">
                   {data?.title}

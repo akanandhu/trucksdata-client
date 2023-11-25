@@ -1,16 +1,15 @@
 import Link from "next/link";
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper";
 import { useSelector } from "react-redux";
 import useVehicle from "../../services/useVehicle";
 
-const PopularTrucks = () => {
-  const filterId = useSelector((store) => store.topfilter["popular"]?.id);
-  const { data: vehicleDetails } = useVehicle(filterId);
+
+function ModelSlides({vehicleDetails}) {
   return (
     <>
       <Swiper
-      
         spaceBetween={30}
         modules={[Navigation, Pagination]}
         navigation={{
@@ -38,11 +37,11 @@ const PopularTrucks = () => {
           },
         }}
       >
-        {vehicleDetails?.data["data"]
+        {vehicleDetails
           ?.slice(0, 8)
           ?.reverse()
           .map((item, i) =>
-            item?.is_popular === 1 ? (
+        
               <SwiperSlide key={item.id}>
                 <Link
                   href={`/details/${item.id}`}
@@ -87,7 +86,9 @@ const PopularTrucks = () => {
                             {/* <div className="truck-card__divider" /> */}
                           </div>
                           <div className="card-contents">
-                          <h4 className="truck-card__title ">{item?.title}</h4>
+                            <h4 className="truck-card__title ">
+                              {item?.title}
+                            </h4>
                           </div>
 
                           <div className="truck-card__price-range">
@@ -109,7 +110,7 @@ const PopularTrucks = () => {
                   </div>
                 </Link>
               </SwiperSlide>
-            ) : null
+            
           )}
       </Swiper>
 
@@ -132,6 +133,6 @@ const PopularTrucks = () => {
       </div>
     </>
   );
-};
+}
 
-export default PopularTrucks;
+export default ModelSlides;

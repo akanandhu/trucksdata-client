@@ -99,7 +99,10 @@
   font-weight: bold;
   color: #333;
 }
-
+.card-contents{
+  height: 45px;
+  overflow: hidden;
+}
 .truck-card__description {
   font-size: 0.9rem;
   color: #777;

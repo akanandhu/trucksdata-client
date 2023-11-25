@@ -25,6 +25,7 @@ import useManufactures from "../../services/useManufactures";
 import useVehicleTypes from "../../services/useVehicleTypes";
 import useAllVehicles from "../../services/vehicles/useAllVehicles";
 import BrandIntro from "../../components/destinations/components/BrandIntro";
+import ModelSlides from "../../components/models/ModelSlides";
 
 const SinglePage = () => {
   const router = useRouter();
@@ -73,6 +74,7 @@ const SinglePage = () => {
       <TopBreadCrumb
         brand={vehicleData?.data?.manufacturer?.name}
         type={vehicleData?.data?.vehicle_type?.name}
+        vehicle={vehicleData?.data?.title}
       />
       {/* End top breadcrumb */}
 
@@ -255,7 +257,8 @@ const SinglePage = () => {
             </div>
 
             <div className="col-lg-8">
-              <SimilarTrucks similarVehicles={similarVehicles} />
+              {/* <SimilarTrucks similarVehicles={similarVehicles} /> */}
+              <ModelSlides vehicleDetails={similarVehicles}/>
             </div>
           </div>
         </div>

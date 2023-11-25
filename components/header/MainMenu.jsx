@@ -3,13 +3,14 @@ import { categorieMegaMenuItems } from "../../data/mainMenuData";
 import CategoriesMegaMenu from "./CategoriesMegaMenu";
 import { useRouter } from "next/router";
 import { truckList } from "../../data/truckList";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 const MainMenu = ({ style = "", vehicleData }) => {
   const router = useRouter();
   const [hoveredId, setHoveredId] = useState("");
 
   function handleHover(vehicle) {
+    
     setHoveredId(vehicle?.id);
   }
 
@@ -58,7 +59,7 @@ const MainMenu = ({ style = "", vehicleData }) => {
                 ) : null}
               </a>
               {vehicle?.manufacturers?.length !== 0 ? (
-                <div className="mega">{categoriesList(vehicle)}</div>
+                <div className="mega" >{categoriesList(vehicle)}</div>
               ) : null}
             </li>
           ) : null
@@ -66,6 +67,14 @@ const MainMenu = ({ style = "", vehicleData }) => {
         <li className={router.pathname === "/contact" ? "current" : ""}>
           <Link href="/compare">Compare</Link>
         </li>
+        {/* <li className={router.pathname === "/compare" ? "current" : ""}>
+          <div
+            onClick={() => router.push("/compare")}
+            className=""
+          >
+            Compare
+          </div>
+        </li> */}
       </ul>
     </nav>
   );
