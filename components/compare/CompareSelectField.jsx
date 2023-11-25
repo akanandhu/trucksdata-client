@@ -2,8 +2,7 @@ import { useState } from "react";
 import useVehicleTypes from "../../services/useVehicleTypes";
 
 
-const CompareInputSeperate = ({ index, setVehicleId }) => {
-  const [searchValue, setSearchValue] = useState("");
+const CompareInputSeperate = ({ index, setVehicleId, setSearchValue, searchValue }) => {
   const [selectedItem, setSelectedItem] = useState(null);
   const { data: vehicleTypes } = useVehicleTypes();
   const vehicleData = vehicleTypes?.data?.data;

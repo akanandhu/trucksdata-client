@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import CompareVehicles from "./CompareVehicles";
 import CompareTable from "./CompareTable";
 import useVehicleTypes from "../../services/useVehicleTypes";
@@ -113,6 +113,8 @@ const CompareBox = ({ vehicle, setVehicle }) => {
     text: `Compare two trucks of your choice with the best truck comparison tool in India on TrucksDekho. You can compare variant-wise prices, GVW, number of tyres, specifications, mileage, performance and more of as many as 3 trucks at one go to help you make the right choice.`,
     delayAnimation: "300",
   };
+  const [comparisonInitiated, setComparisonInitiated] = useState(false);
+  const compareTableRef = useRef(null);
   const [ids, setIds] = useState([]);
 
   const [compared, setCompared] = useState(false);
@@ -131,12 +133,8 @@ const CompareBox = ({ vehicle, setVehicle }) => {
     if (idCollection?.length >= 2) {
       setCompared(true);
       setIds(idCollection);
-      const compareTableSection = document.getElementById(
-        "compareTableSection"
-      );
-      if (compareTableSection) {
-        compareTableSection.scrollIntoView({ behavior: "smooth" });
-      }
+    
+      setComparisonInitiated(true);
     } else {
       setCompared(false);
       toast.error("Select Atleast 2 Vehicle Models To Compare", {
@@ -145,8 +143,15 @@ const CompareBox = ({ vehicle, setVehicle }) => {
     }
   }
 
+  useEffect(() => {
+    if (comparisonInitiated && compareTableRef.current) {
+      compareTableRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [comparisonInitiated]);
+
   // vehicleId set
   const router = useRouter();
+  
   const { vehicle_one, vehicle_two } = router?.query || {};
   const hasIds = Boolean(vehicle_one) && Boolean(vehicle_two);
 
@@ -181,6 +186,8 @@ const CompareBox = ({ vehicle, setVehicle }) => {
   }, []);
 
   if (!mounted) return <></>;
+  console.log(vehicle, 'vehicleCheckerrrrrrr')
+
 
   return (
     <div key={item.id} className="col-lg-12 container mt-40">
@@ -225,8 +232,9 @@ const CompareBox = ({ vehicle, setVehicle }) => {
         <div
           id={"compareTableSection"}
           className="mt-40 view_bordershadow bg-white    p-2 "
+          ref={compareTableRef}
         >
-          <CompareTable compareData={vehicleCollectedData} />
+          <CompareTable  compareData={vehicleCollectedData} />
         </div>
       )}
 

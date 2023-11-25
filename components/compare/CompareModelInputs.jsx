@@ -8,10 +8,11 @@ export const CompareModelInput = ({
   index,
   vehicle,
   setVehicle,
-  vehicleId
+  vehicleId,
+  setSearchModelValue,
+  searchModelValue
 }) => {
   const [selectedItem, setSelectedItem] = useState({})
-  const [searchValue,setSearchValue] = useState('')
 
   const {
     data: results,
@@ -39,7 +40,7 @@ export const CompareModelInput = ({
     hasNextPage,
   });
   const handleOptionClick = (item) => {
-    setSearchValue(item.name);
+    setSearchModelValue(item.name);
     setSelectedItem(item);
     const updatedVehicle = vehicle.map((vehicleItem) =>
       vehicleItem.index === index
@@ -69,8 +70,8 @@ export const CompareModelInput = ({
               autoComplete="off"
               type="search"
               className="js-search js-dd-focus"
-              value={searchValue}
-              onChange={(e) => setSearchValue(e.target.value)}
+              value={searchModelValue}
+              onChange={(e) => setSearchModelValue(e.target.value)}
             />
           </div>
         </div>

@@ -15,7 +15,7 @@ const CompareBoxMobile = ({ vehicle, setVehicle, handleCompare }) => {
 
   return (
     <div
-      className="col-lg-12    d-lg-none"
+      className="col-lg-12    d-md-none"
       key={item.id}
       data-aos="fade"
       data-aos-delay={300}
