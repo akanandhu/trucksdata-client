@@ -9,11 +9,11 @@ import MainHeader from "../../components/header/main-header";
 import { useEffect, useState } from "react";
 
 const ComparePage = () => {
-  const determineDefaultValues = () => {
-    const isClient = typeof window !== "undefined"
-    const screenWidth = isClient ? window.innerWidth : null;
-    return screenWidth < 576 ? defaultValues.slice(0, 2) : defaultValues;
-  };
+  // const determineDefaultValues = () => {
+  //   const isClient = typeof window !== "undefined"
+  //   const screenWidth = isClient ? window.innerWidth : null;
+  //   return screenWidth < 576 ? defaultValues.slice(0, 2) : defaultValues;
+  // };
 
   const defaultValues = [
     {
@@ -27,19 +27,19 @@ const ComparePage = () => {
     },
   ];
 
-  const [vehicle, setVehicle] = useState(determineDefaultValues);
+  const [vehicle, setVehicle] = useState(defaultValues);
   
-  useEffect(() => {
-    const handleResize = () => {
-      setVehicle(determineDefaultValues());
-    };
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     setVehicle(determineDefaultValues());
+  //   };
 
-    window.addEventListener("resize", handleResize);
+  //   window.addEventListener("resize", handleResize);
 
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener("resize", handleResize);
+  //   };
+  // }, [determineDefaultValues]);
 
   return (
     <div className="position-relative   ">

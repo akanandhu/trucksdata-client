@@ -181,12 +181,12 @@ const CompareBox = ({ vehicle, setVehicle }) => {
   const isLoading = queries.some((query) => query.isLoading);
 
   const [mounted, setMounted] = useState(false);
+ 
   useEffect(() => {
     setMounted(true);
   }, []);
 
   if (!mounted) return <></>;
-  console.log(vehicle, 'vehicleCheckerrrrrrr')
 
 
   return (

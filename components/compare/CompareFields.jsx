@@ -7,16 +7,16 @@ const CompareFields = ({ item, vehicle, setVehicle }) => {
   const [vehicleId, setVehicleId] = useState("");
   const [searchValue, setSearchValue] = useState("");
   const [searchModelValue, setSearchModelValue] = useState("");
-
   function handleClear() {
     setVehicle((prevVehicle) => {
-      const updatedVehicle = prevVehicle.map((item) => {
-        if (item.index === item.index) {
-          return { ...item, vehicle: [] };
+      const updatedVehicle = prevVehicle.map((prev) => {
+        if (prev.index === item.index) {
+          return { ...prev, vehicle: [] };
         } else {
-          return item;
+          return prev;
         }
       });
+
       return updatedVehicle;
     });
     setSearchValue("");
