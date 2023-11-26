@@ -5,8 +5,7 @@ import { Navigation, Pagination } from "swiper";
 import { useSelector } from "react-redux";
 import useVehicle from "../../services/useVehicle";
 
-
-function ModelSlides({vehicleDetails}) {
+function ModelSlides({ vehicleDetails }) {
   return (
     <div>
       <Swiper
@@ -40,79 +39,70 @@ function ModelSlides({vehicleDetails}) {
         {vehicleDetails
           ?.slice(0, 8)
           ?.reverse()
-          .map((item, i) =>
-        
-              <SwiperSlide key={item.id}>
-                {console.log("Item===>>>>",item.images)}
-                <Link
-                  href={`/details/${item.id}`}
-                  className="carCard -type-1 d-block rounded-4 hover-inside-slider"
+          .map((item, i) => (
+            <SwiperSlide key={item.id}>
+              <Link
+                href={`/details/${item.id}`}
+                className="carCard -type-1 d-block rounded-4 hover-inside-slider"
+                data-aos="fade"
+                data-aos-delay={i * 100}
+              >
+                <div
+                  key={item?.id}
                   data-aos="fade"
                   data-aos-delay={i * 100}
+                  className="truck-card"
                 >
-                  <div
-                    key={item?.id}
-                    data-aos="fade"
-                    data-aos-delay={i * 100}
-                    className="truck-card"
-                  >
-                    <div className="truck-card__image">
-                      <Swiper
-                        className="mySwiper"
-                        modules={[Pagination, Navigation]}
-                        pagination={{
-                          clickable: true,
-                        }}
-                        navigation={true}
-                      >
-                        <SwiperSlide>
-                          <div className="truck-card-zoom">
-                            <img
-                              // width={300}
-                              // height={300}
-                              className="rounded-4 col-12 js-lazy"
-                              src={item?.images && item?.images[0]?.thumbnail}
-                              alt="image"
-                            />
-                          </div>
-                        </SwiperSlide>
-                        <div className="truck-card__content">
-                          <div className="truck-card__details">
-                            <div className="truck-card__type">
-                              {item?.vehicle_type?.name}
-                            </div>
-                            {/* <div className="truck-card__location">
-                          {item?.location}
-                        </div> */}
-                            {/* <div className="truck-card__divider" /> */}
-                          </div>
-                          <div className="card-contents">
-                            <h4 className="truck-card__title ">
-                              {item?.title}
-                            </h4>
-                          </div>
-
-                          <div className="truck-card__price-range">
-                            <span className="truck-card__price text-blue-1">
-                              ₹ {item?.min_price.split(".")[0]}{" "}
-                            </span>
-                            <span className="truck-card__price-label text-13 text-secondary ">
-                              Onwards
-                            </span>
-                          </div>
-                          <div className="d-flex w-auto mt-5 ">
-                            <button className=" btn btn-primary  bg-blue-1 d-flex justify-content-center   flex-grow-1 text-center  ">
-                              View More
-                            </button>
+                  <div className="truck-card__image">
+                    <Swiper
+                      className="mySwiper"
+                      modules={[Pagination, Navigation]}
+                      pagination={{
+                        clickable: true,
+                      }}
+                      navigation={true}
+                    >
+                      <SwiperSlide>
+                        <div className="truck-card-zoom">
+                          <img
+                            // width={300}
+                            // height={300}
+                            className="rounded-4 col-12 js-lazy"
+                            src={item?.images?.[0]?.thumbnail}
+                            alt="image"
+                          />
+                        </div>
+                      </SwiperSlide>
+                      <div className="truck-card__content">
+                        <div className="truck-card__details">
+                          <div className="truck-card__type">
+                            {item?.vehicle_type?.name}
                           </div>
                         </div>
-                      </Swiper>
-                    </div>
+                        <div className="card-contents">
+                          <h4 className="truck-card__title ">{item?.title}</h4>
+                        </div>
+
+                        <div className="truck-card__price-range">
+                          <span className="truck-card__price text-blue-1">
+                            ₹ {item?.min_price.split(".")[0]}{" "}
+                          </span>
+                          <span className="truck-card__price-label text-13 text-secondary ">
+                            Onwards
+                          </span>
+                        </div>
+                        <div className="d-flex w-auto mt-5 ">
+                          <button className=" btn btn-primary  bg-blue-1 d-flex justify-content-center   flex-grow-1 text-center  ">
+                            View More
+                          </button>
+                        </div>
+                      </div>
+                    </Swiper>
                   </div>
-                </Link>
-              </SwiperSlide>
-            
-          )}
+                </div>
+              </Link>
+            </SwiperSlide>
+          ))}
       </Swiper>
 
       <div className="d-flex x-gap-15 items-center justify-center pt-20 sm:pt-20">

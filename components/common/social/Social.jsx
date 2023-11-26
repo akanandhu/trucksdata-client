@@ -1,9 +1,11 @@
-const Social = () => {
+const Social = ({socials}) => {
+  const {facebook_url, instagram_url,twitter, youtube_url } = socials || {}
+
   const socialContent = [
-    { id: 1, icon: "icon-facebook", link: "https://facebok.com/" },
-    { id: 2, icon: "icon-twitter", link: "https://twitter.com/" },
-    { id: 3, icon: "icon-instagram", link: "https://instagram.com/" },
-    { id: 4, icon: "icon-linkedin", link: "https://linkedin.com/" },
+    { id: 1, icon: "icon-facebook", link: facebook_url },
+    { id: 2, icon: "icon-twitter", link: twitter },
+    { id: 3, icon: "icon-instagram", link: instagram_url },
+    // { id: 4, icon: "icon-youtube", link: youtube_url },
   ];
   return (
     <>

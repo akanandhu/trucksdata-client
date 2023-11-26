@@ -7,9 +7,11 @@ const index = ({className}) => {
   const isClient = typeof window !== "undefined";
   const generalData = isClient ? localStorage?.getItem("general-data") : null;
   const general = JSON.parse(generalData);
-  const { email, contact_number } =
+  const { email, contact_number, facebook_url, instagram_url, youtube_url, twitter  } =
     general || {};
   const contact = { email, contact_number };
+  const socials = {facebook_url, instagram_url, youtube_url, twitter }
+
   return (
     <footer className={`footer -type-3 footerContainer ${className}`}>
       <div 
@@ -43,7 +45,7 @@ const index = ({className}) => {
         {/* End footer top */}
 
         <div className="py-20 border-top-white-15 ps-4 pe-4 px-sm-5">
-          <Copyright />
+          <Copyright socials={socials} />
         </div>
         {/* End footer-copyright */}
       </div>

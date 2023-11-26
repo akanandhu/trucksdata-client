@@ -1,6 +1,7 @@
 import Social from "../../common/social/Social";
 
-const Copyright = () => {
+const Copyright = ({socials}) => {
+
   return (
     <div className="row justify-between items-center y-gap-10">
       <div className="col-auto">
@@ -39,7 +40,7 @@ const Copyright = () => {
 
           <div className="col-auto">
             <div className="d-flex x-gap-20 items-center">
-              <Social />
+              <Social socials={socials} />
             </div>
           </div>
           {/* End .col */}
