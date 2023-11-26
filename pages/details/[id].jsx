@@ -47,7 +47,7 @@ const SinglePage = () => {
   const vehicleTypeId = vehicleData?.data?.vehicle_type_id;
   const manufacturerId = vehicleData?.data?.manufacturer_id;
 
-  console.log("Type id ", vehicleTypeId);
+  
   // const vehiclePrice = vehicleData?.data["min_price"].split(".");
   const similarVehicles = allVehicles?.data?.data?.filter(
     (item) => item?.vehicle_type_id === vehicleTypeId
@@ -64,7 +64,8 @@ const SinglePage = () => {
   );
   return (
     <>
-      <Seo pageTitle={vehicleData?.data?.title ?? "Variant View Page"} />
+      <Seo 
+      pageTitle={vehicleData?.data?.title ?? "Variant View Page"} pageImage={vehicleData?.data?.images[0]?.thumbnail}/>
       {/* End Page Title */}
       <div className="header-margin"></div>
       {/* header top margin */}

@@ -1,4 +1,5 @@
 import React from "react";
+
 import {
   FacebookShareButton,
   FacebookIcon,
@@ -13,12 +14,15 @@ import {
 } from "react-share";
 function Share() {
   const facebookShareUrl = "https://www.facebook.com/";
+  const shareUrl = typeof window !== undefined && window.location.href;
+
   return (
     <div className="d-flex justify-content-between ps-5 pe-5 pb-2">
+      {console.log("location", window.location.href)}
       <FacebookShareButton
         quote={"Some quote"}
         hashtag={"truck"}
-        url={facebookShareUrl}
+        url={shareUrl}
         title="Title"
       >
         <FacebookIcon size={40} round={true} />
@@ -31,10 +35,9 @@ function Share() {
         <WhatsappIcon size={40} round={true} />
       </WhatsappShareButton>
       <TwitterShareButton
-        quote={"Some quote"}
         hashtag={"truck"}
-        url={`https://twitter.com/`}
-        title="Title"
+        url={shareUrl}
+
         // via={`neeraj648317720`}
       >
         <TwitterIcon size={40} round={true} />
@@ -43,7 +46,7 @@ function Share() {
       <PinterestShareButton
         quote={"Some quote"}
         hashtag={"truck"}
-        url={facebookShareUrl}
+        url={shareUrl}
       >
         <PinterestIcon size={40} round={true} />
       </PinterestShareButton>
@@ -51,7 +54,7 @@ function Share() {
       <TelegramShareButton
         quote={"Some quote"}
         hashtag={"truck"}
-        url={facebookShareUrl}
+        url={shareUrl}
       >
         <TelegramIcon size={40} round={true} />
       </TelegramShareButton>

@@ -20,9 +20,9 @@ const TopBrands = () => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: manufacturerLength >= 4 ? 4 : manufacturerLength,
+    slidesToShow: manufacturerLength >= 5 ? 5 : manufacturerLength,
     slidesToScroll: 1,
-    centerMode: manufacturerLength >= 4 ? false : true,
+    centerMode: manufacturerLength >= 5 ? false : true,
     variableWidth: false,
     responsive: [
       {
@@ -45,7 +45,7 @@ const TopBrands = () => {
       {
         breakpoint: 520,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 2,
           centerMode: false,
           variableWidth: true,
         },
