@@ -43,6 +43,7 @@ function ModelSlides({vehicleDetails}) {
           .map((item, i) =>
         
               <SwiperSlide key={item.id}>
+                {console.log("Item===>>>>",item.images)}
                 <Link
                   href={`/details/${item.id}`}
                   className="carCard -type-1 d-block rounded-4 hover-inside-slider"
@@ -70,7 +71,7 @@ function ModelSlides({vehicleDetails}) {
                               // width={300}
                               // height={300}
                               className="rounded-4 col-12 js-lazy"
-                              src={item?.images[0]?.thumbnail}
+                              src={item?.images && item?.images[0]?.thumbnail}
                               alt="image"
                             />
                           </div>

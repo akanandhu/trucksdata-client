@@ -47,7 +47,7 @@ const TopBrands = () => {
         settings: {
           slidesToShow: 1,
           centerMode: false,
-          variableWidth: false
+          variableWidth: true,
         },
       },
     ],
@@ -55,10 +55,9 @@ const TopBrands = () => {
 
   return (
     <Slider {...settings}>
-      {console.log("Vehicle ",topBrandFilterId)}
       {brandDetails?.manufacturers?.slice(0, 8).map((item, i) => (
         <div
-          className="col-xl-2  col-lg-3 col-sm-8 border-2 truck-card p-3 rounded-3 d-flex justify-content-center"
+          className="col-xl-2  col-lg-3 col-sm-8 border-2 truck-card p-2 rounded-3 d-flex justify-content-center"
           key={i}
           data-aos="fade"
           data-aos-delay={i * 100}
@@ -68,7 +67,7 @@ const TopBrands = () => {
             href={`/brands/${item.id}`}
             className="citiesCard -type-3 d-block text-center"
           >
-            <div className="citiesCard__image size-60 rounded-full mx-auto brandCardImage">
+            <div className="citiesCard__image size-120 rounded-full mx-auto brandCardImage">
               <img
                 className="object-cover js-lazy"
                 src={item.logo[0].thumbnail}
