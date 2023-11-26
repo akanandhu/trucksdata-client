@@ -20,7 +20,6 @@ import { useRouter } from "next/router";
 import getFlatData from "../../utils/getFlatData";
 import { useInView } from "react-intersection-observer";
 import { useReloadOnPageScroll } from "../../hooks/useReloadOnPageScroll";
-import Spinner from "../../components/loading/Spinner";
 import { getSearchParams } from "../../functions/params/getSearchParams";
 import useGetSpecification from "../../services/useGetSpecification";
 import getAdvancedSearchParams from "../../functions/params/getAdvancedSearchParams";
@@ -71,7 +70,6 @@ const SearchResultsPage = () => {
   const { params } = getSearchParams(tabs, opt1, opt2, opt3);
   
   const advancedParams = getAdvancedSearchParams(sideParams)
-  console.log(sideParams, "sideParams");
   const {
     data: results,
     fetchNextPage,
@@ -189,7 +187,7 @@ const SearchResultsPage = () => {
                 </div>
               </div>
             </div>
-            <CompareBar />
+            <CompareBar  />
 
             <div className="col-xl-9 ">
               <TopHeaderFilter count={count} />
