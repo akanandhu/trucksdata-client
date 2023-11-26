@@ -36,6 +36,8 @@ const Blog1 = () => {
         </div>
         {/* End tab-controls */}
 
+        
+
         <div className="row y-gap-30 pt-30">
           {blogsData.slice(0, 9).map((item) => (
             <div className="col-lg-4 col-sm-6" key={item.id}>

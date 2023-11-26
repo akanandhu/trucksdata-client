@@ -9,6 +9,10 @@
   justify-content: center;
   align-items: center;
 }
+.brandCardImage img{
+  background-size: cover !important;
+  width: 50%;
+}
 
 .brandCardImage img{
   height: 70% !important;
@@ -21,7 +25,7 @@
   .citiesCard {
     &__image {
       border-radius: inherit;
-
+      background-size: cover;
       img {
         width: 100%;
       }

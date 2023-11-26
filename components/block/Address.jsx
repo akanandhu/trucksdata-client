@@ -5,7 +5,7 @@ const Address = () => {
       colClass: "col-lg-3",
       title: "Address",
       content: (
-        <>TrucksData , Kannur, 688523</>
+        <>TrucksData , Kaannur, 688523</>
       ),
     },
     {

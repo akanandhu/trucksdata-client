@@ -22,6 +22,7 @@ import useGetComparisons from "../../services/compare/useGetComparisons";
 import useAllVehicles from "../../services/vehicles/useAllVehicles";
 import ModelSlides from "../../components/models/ModelSlides";
 import useVehicle from "../../services/useVehicle";
+import Link from "next/link";
 
 const Home = () => {
   const dispach = useDispatch();
@@ -167,8 +168,32 @@ const Home = () => {
                   Read articles
                 </p>
               </div>
+
+              
             </div>
             {/* End .col */}
+
+            {/* <div className="col-auto">
+                  <div className="row x-gap-10 y-gap-10">
+                    <div className="col-auto">
+                      <button className="button px-15 py-10 -blue-1 bg-light-2">
+                        <i className="icon-share mr-10" />
+                        Share
+                      </button>
+                    </div>
+                  </div>
+                </div> */}
+
+
+                <div className="col-auto">
+              <Link
+                href='/blogs'
+                className="button -md -blue-1 bg-blue-1-05 text-blue-1"
+              >
+                View All Blogs
+                <div className="icon-arrow-top-right ml-15" />
+              </Link>
+            </div>
 
             {/* End .col */}
           </div>

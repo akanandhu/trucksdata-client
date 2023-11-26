@@ -26,6 +26,7 @@ import useVehicleTypes from "../../services/useVehicleTypes";
 import useAllVehicles from "../../services/vehicles/useAllVehicles";
 import BrandIntro from "../../components/destinations/components/BrandIntro";
 import ModelSlides from "../../components/models/ModelSlides";
+import ShareModl from "../../components/share/ShareModl";
 
 const SinglePage = () => {
   const router = useRouter();
@@ -109,10 +110,38 @@ const SinglePage = () => {
                 <div className="col-auto">
                   <div className="row x-gap-10 y-gap-10">
                     <div className="col-auto">
-                      <button className="button px-15 py-10 -blue-1 bg-light-2">
+                      <button
+                        type="button"
+                        data-bs-toggle="modal"
+                        data-bs-target="#exampleModal"
+                        className="button px-15 py-10 -blue-1 bg-light-2"
+                      >
                         <i className="icon-share mr-10" />
                         Share
                       </button>
+
+                      <div
+                        className="modal fade"
+                        id="exampleModal"
+                        tabindex="-1"
+                        aria-labelledby="exampleModalLabel"
+                        aria-hidden="true"
+                      >
+                        <div className="modal-dialog modal-dialog-centered">
+                          <div className="modal-content">
+                            <div className="d-flex justify-content-end">
+                
+                              <button
+                                type="button"
+                                class="btn-close px-2 py-2"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                              ></button>
+                            </div>
+                            <div className="modal-body">...</div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -186,18 +215,20 @@ const SinglePage = () => {
         </div>
         {/* </div> */}
       </section>
-      {vehicleData?.data?.description ? <section className="mt-40">
-        <div className="container view_bordershadow bg-white p-4">
-          <div className="row y-gap-20 px-10 pt-5">
-            <div className="col-auto">
-              <h2>About {vehicleData?.data?.title}</h2>
+      {vehicleData?.data?.description ? (
+        <section className="mt-40">
+          <div className="container view_bordershadow bg-white p-4">
+            <div className="row y-gap-20 px-10 pt-5">
+              <div className="col-auto">
+                <h2>About {vehicleData?.data?.title}</h2>
+              </div>
+            </div>
+            <div className="row y-gap-20 px-10">
+              <BrandIntro description={vehicleData?.data?.description} />
             </div>
           </div>
-          <div className="row y-gap-20 px-10">
-            <BrandIntro description={vehicleData?.data?.description} />
-          </div>
-        </div>
-      </section> : null}
+        </section>
+      ) : null}
 
       <section className="pt-40 mb-40 container">
         <div className="view_bordershadow bg-white">
@@ -258,7 +289,7 @@ const SinglePage = () => {
 
             <div className="col-lg-8">
               {/* <SimilarTrucks similarVehicles={similarVehicles} /> */}
-              <ModelSlides vehicleDetails={similarVehicles}/>
+              <ModelSlides vehicleDetails={similarVehicles} />
             </div>
           </div>
         </div>
