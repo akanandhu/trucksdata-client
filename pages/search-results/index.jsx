@@ -82,7 +82,6 @@ const SearchResultsPage = () => {
   const vehicles = getFlatData(results || []);
 
   const [ref, inView] = useInView();
-  console.log(inView,'checkingInView')
   useReloadOnPageScroll({
     fetchNextPage,
     inView,

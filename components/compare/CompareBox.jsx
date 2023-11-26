@@ -163,7 +163,16 @@ const CompareBox = ({ vehicle, setVehicle }) => {
       setIds([vehicle_one, vehicle_two]);
     }
   }, [vehicle_one, vehicle_two]);
-
+  const hasVehicleKeys = vehicle_one && vehicle_two;
+  const vehicleCount = vehicle.reduce((accumulator, currentValue) => {
+    return (
+      accumulator +
+      (currentValue.vehicle?.length !== 0 &&
+      Object.keys(currentValue.vehicle ?? {})?.length
+        ? 1
+        : 0)
+    );
+  }, 0);
 
   useEffect(() => {
     if (isFetched && vehicle_one && vehicle_two) {
@@ -203,14 +212,16 @@ const CompareBox = ({ vehicle, setVehicle }) => {
             );
           })}
         </div>
-        <div className="d-flex justify-content-center py-20 ">
-          <button
-            onClick={handleCompare}
-            className="btn btn-primary w-25 bg-blue-1  h-50 "
-          >
-            Compare
-          </button>
-        </div>
+        {!hasVehicleKeys && (
+          <div className="d-flex justify-content-center py-20 ">
+            <button
+              onClick={handleCompare}
+              className="btn btn-primary w-25 bg-blue-1  h-50 "
+            >
+              Compare
+            </button>
+          </div>
+        )}
       </div>
       <CompareBoxMobile
         vehicle={vehicle}
@@ -226,7 +237,7 @@ const CompareBox = ({ vehicle, setVehicle }) => {
         </div>
       )}
 
-      {compared && (
+      {(compared || hasVehicleKeys) && vehicleCount >= 2 && (
         <div
           id={"compareTableSection"}
           className="mt-40 view_bordershadow bg-white    p-2 "
