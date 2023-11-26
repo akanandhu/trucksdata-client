@@ -8,7 +8,7 @@ import useVehicle from "../../services/useVehicle";
 
 function ModelSlides({vehicleDetails}) {
   return (
-    <>
+    <div>
       <Swiper
         spaceBetween={30}
         modules={[Navigation, Pagination]}
@@ -131,7 +131,7 @@ function ModelSlides({vehicleDetails}) {
           </button>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

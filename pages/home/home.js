@@ -150,7 +150,7 @@ const Home = () => {
             <div className="tabs -pills-2 pt-12">
               <TopFilter vehicleData={vehicleData} flag="upcoming" />
             </div>
-            <ModelSlides vehicleDetails={upcomingModels}/>
+            <ModelSlides vehicleDetails={upcomingModels} className='mt-10'/>
 
           </div>
         </div>

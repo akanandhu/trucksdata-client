@@ -3,10 +3,10 @@ import Seo from "../../components/common/Seo";
 import CompareBox from "../../components/compare/CompareBox";
 import DescriptionBox from "../../components/compare/DescriptionBox";
 import CompareLocationTop from "../../components/compare/location/CompareLocationTop";
-import DefaultFooter from "../../components/footer/default/index";
 import CallToActions from "../../components/common/CallToActions";
 import MainHeader from "../../components/header/main-header";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import Footer from '../../components/footer/footer';
 
 const ComparePage = () => {
 
@@ -39,7 +39,7 @@ const ComparePage = () => {
       <DescriptionBox />
       <CompareBox vehicle={vehicle} setVehicle={setVehicle} />
       <CallToActions />
-      <DefaultFooter />
+      <Footer className="text-dark" />
     </div>
   );
 };

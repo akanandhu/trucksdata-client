@@ -26,7 +26,7 @@ import useVehicleTypes from "../../services/useVehicleTypes";
 import useAllVehicles from "../../services/vehicles/useAllVehicles";
 import BrandIntro from "../../components/destinations/components/BrandIntro";
 import ModelSlides from "../../components/models/ModelSlides";
-import ShareModl from "../../components/share/ShareModl";
+import Share from "../../components/share/Share";
 
 const SinglePage = () => {
   const router = useRouter();
@@ -67,7 +67,6 @@ const SinglePage = () => {
       <Seo pageTitle={vehicleData?.data?.title ?? "Variant View Page"} />
       {/* End Page Title */}
       <div className="header-margin"></div>
-      {console.log("Desctription ", vehicleData?.data)}
       {/* header top margin */}
       <MainHeader />
       {/* End Header 1 */}
@@ -138,7 +137,9 @@ const SinglePage = () => {
                                 aria-label="Close"
                               ></button>
                             </div>
-                            <div className="modal-body">...</div>
+                            <div className="modal-body">
+                              <Share/>
+                            </div>
                           </div>
                         </div>
                       </div>
