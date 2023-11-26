@@ -1,12 +1,35 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { CompareModelInput } from "./CompareModelInputs";
 import ComparePlusButton from "./ComparePlusButton";
 import CompareInputSeperate from "./CompareSelectField";
+import { useRouter } from "next/router";
 
-const CompareFields = ({ item, vehicle, setVehicle }) => {
+const CompareFields = ({ item, vehicle, setVehicle, isFetched }) => {
   const [vehicleId, setVehicleId] = useState("");
   const [searchValue, setSearchValue] = useState("");
   const [searchModelValue, setSearchModelValue] = useState("");
+  const [selectedBodyType, setSelectedBodyType] = useState(null);
+  const [selectedModel, setSelectedModel] = useState(null);
+
+  const router = useRouter();
+  const { vehicle_one, vehicle_two } = router?.query || {};
+  const hasIds = Boolean(vehicle_one) && Boolean(vehicle_two);
+
+
+  useEffect(() => {
+    if (hasIds && isFetched) {
+      setSearchModelValue(vehicle[item.index - 1]?.vehicle?.title ?? "");
+      setSelectedModel(vehicle[item.index - 1]?.vehicle?.title ?? "");
+      setSearchValue(
+        vehicle[item.index - 1]?.vehicle?.vehicle_type?.name ?? ""
+      );
+      setSelectedBodyType(
+        vehicle[item.index - 1]?.vehicle?.vehicle_type?.name ?? ""
+      );
+    }
+  }, [hasIds, isFetched, item.index, vehicle]);
+
+
   function handleClear() {
     setVehicle((prevVehicle) => {
       const updatedVehicle = prevVehicle.map((prev) => {
@@ -41,6 +64,8 @@ const CompareFields = ({ item, vehicle, setVehicle }) => {
           setVehicleId={setVehicleId}
           searchValue={searchValue}
           setSearchValue={setSearchValue}
+          selectedItem={selectedBodyType}
+          setSelectedItem={setSelectedBodyType}
         />
       </div>
       <div className="rounded-4 ">
@@ -52,6 +77,8 @@ const CompareFields = ({ item, vehicle, setVehicle }) => {
           className="vehicle-select"
           searchModelValue={searchModelValue}
           setSearchModelValue={setSearchModelValue}
+          selectedItem={selectedModel}
+          setSelectedItem={setSelectedModel}
         />
       </div>
     </div>

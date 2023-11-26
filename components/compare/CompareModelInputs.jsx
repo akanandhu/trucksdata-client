@@ -10,9 +10,10 @@ export const CompareModelInput = ({
   setVehicle,
   vehicleId,
   setSearchModelValue,
-  searchModelValue
+  searchModelValue,
+  setSelectedItem,
+  selectedItem
 }) => {
-  const [selectedItem, setSelectedItem] = useState({})
 
   const {
     data: results,

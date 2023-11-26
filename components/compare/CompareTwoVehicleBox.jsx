@@ -4,11 +4,16 @@ import React from "react";
 import { Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import isTextMatched from "../../utils/isTextMatched";
+import { useRouter } from "next/router";
 
 const CompareTwoVehicleBox = ({ item }) => {
   const vehicleOne = item?.id;
   const vehicleTwo = item?.compare_vehicle?.[0]?.id;
   const routeToRedirect = `/compare?vehicle_one=${vehicleOne}&vehicle_two=${vehicleTwo}`;
+  const router = useRouter();
+  function handleRoute() {
+    router.push(routeToRedirect);
+  }
 
   return (
     <div className="truck-card-compare">
@@ -51,15 +56,15 @@ const CompareTwoVehicleBox = ({ item }) => {
           {/* End .tourCard__image */}
 
           <div className="cruiseCard__content ps-3 pe-2 py-2 compareContents">
-          <div>
-            <h4 className="w-100 text-dark-1 text-14 lh-14 fw-500">
-              {item?.title}
-            </h4>
-          </div>
-          {/* <p className="text-light-1 lh-14 text-14 mt-5" /> */}
+            <div>
+              <h4 className="w-100 text-dark-1 text-14 lh-14 fw-500">
+                {item?.title}
+              </h4>
+            </div>
+            {/* <p className="text-light-1 lh-14 text-14 mt-5" /> */}
 
-          {/* End .row */}
-          {/* <div
+            {/* End .row */}
+            {/* <div
               className="d-flex flex-column align-content-center align-items-center justify-content-between  "
               // className="d-block"
             >
@@ -75,21 +80,21 @@ const CompareTwoVehicleBox = ({ item }) => {
               </div>
             </div> */}
 
-          <div
-            className="d-flex flex-column  justify-content-end"
-            // className="d-block"
-          >
-            <div>
+            <div
+              className="d-flex flex-column  justify-content-end"
+              // className="d-block"
+            >
               <div>
-                <div className="fw-600 text-15 text-blue-1">
-                  ₹ {item?.min_price.split(".")[0]}
-                </div>{" "}
-                <div className="text-light-1 text-14 compare_onwards">
-                  onwards
+                <div>
+                  <div className="fw-600 text-15 text-blue-1">
+                    ₹ {item?.min_price.split(".")[0]}
+                  </div>{" "}
+                  <div className="text-light-1 text-14 compare_onwards">
+                    onwards
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
           </div>
         </div>
 
@@ -182,7 +187,9 @@ const CompareTwoVehicleBox = ({ item }) => {
         </div>
       </Link>
       <div className="d-flex justify-content-lg-center pb-3 px-2">
-        <button className="btn btn-primary flex-fill  ">Compare Now</button>
+        <button onClick={handleRoute} className="btn btn-primary flex-fill  ">
+          Compare Now
+        </button>
       </div>
     </div>
   );

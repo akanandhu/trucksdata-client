@@ -4,7 +4,7 @@ import CompareInputSeperate from "./CompareSelectField";
 import CompareMobileBodyField from "./mobile/CompareMobileBodyField";
 import CompareFields from "./CompareFields";
 
-const CompareBoxMobile = ({ vehicle, setVehicle, handleCompare }) => {
+const CompareBoxMobile = ({ vehicle, setVehicle, handleCompare, isFetched }) => {
   const item = {
     id: 3,
     img: "/img/backgrounds/3.png",
@@ -30,6 +30,7 @@ const CompareBoxMobile = ({ vehicle, setVehicle, handleCompare }) => {
                 item={obj}
                 setVehicle={setVehicle}
                 vehicle={vehicle}
+                isFetched={isFetched}
               />
             );
           })}

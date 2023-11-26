@@ -9,6 +9,7 @@ import Spinner from "../loading/Spinner";
 import { useRouter } from "next/router";
 import CompareFields from "./CompareFields";
 import CompareBoxMobile from "../compare/CompareBoxMobile";
+import useGetMultipleVehicleToCompare from "../../services/compare/useGetMultipleVehicleToCompare";
 
 const toastStyles = {
   icon: "🚚",
@@ -133,7 +134,7 @@ const CompareBox = ({ vehicle, setVehicle }) => {
     if (idCollection?.length >= 2) {
       setCompared(true);
       setIds(idCollection);
-    
+
       setComparisonInitiated(true);
     } else {
       setCompared(false);
@@ -145,49 +146,44 @@ const CompareBox = ({ vehicle, setVehicle }) => {
 
   useEffect(() => {
     if (comparisonInitiated && compareTableRef.current) {
-      compareTableRef.current.scrollIntoView({ behavior: 'smooth' });
+      compareTableRef.current.scrollIntoView({ behavior: "smooth" });
     }
   }, [comparisonInitiated]);
 
   // vehicleId set
   const router = useRouter();
-  
-  const { vehicle_one, vehicle_two } = router?.query || {};
-  const hasIds = Boolean(vehicle_one) && Boolean(vehicle_two);
 
+  const { vehicle_one, vehicle_two } = router?.query || {};
+
+  const { data, isLoading, isFetched } = useGetMultipleVehicleToCompare(ids);
+
+  // setting to prefill popular compares
   useEffect(() => {
     if (vehicle_one && vehicle_two) {
-      const idsToCall = vehicle?.map((item) => {
-        if (item.vehicle) {
-          return item.vehicle.id;
-        } else {
-          return;
-        }
-      });
-      const idCollection = idsToCall?.filter(Boolean);
-
-      setIds(idCollection);
+      setIds([vehicle_one, vehicle_two]);
     }
-  }, [vehicle, vehicle_one, vehicle_two]);
+  }, [vehicle_one, vehicle_two]);
 
-  const queries = useQueries(
-    ids.map((id) => ({
-      queryKey: ["vehicle-multiple", id],
-      queryFn: () => getVehicleData(id),
-    }))
-  );
 
-  const vehicleCollectedData = queries.map((query) => query?.data?.data);
-  const isLoading = queries.some((query) => query.isLoading);
+  useEffect(() => {
+    if (isFetched && vehicle_one && vehicle_two) {
+      setVehicle((vehicle) => {
+        return vehicle?.map((item) => {
+          return {
+            ...item,
+            vehicle: data?.[item.index - 1],
+          };
+        });
+      });
+    }
+  }, [isFetched, setVehicle]);
 
   const [mounted, setMounted] = useState(false);
- 
   useEffect(() => {
     setMounted(true);
   }, []);
 
   if (!mounted) return <></>;
-
 
   return (
     <div key={item.id} className="col-lg-12 container mt-40">
@@ -201,6 +197,7 @@ const CompareBox = ({ vehicle, setVehicle }) => {
                   item={item}
                   vehicle={vehicle}
                   setVehicle={setVehicle}
+                  isFetched={isFetched}
                 />
               </div>
             );
@@ -219,6 +216,7 @@ const CompareBox = ({ vehicle, setVehicle }) => {
         vehicle={vehicle}
         setVehicle={setVehicle}
         handleCompare={handleCompare}
+        isFetched={isFetched}
       />
 
       {isLoading && (
@@ -234,7 +232,7 @@ const CompareBox = ({ vehicle, setVehicle }) => {
           className="mt-40 view_bordershadow bg-white    p-2 "
           ref={compareTableRef}
         >
-          <CompareTable  compareData={vehicleCollectedData} />
+          <CompareTable compareData={data} />
         </div>
       )}
 
