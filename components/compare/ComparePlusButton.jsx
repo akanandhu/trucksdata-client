@@ -7,8 +7,8 @@ const ComparePlusButton = ({ index, vehicle, handleClear }) => {
   const logo = currentItem?.vehicle
     ? currentItem?.vehicle?.images?.[0]?.thumbnail
     : "";
-  console.log(currentItem, "currentItem");
-  const [screen, setScreen] = useState(250);
+
+    const [screen, setScreen] = useState(250);
 
   useEffect(() => {
     const updateScreenSize = () => {

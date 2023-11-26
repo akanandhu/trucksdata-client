@@ -12,8 +12,8 @@ const CompareFields = ({ item, vehicle, setVehicle, isFetched }) => {
   const [selectedModel, setSelectedModel] = useState(null);
 
   const router = useRouter();
-  const { vehicle_one, vehicle_two } = router?.query || {};
-  const hasIds = Boolean(vehicle_one) && Boolean(vehicle_two);
+  const { vehicle_one, vehicle_two, vehicle_three } = router?.query || {};
+  const hasIds = Boolean(vehicle_one) && Boolean(vehicle_two) && Boolean(vehicle_three)
 
 
   useEffect(() => {
