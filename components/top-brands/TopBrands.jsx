@@ -47,7 +47,7 @@ const TopBrands = () => {
         settings: {
           slidesToShow: 2,
           centerMode: false,
-          variableWidth: true,
+          variableWidth: false,
         },
       },
     ],

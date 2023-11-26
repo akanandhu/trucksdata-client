@@ -24,7 +24,6 @@ const ButtonFilter = ({
     <>
       <div className="row x-gap-10 y-gap-10 pt-10">
         {filters.map((filter) => {
-          console.log(filter, "filterCheck");
           return (
             <div className="col-auto" key={filter.label}>
               <button

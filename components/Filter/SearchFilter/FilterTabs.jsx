@@ -28,7 +28,6 @@ function FilterTabs(props) {
   const opt2 = option2 ? JSON.parse(option2) : null;
   const opt3 = option3 ? JSON.parse(option3) : null;
   const tabsValue = tabs ? JSON.parse(tabs) : null;
-  console.log(currTab, "option1");
   const queryValues = {
     opt1,
     tabs: tabsValue,

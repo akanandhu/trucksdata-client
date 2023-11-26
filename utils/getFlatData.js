@@ -5,7 +5,6 @@ const getFlatData = (apiData) => {
       page.data.data ? page.data.data : page
     );
 
-    console.log(apiData,'apiiiiiii')
 
     return data;
   } else {

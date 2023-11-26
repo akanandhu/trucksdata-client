@@ -49,7 +49,6 @@ const SingleBrand = () => {
   return (
     <>
       <Seo pageTitle="Brands" />
-    {console.log("Most Popular ",mostPopularVehicles)}
       <div className="header-margin"></div>
 
       <MainHeader />

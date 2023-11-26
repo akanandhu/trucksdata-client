@@ -48,7 +48,6 @@ const SpecHighlights = ({keyspecs}) => {
   }
   return (
     <div>
-      {console.log("Key ",keyspecs)}
       <div className="row y-gap-30 justify-between pt-30">
         {keyspecs?.slice(0,6)?.map((item) => (
           <div className="col-md-auto col-6" key={item.id}>

@@ -24,7 +24,6 @@ const SpecTable = ({ hasVariant, tableData, vehicleSpecs, specId }) => {
 
   const maxCount = Math.max(...Object.values(counts));
   const resultArray = generateNumberArray(maxCount);
-  console.log(resultArray, hasVariant, "resulttttt");
 
   return (
     <div className="overflow-scroll scroll-bar-1">
@@ -48,7 +47,6 @@ const SpecTable = ({ hasVariant, tableData, vehicleSpecs, specId }) => {
                   .filter((item) => item !== undefined && item !== "-")
               : [row?.option_one]?.filter(Boolean);
 
-            console.log(optionsRow, hasVariant, "rowchecking");
             return (
               <tr key={index}>
                 <td>{row.item}</td>

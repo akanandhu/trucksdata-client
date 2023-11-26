@@ -15,7 +15,6 @@ const SimilarTrucks = ({similarVehicles}) => {
   return (
     
     <>
-    {console.log("SIMILAR TRUCKS ",similarVehicles)}
       <Swiper
         spaceBetween={30}
         modules={[Navigation, Pagination]}

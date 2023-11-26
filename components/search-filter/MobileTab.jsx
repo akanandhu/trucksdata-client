@@ -24,7 +24,6 @@ const MobileTab = ({
     <div className="tabs -bookmark js-tabs d-md-none ">
       <div className="tabs__controls d-flex items-center js-tabs-controls">
         {dropdown?.map((tab, i) => {
-          console.log(tab, currentTab, "checkingTab");
           return (
             <button
               key={tab?.id}

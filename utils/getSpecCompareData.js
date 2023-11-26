@@ -1,5 +1,4 @@
 function getBasicTableData(datas) {
-  console.log(datas, "datasCheck");
   const basicTableData = [
     {
       item: "Manufacturer Name",

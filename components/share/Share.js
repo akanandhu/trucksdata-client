@@ -18,7 +18,6 @@ function Share() {
 
   return (
     <div className="d-flex justify-content-between ps-5 pe-5 pb-2">
-      {console.log("location", window.location.href)}
       <FacebookShareButton
         quote={"Some quote"}
         hashtag={"truck"}

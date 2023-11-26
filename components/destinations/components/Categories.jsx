@@ -59,7 +59,6 @@ const Categories = ({category}) => {
     <Slider {...settings}>
       {category?.map((item) => (
         <div className="col" key={item.id}>
-          {console.log("!!!!!!!!!!!!!!!",item.name)}
           <button className="bg-white d-flex flex-column justify-center px-20 py-15 rounded-4 border-light text-16 lh-14 fw-500 col-12">
             <div className="pb-20 w-25">
               <img src={categoryIcons[item.name] ? categoryIcons[item.name] : '/icons/truck-wheel.svg' } />

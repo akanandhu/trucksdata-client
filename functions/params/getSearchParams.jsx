@@ -1,5 +1,4 @@
 export function getSearchParams(tabs, opt1, opt2, opt3) {
-  console.log(opt2,opt3, 'optionCheck')
   const params = {};
   if (tabs) {
     if (tabs?.name === "Manufacturer") {

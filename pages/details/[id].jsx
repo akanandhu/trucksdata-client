@@ -64,6 +64,8 @@ const SinglePage = () => {
   );
   return (
     <>
+    {console.log("Whole spec data ",vehicleData?.data?.vehicle_specs)}
+    {console.log("KEY SPEC ",keyspecs)}
       <Seo 
       pageTitle={vehicleData?.data?.title ?? "Variant View Page"} pageImage={vehicleData?.data?.images[0]?.thumbnail}/>
       {/* End Page Title */}
