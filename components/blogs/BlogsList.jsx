@@ -7,31 +7,33 @@ import getFlatData from "../../utils/getFlatData";
 import { useReloadOnPageScroll } from "../../hooks/useReloadOnPageScroll";
 import { useInView } from "react-intersection-observer";
 import { FaSpinner } from "react-icons/fa";
+import Spinner from "../loading/Spinner";
 
 function BlogsList() {
-  const { data, fetchNextPage, hasNextPage, isFetchingNextPage, isLoading } = useGetArticlesInfinite({});
+  const { data, fetchNextPage, hasNextPage, isFetchingNextPage, isLoading } =
+    useGetArticlesInfinite({});
   const blogs = getFlatData(data);
   const blogList = blogs || [];
 
-  const [ref, inView] = useInView()
+  const [ref, inView] = useInView();
 
   useReloadOnPageScroll({
     fetchNextPage,
     hasNextPage,
     inView,
-    isFetchingNextPage
-  })
+    isFetchingNextPage,
+  });
 
-  if(isLoading) {
-    return <></>
+  if (isLoading) {
+    return <></>;
   }
 
   return (
-    <section className="layout-pt-lg layout-pb-md blogListView">
-      <div className="container">
+    <section>
+      <div className="container ">
         <div className="row justify-center text-center">
           <div className="col-auto">
-            <div className="sectionTitle -md">
+            <div className="sectionTitle -md mt-15 ">
               <h2 className="sectionTitle__title">
                 Trucks News - All Latest Trucks Information and Auto news
               </h2>

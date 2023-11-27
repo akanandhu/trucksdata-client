@@ -4,12 +4,28 @@ import CompareInputSeperate from "./CompareSelectField";
 import CompareMobileBodyField from "./mobile/CompareMobileBodyField";
 import CompareFields from "./CompareFields";
 
-const CompareBoxMobile = ({ vehicle, setVehicle, handleCompare, isFetched }) => {
+const CompareBoxMobile = ({
+  vehicle,
+  setVehicle,
+  handleCompare,
+  isFetched,
+}) => {
+  const vehicleNames = vehicle
+    ?.map((item) => item?.vehicle?.title)
+    ?.filter(Boolean);
+  const defaultCompareText = `Compare two trucks of your choice with the best truck comparison tool in India . You can compare variant-wise prices, GVW, number of tyres, specifications, mileage, performance and more of as many as 3 trucks at one go to help you make the right choice.`;
+  const customCompareText = `Compare ${vehicleNames?.join(
+    " vs "
+  )} variant-wise prices, GVW, number of tyres, specifications, mileage, performance and more`;
+
+  const compareText = vehicleNames?.length
+    ? customCompareText
+    : defaultCompareText;
   const item = {
     id: 3,
     img: "/img/backgrounds/3.png",
     title: "Compare Trucks",
-    text: `Compare two trucks of your choice with the best truck comparison tool in India on TrucksDekho. You can compare variant-wise prices, GVW, number of tyres, specifications, mileage, performance and more of as many as 3 trucks at one go to help you make the right choice.`,
+    text: compareText,
     delayAnimation: "300",
   };
 
@@ -36,7 +52,9 @@ const CompareBoxMobile = ({ vehicle, setVehicle, handleCompare, isFetched }) => 
           })}
         </div>
         <div className="d-flex justify-content-center py-20 ">
-          <button onClick={handleCompare} className="btn btn-primary w-50  ">Compare</button>
+          <button onClick={handleCompare} className="btn btn-primary w-50  ">
+            Compare
+          </button>
         </div>
       </div>
     </div>

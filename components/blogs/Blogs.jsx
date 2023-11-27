@@ -6,7 +6,7 @@ import formattedDate from '../../utils/formattedDate'
 function Blogs({blogList}) {
   return (
     <>
-      {blogList.reverse().map((item,i) => (
+      {blogList?.map((item,i) => (
         <div
           className="col-lg-3 col-sm-6"
           key={item.id}

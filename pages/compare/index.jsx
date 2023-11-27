@@ -29,6 +29,7 @@ const ComparePage = () => {
   ];
 
   const [vehicle, setVehicle] = useState(defaultValues);
+  console.log(vehicle,'vehicleCheck')
 
   return (
     <div className="position-relative   ">
@@ -36,7 +37,7 @@ const ComparePage = () => {
       <div className="header-margin"></div>
       <MainHeader />
       <CompareLocationTop />
-      <DescriptionBox />
+      <DescriptionBox vehicle={vehicle}  />
       <CompareBox vehicle={vehicle} setVehicle={setVehicle} />
       <CallToActions />
       <Footer className="text-dark" />
