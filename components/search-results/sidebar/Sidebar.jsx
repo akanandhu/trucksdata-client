@@ -42,7 +42,6 @@ const Sidebar = ({ sideParams, setSideParams, specifications }) => {
     (item) => item?.name === "Axel Configuration"
   );
 
-
   return (
     <>
       <LoadingSpanFilters
@@ -67,7 +66,7 @@ const Sidebar = ({ sideParams, setSideParams, specifications }) => {
         options={variantOptions?.options ?? []}
         specId={variantOptions?.id}
       />
-      <Tyres {...paramsProps} options={tyres?.options}  specId={tyres?.id} />
+      <Tyres {...paramsProps} options={tyres?.options} specId={tyres?.id} />
       <Status
         {...paramsProps}
         options={statusOptions?.options ?? []}

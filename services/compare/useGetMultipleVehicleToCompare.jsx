@@ -1,4 +1,3 @@
-import React from "react";
 import { useQueries } from "react-query";
 import { getVehicleData } from "../useViewVehicle";
 
@@ -9,7 +8,7 @@ function useGetMultipleVehicleToCompare(ids) {
       queryFn: () => getVehicleData(id),
     }))
   );
-
+      console.log(ids,'idsToCheck')
   const vehicleCollectedData = queries.map((query) => query?.data?.data);
   const isLoading = queries.some((query) => query.isLoading);
   const isFetched = queries.every((query) => query.isFetched);

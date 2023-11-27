@@ -41,7 +41,11 @@ const CompareBox = ({ vehicle, setVehicle }) => {
       }
     });
 
-    const idCollection = idsToCall?.filter(Boolean);
+    const idCollection =
+      idsToCall &&
+      idsToCall
+        ?.filter(Boolean)
+        ?.filter((id) => id !== null && id !== undefined);
 
     if (idCollection?.length >= 2) {
       setCompared(true);
@@ -68,11 +72,13 @@ const CompareBox = ({ vehicle, setVehicle }) => {
   const { vehicle_one, vehicle_two, vehicle_three } = router?.query || {};
 
   const { data, isLoading, isFetched } = useGetMultipleVehicleToCompare(ids);
-
   // setting to prefill popular compares
   useEffect(() => {
-    if ((vehicle_one && vehicle_two && vehicle_three, vehicle_three)) {
-      setIds([vehicle_one, vehicle_two, vehicle_three]);
+    if (vehicle_one || vehicle_two || vehicle_three) {
+      const idsToCall = [vehicle_one, vehicle_two, vehicle_three]
+        ?.filter(Boolean)
+        ?.filter((id) => id !== null && id !== undefined);
+      setIds(idsToCall);
     }
   }, [vehicle_one, vehicle_two, vehicle_three]);
   const hasVehicleKeys = vehicle_one && vehicle_two;
@@ -87,7 +93,7 @@ const CompareBox = ({ vehicle, setVehicle }) => {
   }, 0);
 
   useEffect(() => {
-    if (isFetched && vehicle_one && vehicle_two && vehicle_three) {
+    if (isFetched && (vehicle_one || vehicle_two || vehicle_three)) {
       setVehicle((vehicle) => {
         return vehicle?.map((item) => {
           return {
