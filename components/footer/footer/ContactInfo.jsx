@@ -1,3 +1,5 @@
+import { Fragment } from "react";
+
 const ContactInfo = ({ contact }) => {
   const { contact_number, email } = contact || {};
 
@@ -16,18 +18,16 @@ const ContactInfo = ({ contact }) => {
     },
   ];
   return (
-    <>
+    <Fragment>
       {contactContent.map((item) => (
         <div className="mt-30" key={item.id}>
           <div className="mt-30">
             <div className="text-14 mt-30">{item.title}</div>
-            <a href="#" className="text-18 fw-500 mt-5">
-              {item.text}
-            </a>
+            <div className="text-18 fw-500 mt-5 contact_text">{item.text ?? ''}</div>
           </div>
         </div>
       ))}
-    </>
+    </Fragment>
   );
 };
 

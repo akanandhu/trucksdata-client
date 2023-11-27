@@ -70,7 +70,7 @@ const TopBrands = () => {
             <div className="citiesCard__image size-120 rounded-full mx-auto brandCardImage">
               <img
                 className="object-cover js-lazy"
-                src={item.logo[0].thumbnail}
+                src={item?.logo[0]?.thumbnail}
                 alt="image"
                 width={100}
                 height={100}

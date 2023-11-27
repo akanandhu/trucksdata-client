@@ -1,5 +1,5 @@
-const Social = ({socials}) => {
-  const {facebook_url, instagram_url,twitter, youtube_url } = socials || {}
+const Social = ({ socials }) => {
+  const { facebook_url, instagram_url, twitter, youtube_url } = socials || {};
 
   const socialContent = [
     { id: 1, icon: "icon-facebook", link: facebook_url },
@@ -11,7 +11,7 @@ const Social = ({socials}) => {
     <>
       {socialContent.map((item) => (
         <a
-          href={item.link}
+          href={`http://${item.link}`}
           target="_blank"
           rel="noopener noreferrer"
           key={item.id}

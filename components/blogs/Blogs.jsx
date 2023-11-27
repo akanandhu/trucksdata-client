@@ -14,7 +14,7 @@ function Blogs({blogList}) {
           data-aos-delay={i * 100}
         >
           <Link
-            href={`/blog/blog-details/${item.id}`}
+            href={`/blog/${item.id}`}
             className="blogCard -type-1 d-block "
           >
             <div className="blogCard__image">
@@ -23,7 +23,7 @@ function Blogs({blogList}) {
                   width={400}
                   height={400}
                   className="img-ratio js-lazy"
-                  src={item?.thumbnail[0]?.thumbnail}
+                  src={item?.thumbnail?.[0]?.thumbnail}
                   alt="image"
                 />
               </div>

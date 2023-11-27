@@ -9,8 +9,12 @@ import {
   SubMenu,
 } from "react-pro-sidebar";
 import Social from "../common/social/Social";
-import ContactInfo from "./ContactInfo";
 import Image from "next/image";
+import dynamic from "next/dynamic";
+
+const ContactInfo = dynamic(() => import('./ContactInfo'), {
+  ssr: false,
+})
 
 const MobileMenu = (props) => {
   const { vehicleData, logoImage } = props;
