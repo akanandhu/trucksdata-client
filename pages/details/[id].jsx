@@ -129,15 +129,24 @@ const SinglePage = () => {
                         aria-hidden="true"
                       >
                         <div className="modal-dialog modal-dialog-centered">
-                          <div className="modal-content">
-                            <div className="d-flex justify-content-end">
+                          <div className="modal-content pb-2">
+                            <div class="modal-header">
+                              <h5 class="modal-title">Share</h5>
+                              <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                              ></button>
+                            </div>
+                            {/* <div className="d-flex justify-content-end">
                               <button
                                 type="button"
                                 class="btn-close px-2 py-2"
                                 data-bs-dismiss="modal"
                                 aria-label="Close"
                               ></button>
-                            </div>
+                            </div> */}
                             <div className="modal-body">
                               <Share />
                             </div>

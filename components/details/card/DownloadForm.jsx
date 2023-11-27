@@ -179,8 +179,8 @@ const DownloadForm = ({ handleClick, click, url }) => {
                 </div>
               </div>
 
-              <div className="shadow-2 dropdown-menu min-width-400 overflow-scroll  position-absolute">
-                <div className="bg-white px-20 py-20 sm:px-0 sm:py-15 rounded-4">
+              <div className="shadow-2 dropdown-menu min-width-400   position-absolute ">
+                <div className="bg-primary px-20 py-20 sm:px-0 sm:py-15 rounded-4">
                   <ul className="y-gap-5 js-results">
                     {selectedItem?.districts?.map((item) => (
                       <li
@@ -209,7 +209,7 @@ const DownloadForm = ({ handleClick, click, url }) => {
 
               <div className="shadow-2 dropdown-menu min-width-400 position-absolute ">
                 <div className="bg-white px-20 py-20 sm:px-0 sm:py-15 rounded-4">
-                  <ul className="y-gap-5 js-results">
+                  <ul className="y-gap-5 js-results ">
                     {selectedItem?.districts?.map((item) => (
                       <li
                         className={`-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option mb-1 ${

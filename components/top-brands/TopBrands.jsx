@@ -22,7 +22,7 @@ const TopBrands = () => {
     speed: 500,
     slidesToShow: manufacturerLength >= 5 ? 5 : manufacturerLength,
     slidesToScroll: 1,
-    centerMode: manufacturerLength >= 5 ? false : true,
+    centerMode: manufacturerLength >= 5 ? false : false,
     variableWidth: false,
     responsive: [
       {
@@ -45,9 +45,10 @@ const TopBrands = () => {
       {
         breakpoint: 520,
         settings: {
-          slidesToShow: 2,
-          centerMode: false,
+          slidesToShow: 1,
+          centerMode: true,
           variableWidth: false,
+          infinite:false
         },
       },
     ],
@@ -57,7 +58,7 @@ const TopBrands = () => {
     <Slider {...settings}>
       {brandDetails?.manufacturers?.slice(0, 8).map((item, i) => (
         <div
-          className="col-xl-2  col-lg-3 col-sm-8 border-2 truck-card p-2 rounded-3 d-flex justify-content-center"
+          className="tobrandCard col-xl-2  col-lg-3 col-sm-8 border-2 truck-card p-2 rounded-3 d-flex justify-content-center"
           key={i}
           data-aos="fade"
           data-aos-delay={i * 100}
@@ -65,7 +66,7 @@ const TopBrands = () => {
 
           <Link
             href={`/brands/${item.id}`}
-            className="citiesCard -type-3 d-block text-center"
+            className="citiesCard -type-3 d-block text-center "
           >
             <div className="citiesCard__image size-120 rounded-full mx-auto brandCardImage">
               <img

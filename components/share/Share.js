@@ -16,7 +16,7 @@ function Share() {
   const shareUrl = typeof window !== undefined && window.location.href;
 
   return (
-    <div className="d-flex justify-content-between ps-5 pe-5 pb-2">
+    <div className="d-flex justify-content-between ps-5 pe-5 pb-5">
       <FacebookShareButton
         quote={"Some quote"}
         hashtag={"truck"}
