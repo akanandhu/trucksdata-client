@@ -53,7 +53,7 @@ const SinglePage = () => {
     (item) => item?.vehicle_type_id === vehicleTypeId
   );
   const keyspecs = vehicleData?.data?.vehicle_specs?.filter(
-    (item) => item.is_key_feature === true
+    (item) => item.is_key_feature
   );
 
   const popularModels = allVehicles?.data?.data?.filter(
@@ -64,8 +64,6 @@ const SinglePage = () => {
   );
   return (
     <>
-    {console.log("Whole spec data ",vehicleData?.data?.vehicle_specs)}
-    {console.log("KEY SPEC ",keyspecs)}
       <Seo 
       pageTitle={vehicleData?.data?.title ?? "Variant View Page"} pageImage={vehicleData?.data?.images[0]?.thumbnail}/>
       {/* End Page Title */}

@@ -8,7 +8,6 @@ import Spinner from "../../loading/Spinner";
 
 const SearchResults = ({ showError, setShow, vehicles, refItem, isLoading }) => {
   
-
   return (
     <>
       {vehicles?.map((item) => {
@@ -150,7 +149,6 @@ const SearchResults = ({ showError, setShow, vehicles, refItem, isLoading }) => 
           </div>
         );
       })}
-      <div ref={refItem}></div>
       {isLoading && (
         <div className="mt-20">
           <Spinner />

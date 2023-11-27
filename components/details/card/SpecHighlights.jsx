@@ -1,7 +1,6 @@
 import Image from "next/image";
 
-const SpecHighlights = ({keyspecs}) => {
-  
+const SpecHighlights = ({ keyspecs }) => {
   const propertyContent = [
     {
       id: 1,
@@ -41,25 +40,36 @@ const SpecHighlights = ({keyspecs}) => {
     },
   ];
 
-  const showIconUrl = (title)=>{
-    const item = propertyContent.find((item)=> item.name === title);
+  const showIconUrl = (title) => {
+    const item = propertyContent.find((item) => item.name === title);
     const url = item?.icon;
-    return url ? url : '/icons/truck-wheel.svg'
-  }
+    return url ? url : "/icons/truck-wheel.svg";
+  };
   return (
     <div>
       <div className="row y-gap-30 justify-between pt-30">
-        {keyspecs?.slice(0,6)?.map((item) => (
-          <div className="col-md-auto col-6" key={item.id}>
-            <div className="d-block text-center">
-              <Image src={showIconUrl(item?.specification?.name)} width={22} height={22}  alt={'icon'} />
-              <div className="text-15 lh-15">
-               <span className=" fw-semibold ">{item?.specification?.name}</span> 
-                <br /> {item?.values[0]?.value}
+        {keyspecs?.slice(0, 6)?.map((item) => {
+          if (item?.values?.length) {
+            return (
+              <div className="col-md-auto col-6" key={item.id}>
+                <div className="d-block text-center">
+                  <Image
+                    src={showIconUrl(item?.specification?.name)}
+                    width={22}
+                    height={22}
+                    alt={"icon"}
+                  />
+                  <div className="text-15 lh-15">
+                    <span className=" fw-semibold ">
+                      {item?.specification?.name}
+                    </span>
+                    <br /> {item?.values[0]?.value}
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-        ))}
+            );
+          }
+        })}
       </div>
     </div>
   );

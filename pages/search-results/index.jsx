@@ -68,8 +68,8 @@ const SearchResultsPage = () => {
   const tabs = tab ? JSON.parse(tab) : null;
 
   const { params } = getSearchParams(tabs, opt1, opt2, opt3);
-  
-  const advancedParams = getAdvancedSearchParams(sideParams)
+
+  const advancedParams = getAdvancedSearchParams(sideParams);
   const {
     data: results,
     fetchNextPage,
@@ -80,9 +80,18 @@ const SearchResultsPage = () => {
   const vehicles = getFlatData(results || []);
 
   const [ref, inView] = useInView();
+  const [ref1, inView1] = useInView();
+
   useReloadOnPageScroll({
     fetchNextPage,
     inView,
+    isFetchingNextPage,
+    hasNextPage,
+  });
+
+  useReloadOnPageScroll({
+    fetchNextPage,
+    inView: inView1,
     isFetchingNextPage,
     hasNextPage,
   });
@@ -187,7 +196,7 @@ const SearchResultsPage = () => {
                 </div>
               </div>
             </div>
-            <CompareBar  />
+            <CompareBar />
 
             <div className="col-xl-9 ">
               <TopHeaderFilter count={count} />
@@ -199,8 +208,9 @@ const SearchResultsPage = () => {
                   setShow={setShow}
                   vehicles={vehicles}
                   isLoading={isLoading}
-                  refItem={ref}
+                  // refItem={ref}
                 />
+                <div ref={ref}></div>
               </div>
 
               <div className="row y-gap-2  sm:d-flex md:d-flex justify-content-center d-none">
@@ -208,9 +218,10 @@ const SearchResultsPage = () => {
                   setShow={setShow}
                   showError={handleCompareExceed}
                   vehicles={vehicles}
-                  refItem={ref}
+                  // refItem={ref}
                   isLoading={isLoading}
                 />
+                <div ref={ref1}></div>
               </div>
               {/* End .row */}
             </div>
