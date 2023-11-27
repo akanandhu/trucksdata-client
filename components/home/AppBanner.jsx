@@ -13,7 +13,9 @@ const AppBanner = () => {
             <AppBlock />
           </div>
 
-          <div className="col-lg-6">
+          <div 
+          className="col-lg-7"
+          >
             <img src="/img/mockup/mockup.svg" alt="image" />
           </div>
         </div>

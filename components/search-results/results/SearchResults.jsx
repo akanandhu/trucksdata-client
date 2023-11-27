@@ -6,8 +6,13 @@ import Link from "next/link";
 import CompareAddButton from "./compare/CompareAddButton";
 import Spinner from "../../loading/Spinner";
 
-const SearchResults = ({ showError, setShow, vehicles, refItem, isLoading }) => {
-  
+const SearchResults = ({
+  showError,
+  setShow,
+  vehicles,
+  refItem,
+  isLoading,
+}) => {
   return (
     <>
       {vehicles?.map((item) => {
@@ -22,21 +27,21 @@ const SearchResults = ({ showError, setShow, vehicles, refItem, isLoading }) => 
           <div className="col-4" key={item?.id}>
             <div className="border-top-light pt-30">
               <div className="custom-shadow p-1 x-gap-20 y-gap-20">
-                <div className="col-md-auto">
-                  <div className="cardImage  md:w-1/1 rounded-4">
+                <div className="col-md-auto ">
+                  <div className="cardImage cardSliderContainer md:w-1/1 rounded-4">
                     <div className="cardImage-slider rounded-4  custom_inside-slider">
                       <Swiper
                         className="mySwiper"
                         modules={[Pagination, Navigation]}
-                        pagination={{
-                          clickable: true,
-                        }}
+                        // pagination={{
+                        //   clickable: true,
+                        // }}
                         navigation={true}
                       >
                         {item?.images?.map((slide, i) => (
                           <SwiperSlide key={i}>
                             <div className=" ratio ratio-1:1">
-                              <div className="cardImage__content">
+                              <div className="cardImage__content searchResultCard">
                                 <Image
                                   width={300}
                                   height={300}
@@ -55,7 +60,7 @@ const SearchResults = ({ showError, setShow, vehicles, refItem, isLoading }) => 
                 </div>
                 {/* End .col */}
 
-                <div className="col-md">
+                <div className="col-md customCardContainer">
                   <div className="d-flex flex-column h-full justify-start">
                     <div>
                       <div className="row x-gap-5 items-center ">
@@ -73,7 +78,9 @@ const SearchResults = ({ showError, setShow, vehicles, refItem, isLoading }) => 
                           </div>
                         </div>
                       </div>
-                      <h3 className="text-18 lh-16 fw-500">{item?.title}</h3>
+                      <div className="searchResultContainer">
+                        <h3 className="text-18 lh-sm fw-500">{item?.title}</h3>
+                      </div>
                       <div className="truck-card__price-range">
                         <span className="truck-card__price text-blue-1">
                           ₹{minPrice} - ₹{maxPrice}

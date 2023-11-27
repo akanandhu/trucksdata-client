@@ -23,7 +23,7 @@ import { useReloadOnPageScroll } from "../../hooks/useReloadOnPageScroll";
 import { getSearchParams } from "../../functions/params/getSearchParams";
 import useGetSpecification from "../../services/useGetSpecification";
 import getAdvancedSearchParams from "../../functions/params/getAdvancedSearchParams";
-
+import Footer from '../../components/footer/footer/'
 const toastStyles = {
   icon: "🚚",
   position: "top-right",
@@ -236,7 +236,8 @@ const SearchResultsPage = () => {
       <CallToActions />
       {/* End Call To Actions Section */}
 
-      <DefaultFooter contact={contactDetails} />
+      {/* <DefaultFooter contact={contactDetails} /> */}
+      <Footer className="text-dark" />      
     </>
   );
 };

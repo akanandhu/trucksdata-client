@@ -24,7 +24,7 @@ const index = (props) => {
                   data-aos="fade-up"
                   data-aos-delay="100"
                 >
-                  {heading || "Search for the Best Trucks"}
+                  { heading || "Search for the Best Trucks" }
                 </h1>
                 <p
                   className="text-dark-1 mt-5"

@@ -186,8 +186,8 @@ const CompareTwoVehicleBox = ({ item }) => {
           })}
         </div>
       </Link>
-      <div className="d-flex justify-content-lg-center pb-3 px-2">
-        <button onClick={handleRoute} className="btn btn-primary flex-fill  ">
+      <div className="d-flex justify-content-lg-center pb-3 px-3">
+        <button onClick={handleRoute} className="btn bg-blue-1 flex-fill btn-primary text-center">
           Compare Now
         </button>
       </div>

@@ -13,7 +13,6 @@ import {
   TelegramIcon,
 } from "react-share";
 function Share() {
-  const facebookShareUrl = "https://www.facebook.com/";
   const shareUrl = typeof window !== undefined && window.location.href;
 
   return (
@@ -29,16 +28,11 @@ function Share() {
       <WhatsappShareButton
         quote={"Some quote"}
         hashtag={"truck"}
-        url={facebookShareUrl}
+        url={shareUrl}
       >
         <WhatsappIcon size={40} round={true} />
       </WhatsappShareButton>
-      <TwitterShareButton
-        hashtag={"truck"}
-        url={shareUrl}
-
-        // via={`neeraj648317720`}
-      >
+      <TwitterShareButton hashtag={"truck"} url={shareUrl}>
         <TwitterIcon size={40} round={true} />
       </TwitterShareButton>
 

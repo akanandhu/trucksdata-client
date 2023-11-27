@@ -2,8 +2,8 @@ import Image from "next/image";
 import blogsData from "../../../data/blogs";
 import formattedDate from "../../../utils/formattedDate";
 
-const RelatedBlog = ({blogs, id}) => {
-  const notCurrentBlogs = blogs?.filter((blog) => blog.id !== Number(id))
+const RelatedBlog = ({ blogs, id }) => {
+  const notCurrentBlogs = blogs?.filter((blog) => blog.id !== Number(id));
 
   return (
     <>
@@ -25,7 +25,11 @@ const RelatedBlog = ({blogs, id}) => {
               </div>
             </div>
             <div className="px-20 py-20">
-              <h4 className="text-dark-1 text-18 fw-500  " >{item.heading}</h4>
+              <div>
+                <div className="blogHeadingContainer">
+                  <h4 className="text-dark-1 text-18 fw-500">{item.heading}</h4>
+                </div>
+              </div>
               <div className="text-light-1 text-15 lh-14 mt-10">
                 {formattedDate(item?.created_at)}
               </div>

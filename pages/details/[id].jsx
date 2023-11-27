@@ -47,7 +47,6 @@ const SinglePage = () => {
   const vehicleTypeId = vehicleData?.data?.vehicle_type_id;
   const manufacturerId = vehicleData?.data?.manufacturer_id;
 
-  
   // const vehiclePrice = vehicleData?.data["min_price"].split(".");
   const similarVehicles = allVehicles?.data?.data?.filter(
     (item) => item?.vehicle_type_id === vehicleTypeId
@@ -64,8 +63,10 @@ const SinglePage = () => {
   );
   return (
     <>
-      <Seo 
-      pageTitle={vehicleData?.data?.title ?? "Variant View Page"} pageImage={vehicleData?.data?.images[0]?.thumbnail}/>
+      <Seo
+        pageTitle={vehicleData?.data?.title ?? "Variant View Page"}
+        pageImage={vehicleData?.data?.images[0]?.thumbnail}
+      />
       {/* End Page Title */}
       <div className="header-margin"></div>
       {/* header top margin */}
@@ -130,7 +131,6 @@ const SinglePage = () => {
                         <div className="modal-dialog modal-dialog-centered">
                           <div className="modal-content">
                             <div className="d-flex justify-content-end">
-                
                               <button
                                 type="button"
                                 class="btn-close px-2 py-2"
@@ -139,7 +139,7 @@ const SinglePage = () => {
                               ></button>
                             </div>
                             <div className="modal-body">
-                              <Share/>
+                              <Share />
                             </div>
                           </div>
                         </div>

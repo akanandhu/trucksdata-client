@@ -22,6 +22,7 @@
 }
 
 .blogCard.-type-2 {
+  background-color: red;
   .blogCard {
     &__image {
       overflow: hidden;
@@ -49,6 +50,7 @@
   display: block;
   width: 100%;
   height: 100%;
+  
   
   .blogCard {
     &__image {
@@ -89,7 +91,7 @@
 }
 
 .customBlog {
-  min-height: 22rem;
+  // min-height: 22rem;
 }
 
 .blogListView{
