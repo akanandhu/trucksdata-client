@@ -33,7 +33,7 @@ function PopularModals({ vehicleDetails, popularModels, manufacturer, type }) {
               <div className="ps-3">
                 <div className="text-black-1 fw-500">{item.title}</div>
                 <div className="text-light-1 fw-400 text-15">
-                ₹{" "}{item.max_price.split('.')[0]}{" "}-{" "}{item.min_price.split('.')[0]}
+                ₹{item.max_price.split('.')[0]}{" "}-{" "}₹{item.min_price.split('.')[0]}
                 </div>
               </div>
             </div>
