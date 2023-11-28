@@ -7,8 +7,6 @@ import {
   WhatsappIcon,
   TwitterShareButton,
   TwitterIcon,
-  PinterestIcon,
-  PinterestShareButton,
   TelegramShareButton,
   TelegramIcon,
 } from "react-share";
@@ -36,13 +34,13 @@ function Share() {
         <TwitterIcon size={40} round={true} />
       </TwitterShareButton>
 
-      <PinterestShareButton
+      {/* <PinterestShareButton
         quote={"Some quote"}
         hashtag={"truck"}
         url={shareUrl}
       >
         <PinterestIcon size={40} round={true} />
-      </PinterestShareButton>
+      </PinterestShareButton> */}
 
       <TelegramShareButton
         quote={"Some quote"}
