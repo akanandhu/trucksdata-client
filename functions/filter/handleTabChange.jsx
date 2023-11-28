@@ -13,6 +13,7 @@ export function handleTabChange(item, i, setCurrTab, specifications) {
     const gvw = specifications?.find(
       (spec) => spec?.name === "Gross Vehicle Weight (Kg)"
     );
+    
     return setCurrTab({ item: { ...item, spec_id: gvw?.id }, i });
   }
   setCurrTab({ item, i });

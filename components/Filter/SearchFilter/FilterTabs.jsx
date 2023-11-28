@@ -20,7 +20,7 @@ function FilterTabs(props) {
 
   const [currTab, setCurrTab] = useState();
   const router = useRouter();
-  const { data: specs } = useGetSpecification();
+  const { data: specs, isFetched } = useGetSpecification();
   const specifications = specs?.data?.data;
   const queryItems = router?.query;
   const { tab: tabs, option1, option2, option3 } = queryItems;
@@ -63,8 +63,8 @@ function FilterTabs(props) {
       );
     });
   };
-
   function handleSearch() {
+
     const query = {
       tab: JSON.stringify({
         name: currTab?.item?.tabItem || currTab?.item?.name || "Manufacturer",
@@ -87,6 +87,7 @@ function FilterTabs(props) {
       }),
     };
 
+
     const cleanQuery = Object.fromEntries(
       Object.entries(query).filter(
         ([_, value]) => value !== undefined && value !== null && value !== ""
@@ -102,12 +103,12 @@ function FilterTabs(props) {
   const [defaultIndex, setDefaultIndex] = useState(0);
 
   useEffect(() => {
-    if (tabs && option1 && option2) {
+    if (tabs && option1 && option2 && isFetched) {
       const index = tabsValue?.name === "Manufacturer" ? 0 : tabsValue?.id;
       setDefaultIndex(index);
       handleTabChange(tabsValue, tabsValue?.id, setCurrTab, specifications);
     }
-  }, []);
+  }, [isFetched]);
 
   function handleTableChange(index) {
     setDefaultIndex(index);
