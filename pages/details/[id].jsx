@@ -27,6 +27,7 @@ import useAllVehicles from "../../services/vehicles/useAllVehicles";
 import BrandIntro from "../../components/destinations/components/BrandIntro";
 import ModelSlides from "../../components/models/ModelSlides";
 import Share from "../../components/share/Share";
+import Spinner from "../../components/loading/Spinner";
 
 const SinglePage = () => {
   const router = useRouter();
@@ -40,7 +41,7 @@ const SinglePage = () => {
   const filterId = useSelector((store) => store.topfilter["brands"]?.id);
   const { data: vehicleDetails } = useVehicle(filterId);
 
-  const { data: vehicleData } = useViewVehicle(id);
+  const { data: vehicleData, isLoading } = useViewVehicle(id);
   const { data: vehicletypes } = useVehicleTypes();
   const { data: allVehicles } = useAllVehicles();
 
@@ -61,6 +62,15 @@ const SinglePage = () => {
       item?.vehicle_type_id === vehicleTypeId &&
       item?.manufacturer_id === manufacturerId
   );
+
+  if (isLoading) {
+    return (
+      <div className="d-flex justify-content-center  align-items-center vh-100  ">
+        <Spinner />
+      </div>
+    );
+  }
+
   return (
     <>
       <Seo

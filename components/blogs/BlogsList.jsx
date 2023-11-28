@@ -25,7 +25,11 @@ function BlogsList() {
   });
 
   if (isLoading) {
-    return <></>;
+    return (
+      <div className="d-flex justify-content-center  align-items-center vh-100  ">
+        <Spinner />
+      </div>
+    );
   }
 
   return (

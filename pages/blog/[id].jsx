@@ -18,7 +18,7 @@ const BlogSingleDynamic = () => {
   const router = useRouter();
   const [blog, setBlogItem] = useState({});
   const id = router.query.id;
-  const {data} = useGetArticles()
+  const {data, isLoading} = useGetArticles()
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const blogList = data?.data?.data || []
 
@@ -33,6 +33,14 @@ const BlogSingleDynamic = () => {
       return <Spinner />;
     }
   }, [blogList, id]);
+
+  if (isLoading) {
+    return (
+      <div className="d-flex justify-content-center  align-items-center vh-100  ">
+        <Spinner />
+      </div>
+    );
+  }
 
   return (
     <>

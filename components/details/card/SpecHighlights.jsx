@@ -11,7 +11,7 @@ const SpecHighlights = ({ keyspecs }) => {
     {
       id: 2,
       icon: "/icons/weight.svg",
-      name: "GVW",
+      name: "Gross Vehicle Weight (Kg)",
       content: "41500 KG",
     },
     {
@@ -23,7 +23,7 @@ const SpecHighlights = ({ keyspecs }) => {
     {
       id: 4,
       icon: "/icons/fuel-tank.svg",
-      name: "Fuel Tank",
+      name: "Fuel tank (Litres)",
       content: "160 Ltr",
     },
     {
@@ -55,8 +55,8 @@ const SpecHighlights = ({ keyspecs }) => {
                 <div className="d-block text-center">
                   <Image
                     src={showIconUrl(item?.specification?.name)}
-                    width={22}
-                    height={22}
+                    width={26}
+                    height={26}
                     alt={"icon"}
                   />
                   <div className="text-15 lh-15">

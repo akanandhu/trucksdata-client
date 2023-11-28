@@ -10,7 +10,7 @@ const RelatedBlog = ({ blogs, id }) => {
       {notCurrentBlogs.slice(0, 4).map((item) => (
         <div className="col-lg-3 col-sm-6 " key={item.id}>
           <a
-            href={`/blog/blog-details/${item.id}`}
+            href={`/blog/${item.id}`}
             className="blogCard customBlog -type-2 d-block bg-white rounded-4 custom-shadow "
           >
             <div className="blogCard__image blogcardView">

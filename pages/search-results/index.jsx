@@ -23,7 +23,8 @@ import { useReloadOnPageScroll } from "../../hooks/useReloadOnPageScroll";
 import { getSearchParams } from "../../functions/params/getSearchParams";
 import useGetSpecification from "../../services/useGetSpecification";
 import getAdvancedSearchParams from "../../functions/params/getAdvancedSearchParams";
-import Footer from '../../components/footer/footer/'
+import Footer from "../../components/footer/footer/";
+import Spinner from "../../components/loading/Spinner";
 const toastStyles = {
   icon: "🚚",
   position: "top-right",
@@ -112,6 +113,14 @@ const SearchResultsPage = () => {
   const contactDetails = { email, contact_number };
 
   const count = results?.pages?.[0]?.data?.total ?? 0;
+
+  if (isLoading) {
+    return (
+      <div className="d-flex justify-content-center  align-items-center vh-100  ">
+        <Spinner />
+      </div>
+    );
+  }
 
   return (
     <>
@@ -237,7 +246,7 @@ const SearchResultsPage = () => {
       {/* End Call To Actions Section */}
 
       {/* <DefaultFooter contact={contactDetails} /> */}
-      <Footer className="text-dark" />      
+      <Footer className="text-dark" />
     </>
   );
 };
