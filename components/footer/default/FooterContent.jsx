@@ -1,5 +1,4 @@
 import Link from "next/link";
-import footerDataContent from "../../../data/footerContent";
 import { useSelector } from "react-redux";
 
 const FooterContent = () => {

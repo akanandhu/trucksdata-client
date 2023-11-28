@@ -22,7 +22,7 @@ const TopBrands = () => {
     speed: 500,
     slidesToShow: manufacturerLength >= 5 ? 5 : manufacturerLength,
     slidesToScroll: 1,
-    centerMode: manufacturerLength >= 5 ? false : false,
+    // centerMode: manufacturerLength >= 5 ? false : false,
     variableWidth: false,
     responsive: [
       {

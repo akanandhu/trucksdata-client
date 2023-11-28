@@ -32,7 +32,7 @@ function FilterTabs(props) {
     opt1,
     tabs: tabsValue,
   };
-
+  console.log(opt1, "oneOption");
   const dropdown = getDropDown({
     manufacturers: manufacturerData,
     bodyTypes: vehicleData,
@@ -44,7 +44,7 @@ function FilterTabs(props) {
 
   const dropdownComponent = (dropdowns, screen) => {
     const selectedTab = tab.currentTab;
-    
+
     return dropdowns?.dropdownItem?.map((dropdownDetails) => {
       return (
         <DropInput
@@ -64,7 +64,6 @@ function FilterTabs(props) {
     });
   };
   function handleSearch() {
-
     const query = {
       tab: JSON.stringify({
         name: currTab?.item?.tabItem || currTab?.item?.name || "Manufacturer",
@@ -72,21 +71,26 @@ function FilterTabs(props) {
         spec_id: currTab?.item?.spec_id || null,
       }),
       option1: JSON.stringify({
-        id: filterParam?.option1?.id,
-        name: filterParam?.option1?.name,
+        id: filterParam?.option1?.id ? filterParam?.option1?.id : opt1?.id,
+        name: filterParam?.option1?.name
+          ? filterParam?.option1?.name
+          : opt1?.name,
       }),
       option2: JSON.stringify({
-        id: filterParam?.option2?.id,
-        name: filterParam?.option2?.name,
+        id: filterParam?.option2?.id ? filterParam?.option2?.id : opt2?.id,
+        name: filterParam?.option2?.name
+          ? filterParam?.option2?.name
+          : opt2?.name,
       }),
       ...(filterParam?.option3 && {
         option3: JSON.stringify({
-          id: filterParam?.option3?.id,
-          name: filterParam?.option3?.name,
+          id: filterParam?.option3?.id ? filterParam?.option3?.id : opt3?.id,
+          name: filterParam?.option3?.name
+            ? filterParam?.option3?.name
+            : opt3?.name,
         }),
       }),
     };
-
 
     const cleanQuery = Object.fromEntries(
       Object.entries(query).filter(
