@@ -11,6 +11,8 @@ const DownloadForm = ({ handleClick, click, url }) => {
   const [selectedDistrict, setSelectedDistrict] = useState({});
   const [name, setName] = useState();
   const [email, setEmail] = useState();
+  console.log(selectedItem,'districtttttt')
+  console.log(selectedDistrict,'districttttttsssss')
 
   const handleOptionClick = (item) => {
     setSearchValue(item.state);
@@ -34,7 +36,7 @@ const DownloadForm = ({ handleClick, click, url }) => {
     };
 
     create.mutate(data, {
-      onSuccess: () => downloadFile(url),
+      onSuccess: () => downloadFile(url, handleClick),
       onError: () => toast.error("Something Unexpected Occurred!!"),
     });
   }
@@ -169,6 +171,7 @@ const DownloadForm = ({ handleClick, click, url }) => {
                 <div className="text-15 text-light-1 ls-2 lh-16 d-flex  justify-content-between ">
                   <div>
                     <input
+                      autoComplete="off"
                       type="search"
                       className="js-search js-dd-focus"
                       value={districtValue}
@@ -179,38 +182,41 @@ const DownloadForm = ({ handleClick, click, url }) => {
                 </div>
               </div>
 
-              <div className="shadow-2 dropdown-menu min-width-400   position-absolute ">
-                <div className="bg-primary px-20 py-20 sm:px-0 sm:py-15 rounded-4">
+              <div className="shadow-2 dropdown-menu min-width-400 filter_contents">
+                <div className="px-20 py-20 sm:px-0 sm:py-15 rounded-4">
                   <ul className="y-gap-5 js-results">
-                    {selectedItem?.districts?.map((item) => (
-                      <li
-                        className={`-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option mb-1 ${
-                          selectedDistrict && selectedDistrict === item
-                            ? "active"
-                            : ""
-                        }`}
-                        key={item}
-                        role="button"
-                        onClick={() => handleDistrict(item)}
-                      >
-                        <div className="d-flex">
-                          <div className="icon-location text-light-1 text-20 pt-4" />
-                          <div className="ml-10">
-                            <div className="text-15 lh-12 fw-500 js-search-option-target">
-                              {item}
+                    {selectedItem?.districts?.map((item) => {
+
+                      return (
+                        <li
+                          className={`-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option mb-1 ${
+                            selectedDistrict&& selectedDistrict === item
+                              ? "active"
+                              : ""
+                          }`}
+                          key={item}
+                          role="button"
+                          onClick={() => handleDistrict(item)}
+                        >
+                          <div className="d-flex">
+                            <div className="icon-location text-light-1 text-20 pt-4" />
+                            <div className="ml-10">
+                              <div className="text-15 lh-12 fw-500 js-search-option-target">
+                                {item}
+                              </div>
                             </div>
                           </div>
-                        </div>
-                      </li>
-                    ))}
+                        </li>
+                      );
+                    })}
                   </ul>
                 </div>
               </div>
 
-              <div className="shadow-2 dropdown-menu min-width-400 position-absolute ">
+              <div className="shadow-2 dropdown-menu min-width-400 overflow-scroll  position-absolute ">
                 <div className="bg-white px-20 py-20 sm:px-0 sm:py-15 rounded-4">
-                  <ul className="y-gap-5 js-results ">
-                    {selectedItem?.districts?.map((item) => (
+                  <ul className="y-gap-5 js-results">
+                    {selectedItem?.district?.map((item) => (
                       <li
                         className={`-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option mb-1 ${
                           selectedDistrict && selectedDistrict === item
@@ -219,7 +225,7 @@ const DownloadForm = ({ handleClick, click, url }) => {
                         }`}
                         key={item}
                         role="button"
-                        onClick={() => handleDistrict(item)}
+                        onClick={() => handleOptionClick(item)}
                       >
                         <div className="d-flex">
                           <div className="icon-location text-light-1 text-20 pt-4" />

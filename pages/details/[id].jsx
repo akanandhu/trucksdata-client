@@ -237,8 +237,8 @@ const SinglePage = () => {
         {/* </div> */}
       </section>
       {vehicleData?.data?.description ? (
-        <section className="mt-40">
-          <div className="container view_bordershadow bg-white p-4">
+        <section className="pt-40">
+          <div className="container view_bordershadow bg-white ">
             <div className="row y-gap-20 px-10 pt-5">
               <div className="col-auto">
                 <h2>About {vehicleData?.data?.title}</h2>

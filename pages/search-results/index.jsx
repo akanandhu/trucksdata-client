@@ -114,14 +114,6 @@ const SearchResultsPage = () => {
 
   const count = results?.pages?.[0]?.data?.total ?? 0;
 
-  if (isLoading) {
-    return (
-      <div className="d-flex justify-content-center  align-items-center vh-100  ">
-        <Spinner />
-      </div>
-    );
-  }
-
   return (
     <>
       <Seo pageTitle="Search Results" />

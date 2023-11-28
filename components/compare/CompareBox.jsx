@@ -114,7 +114,7 @@ const CompareBox = ({ vehicle, setVehicle }) => {
 
   return (
     <div key={item.id} className="col-lg-12 container mt-40">
-      <div className="rounded-4 layout-pt-md  layout-pb-md  view_bordershadow bg-white d-lg-block sm:d-none md:none">
+      <div className="rounded-4 layout-pt-md  layout-pb-md  view_bordershadow bg-white d-lg-block sm:d-none md:d-none">
         <div className="d-flex flex-wrap y-gap-30  d-xs-none d-md-block ">
           <div className="col-auto"></div>
           {vehicle?.map((item, index) => {

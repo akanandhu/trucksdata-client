@@ -81,7 +81,7 @@ const DetailBox = ({ vehicleDetails }) => {
 
   function handleClick() {
     if (hasData) {
-      return downloadFile(vehicleDetails?.brochure);
+      return downloadFile(vehicleDetails?.brochure, handleClick);
     }
     setClick(!click);
   }
