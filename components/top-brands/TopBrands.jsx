@@ -46,8 +46,8 @@ const TopBrands = () => {
         breakpoint: 520,
         settings: {
           slidesToShow: 1,
-          centerMode: true,
-          variableWidth: false,
+          centerMode: false,
+          variableWidth: true,
           infinite:false
         },
       },
