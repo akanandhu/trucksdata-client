@@ -52,9 +52,9 @@ const CompareTwoVehiclesCard = ({ comparisonData }) => {
         </div>
         {/* End arrow prev */}
 
-        <div className="col-auto">
+        {/* <div className="col-auto">
           <div className="pagination -dots text-border js-car-pag_active" />
-        </div>
+        </div> */}
         {/* End arrow pagination */}
 
         <div className="col-auto">

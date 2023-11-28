@@ -5,15 +5,15 @@ import { Navigation, Pagination } from "swiper";
 import { useSelector } from "react-redux";
 import useVehicle from "../../services/useVehicle";
 
-function ModelSlides({ vehicleDetails }) {
+function ModelSlides({ vehicleDetails,navigations}) {
   return (
     <div>
       <Swiper
         spaceBetween={30}
         modules={[Navigation, Pagination]}
         navigation={{
-          nextEl: ".js-popular-car-next",
-          prevEl: ".js-popular-car-prev",
+          nextEl: `.${navigations.next}`,
+          prevEl: `.${navigations.prev}`,
         }}
         pagination={{
           el: ".js-car-pag_active",
@@ -104,20 +104,19 @@ function ModelSlides({ vehicleDetails }) {
             </SwiperSlide>
           ))}
       </Swiper>
-
       <div className="d-flex x-gap-15 items-center justify-center pt-20 sm:pt-20">
         <div className="col-auto">
-          <button className="d-flex items-center text-24 arrow-left-hover js-popular-car-prev">
+          <button className={`d-flex items-center text-24 arrow-left-hover ${navigations?.prev}`}>
             <i className="icon icon-arrow-left" />
           </button>
         </div>
 
-        <div className="col-auto">
+        {/* <div className="col-auto">
           <div className="pagination -dots text-border js-car-pag_active" />
-        </div>
+        </div> */}
 
         <div className="col-auto">
-          <button className="d-flex items-center text-24 arrow-right-hover js-popular-car-next">
+          <button className={`d-flex items-center text-24 arrow-right-hover ${navigations?.next}`}>
             <i className="icon icon-arrow-right" />
           </button>
         </div>

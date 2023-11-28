@@ -10,6 +10,7 @@ const Faq = ({ faq }) => {
       })
     : [];
 
+
   return (
     <>
       {faqContent.map((item) => (
@@ -26,7 +27,6 @@ const Faq = ({ faq }) => {
               </div>
               <div className="button text-dark-1 text-start">{item.title}</div>
             </div>
-            {/* End accordion button */}
 
             <div
               className="accordion-collapse collapse"
@@ -37,7 +37,6 @@ const Faq = ({ faq }) => {
                 <p className="text-15">{item.content}</p>
               </div>
             </div>
-            {/* End accordion conent */}
           </div>
         </div>
       ))}

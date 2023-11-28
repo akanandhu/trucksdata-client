@@ -45,6 +45,13 @@ const Home = () => {
 
   const upcomingModels = upcomingVehicles?.data?.data.filter((item)=> item['is_upcoming'] === 1);
 
+  const popularNavigations = {prev:"js-popular-car-prev",next:"js-popular-car-next"};
+
+  const upcomingNavigations = {prev:"upcoming-prev-navigation",next:"upcoming-next-navigation"}
+
+  const compareNavigations = {prev:"compare-prev-navigation",next:"compare-next-navigation"}
+
+
   dispach(setManufacturer(manufacturer?.data["data"]));
 
   const generalData = localStorage.getItem("general-data");
@@ -93,7 +100,7 @@ const Home = () => {
             <div className="tabs -pills-2 pt-12">
               <TopFilter vehicleData={vehicleData} flag="popular" />
             </div>
-            <ModelSlides vehicleDetails={popularModels}/>
+            <ModelSlides vehicleDetails={popularModels} navigations={popularNavigations} />
           </div>
           {/* End .row */}
         </div>
@@ -113,7 +120,6 @@ const Home = () => {
               </div>
             </div>
           </div>
-          {/* End .row */}
 
           <div className="row y-gap-30 pt-5 item_gap-x30  ">
             <div className="tabs -pills-2 pt-12 ">
@@ -121,15 +127,17 @@ const Home = () => {
             </div>
             <TopBrands topBrandDetails={vehicleData} />
           </div>
-          {/* End .row */}
         </div>
-        {/* End .container */}
       </section>
+
+      <section className="pb-30">
 
       <CompareVehicles
         filterOptions={filterOptions}
         vehicleData={vehicleData}
-      />
+        
+        />
+        </section>
 
       <section className="pb-30">
         <div className="container view_bordershadow bg-white p-5">
@@ -150,7 +158,7 @@ const Home = () => {
             <div className="tabs -pills-2 pt-12">
               <TopFilter vehicleData={vehicleData} flag="upcoming" />
             </div>
-            <ModelSlides vehicleDetails={upcomingModels} className='mt-10'/>
+            <ModelSlides vehicleDetails={upcomingModels} className='mt-10' navigations={upcomingNavigations}/>
 
           </div>
         </div>

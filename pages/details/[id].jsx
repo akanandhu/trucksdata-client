@@ -33,6 +33,9 @@ const SinglePage = () => {
   const router = useRouter();
   const id = router.query.id;
 
+  const similarNavigations = {prev:"similar-prev-navigation",next:"similar-next-navigation"}
+
+
   // useEffect(() => {
   //   if (!id) <h1>Loading...</h1>;
   //   else setVehicle(carsData.find((item) => item.id == id));
@@ -310,7 +313,7 @@ const SinglePage = () => {
 
             <div className="col-lg-8">
               {/* <SimilarTrucks similarVehicles={similarVehicles} /> */}
-              <ModelSlides vehicleDetails={similarVehicles} />
+              <ModelSlides vehicleDetails={similarVehicles} navigations={similarNavigations}/>
             </div>
           </div>
         </div>
