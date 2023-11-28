@@ -14,7 +14,7 @@ const CompareVehicles = ({  vehicleData }) => {
 
 
   return (
-    <section className="">
+    <section className="pb-30">
       <div className="container view_bordershadow bg-white p-5">
         <div className="row y-gap-20 justify-center text-center">
           <div className="col-auto">
