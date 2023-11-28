@@ -1,3 +1,5 @@
+import { getHighestDigit } from "../../../utils/getHighestNum";
+
 function generateNumberArray(n) {
   return Array.from({ length: n }, (_, index) => index + 1);
 }
@@ -7,23 +9,32 @@ const SpecTable = ({ hasVariant, tableData, vehicleSpecs, specId }) => {
     (item) => item?.specification?.specification_category_id === specId
   );
 
-  const counts = {
-    option_one: 0,
-    option_two: 0,
-    option_three: 0,
-    option_four: 0,
-  };
 
-  tableData?.forEach((entry) => {
-    Object.keys(counts).forEach((option) => {
-      if (entry[option] !== "-") {
-        counts[option]++;
-      }
+
+  function getCounts(data) {
+    return data.map(item => {
+        if (item.option_four !== "-") {
+            return 4;
+        } else if (item.option_three !== "-") {
+            return 3;
+        } else if (item.option_two !== "-") {
+            return 2;
+        } else if (item.option_one !== "-") {
+            return 1;
+        } else {
+            return 0; // Return 0 if none of the options have a value
+        }
     });
-  });
+}
 
-  const maxCount = Math.max(...Object.values(counts));
-  const resultArray = generateNumberArray(maxCount);
+
+
+  const counts = getCounts(tableData)
+  const highest = getHighestDigit(counts)
+  const numArray = generateNumberArray(highest)
+
+  const resultArray = numArray
+  console.log(highest, 'tableDataCheck')
 
   return (
     <div className="overflow-scroll scroll-bar-1">
@@ -42,7 +53,12 @@ const SpecTable = ({ hasVariant, tableData, vehicleSpecs, specId }) => {
         <tbody>
           {tableData?.map((row, index) => {
             const optionsRow = hasVariant
-              ? [row?.option_one, row?.option_two, row?.option_three, row?.option_four]
+              ? [
+                  row?.option_one,
+                  row?.option_two,
+                  row?.option_three,
+                  row?.option_four,
+                ]
                   ?.filter(Boolean)
                   .filter((item) => item !== undefined && item !== "-")
               : [row?.option_one]?.filter(Boolean);
@@ -50,9 +66,15 @@ const SpecTable = ({ hasVariant, tableData, vehicleSpecs, specId }) => {
             return (
               <tr key={index}>
                 <td>{row.item}</td>
-                {optionsRow.map((item) => (
-                  <td key={item}>{item ?? "-"}</td>
-                ))}
+                {optionsRow.map((item) => {
+                  return Array.isArray(item) ? (
+                    item?.map((val) => {
+                      return <td key={val}>{val.value ?? "-"}</td>;
+                    })
+                  ) : (
+                    <td key={item}>{item ?? "-"}</td>
+                  );
+                })}
               </tr>
             );
           })}

@@ -2,35 +2,48 @@ function getBasicTableData(datas) {
   const basicTableData = [
     {
       item: "Manufacturer Name",
-      option_one: datas?.[0]?.manufacturer?.name ?? "-",
-      option_two: datas?.[1]?.manufacturer?.name ?? "-",
-      option_three: datas?.[2]?.manufacturer?.name ?? "-",
+      option_one: [{ value: datas?.[0]?.manufacturer?.name ?? "-" }] ?? "-",
+      option_two: [{ value: datas?.[1]?.manufacturer?.name ?? "-" }] ?? "-",
+      option_three: [{ value: datas?.[2]?.manufacturer?.name ?? "-" }] ?? "-",
     },
     {
       item: "Power Source",
-      option_one: datas?.[0]?.energy_source?.name ?? "-",
-      option_two: datas?.[1]?.energy_source?.name ?? "-",
-      option_three: datas?.[2]?.energy_source?.name ?? "-",
+      option_one: [{ value: datas?.[0]?.energy_source?.name ?? "-" }],
+      option_two: [{ value: datas?.[1]?.energy_source?.name ?? "-" }],
+      option_three: [{ value: datas?.[2]?.energy_source?.name ?? "-" }],
     },
     {
       item: "Category",
-      option_one: datas?.[0]?.category_name ?? "-",
-      option_two: datas?.[1]?.category_name ?? "-",
-      option_three: datas?.[2]?.category_name ?? "-",
+      option_one: [{ value: datas?.[0]?.category_name ?? "-" }],
+      option_two: [{ value: datas?.[1]?.category_name ?? "-" }],
+      option_three: [{ value: datas?.[2]?.category_name ?? "-" }],
     },
     {
       item: "Min-Price",
-      option_one: datas?.[0]?.min_price
-        ? `₹${Math.floor(datas?.[0]?.min_price)}`
-        : "-",
-      option_two: datas?.[1]?.min_price
-        ? `₹${Math.floor(datas?.[1]?.min_price)}`
-        : "-",
-      option_three: datas?.[2]?.min_price
-        ? `₹${Math.floor(datas?.[2]?.min_price)}`
-        : "-",
+      option_one: [
+        {
+          value: datas?.[0]?.min_price
+            ? `₹${Math.floor(datas?.[0]?.min_price)}`
+            : "-",
+        },
+      ],
+      option_two: [
+        {
+          value: datas?.[1]?.min_price
+            ? `₹${Math.floor(datas?.[1]?.min_price)}`
+            : "-",
+        },
+      ],
+      option_three: [
+        {
+          value: datas?.[2]?.min_price
+            ? `₹${Math.floor(datas?.[2]?.min_price)}`
+            : "-",
+        },
+      ],
     },
   ];
+
   return basicTableData;
 }
 
@@ -94,28 +107,60 @@ function itemInFormat(data, isViewPage) {
 function getTableData(id, specifications, compareData, isViewPage) {
   function matchAndGenerateOutput(firstArray, secondArray) {
     const output = [];
+    if (!isViewPage) {
+      secondArray?.forEach((obj) => {
+        obj?.vehicle_specs.forEach((spec) => {
+          const matchingItem = firstArray.find(
+            (item) => item.item === spec?.specification?.name
+          );
 
-    secondArray?.forEach((obj) => {
-      obj?.vehicle_specs.forEach((spec) => {
-        const match = firstArray.find(
-          (item) => item.item === spec?.specification?.name
-        );
-        if (match && spec?.values !== null) {
-          const newItem = {
-            item: match.item,
-            values: spec?.values,
-          };
-          for (let i = 2; i <= 4; i++) {
-            const optionKey = `option_${i}`;
-            if (spec[optionKey]) {
-              newItem[optionKey] = spec[optionKey];
+          if (matchingItem) {
+            const existingItem = output.find(
+              (outputItem) => outputItem.item === matchingItem.item
+            );
+            if (existingItem) {
+              if (!existingItem.option_one) {
+                existingItem.option_one = spec?.values ?? "-";
+              } else if (!existingItem.option_two) {
+                existingItem.option_two = spec?.values ?? "-";
+              } else if (!existingItem.option_three) {
+                existingItem.option_three = spec?.values ?? "-";
+              }
+            } else {
+              const newItem = {
+                item: matchingItem.item,
+                option_one: spec?.values,
+                option_two: null,
+                option_three: null,
+              };
+              output.push(newItem);
             }
           }
-
-          output.push(newItem);
-        }
+        });
       });
-    });
+    } else {
+      secondArray?.forEach((obj) => {
+        obj?.vehicle_specs?.forEach((spec) => {
+          const match = firstArray.find(
+            (item) => item.item === spec?.specification?.name
+          );
+          if (match && spec?.values !== null) {
+            const newItem = {
+              item: match?.item,
+              values: spec?.values,
+            };
+            for (let i = 2; i <= 4; i++) {
+              const optionKey = `option_${i}`;
+              if (spec[optionKey]) {
+                newItem[optionKey] = spec[optionKey];
+              }
+            }
+
+            output.push(newItem);
+          }
+        });
+      });
+    }
 
     return output;
   }
@@ -129,9 +174,9 @@ function getTableData(id, specifications, compareData, isViewPage) {
   });
 
   const itemData = matchAndGenerateOutput(data, compareData);
-  const itemDataWithOptions = itemInFormat(itemData, isViewPage);
+  const dataSet = itemInFormat(itemData, isViewPage);
 
-  return itemDataWithOptions;
+  return isViewPage ? dataSet : itemData;
 }
 
 export const getSpecCompareData = (compareData, specCategory, isViewPage) => {

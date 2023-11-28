@@ -9,7 +9,6 @@ const CompareTable = ({ compareData, compared }) => {
 
   const specContent = getSpecCompareData(compareData, specCategory, false);
   const [expand, setExpand] = useState(false);
-
   return (
     <>
       <div className="accordion lg:lh-1" id="accordionExample">

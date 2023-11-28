@@ -29,7 +29,6 @@ const ComparePage = () => {
   ];
 
   const [vehicle, setVehicle] = useState(defaultValues);
-  console.log(vehicle,'vehicleCheck')
 
   return (
     <div className="position-relative   ">

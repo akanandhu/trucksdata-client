@@ -1,5 +1,12 @@
 import React from "react";
 
+const renderOptionValues = (rowData, optionKey) => {
+  const optionValues = Array.isArray(rowData[optionKey])
+    ? rowData[optionKey].map((item) => item.value)
+    : [];
+  return optionValues.join(", ");
+};
+
 const CompareDataTable = ({ hasVariant, tableData }) => {
   const isClient = typeof window !== "undefined";
   const screenWidth = isClient ? window.innerWidth : null;
@@ -20,14 +27,16 @@ const CompareDataTable = ({ hasVariant, tableData }) => {
         )}
 
         <tbody>
-          {tableData?.map((row, index) => (
-            <tr key={index}>
-              <td>{row.item}</td>
-              <td>{row.option_one}</td>
-              {row?.option_two && <td>{row.option_two}</td>}
-              {row?.option_three && !isMobScreen && <td>{row.option_three}</td>}
-            </tr>
-          ))}
+          {tableData?.map((row, index) => {
+            return (
+              <tr key={index}>
+                <td>{row.item}</td>
+                <td>{renderOptionValues(row, "option_one")}</td>
+                <td>{renderOptionValues(row, "option_two")}</td>
+                <td>{renderOptionValues(row, "option_three")}</td>
+              </tr>
+            );
+          })}
         </tbody>
       </table>
     </div>
