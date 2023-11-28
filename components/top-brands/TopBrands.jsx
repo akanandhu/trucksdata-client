@@ -18,7 +18,7 @@ const TopBrands = () => {
 
   const settings = {
     dots: true,
-    infinite: true,
+    infinite: false,
     speed: 500,
     slidesToShow: manufacturerLength >= 5 ? 5 : manufacturerLength,
     slidesToScroll: 1,
