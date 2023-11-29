@@ -11,8 +11,7 @@ const DownloadForm = ({ handleClick, click, url }) => {
   const [selectedDistrict, setSelectedDistrict] = useState({});
   const [name, setName] = useState();
   const [email, setEmail] = useState();
-  console.log(selectedItem,'districtttttt')
-  console.log(selectedDistrict,'districttttttsssss')
+
 
   const handleOptionClick = (item) => {
     setSearchValue(item.state);
@@ -71,12 +70,12 @@ const DownloadForm = ({ handleClick, click, url }) => {
           <div className="col-12 col-lg-6">
             <div className="form-input ">
               <input
-                type="email"
+                type="tel"
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
-              <label className="lh-1 text-14 text-light-1">Email</label>
+              <label className="lh-1 text-14 text-light-1">Phone</label>
             </div>
           </div>
 

@@ -81,9 +81,14 @@ const DetailBox = ({ vehicleDetails }) => {
 
   function handleClick() {
     if (hasData) {
-      return downloadFile(vehicleDetails?.brochure, handleClick);
+      return downloadFile(vehicleDetails?.brochure, handleClose);
     }
     setClick(!click);
+  }
+
+
+  function handleClose () {
+    setClick(false);
   }
 
   return (
@@ -107,7 +112,7 @@ const DetailBox = ({ vehicleDetails }) => {
       </div>
 
       <DownloadForm
-        handleClick={handleClick}
+        handleClick={handleClose}
         click={click}
         url={vehicleDetails?.brochure}
       />
