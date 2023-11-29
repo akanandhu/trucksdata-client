@@ -35,7 +35,7 @@ export default function SlideGallery({ slides,videos }) {
               ))}
               {videos && videos.length !==0 ? <SwiperSlide>
                 <div className="slider__image">
-                  <img src={slides ? slides[0].original : null} alt="" />
+                  <img src={slides ? slides[0]?.original : null} alt="" />
                 </div>
               </SwiperSlide>
             :null  

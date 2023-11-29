@@ -28,6 +28,7 @@ const PriceSlider = ({ sideParams, setSideParams, label }) => {
           formatLabel={(value) => ``}
           minValue={100000}
           maxValue={1000000}
+          step={100000}
           value={price.value}
           onChange={(value) => handleOnChange(value)}
         />
