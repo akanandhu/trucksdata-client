@@ -13,7 +13,7 @@ const Faq = ({ faq }) => {
   return (
     <>
       {faqContent.map((item) => {
-        const sanitizedId = item.collapseTarget.replace(/[^a-zA-Z0-9-_]/g, "");
+        const sanitizedId = item?.collapseTarget?.replace(/[^a-zA-Z0-9-_]/g, "");
 
         return (
           <div className="col-12" key={item.id}>

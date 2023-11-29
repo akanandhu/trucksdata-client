@@ -22,7 +22,7 @@ const Categories = ({category}) => {
 
   var settings = {
     dots: true,
-    infinite: true,
+    infinite: false,
     speed: 500,
     slidesToShow: catContent.length,
     slidesToScroll: 1,

@@ -39,7 +39,7 @@ const ComparePage = () => {
       <DescriptionBox vehicle={vehicle}  />
       <CompareBox vehicle={vehicle} setVehicle={setVehicle} />
       <CallToActions />
-      <Footer className="text-dark" />
+      <Footer className="text-dark" type={'white'} />
     </div>
   );
 };

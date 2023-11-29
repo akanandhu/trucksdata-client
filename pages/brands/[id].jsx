@@ -192,7 +192,7 @@ const SingleBrand = () => {
 
       <CallToActions />
 
-      <Footer className="text-dark" />
+      <Footer className="text-dark" type={'white'} />
     </>
   );
 };

@@ -6,7 +6,7 @@ const ContactInfo = dynamic(() => import("./ContactInfo"), {
   ssr: false,
 });
 
-const index = ({ className }) => {
+const index = ({ className, type }) => {
   const isClient = typeof window !== "undefined";
   const generalData = isClient ? localStorage?.getItem("general-data") : null;
   const general = JSON.parse(generalData);
@@ -41,7 +41,8 @@ const index = ({ className }) => {
             </div>
             {/* End col */}
 
-            <FooterContent />
+            <FooterContent type={type} />
+
             {/* End footer menu content */}
 
             {/* <div className="col-xl-4 col-lg-4 col-sm-6">

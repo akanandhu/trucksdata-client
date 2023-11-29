@@ -3,7 +3,7 @@ import React from "react";
 const getAdvancedSearchParams = (sideParams) => {
   const hasMinPrice = !!sideParams?.price?.min && sideParams?.price?.min !== "";
   const hasMaxPrice = !!sideParams?.price?.min && sideParams?.price?.max !== "";
-
+  console.log(sideParams, 'sPPP')
   const advancedParams = {
     ...(hasMinPrice &&
       hasMaxPrice && {
@@ -13,7 +13,8 @@ const getAdvancedSearchParams = (sideParams) => {
       sideParams?.loading_capacity != 0 && {
         loading_capacity: [
           sideParams?.loading_capacity_spec_id,
-          sideParams?.loading_capacity,
+          sideParams?.loading_capacity?.min,
+          sideParams?.loading_capacity?.max,
         ]?.join(","),
       }),
     ...(sideParams?.variant_options_spec_id &&

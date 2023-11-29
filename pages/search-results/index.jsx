@@ -238,7 +238,7 @@ const SearchResultsPage = () => {
       {/* End Call To Actions Section */}
 
       {/* <DefaultFooter contact={contactDetails} /> */}
-      <Footer className="text-dark" />
+      <Footer className="text-dark" type={'white'}  />
     </>
   );
 };

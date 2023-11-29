@@ -14,3 +14,21 @@
 .footerContainer{
   // width: 90vw;
 }
+
+.displayInMedium {
+  display: none;
+
+  @media (min-width: 768px) {
+    display: block; 
+  }
+}
+
+.displayInMobile {
+  display: block; 
+
+
+  @media (min-width: 768px) {
+  display: none;
+
+  }
+}

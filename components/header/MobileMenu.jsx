@@ -29,6 +29,17 @@ const MobileMenu = (props) => {
     closeCanvas()
   }
 
+  const isClient = typeof window !== "undefined";
+  const generalData = isClient ? localStorage?.getItem("general-data") : null;
+  const general = JSON.parse(generalData);
+  const {
+    email,
+    contact_number,
+    facebook_url, instagram_url, youtube_url, twitter
+  } = general || {};
+  const contact = { email, contact_number };
+  const socials = { facebook_url, instagram_url, youtube_url, twitter };
+
   
 
   return (
@@ -104,11 +115,11 @@ const MobileMenu = (props) => {
       <div className="mobile-footer px-20 py-5 border-top-light"></div>
 
       <div className="pro-footer">
-        <ContactInfo />
+        <ContactInfo contact={contact} />
         <div className="mt-10">
           <h5 className="text-16 fw-500 mb-10">Follow us on social media</h5>
           <div className="d-flex x-gap-20 items-center">
-            <Social />
+            <Social socials={socials} />
           </div>
         </div>
       </div>

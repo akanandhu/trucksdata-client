@@ -3,33 +3,32 @@ import AppButton from "./AppButton";
 import Copyright from "./Copyright";
 import FooterContent from "./FooterContent";
 
-const ContactInfo = dynamic(() => import('./ContactInfo'), {
+const ContactInfo = dynamic(() => import("./ContactInfo"), {
   ssr: false,
-})
+});
 
 const index = () => {
   return (
     <footer className="footer -type-3 footerContainer">
-      <div 
+      <div
       // className="container"
       >
-        <div 
+        <div
         // className="d-flex pt-60 pb-60 ps-2"
         >
-          <div 
-          // className="row y-gap-40 justify-between xl:justify-start"
-        className="d-flex pt-60 pb-60 justify-content-between sm:flex-column md:flex-column ps-4 pe-4 px-sm-5"
-
+          <div
+            // className="row y-gap-40 justify-between xl:justify-start"
+            className="d-flex pt-60 pb-60 justify-content-between sm:flex-column md:flex-column ps-4 pe-4 px-sm-5"
           >
-            <div 
+            <div
             // className="col-xl-2 col-lg-4 col-sm-6"
             >
               <h5 className="text-16 fw-500 mb-30">Contact Us</h5>
-              <ContactInfo  />
+              <ContactInfo />
             </div>
             {/* End col */}
 
-            <FooterContent />
+            <FooterContent  />
             {/* End footer menu content */}
 
             {/* <div className="col-xl-4 col-lg-4 col-sm-6">

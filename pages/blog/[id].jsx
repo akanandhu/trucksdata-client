@@ -115,7 +115,7 @@ const BlogSingleDynamic = () => {
       <CallToActions />
       {/* End Call To Actions Section */}
 
-      <Footer className="text-dark"/>
+      <Footer className="text-dark" type={'white'} />
       {/* End Call To Actions Section */}
     </>
   );
