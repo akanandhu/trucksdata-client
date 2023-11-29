@@ -33,8 +33,10 @@ const SinglePage = () => {
   const router = useRouter();
   const id = router.query.id;
 
-  const similarNavigations = {prev:"similar-prev-navigation",next:"similar-next-navigation"}
-
+  const similarNavigations = {
+    prev: "similar-prev-navigation",
+    next: "similar-next-navigation",
+  };
 
   // useEffect(() => {
   //   if (!id) <h1>Loading...</h1>;
@@ -51,10 +53,12 @@ const SinglePage = () => {
   const vehicleTypeId = vehicleData?.data?.vehicle_type_id;
   const manufacturerId = vehicleData?.data?.manufacturer_id;
 
-  // const vehiclePrice = vehicleData?.data["min_price"].split(".");
-  const similarVehicles = allVehicles?.data?.data?.filter(
-    (item) => item?.vehicle_type_id === vehicleTypeId
-  );
+  const currentVehicleId = router?.query?.id;
+
+  const similarVehicles = allVehicles?.data?.data
+    ?.filter((item) => item?.vehicle_type_id === vehicleTypeId)
+    ?.filter((item) => item?.id !== Number(currentVehicleId));
+
   const keyspecs = vehicleData?.data?.vehicle_specs?.filter(
     (item) => item.is_key_feature
   );
@@ -313,7 +317,10 @@ const SinglePage = () => {
 
             <div className="col-lg-8">
               {/* <SimilarTrucks similarVehicles={similarVehicles} /> */}
-              <ModelSlides vehicleDetails={similarVehicles} navigations={similarNavigations}/>
+              <ModelSlides
+                vehicleDetails={similarVehicles}
+                navigations={similarNavigations}
+              />
             </div>
           </div>
         </div>
@@ -321,7 +328,7 @@ const SinglePage = () => {
 
       <CallToActions />
 
-      <Footer className="text-dark" type={'white'} />
+      <Footer className="text-dark" type={"white"} />
     </>
   );
 };
