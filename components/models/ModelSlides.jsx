@@ -2,8 +2,7 @@ import Link from "next/link";
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper";
-import { useSelector } from "react-redux";
-import useVehicle from "../../services/useVehicle";
+
 
 function ModelSlides({ vehicleDetails,navigations}) {
   return (

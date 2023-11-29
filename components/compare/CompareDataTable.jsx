@@ -33,7 +33,9 @@ const CompareDataTable = ({ hasVariant, tableData }) => {
                 <td>{row.item}</td>
                 <td>{renderOptionValues(row, "option_one")}</td>
                 <td>{renderOptionValues(row, "option_two")}</td>
-                <td>{renderOptionValues(row, "option_three")}</td>
+                {!isMobScreen && (
+                  <td>{renderOptionValues(row, "option_three")}</td>
+                )}
               </tr>
             );
           })}
