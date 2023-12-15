@@ -108,8 +108,8 @@ function getTableData(id, specifications, compareData, isViewPage) {
   function matchAndGenerateOutput(firstArray, secondArray) {
     const output = [];
     if (!isViewPage) {
-      secondArray?.forEach((obj) => {
-        obj?.vehicle_specs.forEach((spec) => {
+      secondArray?.forEach((obj, index) => {
+        obj?.vehicle_specs?.forEach((spec) => {
           const matchingItem = firstArray.find(
             (item) => item.item === spec?.specification?.name
           );
@@ -118,6 +118,7 @@ function getTableData(id, specifications, compareData, isViewPage) {
             const existingItem = output.find(
               (outputItem) => outputItem.item === matchingItem.item
             );
+            
             if (existingItem) {
               if (!existingItem.option_one) {
                 existingItem.option_one = spec?.values ?? "-";
@@ -129,9 +130,9 @@ function getTableData(id, specifications, compareData, isViewPage) {
             } else {
               const newItem = {
                 item: matchingItem.item,
-                option_one: spec?.values,
-                option_two: null,
-                option_three: null,
+                ...(index === 0 && {option_one: spec?.values ?? '-'}),
+                ...(index === 1 && {option_two: spec?.values ?? '-'}),
+                ...(index === 2 && {option_three: spec?.values ?? '-'}),
               };
               output.push(newItem);
             }

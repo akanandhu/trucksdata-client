@@ -10,7 +10,7 @@ const DownloadForm = ({ handleClick, click, url }) => {
   const [selectedItem, setSelectedItem] = useState({});
   const [selectedDistrict, setSelectedDistrict] = useState({});
   const [name, setName] = useState();
-  const [email, setEmail] = useState();
+  const [phone, setPhone] = useState();
 
 
   const handleOptionClick = (item) => {
@@ -29,7 +29,7 @@ const DownloadForm = ({ handleClick, click, url }) => {
 
     const data = {
       name,
-      email,
+      phone_number: phone,
       district: districtValue,
       state: selectedItem?.state,
     };
@@ -72,8 +72,8 @@ const DownloadForm = ({ handleClick, click, url }) => {
               <input
                 type="tel"
                 required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
               />
               <label className="lh-1 text-14 text-light-1">Phone</label>
             </div>
