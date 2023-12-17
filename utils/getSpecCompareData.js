@@ -120,11 +120,11 @@ function getTableData(id, specifications, compareData, isViewPage) {
             );
             
             if (existingItem) {
-              if (!existingItem.option_one) {
+              if (!existingItem.option_one && index === 0) {
                 existingItem.option_one = spec?.values ?? "-";
-              } else if (!existingItem.option_two) {
+              } else if (!existingItem.option_two && index === 1) {
                 existingItem.option_two = spec?.values ?? "-";
-              } else if (!existingItem.option_three) {
+              } else if (!existingItem.option_three && index === 2) {
                 existingItem.option_three = spec?.values ?? "-";
               }
             } else {
