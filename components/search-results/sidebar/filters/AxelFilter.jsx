@@ -16,7 +16,7 @@ const AxelFilter = ({ sideParams, setSideParams, options, specId }) => {
 
   return (
     <div className="sidebar__item">
-      <h5 className="text-18 fw-500 mb-10">Axel Configuration</h5>
+      <h5 className="text-18 fw-500 mb-10">Axle Configuration</h5>
       <div className="sidebar-checkbox">
         <ButtonFilter
           setSideParams={setSideParams}

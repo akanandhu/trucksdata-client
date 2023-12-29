@@ -35,11 +35,11 @@ const Sidebar = ({ sideParams, setSideParams, specifications }) => {
   );
 
   const tyres = specifications?.find(
-    (item) => item?.name === "Number of Tyres"
+    (item) => item?.name === "Number Of Tyres"
   );
 
   const axelOptions = specifications?.find(
-    (item) => item?.name === "Axel Configuration"
+    (item) => item?.name === "Axle Configuration"
   );
 
   return (
