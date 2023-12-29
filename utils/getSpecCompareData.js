@@ -42,6 +42,30 @@ function getBasicTableData(datas) {
         },
       ],
     },
+    {
+      item: "Max-Price",
+      option_one: [
+        {
+          value: datas?.[0]?.max_price
+            ? `₹${Math.floor(datas?.[0]?.max_price)}`
+            : "-",
+        },
+      ],
+      option_two: [
+        {
+          value: datas?.[1]?.max_price
+            ? `₹${Math.floor(datas?.[1]?.max_price)}`
+            : "-",
+        },
+      ],
+      option_three: [
+        {
+          value: datas?.[2]?.max_price
+            ? `₹${Math.floor(datas?.[2]?.max_price)}`
+            : "-",
+        },
+      ],
+    },
   ];
 
   return basicTableData;

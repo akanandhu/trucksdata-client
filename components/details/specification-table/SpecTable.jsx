@@ -34,7 +34,6 @@ const SpecTable = ({ hasVariant, tableData, vehicleSpecs, specId }) => {
   const numArray = generateNumberArray(highest)
 
   const resultArray = numArray
-  console.log(highest, 'tableDataCheck')
 
   return (
     <div className="overflow-scroll scroll-bar-1">
