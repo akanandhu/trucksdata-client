@@ -15,7 +15,9 @@ const SearchResults = ({
 }) => {
   return (
     <>
-      {vehicles?.map((item) => {
+      {vehicles
+      ?.filter((item) => item?.is_visible)
+      ?.map((item) => {
         const minPrice = Math.floor(item?.min_price ?? 0);
         const maxPrice = Math.floor(item?.max_price ?? 0);
         const payloads = item?.payload_spec?.values?.map((value) => {

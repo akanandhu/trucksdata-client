@@ -41,9 +41,9 @@ const Home = () => {
   const {data: upcomingVehicles } = useVehicle(upcomingFilterId);
   const blogs = articles?.data?.data
 
-  const popularModels = popularVehicels?.data?.data.filter((item)=> item['is_popular'] === 1);
+  const popularModels = popularVehicels?.data?.data.filter((item)=> item['is_popular'] === 1 && item['is_visible'] === 1);
 
-  const upcomingModels = upcomingVehicles?.data?.data.filter((item)=> item['is_upcoming'] === 1);
+  const upcomingModels = upcomingVehicles?.data?.data.filter((item)=> item['is_upcoming'] === 1 && item['is_visible'] === 1);
 
   const popularNavigations = {prev:"js-popular-car-prev",next:"js-popular-car-next"};
 
