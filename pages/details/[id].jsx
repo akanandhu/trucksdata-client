@@ -82,7 +82,7 @@ const SinglePage = () => {
     <>
       <Seo
         pageTitle={vehicleData?.data?.title ?? "Variant View Page"}
-        pageImage={vehicleData?.data?.images[0]?.thumbnail}
+        pageImage={vehicleData?.data?.images?.[0]?.thumbnail}
       />
       {/* End Page Title */}
       <div className="header-margin"></div>
@@ -271,7 +271,7 @@ const SinglePage = () => {
         </div>
       </section>
 
-      {vehicleData?.data?.video_links.length !== 0 ? (
+      {vehicleData?.data?.video_links?.length !== 0 ? (
         <section className="mt-40 pt-40">
           <div className="container">
             {/* <h3 className="text-22 fw-500 mb-20">Car Location</h3> */}

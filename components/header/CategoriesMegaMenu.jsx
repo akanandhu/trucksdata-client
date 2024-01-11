@@ -123,7 +123,6 @@ const CategoriesMegaMenu = ({
                         <div className="y-gap-5 text-15 pt-5">
                           {model?.vehicles?.slice(0, 10).map((list, i) => {
                             
-
                             return (
                               <div
                                 key={i}
@@ -134,7 +133,7 @@ const CategoriesMegaMenu = ({
                                 }
                               >
                                 <Link
-                                  href={`/details/${list?.id}`}
+                                  href={`/details/${list?.id}?vehicle_name=${list?.slug}`}
                                 >
                                   {list.title}
                                 </Link>

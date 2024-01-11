@@ -9,7 +9,8 @@ import { useRouter } from "next/router";
 const CompareTwoVehicleBox = ({ item }) => {
   const vehicleOne = item?.id;
   const vehicleTwo = item?.compare_vehicle?.[0]?.id;
-  const routeToRedirect = `/compare?vehicle_one=${vehicleOne}&vehicle_two=${vehicleTwo}`;
+  const vehicleNames = item?.slug + '_vs_' + item?.compare_vehicle?.[0]?.slug
+  const routeToRedirect = `/compare?vehicle_one=${vehicleOne}&vehicle_two=${vehicleTwo}&comparison=${vehicleNames}`;
   const router = useRouter();
   function handleRoute() {
     router.push(routeToRedirect);

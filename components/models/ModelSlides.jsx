@@ -41,7 +41,7 @@ function ModelSlides({ vehicleDetails,navigations}) {
           .map((item, i) => (
             <SwiperSlide key={item.id}>
               <Link
-                href={`/details/${item.id}`}
+                href={`/details/${item.id}?vehicle_name=${item?.slug}&type=${item?.vehicle_type?.name}`}
                 className="carCard -type-1 d-block rounded-4 hover-inside-slider"
                 data-aos="fade"
                 data-aos-delay={i * 100}

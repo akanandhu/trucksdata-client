@@ -65,7 +65,7 @@ const TopBrands = () => {
         >
 
           <Link
-            href={`/brands/${item.id}`}
+            href={`/brands/${item.id}?brand_name=${item.slug}`}
             className="citiesCard -type-3 d-block text-center "
           >
             <div className="citiesCard__image size-120 rounded-full mx-auto brandCardImage">
