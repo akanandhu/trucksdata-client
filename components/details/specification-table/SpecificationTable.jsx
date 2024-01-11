@@ -4,7 +4,7 @@ import { getSpecData } from "../../../utils/getSpecData";
 import { getSpecCompareData } from "../../../utils/getSpecCompareData";
 import useGetSpecificationCategories from "../../../services/specs/useGetSpecCategories";
 
-const SpecificationTable = ({ vehicleData }) => {
+const SpecificationTable = ({ vehicleData, expand }) => {
   // const specContent = getSpecData();
   const { data: categories } = useGetSpecificationCategories();
   const categoriesData = categories?.data?.data || [];
@@ -40,7 +40,8 @@ const SpecificationTable = ({ vehicleData }) => {
             </h2>
             <div
               id={item.collapseTarget}
-              class="accordion-collapse collapse"
+              // class="accordion-collapse collapse"
+              className={`accordion-collapse collapse ${expand ? "show" : ""}`}
               aria-labelledby="headingOne"
               data-bs-parent="#accordionExample"
             >

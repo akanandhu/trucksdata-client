@@ -33,6 +33,9 @@ const SinglePage = () => {
   const router = useRouter();
   const id = router.query.id;
 
+  const [expand, setExpand] = useState(false)
+
+
   const similarNavigations = {
     prev: "similar-prev-navigation",
     next: "similar-next-navigation",
@@ -77,6 +80,7 @@ const SinglePage = () => {
       </div>
     );
   }
+
 
   return (
     <>
@@ -261,11 +265,18 @@ const SinglePage = () => {
       <section className="pt-40 mb-40 container">
         <div className="view_bordershadow bg-white">
           <div className="container pt-20 pb-20 lg:px-30 sm:px-0">
-            <div className="ms-3">
+            <div className="ms-3 d-flex justify-content-between  ">
               <h4 className="mb-10">Specifications</h4>
+              <button
+                className="bg-white text-black px-2  "
+                onClick={() => setExpand(!expand)}
+              >
+                {!expand ? <u>Expand all</u> : <u>Collapse all</u>}
+              </button>
             </div>
+            
             <div className="w-100">
-              <SpecificationTable vehicleData={vehicleData?.data} />
+              <SpecificationTable vehicleData={vehicleData?.data}  expand={expand} />
             </div>
           </div>
         </div>
