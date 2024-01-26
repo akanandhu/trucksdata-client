@@ -13,6 +13,9 @@ const SpecTable = ({ hasVariant, tableData, vehicleSpecs, specId }) => {
 
   function getCounts(data) {
     return data.map(item => {
+      if (item.option_five !== "-") {
+        return 5;
+    }
         if (item.option_four !== "-") {
             return 4;
         } else if (item.option_three !== "-") {
@@ -57,6 +60,7 @@ const SpecTable = ({ hasVariant, tableData, vehicleSpecs, specId }) => {
                   row?.option_two,
                   row?.option_three,
                   row?.option_four,
+                  row?.option_five,
                 ]
                   ?.filter(Boolean)
                   .filter((item) => item !== undefined && item !== "-")

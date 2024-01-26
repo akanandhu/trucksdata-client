@@ -122,6 +122,7 @@ function itemInFormat(data, isViewPage) {
       option_two: values?.[1] || "-",
       option_three: values?.[2] || "-",
       ...(isViewPage && { option_four: values?.[3] || "-" }),
+      ...(isViewPage && { option_five: values?.[4] || "-" }),
     };
   });
 
@@ -174,7 +175,7 @@ function getTableData(id, specifications, compareData, isViewPage) {
               item: match?.item,
               values: spec?.values,
             };
-            for (let i = 2; i <= 4; i++) {
+            for (let i = 2; i <= 5; i++) {
               const optionKey = `option_${i}`;
               if (spec[optionKey]) {
                 newItem[optionKey] = spec[optionKey];
