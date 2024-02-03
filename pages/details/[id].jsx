@@ -63,9 +63,9 @@ const SinglePage = () => {
     ?.filter((item) => item?.id !== Number(currentVehicleId));
 
   const keyspecs = vehicleData?.data?.vehicle_specs?.filter(
-    (item) => item.is_key_feature
+    (item) => item?.specification?.is_key_feature
   );
-  
+
   const popularModels = allVehicles?.data?.data?.filter(
     (item) =>
       item.is_popular === 1 &&

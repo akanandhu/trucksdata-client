@@ -88,7 +88,7 @@ const Home = () => {
               <div className="sectionTitle -md">
                 <h2 className="sectionTitle__title">Popular Models</h2>
                 <p className=" sectionTitle__text mt-5 sm:mt-0">
-                  Explore the popular models
+                Explore the top-rated models
                 </p>
               </div>
             </div>
@@ -115,7 +115,7 @@ const Home = () => {
               <div className="sectionTitle -md">
                 <h2 className="sectionTitle__title">Top Brands</h2>
                 <p className=" sectionTitle__text mt-5 sm:mt-0">
-                  These popular brands have a lot to variants to offer
+                Explore top brands for diversity
                 </p>
               </div>
             </div>
