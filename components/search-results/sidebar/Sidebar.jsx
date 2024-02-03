@@ -31,7 +31,7 @@ const Sidebar = ({ sideParams, setSideParams, specifications }) => {
 
   const statusOptions = specifications?.find((item) => item?.name === "Status");
   const payloadOptions = specifications?.find(
-    (item) => item?.name === "Payload  (Kg)"
+    (item) => item?.name === "Payload (Range)(Kg)"
   );
 
   const tyres = specifications?.find(
