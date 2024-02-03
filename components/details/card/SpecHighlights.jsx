@@ -50,6 +50,7 @@ const SpecHighlights = ({ keyspecs }) => {
       <div className="row y-gap-30 justify-between pt-30">
         {keyspecs?.slice(0, 6)?.map((item) => {
           if (item?.values?.length) {
+          const valueToDisplay = item.values.map((obj) => obj.value)
             return (
               <div className="col-md-auto col-6" key={item.id}>
                 <div className="d-block text-center">
@@ -63,7 +64,7 @@ const SpecHighlights = ({ keyspecs }) => {
                     <span className=" fw-semibold ">
                       {item?.specification?.name}
                     </span>
-                    <br /> {item?.values[0]?.value}
+                    <br /> {valueToDisplay?.join(',')}
                   </div>
                 </div>
               </div>
