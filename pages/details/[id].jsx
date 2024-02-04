@@ -29,6 +29,12 @@ import ModelSlides from "../../components/models/ModelSlides";
 import Share from "../../components/share/Share";
 import Spinner from "../../components/loading/Spinner";
 
+const highlights = ["Loading Span (ft) / Loading Capacity (Cu.M)",
+"Gross Vehicle Weight (Kg)", "Variant Options", "Emission Standard", "Maximum Power", "Maximum Torque"
+]
+
+
+
 const SinglePage = () => {
   const router = useRouter();
   const id = router.query.id;
@@ -63,8 +69,12 @@ const SinglePage = () => {
     ?.filter((item) => item?.id !== Number(currentVehicleId));
 
   const keyspecs = vehicleData?.data?.vehicle_specs?.filter(
-    (item) => item?.specification?.is_key_feature
+    (item) => item?.specification?.is_key_feature && highlights.includes(item?.specification?.name)
   );
+  const sortedKeySpecs =  keyspecs?.sort((a, b) => {
+    return highlights.indexOf(a.specification.name) - highlights.indexOf(b.specification.name);
+  });
+
 
   const popularModels = allVehicles?.data?.data?.filter(
     (item) =>
@@ -225,7 +235,7 @@ const SinglePage = () => {
               {keyspecs?.length !== 0 ? (
                 <div className="view_bordershadow ps-4 pe-4 pt-15 pb-15 bg-white ">
                   <h6 className="fw-500 text-22">Highlights</h6>
-                  <SpecHighlights keyspecs={keyspecs} />
+                  <SpecHighlights keyspecs={sortedKeySpecs} />
                 </div>
               ) : null}
               {/* <div className="mt-30 view_bordershadow ps-4 pe-4 pt-15 pb-15 bg-white">
