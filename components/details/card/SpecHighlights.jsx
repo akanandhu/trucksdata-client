@@ -40,6 +40,8 @@ const SpecHighlights = ({ keyspecs }) => {
     },
   ];
 
+  const multipleSpec = ['Loading Span (ft) / Loading Capacity (Cu.M)', 'Variant Options']
+
   const showIconUrl = (title) => {
     const item = propertyContent.find((item) => item.name === title);
     const url = item?.icon;
@@ -50,7 +52,8 @@ const SpecHighlights = ({ keyspecs }) => {
       <div className="row y-gap-30 justify-between pt-30">
         {keyspecs?.slice(0, 6)?.map((item) => {
           if (item?.values?.length) {
-          const valueToDisplay = item.values.map((obj) => obj.value)
+            const hasMultiple = multipleSpec?.includes(item?.specification?.name)
+          const valueToDisplay =  item.values.map((obj) => obj.value)
             return (
               <div className="col-md-auto col-6" key={item.id}>
                 <div className="d-block text-center">
@@ -64,7 +67,7 @@ const SpecHighlights = ({ keyspecs }) => {
                     <span className=" fw-semibold ">
                       {item?.specification?.name}
                     </span>
-                    <br /> {valueToDisplay?.join(',')}
+                    <br /> {hasMultiple ? valueToDisplay?.join(',') : valueToDisplay?.[0] }
                   </div>
                 </div>
               </div>
