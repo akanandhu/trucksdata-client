@@ -4,7 +4,7 @@ import InputRange from "react-input-range";
 
 const PriceSlider = ({ sideParams, setSideParams, label }) => {
   const [price, setPrice] = useState({
-    value: { min: 10000, max: 1000000 },
+    value: { min: 10000, max: 9500000 },
   });
 
   const handleOnChange = (value) => {
@@ -27,8 +27,8 @@ const PriceSlider = ({ sideParams, setSideParams, label }) => {
         <InputRange
           formatLabel={(value) => ``}
           minValue={100000}
-          maxValue={1000000}
-          step={100000}
+          maxValue={9500000}
+          step={200000}
           value={price.value}
           onChange={(value) => handleOnChange(value)}
         />
